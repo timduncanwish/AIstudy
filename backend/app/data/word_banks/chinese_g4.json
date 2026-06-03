@@ -4,301 +4,881 @@
   "units": [
     {
       "unit": 1,
-      "title": "第一单元·自然之美",
+      "title": "观潮",
       "words": [
-        {
-          "word": "雾",
-          "pinyin": "wù",
-          "meaning": "空气中弥漫的水汽，看不清远处",
-          "level_hint": "早晨起了大____，什么都看不清。",
-          "sample_sentences": ["江面上起了大雾。", "雾散了，太阳出来了。", "浓雾笼罩着整个城市。"],
-          "distractor_words": ["露", "霜", "烟"],
-          "distractor_meanings": ["露水，清晨凝结在草叶上的水珠", "霜，寒冷时地面结的白色冰晶", "烟，燃烧产生的气体"]
-        },
         {
           "word": "潮",
           "pinyin": "cháo",
           "meaning": "海水定期涨落的现象",
-          "level_hint": "钱塘江大____非常壮观。",
-          "sample_sentences": ["钱塘江大潮天下闻名。", "潮水退去，沙滩露出来了。", "涨潮了，海水漫过脚面。"],
-          "distractor_words": ["浪", "涛", "波"],
-          "distractor_meanings": ["波浪，水面起伏的运动", "波涛，大波浪", "水波，水面上的纹路"]
-        },
-        {
-          "word": "据",
-          "pinyin": "jù",
-          "meaning": "依据，按照",
-          "level_hint": "根____天气预报，明天会下雨。",
-          "sample_sentences": ["据老师说，下周要考试。", "据我观察，天要晴了。", "据说那里很美。"],
-          "distractor_words": ["依", "凭", "按"],
-          "distractor_meanings": ["依靠，倚仗", "凭借，利用", "按照，依照"]
+          "level_hint": "钱塘江大____是大自然赐予我们的壮观景象。",
+          "sample_sentences": [
+            "钱塘江大潮，自古以来被称为天下奇观。",
+            "潮水越来越近，犹如千万匹白色战马齐头并进。",
+            "观潮的最佳时间是农历八月十八。"
+          ],
+          "distractor_words": ["浪", "涛", "汛"],
+          "distractor_meanings": ["波浪，水面涌起的部分", "大波浪", "江河定期涨水"]
         },
         {
           "word": "堤",
           "pinyin": "dī",
-          "meaning": "沿河或沿海修建的防水建筑物",
-          "level_hint": "河____上种了一排柳树。",
-          "sample_sentences": ["堤岸上长满了青草。", "大堤保护着村庄。", "他们在堤上散步。"],
-          "distractor_words": ["坝", "桥", "岸"],
-          "distractor_meanings": ["水坝，拦水的建筑物", "桥梁，跨越水面的建筑", "岸边，水边的陆地"]
+          "meaning": "沿河或沿海修筑的挡水建筑物",
+          "level_hint": "人们站在海塘大____上等待潮水到来。",
+          "sample_sentences": [
+            "宽阔的钱塘江横卧在眼前，海塘大堤上早已人山人海。",
+            "洪水来了，村民们日夜守护着河堤。",
+            "这段堤坝是去年新修的，非常坚固。"
+          ],
+          "distractor_words": ["坝", "岸", "桥"],
+          "distractor_meanings": ["拦截水流的建筑物", "水边的陆地", "架在河上通行的建筑"]
         },
         {
           "word": "阔",
           "pinyin": "kuò",
-          "meaning": "宽广，面积大",
-          "level_hint": "大海非常广____。",
-          "sample_sentences": ["草原非常辽阔。", "宽阔的马路两旁种着树。", "视野开阔，能看到很远。"],
-          "distractor_words": ["窄", "狭", "小"],
-          "distractor_meanings": ["狭窄，不宽", "狭小，空间有限", "微小，不大"]
+          "meaning": "宽广、开阔",
+          "level_hint": "宽____的江面在阳光下闪闪发光。",
+          "sample_sentences": [
+            "宽阔的钱塘江横卧在眼前。",
+            "站在山顶往下看，视野非常开阔。",
+            "这条宽阔的马路可以并排走八辆车。"
+          ],
+          "distractor_words": ["广", "宽", "辽"],
+          "distractor_meanings": ["面积大、范围大", "横的距离大", "遥远、宽广"]
         },
         {
           "word": "笼",
           "pinyin": "lǒng",
-          "meaning": "遮盖，笼罩",
-          "level_hint": "夜幕____罩着大地。",
-          "sample_sentences": ["晨雾笼罩着村庄。", "月光笼罩着湖面。", "大地笼罩在夜色中。"],
-          "distractor_words": ["罩", "遮", "盖"],
-          "distractor_meanings": ["覆盖，从上面遮住", "遮挡，挡住光线", "盖住，覆盖在上面"]
+          "meaning": "遮盖、笼罩",
+          "level_hint": "蒙蒙的薄雾____罩着整个江面。",
+          "sample_sentences": [
+            "蒙蒙的薄雾笼罩着整个江面。",
+            "夜幕降临，黑暗笼罩了大地。",
+            "小鸟被关在笼子里，失去了自由。"
+          ],
+          "distractor_words": ["盖", "遮", "罩"],
+          "distractor_meanings": ["由上而下地遮掩", "遮挡、挡住", "覆盖在外的套子"]
+        },
+        {
+          "word": "罩",
+          "pinyin": "zhào",
+          "meaning": "覆盖、套在外面的东西",
+          "level_hint": "蒙蒙的薄雾笼____着整个江面。",
+          "sample_sentences": [
+            "蒙蒙的薄雾笼罩着整个江面。",
+            "妈妈给沙发套上了沙发罩。",
+            "灯罩可以把灯光变得柔和。"
+          ],
+          "distractor_words": ["盖", "蒙", "套"],
+          "distractor_meanings": ["由上而下地遮住", "蒙上、遮住", "罩在外面"]
+        },
+        {
+          "word": "蒙",
+          "pinyin": "méng",
+          "meaning": "遮盖、细雨的样子",
+          "level_hint": "____蒙的薄雾笼罩着整个江面。",
+          "sample_sentences": [
+            "蒙蒙的细雨下个不停。",
+            "雾蒙蒙的早晨，远处什么都看不清。",
+            "他蒙上眼睛和大家玩捉迷藏。"
+          ],
+          "distractor_words": ["细", "迷", "飘"],
+          "distractor_meanings": ["颗粒小、不多", "分辨不清", "随风飞动"]
+        },
+        {
+          "word": "滚",
+          "pinyin": "gǔn",
+          "meaning": "翻滚、滚动",
+          "level_hint": "白浪翻____，如同万马奔腾。",
+          "sample_sentences": [
+            "浪潮越来越近，犹如千万匹白色战马齐头并进。",
+            "皮球从山坡上滚了下来。",
+            "远处的白浪翻滚着向岸边涌来。"
+          ],
+          "distractor_words": ["翻", "涌", "奔"],
+          "distractor_meanings": ["上下翻转", "水向上冒出", "跑得很快"]
+        },
+        {
+          "word": "顿",
+          "pinyin": "dùn",
+          "meaning": "忽然、停顿",
+          "level_hint": "潮头奔腾西去后，江面上____时风号浪吼。",
+          "sample_sentences": [
+            "霎时，潮头奔腾西去，可是余波还在漫天卷地般涌来。",
+            "他顿时愣住了，不知道该说什么。",
+            "说完这句话，他顿了一下，又接着说下去。"
+          ],
+          "distractor_words": ["忽", "猛", "骤"],
+          "distractor_meanings": ["突然、出乎意料", "力量大、速度快", "突然、急剧"]
         }
       ]
     },
     {
       "unit": 2,
-      "title": "第二单元·观察发现",
+      "title": "走月亮",
       "words": [
         {
-          "word": "虑",
-          "pinyin": "lǜ",
-          "meaning": "思考，考虑",
-          "level_hint": "他经过深____熟虑后做了决定。",
-          "sample_sentences": ["这件事需要仔细考虑。", "不要忧虑，一切都会好的。", "他深思熟虑后才回答。"],
-          "distractor_words": ["思", "想", "念"],
-          "distractor_meanings": ["思考，动脑筋想", "思考，动脑筋", "想念，挂念"]
+          "word": "淘",
+          "pinyin": "táo",
+          "meaning": "用水清洗、顽皮",
+          "level_hint": "____气的小弟弟总是把衣服弄得脏兮兮的。",
+          "sample_sentences": [
+            "淘气的弟弟把家里弄得乱七八糟。",
+            "妈妈在河边淘米洗菜。",
+            "小伙伴们在溪水里淘气地泼水嬉闹。"
+          ],
+          "distractor_words": ["调", "顽", "洗"],
+          "distractor_meanings": ["调皮、不服管教", "固执、不听话", "用水去掉污垢"]
         },
         {
-          "word": "屏",
-          "pinyin": "bǐng",
-          "meaning": "忍住，抑制",
-          "level_hint": "大家____住呼吸，等待结果。",
-          "sample_sentences": ["他屏住呼吸跳水。", "大家屏息凝视。", "她屏气不敢出声。"],
-          "distractor_words": ["忍", "停", "憋"],
-          "distractor_meanings": ["忍耐，克制自己", "停止，不再继续", "憋住，强忍着"]
+          "word": "牵",
+          "pinyin": "qiān",
+          "meaning": "拉、引导",
+          "level_hint": "妈妈____着我的手在月光下散步。",
+          "sample_sentences": [
+            "妈妈牵着我的手，走过月光闪闪的溪岸。",
+            "老爷爷牵着牛在田间小路上慢慢走着。",
+            "老师的一番话牵动了每个人的心。"
+          ],
+          "distractor_words": ["拉", "引", "扶"],
+          "distractor_meanings": ["用力使东西朝自己方向移动", "带领、引导", "搀扶、支持"]
         },
         {
-          "word": "蹭",
-          "pinyin": "cèng",
-          "meaning": "慢慢地磨擦",
-          "level_hint": "小猫在我腿上____来____去。",
-          "sample_sentences": ["小猫蹭着主人的腿。", "他在墙上蹭了蹭。", "别蹭来蹭去的。"],
-          "distractor_words": ["擦", "磨", "碰"],
-          "distractor_meanings": ["摩擦，两个物体来回接触", "磨擦，反复接触", "碰触，轻轻接触"]
+          "word": "鹅",
+          "pinyin": "é",
+          "meaning": "一种家禽，比鸭子大",
+          "level_hint": "村头的池塘里游着几只大白____。",
+          "sample_sentences": [
+            "鹅卵石布满河床，小白鹅在水中嬉戏。",
+            "骆宾王小时候写过一首咏鹅的诗。",
+            "大白鹅昂着头，大摇大摆地走在路上。"
+          ],
+          "distractor_words": ["鸭", "鸡", "鸽"],
+          "distractor_meanings": ["一种家禽，嘴扁脚有蹼", "一种家禽，会下蛋会打鸣", "一种鸟，善于飞行"]
         },
         {
-          "word": "稿",
-          "pinyin": "gǎo",
-          "meaning": "草稿，文章的初稿",
-          "level_hint": "他在纸上打____写文章。",
-          "sample_sentences": ["写作文要先打稿。", "稿纸上写满了字。", "他把稿件修改了三遍。"],
-          "distractor_words": ["纸", "笔", "墨"],
-          "distractor_meanings": ["纸张，写字用的薄片", "毛笔，写字的工具", "墨水，写字用的液体"]
+          "word": "卵",
+          "pinyin": "luǎn",
+          "meaning": "蛋、圆形的小石子",
+          "level_hint": "河床上铺满了____石，洁白如玉。",
+          "sample_sentences": [
+            "鹅卵石布满河床。",
+            "小鱼在卵石之间快活地游来游去。",
+            "蝴蝶在叶片上产下了小小的卵。"
+          ],
+          "distractor_words": ["石", "蛋", "珠"],
+          "distractor_meanings": ["坚硬的矿物", "鸟类或爬行动物的卵", "圆润的装饰品"]
         },
         {
-          "word": "腔",
-          "pinyin": "qiāng",
-          "meaning": "说话的腔调或口音",
-          "level_hint": "他说话带着一口京____。",
-          "sample_sentences": ["她唱腔优美动听。", "他说话带腔调。", "不要装腔作势。"],
-          "distractor_words": ["调", "音", "声"],
-          "distractor_meanings": ["声调，说话的高低变化", "声音，耳朵能听到的", "声音，发出的声响"]
+          "word": "坑",
+          "pinyin": "kēng",
+          "meaning": "凹下去的地方、洞",
+          "level_hint": "路上有一个大水____，要小心别踩进去。",
+          "sample_sentences": [
+            "路上有个大水坑，行人纷纷绕道而行。",
+            "小伙伴们在沙地上挖了一个大大的坑。",
+            "大雨过后，操场上有不少积水坑。"
+          ],
+          "distractor_words": ["洞", "洼", "沟"],
+          "distractor_meanings": ["物体中间穿通或凹下的部分", "凹陷的地方", "人工挖掘的水道"]
         },
         {
-          "word": "解",
-          "pinyin": "jiě",
-          "meaning": "理解，明白",
-          "level_hint": "这道题我终于____开了。",
-          "sample_sentences": ["我理解了老师的意思。", "这个问题很难解答。", "请你解释一下。"],
-          "distractor_words": ["释", "悟", "懂"],
-          "distractor_meanings": ["解释，说明原因", "领悟，忽然明白", "懂得，知道明白"]
+          "word": "洼",
+          "pinyin": "wā",
+          "meaning": "低凹的地方",
+          "level_hint": "秋天的夜晚，村子里四处蛙声，____地里一片稻香。",
+          "sample_sentences": [
+            "山洼里开满了五颜六色的野花。",
+            "低洼的地方容易积水。",
+            "那片洼地变成了一个小池塘。"
+          ],
+          "distractor_words": ["谷", "坑", "坳"],
+          "distractor_meanings": ["两山之间的狭长地带", "地面凹下去的地方", "山间的平地"]
+        },
+        {
+          "word": "填",
+          "pinyin": "tián",
+          "meaning": "把空的地方塞满、补上",
+          "level_hint": "农民伯伯往沟里____土，准备种菜。",
+          "sample_sentences": [
+            "工人们正在填平路上的坑。",
+            "请认真填写这份调查表。",
+            "他把书架的空隙都填满了书。"
+          ],
+          "distractor_words": ["塞", "补", "铺"],
+          "distractor_meanings": ["把东西放进去填满", "修补破损的地方", "把东西展开铺平"]
+        },
+        {
+          "word": "庄",
+          "pinyin": "zhuāng",
+          "meaning": "村庄、田庄",
+          "level_hint": "秋天的夜晚，____稼地里虫鸣声声。",
+          "sample_sentences": [
+            "月光下的村庄显得格外宁静。",
+            "路边的庄稼长势喜人，丰收在望。",
+            "这个山庄风景如画，吸引了很多游客。"
+          ],
+          "distractor_words": ["村", "稼", "园"],
+          "distractor_meanings": ["农民聚居的地方", "种植的农作物", "种植花木的地方"]
         }
       ]
     },
     {
       "unit": 3,
-      "title": "第三单元·童话世界",
+      "title": "现代诗二首",
       "words": [
         {
-          "word": "幻",
-          "pinyin": "huàn",
-          "meaning": "不真实的，想象中的",
-          "level_hint": "这个魔术太____妙了。",
-          "sample_sentences": ["科幻故事真有趣。", "魔术变化如梦如幻。", "不要幻想不劳而获。"],
-          "distractor_words": ["梦", "想", "虚"],
-          "distractor_meanings": ["梦境，睡觉时看到的", "想象，脑海中构思", "虚假，不真实的"]
+          "word": "巢",
+          "pinyin": "cháo",
+          "meaning": "鸟窝、动物的窝",
+          "level_hint": "傍晚时分，小鸟纷纷飞回自己的____中。",
+          "sample_sentences": [
+            "归巢的鸟儿，尽管是倦了，还驮着斜阳回去。",
+            "春天来了，燕子忙着在屋檐下筑巢。",
+            "松鼠在树上搭了一个温暖的巢。"
+          ],
+          "distractor_words": ["窝", "穴", "洞"],
+          "distractor_meanings": ["鸟兽昆虫居住的地方", "动物的洞穴", "物体上穿通的深孔"]
         },
         {
-          "word": "邀",
-          "pinyin": "yāo",
-          "meaning": "请别人来",
-          "level_hint": "他____请同学们来家里玩。",
-          "sample_sentences": ["我邀请你来我家。", "他发出了邀请函。", "受邀参加生日聚会。"],
-          "distractor_words": ["请", "叫", "约"],
-          "distractor_meanings": ["邀请，请求别人来", "叫唤，让别人过来", "约定，说好时间"]
+          "word": "苇",
+          "pinyin": "wěi",
+          "meaning": "芦苇，一种生长在水边的高大植物",
+          "level_hint": "秋风吹过，一片白色的芦____在风中摇曳。",
+          "sample_sentences": [
+            "芦苇丛中不时飞出几只水鸟。",
+            "秋天的芦苇像一片金色的海洋。",
+            "小船在芦苇荡里穿行。"
+          ],
+          "distractor_words": ["芦", "茅", "蒲"],
+          "distractor_meanings": ["芦苇，一种水生植物", "一种野草，可盖屋顶", "一种水生草本植物"]
         },
         {
-          "word": "填",
-          "pinyin": "tián",
-          "meaning": "把空的地方补上",
-          "level_hint": "请在括号里____上正确的答案。",
-          "sample_sentences": ["请填写你的姓名。", "把坑填平了。", "填空题要做完。"],
-          "distractor_words": ["写", "补", "画"],
-          "distractor_meanings": ["书写，用笔记录", "修补，补上缺少的", "画图，用笔画出"]
+          "word": "罗",
+          "pinyin": "luó",
+          "meaning": "搜集、网",
+          "level_hint": "科学家们想尽办法搜____这种珍稀植物的资料。",
+          "sample_sentences": [
+            "花牛在草地里走，小尾巴甩得溜溜。",
+            "警察在搜罗证据，寻找破案的线索。",
+            "星星布满了夜空，好像一张巨大的罗网。"
+          ],
+          "distractor_words": ["搜", "集", "网"],
+          "distractor_meanings": ["寻找、搜寻", "聚集、收集", "用绳线编织的捕鱼工具"]
         },
         {
-          "word": "训",
-          "pinyin": "xùn",
-          "meaning": "教导，训练",
-          "level_hint": "教练在____练队员们。",
-          "sample_sentences": ["老师训练我们跑步。", "足球训练很辛苦。", "军训锻炼了意志。"],
-          "distractor_words": ["练", "教", "导"],
-          "distractor_meanings": ["练习，反复做来提高", "教授，传授知识", "引导，带领指导"]
+          "word": "眠",
+          "pinyin": "mián",
+          "meaning": "睡觉",
+          "level_hint": "春天到了，处处鸟啼，人们从冬____中苏醒过来。",
+          "sample_sentences": [
+            "春眠不觉晓，处处闻啼鸟。",
+            "小宝宝在妈妈的怀里安然入眠。",
+            "漫长的冬眠结束后，小熊从树洞里爬了出来。"
+          ],
+          "distractor_words": ["睡", "梦", "歇"],
+          "distractor_meanings": ["闭上眼睛休息", "睡觉时大脑产生的幻象", "休息一下"]
         },
         {
-          "word": "斥",
-          "pinyin": "chì",
-          "meaning": "责备，批评",
-          "level_hint": "妈妈____责了他一顿。",
-          "sample_sentences": ["老师斥责了迟到的人。", "他怒斥这种行为。", "不要斥责孩子。"],
-          "distractor_words": ["骂", "批", "责"],
-          "distractor_meanings": ["谩骂，用粗话骂人", "批评，指出错误", "责备，怪罪别人"]
+          "word": "霸",
+          "pinyin": "bà",
+          "meaning": "蛮横地占有、称霸",
+          "level_hint": "那只大公鸡总是____占着食槽不让别人吃。",
+          "sample_sentences": [
+            "那只大公鸡霸占了整个院子。",
+            "霸道的哥哥总是抢弟弟的玩具。",
+            "校园里不能有霸凌行为。"
+          ],
+          "distractor_words": ["占", "横", "强"],
+          "distractor_meanings": ["取得或保持某个位置", "蛮横不讲理", "力量大、强硬"]
         },
         {
-          "word": "骄",
-          "pinyin": "jiāo",
-          "meaning": "自满，自大",
-          "level_hint": "我们不能____傲自满。",
-          "sample_sentences": ["不要骄傲，继续努力。", "骄兵必败。", "他为祖国感到骄傲。"],
-          "distractor_words": ["傲", "谦", "狂"],
-          "distractor_meanings": ["高傲，看不起别人", "谦虚，不自满", "疯狂，失去理智"]
+          "word": "占",
+          "pinyin": "zhàn",
+          "meaning": "占据、占有",
+          "level_hint": "这棵大树____据了花坛一大半的位置。",
+          "sample_sentences": [
+            "花牛在草地里坐，压扁了一穗剪秋罗。",
+            "他占了别人的座位还理直气壮。",
+            "这片森林占据了整座山的南面。"
+          ],
+          "distractor_words": ["据", "抢", "夺"],
+          "distractor_meanings": ["占据、凭依", "强行取得", "用力争抢"]
+        },
+        {
+          "word": "懒",
+          "pinyin": "lǎn",
+          "meaning": "不愿意做事、偷闲",
+          "level_hint": "小花猫____洋洋地趴在窗台上晒太阳。",
+          "sample_sentences": [
+            "花牛在草地里眠，白云霸占了半个天。",
+            "懒洋洋的小猫整天就知道睡觉。",
+            "他太懒了，自己的房间从不打扫。"
+          ],
+          "distractor_words": ["怠", "倦", "疲"],
+          "distractor_meanings": ["松懈、懒惰", "疲倦、没有精神", "身体劳累"]
+        },
+        {
+          "word": "穗",
+          "pinyin": "suì",
+          "meaning": "稻麦等植物的花或果实聚生的部分",
+          "level_hint": "秋天到了，沉甸甸的稻____弯下了腰。",
+          "sample_sentences": [
+            "压扁了一穗剪秋罗。",
+            "金黄的麦穗在秋风中轻轻摇摆。",
+            "玉米穗一个个饱满极了，今年一定是个丰收年。"
+          ],
+          "distractor_words": ["粒", "芒", "苗"],
+          "distractor_meanings": ["谷物的种子", "谷类植物壳上的细刺", "植物的幼小植株"]
         }
       ]
     },
     {
       "unit": 4,
-      "title": "第四单元·动物朋友",
+      "title": "繁星",
       "words": [
         {
-          "word": "虑",
-          "pinyin": "lǜ",
-          "meaning": "担忧，忧虑",
-          "level_hint": "妈妈总是忧____我的学习。",
-          "sample_sentences": ["他满脸忧虑。", "不要过度忧虑。", "这件事无需顾虑。"],
-          "distractor_words": ["愁", "烦", "忧"],
-          "distractor_meanings": ["发愁，心中不安", "烦闷，心情不好", "担忧，心中不安"]
+          "word": "昧",
+          "pinyin": "mèi",
+          "meaning": "昏暗、不明白",
+          "level_hint": "拾金不____是中华民族的传统美德。",
+          "sample_sentences": [
+            "昧着良心做事是不对的。",
+            "昏昧的灯光下，他埋头苦读。",
+            "拾金不昧是中华民族的传统美德。"
+          ],
+          "distractor_words": ["暗", "昏", "盲"],
+          "distractor_meanings": ["光线不足", "光线微弱", "看不见"]
         },
         {
-          "word": "唤",
+          "word": "坠",
+          "pinyin": "zhuì",
+          "meaning": "落、掉",
+          "level_hint": "夜晚，星星好像要从天空____落下来。",
+          "sample_sentences": [
+            "繁星坠落在天幕之上。",
+            "秋叶纷纷从树上坠落下来。",
+            "流星拖着长长的尾巴坠入地平线。"
+          ],
+          "distractor_words": ["落", "掉", "降"],
+          "distractor_meanings": ["从上往下移动", "遗失、落下", "从高处到低处"]
+        },
+        {
+          "word": "怀",
+          "pinyin": "huái",
+          "meaning": "心中存有、胸怀",
+          "level_hint": "每到夜晚，我便满____深情地望着星空。",
+          "sample_sentences": [
+            "我望着那许多认识的星，我仿佛看见它们在对我眨眼睛。",
+            "奶奶满怀慈爱地看着我。",
+            "怀着一颗感恩的心面对生活。"
+          ],
+          "distractor_words": ["胸", "念", "抱"],
+          "distractor_meanings": ["身体前面脖子到腹部的部分", "惦记、常常想起", "用手臂围住"]
+        },
+        {
+          "word": "藻",
+          "pinyin": "zǎo",
+          "meaning": "水中的隐花植物",
+          "level_hint": "清澈的湖水里长满了绿色的水____。",
+          "sample_sentences": [
+            "海水里漂浮着各种美丽的海藻。",
+            "池塘底部长满了绿色的水藻。",
+            "海带也是一种藻类植物。"
+          ],
+          "distractor_words": ["苔", "萍", "莲"],
+          "distractor_meanings": ["阴湿地方生长的绿色植物", "浮在水面上的水生植物", "一种水生花卉"]
+        },
+        {
+          "word": "滨",
+          "pinyin": "bīn",
+          "meaning": "水边、靠近水边",
+          "level_hint": "我的家乡在海____，经常能看到壮观的海上日出。",
+          "sample_sentences": [
+            "我的家乡在海滨，那里风景优美。",
+            "这条湖滨小路是散步的好地方。",
+            "海滨城市的夏天格外凉爽。"
+          ],
+          "distractor_words": ["岸", "畔", "沿"],
+          "distractor_meanings": ["江、河、湖、海等水边的陆地", "田地的界限、水边", "顺着某物的边缘"]
+        },
+        {
+          "word": "灰",
+          "pinyin": "huī",
+          "meaning": "灰白色、灰尘",
+          "level_hint": "天空布满了____色的乌云，看样子要下雨了。",
+          "sample_sentences": [
+            "灰色的云层遮住了太阳。",
+            "炉膛里的灰烬还有余温。",
+            "小猫把地板上踩了一串灰色的小脚印。"
+          ],
+          "distractor_words": ["尘", "暗", "白"],
+          "distractor_meanings": ["细小的灰土", "光线不足", "像雪一样的颜色"]
+        },
+        {
+          "word": "幻",
           "pinyin": "huàn",
-          "meaning": "大声叫，召唤",
-          "level_hint": "妈妈在门口____我回家吃饭。",
-          "sample_sentences": ["妈妈呼唤我回家。", "他大声唤醒了沉睡的伙伴。", "呼唤是一种爱的表达。"],
-          "distractor_words": ["喊", "叫", "喊"],
-          "distractor_meanings": ["大喊，大声地叫", "呼叫，大声叫唤", "叫唤，发出声音"]
+          "meaning": "不真实的、变化莫测",
+          "level_hint": "夜空中的繁星如同梦____般美丽。",
+          "sample_sentences": [
+            "海上的夜是柔和的，是静寂的，是梦幻的。",
+            "魔术师的表演变幻莫测，让人叹为观止。",
+            "那只是一场幻想，不可能变成现实。"
+          ],
+          "distractor_words": ["梦", "虚", "想"],
+          "distractor_meanings": ["睡眠中的幻象", "不真实的、空幻的", "动脑筋思考"]
         },
         {
-          "word": "割",
-          "pinyin": "gē",
-          "meaning": "用刀截断",
-          "level_hint": "农民在田里____麦子。",
-          "sample_sentences": ["爷爷在割草。", "刀很锋利，小心割手。", "割完麦子休息一下。"],
-          "distractor_words": ["砍", "切", "剪"],
-          "distractor_meanings": ["砍伐，用力斩断", "切割，分成小块", "剪裁，用剪刀截断"]
-        },
-        {
-          "word": "蛇",
-          "pinyin": "shé",
-          "meaning": "一种爬行动物，身体细长",
-          "level_hint": "草丛里有一条小____。",
-          "sample_sentences": ["蛇是爬行动物。", "不要靠近蛇。", "蛇在草丛中爬行。"],
-          "distractor_words": ["蜥", "蛙", "龟"],
-          "distractor_meanings": ["蜥蜴，一种爬行动物", "青蛙，会跳的两栖动物", "乌龟，有壳的爬行动物"]
-        },
-        {
-          "word": "柔",
-          "pinyin": "róu",
-          "meaning": "软，温和",
-          "level_hint": "妈妈的目光很温____。",
-          "sample_sentences": ["柳条柔软地垂下来。", "她说话温柔极了。", "柔风轻轻吹过。"],
-          "distractor_words": ["刚", "硬", "粗"],
-          "distractor_meanings": ["刚强，坚强不屈", "坚硬，不容易变形", "粗糙，不光滑"]
-        },
-        {
-          "word": "猛",
-          "pinyin": "měng",
-          "meaning": "凶猛，猛烈",
-          "level_hint": "台风来得很凶____。",
-          "sample_sentences": ["猛虎下山。", "风猛烈地吹着。", "他猛然转过身来。"],
-          "distractor_words": ["凶", "烈", "强"],
-          "distractor_meanings": ["凶狠，不友善", "剧烈，程度很深", "强大，力量很大"]
+          "word": "漫",
+          "pinyin": "màn",
+          "meaning": "到处都是、不受约束",
+          "level_hint": "天空中____天繁星，像无数颗宝石镶嵌在黑丝绒上。",
+          "sample_sentences": [
+            "漫天的繁星闪烁着耀眼的光芒。",
+            "春天来了，漫山遍野开满了野花。",
+            "他漫步在月光下的小路上，心情格外舒畅。"
+          ],
+          "distractor_words": ["遍", "满", "弥"],
+          "distractor_meanings": ["到处、全面", "全部、充实", "充满、填满"]
         }
       ]
     },
     {
       "unit": 5,
-      "title": "第五单元·成长故事",
+      "title": "一个豆荚里的五粒豆",
       "words": [
         {
-          "word": "悔",
-          "pinyin": "huǐ",
-          "meaning": "做了错事后心里难过",
-          "level_hint": "他很后____说了那句话。",
-          "sample_sentences": ["我很后悔没有好好学习。", "做了错事要后悔。", "后悔已经来不及了。"],
-          "distractor_words": ["恨", "怨", "愧"],
-          "distractor_meanings": ["怨恨，心中不满", "抱怨，责怪别人", "惭愧，觉得不好意思"]
+          "word": "豌",
+          "pinyin": "wān",
+          "meaning": "一种植物，结圆形的豆子",
+          "level_hint": "春天来了，农民伯伯在田里种下了____豆。",
+          "sample_sentences": [
+            "一个豆荚里有五粒豌豆。",
+            "妈妈做的豌豆汤又香又好喝。",
+            "嫩绿的豌豆苗在春风中轻轻摇摆。"
+          ],
+          "distractor_words": ["豆", "豆", "豆"],
+          "distractor_meanings": ["黄豆，一种常见的粮食作物", "绿豆，一种消暑的豆类", "红豆，一种红色的粮食"]
         },
         {
-          "word": "境",
-          "pinyin": "jìng",
-          "meaning": "环境，情况",
-          "level_hint": "我们要保护自然环____。",
-          "sample_sentences": ["优美的环境让人心情好。", "处境困难不要放弃。", "学习环境很重要。"],
-          "distractor_words": ["况", "态", "势"],
-          "distractor_meanings": ["情况，事情的态势", "状态，当前的样子", "形势，发展的趋势"]
+          "word": "按",
+          "pinyin": "àn",
+          "meaning": "用手压、依照",
+          "level_hint": "请你____照老师的要求完成作业。",
+          "sample_sentences": [
+            "他按了一下门铃，等着有人来开门。",
+            "按照计划，我们明天出发去旅行。",
+            "妈妈轻轻地按住伤口帮他止血。"
+          ],
+          "distractor_words": ["压", "照", "顺"],
+          "distractor_meanings": ["从上面加重力", "依照、依据", "沿着、依从"]
         },
         {
-          "word": "欺",
-          "pinyin": "qī",
-          "meaning": "欺负，欺骗",
-          "level_hint": "我们不能____负弱小。",
-          "sample_sentences": ["不要欺负同学。", "欺骗别人是不对的。", "以大欺小不好。"],
-          "distractor_words": ["骗", "辱", "打"],
-          "distractor_meanings": ["欺骗，说谎骗人", "侮辱，伤害别人自尊", "动手打人"]
+          "word": "舒",
+          "pinyin": "shū",
+          "meaning": "伸展、宽松舒服",
+          "level_hint": "雨后的空气清新，让人感到十分____适。",
+          "sample_sentences": [
+            "豌豆舒展着嫩绿的叶子。",
+            "周末在家里舒舒服服地看一本书，真是太好了。",
+            "运动之后舒展一下筋骨，感觉轻松多了。"
+          ],
+          "distractor_words": ["展", "松", "畅"],
+          "distractor_meanings": ["张开、放开", "不紧、宽缓", "通达、没有阻碍"]
         },
         {
-          "word": "励",
-          "pinyin": "lì",
-          "meaning": "鼓励，激发",
-          "level_hint": "老师鼓____我们好好学习。",
-          "sample_sentences": ["老师鼓励我不要放弃。", "互相激励，共同进步。", "励志的故事让人感动。"],
-          "distractor_words": ["鼓", "激", "奋"],
-          "distractor_meanings": ["鼓舞，使振作", "激发，调动积极性", "振奋，精神饱满"]
+          "word": "适",
+          "pinyin": "shì",
+          "meaning": "合适、舒适",
+          "level_hint": "这件衣服大小正合____，你穿很好看。",
+          "sample_sentences": [
+            "豌豆在裂缝里找到了一个舒适的位置。",
+            "这里的气候温和适宜居住。",
+            "运动要适量，不能过度。"
+          ],
+          "distractor_words": ["合", "宜", "当"],
+          "distractor_meanings": ["符合、对得上", "合适、恰当", "恰当、妥当"]
         },
         {
-          "word": "坚",
-          "pinyin": "jiān",
-          "meaning": "牢固，不动摇",
-          "level_hint": "我们要____持到底。",
-          "sample_sentences": ["坚持就是胜利。", "岩石非常坚硬。", "他坚定地点了点头。"],
-          "distractor_words": ["硬", "牢", "固"],
-          "distractor_meanings": ["坚硬，不容易变形", "牢固，不容易松开", "固定，不改变"]
+          "word": "恐",
+          "pinyin": "kǒng",
+          "meaning": "害怕、畏惧",
+          "level_hint": "小女孩生了一场重病，身体非常虚____。",
+          "sample_sentences": [
+            "那粒最小的豌豆并没有恐吓任何人。",
+            "恐龙是远古时代的大型动物。",
+            "他恐高，不敢站在高处往下看。"
+          ],
+          "distractor_words": ["惧", "怕", "惊"],
+          "distractor_meanings": ["害怕、恐惧", "感到害怕", "突然受到刺激而紧张"]
         },
         {
-          "word": "毅",
+          "word": "僵",
+          "pinyin": "jiāng",
+          "meaning": "僵硬、不能活动",
+          "level_hint": "冬天在外面玩久了，手都冻____了。",
+          "sample_sentences": [
+            "小女孩躺在床上，身体僵硬得不能动弹。",
+            "冬天在外面站久了，手脚都冻僵了。",
+            "谈判双方僵持不下，谁也不肯让步。"
+          ],
+          "distractor_words": ["硬", "冻", "死"],
+          "distractor_meanings": ["坚固、不柔软", "因寒冷而凝结", "失去生命"]
+        },
+        {
+          "word": "硬",
+          "pinyin": "yìng",
+          "meaning": "坚固、不容易变形",
+          "level_hint": "这块石头太____了，根本敲不动。",
+          "sample_sentences": [
+            "豌豆的壳很硬，保护着里面的小豆子。",
+            "这张床太硬了，睡得不舒服。",
+            "他性格强硬，从不服输。"
+          ],
+          "distractor_words": ["坚", "固", "刚"],
+          "distractor_meanings": ["结实、不动摇", "牢固、不容易破坏", "坚硬、坚强"]
+        },
+        {
+          "word": "枪",
+          "pinyin": "qiāng",
+          "meaning": "一种发射子弹的武器",
+          "level_hint": "那个男孩举起____瞄准了天空中的气球。",
+          "sample_sentences": [
+            "小男孩用玩具枪瞄准了树上的苹果。",
+            "猎人扛着猎枪走进了森林。",
+            "枪声一响，运动员们像离弦的箭一样冲了出去。"
+          ],
+          "distractor_words": ["炮", "弹", "剑"],
+          "distractor_meanings": ["一种重型武器", "弹药、子弹", "一种古代兵器"]
+        }
+      ]
+    },
+    {
+      "unit": 6,
+      "title": "蝙蝠和雷达",
+      "words": [
+        {
+          "word": "蝙",
+          "pinyin": "biān",
+          "meaning": "蝙蝠的蝙，一种会飞的哺乳动物",
+          "level_hint": "____蝠在夜间飞行，靠的不是眼睛。",
+          "sample_sentences": [
+            "蝙蝠在夜间飞行，捕捉飞虫。",
+            "小蝙蝠紧紧地依偎在妈妈怀里。",
+            "蝙蝠是唯一能够飞行的哺乳动物。"
+          ],
+          "distractor_words": ["鹰", "雁", "鸥"],
+          "distractor_meanings": ["一种猛禽", "一种候鸟，秋天南飞", "一种海鸟"]
+        },
+        {
+          "word": "蝠",
+          "pinyin": "fú",
+          "meaning": "蝙蝠的蝠，翼手目动物",
+          "level_hint": "科学研究发现，蝙____夜间飞行靠的是超声波。",
+          "sample_sentences": [
+            "蝙蝠用嘴发出超声波来探路。",
+            "蝙蝠在漆黑的夜里也能灵巧地飞行。",
+            "人们从蝙蝠身上得到启示，发明了雷达。"
+          ],
+          "distractor_words": ["蝶", "蛾", "蜂"],
+          "distractor_meanings": ["蝴蝶，一种美丽的昆虫", "飞蛾，一种夜间活动的昆虫", "蜜蜂，能采蜜的昆虫"]
+        },
+        {
+          "word": "启",
+          "pinyin": "qǐ",
+          "meaning": "打开、开始、启示",
+          "level_hint": "蝙蝠的飞行本领给科学家带来了____发。",
+          "sample_sentences": [
+            "科学家从蝙蝠身上得到启示，发明了雷达。",
+            "新学期开始了，同学们精神振奋地迎接启航。",
+            "启蒙老师教会了我认字读书。"
+          ],
+          "distractor_words": ["示", "发", "开"],
+          "distractor_meanings": ["把事物摆出来让人知道", "产生、出现", "使关闭的东西不再关闭"]
+        },
+        {
+          "word": "即",
+          "pinyin": "jí",
+          "meaning": "就是、马上、接近",
+          "level_hint": "科学家____刻开始做实验验证自己的想法。",
+          "sample_sentences": [
+            "即使蒙上蝙蝠的眼睛，它也能灵巧地飞行。",
+            "比赛即将开始，运动员们做好了准备。",
+            "他立即站起来回答老师的问题。"
+          ],
+          "distractor_words": ["便", "遂", "乃"],
+          "distractor_meanings": ["就、方便", "于是、就", "是、于是"]
+        },
+        {
+          "word": "锐",
+          "pinyin": "ruì",
+          "meaning": "锋利、敏锐",
+          "level_hint": "老鹰的眼睛非常敏____，能在高空发现地面的猎物。",
+          "sample_sentences": [
+            "蝙蝠的听觉非常敏锐。",
+            "这把刀很锐利，使用时要小心。",
+            "目光锐利的侦探发现了重要线索。"
+          ],
+          "distractor_words": ["利", "敏", "尖"],
+          "distractor_meanings": ["锋利、有益", "感觉灵敏、反应快", "末端细小锐利"]
+        },
+        {
+          "word": "系",
+          "pinyin": "xì",
+          "meaning": "系统、联系",
+          "level_hint": "雷达和蝙蝠之间有着密切的关____。",
+          "sample_sentences": [
+            "雷达的工作原理和蝙蝠探路的方法有密切联系。",
+            "这两个问题之间存在着一定的联系。",
+            "学校的课外活动丰富多彩，形成了一个完整的体系。"
+          ],
+          "distractor_words": ["联", "关", "结"],
+          "distractor_meanings": ["结合在一起", "重要的转折点", "互相交接"]
+        },
+        {
+          "word": "铛",
+          "pinyin": "dāng",
+          "meaning": "撞击金属发出的声音",
+          "level_hint": "科学家在蝙蝠身上系上铃____，用来追踪它的飞行。",
+          "sample_sentences": [
+            "铛铛铛，远处传来了打铁的声音。",
+            "小猫脖子上挂着一个小铃铛。",
+            "门上的铃铛叮当作响，有客人来了。"
+          ],
+          "distractor_words": ["铃", "锣", "钟"],
+          "distractor_meanings": ["一种用金属制成的响器", "一种打击乐器", "一种计时或报警的器具"]
+        },
+        {
+          "word": "蝇",
+          "pinyin": "yíng",
+          "meaning": "一种常见的昆虫",
+          "level_hint": "蝙蝠在夜间能灵巧地捕捉飞____。",
+          "sample_sentences": [
+            "蝙蝠在夜间飞行时能捕捉苍蝇等飞虫。",
+            "夏天到了，苍蝇嗡嗡地到处乱飞。",
+            "消灭苍蝇可以减少疾病的传播。"
+          ],
+          "distractor_words": ["蚊", "蚁", "蜂"],
+          "distractor_meanings": ["一种吸血的飞虫", "一种群居的小昆虫", "一种采蜜的昆虫"]
+        }
+      ]
+    },
+    {
+      "unit": 7,
+      "title": "呼风唤雨的世纪",
+      "words": [
+        {
+          "word": "唤",
+          "pinyin": "huàn",
+          "meaning": "呼叫、召唤",
+          "level_hint": "随着科技的发展，人类逐渐拥有了呼风____雨的能力。",
+          "sample_sentences": [
+            "20世纪是一个呼风唤雨的世纪。",
+            "清晨，公鸡的啼叫唤醒了沉睡的村庄。",
+            "妈妈唤我回家吃饭。"
+          ],
+          "distractor_words": ["叫", "喊", "招"],
+          "distractor_meanings": ["大声说话", "高声呼喊", "挥手叫人来"]
+        },
+        {
+          "word": "技",
+          "pinyin": "jì",
+          "meaning": "技能、技术",
+          "level_hint": "现代科____让我们的生活变得更加方便。",
+          "sample_sentences": [
+            "科学技术的发展改变了人类的生活。",
+            "他的手工技艺非常精湛。",
+            "电脑技术在学校教育中广泛应用。"
+          ],
+          "distractor_words": ["术", "艺", "能"],
+          "distractor_meanings": ["方法、手段", "才能、技艺", "本领、能力"]
+        },
+        {
+          "word": "获",
+          "pinyin": "huò",
+          "meaning": "得到、取得",
+          "level_hint": "通过这次实验，同学们收____了很多知识。",
+          "sample_sentences": [
+            "科学家们获得了许多重要发现。",
+            "农民伯伯辛勤劳动，获得了丰收。",
+            "他在比赛中获得了第一名。"
+          ],
+          "distractor_words": ["得", "取", "赢"],
+          "distractor_meanings": ["获取、得到", "拿到、获得", "胜过对方"]
+        },
+        {
+          "word": "赖",
+          "pinyin": "lài",
+          "meaning": "依靠、留在不走",
+          "level_hint": "我们不能一味依____别人，要学会自己解决问题。",
+          "sample_sentences": [
+            "人们赖以生存的不仅仅是粮食和水。",
+            "时代的发展依赖于科技的创新。",
+            "他赖在床上不肯起来，上学迟到了。"
+          ],
+          "distractor_words": ["依", "靠", "凭"],
+          "distractor_meanings": ["仰仗、借助", "依靠、信赖", "依靠、根据"]
+        },
+        {
+          "word": "潜",
+          "pinyin": "qián",
+          "meaning": "隐藏在水面下、暗中的",
+          "level_hint": "每个同学都有巨大的____力，等待被发现。",
+          "sample_sentences": [
+            "人类有着巨大的潜力。",
+            "潜水艇像一条大鱼一样潜入海底。",
+            "春天来了，小草悄悄地从地里探出了头，露出了潜在的生命力。"
+          ],
+          "distractor_words": ["沉", "隐", "藏"],
+          "distractor_meanings": ["没入水中", "隐藏不露", "储存、躲藏"]
+        },
+        {
+          "word": "核",
+          "pinyin": "hé",
+          "meaning": "核心、原子核",
+          "level_hint": "科学技术是推动社会发展的____心力量。",
+          "sample_sentences": [
+            "核能是一种重要的能源。",
+            "桃子吃完后，里面有一个硬硬的桃核。",
+            "这个问题是整件事情的核心所在。"
+          ],
+          "distractor_words": ["心", "中", "本"],
+          "distractor_meanings": ["中心、重要部分", "里面、内部", "事物的根源"]
+        },
+        {
+          "word": "奥",
+          "pinyin": "ào",
+          "meaning": "深奥、不容易理解",
+          "level_hint": "宇宙中有许多____秘等待着我们去探索。",
+          "sample_sentences": [
+            "科学世界里充满了奥妙。",
+            "奥运会的赛场上运动员们奋勇争先。",
+            "大自然的奥秘无穷无尽。"
+          ],
+          "distractor_words": ["秘", "妙", "奇"],
+          "distractor_meanings": ["不为人知的", "美好、神奇", "罕见、特别"]
+        },
+        {
+          "word": "益",
           "pinyin": "yì",
-          "meaning": "意志坚强，不动摇",
-          "level_hint": "他有坚强的意____。",
-          "sample_sentences": ["他毅力很强。", "刚毅的性格令人佩服。", "做事要有毅力。"],
-          "distractor_words": ["志", "气", "力"],
-          "distractor_meanings": ["志向，想要达到的目标", "勇气，面对困难不害怕", "力量，做事的能力"]
+          "meaning": "好处、更加",
+          "level_hint": "科技的发展对人类大有____处。",
+          "sample_sentences": [
+            "科学技术的发展让人类受益无穷。",
+            "开卷有益，多读书总是有好处的。",
+            "随着年龄的增长，他变得益发懂事了。"
+          ],
+          "distractor_words": ["利", "优", "善"],
+          "distractor_meanings": ["好处、顺畅", "优良、美好", "善良、良好"]
+        }
+      ]
+    },
+    {
+      "unit": 8,
+      "title": "蝴蝶的家",
+      "words": [
+        {
+          "word": "避",
+          "pinyin": "bì",
+          "meaning": "躲避、避免",
+          "level_hint": "下大雨了，蝴蝶不知道该去哪里躲____。",
+          "sample_sentences": [
+            "蝴蝶在风雨中不知道去哪里避雨。",
+            "夏天太热了，大家都在树荫下避暑。",
+            "遇到危险要避开，保护自己的安全。"
+          ],
+          "distractor_words": ["躲", "藏", "逃"],
+          "distractor_meanings": ["隐藏自己", "把东西收存起来", "跑开、离开"]
+        },
+        {
+          "word": "撼",
+          "pinyin": "hàn",
+          "meaning": "摇动、震动",
+          "level_hint": "狂风震____着大树，树叶纷纷飘落。",
+          "sample_sentences": [
+            "暴风雨震撼了整个大地。",
+            "这件事令人震撼不已。",
+            "蚂蚁撼大树，自不量力。"
+          ],
+          "distractor_words": ["摇", "震", "动"],
+          "distractor_meanings": ["来回摆动", "颤动、震动", "改变位置"]
+        },
+        {
+          "word": "喧",
+          "pinyin": "xuān",
+          "meaning": "大声、嘈杂",
+          "level_hint": "教室里____闹得像菜市场一样，老师来了才安静下来。",
+          "sample_sentences": [
+            "喧闹的声音打破了夜的宁静。",
+            "下课了，校园里一片喧哗声。",
+            "菜市场里人声喧闹，非常热闹。"
+          ],
+          "distractor_words": ["吵", "闹", "嚷"],
+          "distractor_meanings": ["声音大而杂乱", "不安静、喧哗", "大声喊叫"]
+        },
+        {
+          "word": "雀",
+          "pinyin": "què",
+          "meaning": "一种小鸟",
+          "level_hint": "屋檐下有几只小麻____在叽叽喳喳地叫着。",
+          "sample_sentences": [
+            "麻雀在屋檐下叽叽喳喳地叫个不停。",
+            "孔雀展开了美丽的尾羽。",
+            "门可罗雀，形容非常冷清。"
+          ],
+          "distractor_words": ["燕", "莺", "鹊"],
+          "distractor_meanings": ["一种候鸟，春天飞来", "一种叫声好听的鸟", "一种被认为吉祥的鸟"]
+        },
+        {
+          "word": "檐",
+          "pinyin": "yán",
+          "meaning": "屋顶向旁边伸出的边沿",
+          "level_hint": "雨天，屋____上的雨水滴滴答答地落下来。",
+          "sample_sentences": [
+            "屋檐下有几只麻雀在避雨。",
+            "雨滴从屋檐上落下来，形成了一道水帘。",
+            "古老的寺庙有着高高翘起的飞檐。"
+          ],
+          "distractor_words": ["顶", "墙", "梁"],
+          "distractor_meanings": ["建筑物的最高处", "用砖石砌成的建筑物", "支撑屋顶的横木"]
+        },
+        {
+          "word": "遮",
+          "pinyin": "zhē",
+          "meaning": "挡住、掩盖",
+          "level_hint": "乌云____住了太阳，天一下子暗了下来。",
+          "sample_sentences": [
+            "大树遮住了阳光，树荫下很凉快。",
+            "他用手遮住了眼睛，不敢看。",
+            "蝴蝶被花瓣遮住了身影。"
+          ],
+          "distractor_words": ["挡", "掩", "盖"],
+          "distractor_meanings": ["阻拦、拦住", "遮盖、遮蔽", "由上而下地遮住"]
+        },
+        {
+          "word": "蔽",
+          "pinyin": "bì",
+          "meaning": "遮住、隐藏",
+          "level_hint": "茂密的树叶隐____了鸟巢，不仔细看根本发现不了。",
+          "sample_sentences": [
+            "树林为蝴蝶提供了隐蔽的场所。",
+            "他躲在草丛里隐蔽起来。",
+            "这件衣服有很好的隐蔽效果。"
+          ],
+          "distractor_words": ["隐", "藏", "掩"],
+          "distractor_meanings": ["隐藏不露", "躲藏、储存", "遮盖、遮蔽"]
+        },
+        {
+          "word": "稳",
+          "pinyin": "wěn",
+          "meaning": "稳固、不摇晃",
+          "level_hint": "他在平衡木上走得又平____又快速。",
+          "sample_sentences": [
+            "小船在风浪中不够稳当。",
+            "他稳稳地接住了飞来的球。",
+            "在学习上要稳扎稳打，不能急于求成。"
+          ],
+          "distractor_words": ["固", "牢", "安"],
+          "distractor_meanings": ["结实、不动摇", "坚固、不易变动", "平安、安全"]
         }
       ]
     }

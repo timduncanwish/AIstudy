@@ -4,302 +4,114 @@
   "units": [
     {
       "unit": 1,
-      "title": "Unit 1 · How Can I Get There?",
+      "title": "Unit 1 · How can I get there?",
       "words": [
-        {
-          "word": "science",
-          "phonetic": "/ˈsaɪəns/",
-          "meaning": "科学",
-          "level_hint": "The ____ museum is fun.",
-          "sample_sentences": ["I like science.", "Science is interesting.", "We have science class today."],
-          "distractor_words": ["history", "music", "geography"],
-          "distractor_meanings": ["历史", "音乐", "地理"]
-        },
-        {
-          "word": "museum",
-          "phonetic": "/mjuːˈziːəm/",
-          "meaning": "博物馆",
-          "level_hint": "Let's visit the ____.",
-          "sample_sentences": ["The museum is big.", "I went to the museum.", "The science museum is cool."],
-          "distractor_words": ["library", "cinema", "hospital"],
-          "distractor_meanings": ["图书馆", "电影院", "医院"]
-        },
-        {
-          "word": "hospital",
-          "phonetic": "/ˈhɑːspɪtl/",
-          "meaning": "医院",
-          "level_hint": "The ____ is near the park.",
-          "sample_sentences": ["The hospital is on this street.", "She went to the hospital.", "The hospital is big."],
-          "distractor_words": ["school", "bank", "police"],
-          "distractor_meanings": ["学校", "银行", "警察局"]
-        },
-        {
-          "word": "crossing",
-          "phonetic": "/ˈkrɔːsɪŋ/",
-          "meaning": "十字路口",
-          "level_hint": "Turn left at the ____.",
-          "sample_sentences": ["Turn at the crossing.", "The crossing is busy.", "Stop at the crossing."],
-          "distractor_words": ["corner", "bridge", "tunnel"],
-          "distractor_meanings": ["拐角", "桥", "隧道"]
-        },
-        {
-          "word": "straight",
-          "phonetic": "/streɪt/",
-          "meaning": "笔直地",
-          "level_hint": "Go ____ ahead.",
-          "sample_sentences": ["Go straight.", "Walk straight on.", "The road goes straight."],
-          "distractor_words": ["left", "right", "back"],
-          "distractor_meanings": ["左转", "右转", "返回"]
-        },
-        {
-          "word": "follow",
-          "phonetic": "/ˈfɑːloʊ/",
-          "meaning": "跟随",
-          "level_hint": "____ me, please.",
-          "sample_sentences": ["Follow me.", "Follow the rules.", "She followed her dream."],
-          "distractor_words": ["lead", "guide", "direct"],
-          "distractor_meanings": ["带领", "引导", "指引"]
-        }
+        { "word": "science", "phonetic": "/ˈsaɪəns/", "meaning": "科学", "level_hint": "I like ____ class.", "sample_sentences": ["Science is fun.", "We have science class.", "The science museum is big."], "distractor_words": ["math", "art", "music"], "distractor_meanings": ["数学", "美术", "音乐"] },
+        { "word": "museum", "phonetic": "/mjuːˈziːəm/", "meaning": "博物馆", "level_hint": "Let's go to the ____.", "sample_sentences": ["The museum is big.", "I visit the museum.", "There are many museums."], "distractor_words": ["library", "cinema", "hospital"], "distractor_meanings": ["图书馆", "电影院", "医院"] },
+        { "word": "post office", "phonetic": "/poʊst ˈɔːfɪs/", "meaning": "邮局", "level_hint": "I go to the ____ to send a letter.", "sample_sentences": ["The post office is near here.", "Where is the post office?", "I buy stamps at the post office."], "distractor_words": ["bank", "shop", "school"], "distractor_meanings": ["银行", "商店", "学校"] },
+        { "word": "bookstore", "phonetic": "/ˈbʊkstɔːr/", "meaning": "书店", "level_hint": "I buy books at the ____.", "sample_sentences": ["The bookstore is big.", "I go to the bookstore.", "She works at a bookstore."], "distractor_words": ["library", "school", "office"], "distractor_meanings": ["图书馆", "学校", "办公室"] },
+        { "word": "cinema", "phonetic": "/ˈsɪnəmə/", "meaning": "电影院", "level_hint": "Let's go to the ____.", "sample_sentences": ["The cinema is near here.", "I watch movies at the cinema.", "The cinema is on Main Street."], "distractor_words": ["theater", "museum", "library"], "distractor_meanings": ["剧院", "博物馆", "图书馆"] },
+        { "word": "hospital", "phonetic": "/ˈhɑːspɪtl/", "meaning": "医院", "level_hint": "The ____ is on Park Street.", "sample_sentences": ["The hospital is big.", "She goes to the hospital.", "The doctor works at the hospital."], "distractor_words": ["school", "hotel", "market"], "distractor_meanings": ["学校", "酒店", "市场"] },
+        { "word": "crossing", "phonetic": "/ˈkrɔːsɪŋ/", "meaning": "十字路口", "level_hint": "Turn left at the ____.", "sample_sentences": ["Turn right at the crossing.", "The crossing is busy.", "Stop at the crossing."], "distractor_words": ["corner", "street", "road"], "distractor_meanings": ["角落", "街道", "路"] },
+        { "word": "turn", "phonetic": "/tɜːrn/", "meaning": "转弯", "level_hint": "____ left at the school.", "sample_sentences": ["Turn left here.", "Turn right at the park.", "Don't turn wrong."], "distractor_words": ["go", "stop", "walk"], "distractor_meanings": ["去", "停", "走"] }
       ]
     },
     {
       "unit": 2,
-      "title": "Unit 2 · Ways to Go to School",
+      "title": "Unit 2 · Ways to go to school",
       "words": [
-        {
-          "word": "subway",
-          "phonetic": "/ˈsʌbweɪ/",
-          "meaning": "地铁",
-          "level_hint": "I go to school by ____.",
-          "sample_sentences": ["I take the subway.", "The subway is fast.", "Beijing has many subway lines."],
-          "distractor_words": ["bus", "taxi", "train"],
-          "distractor_meanings": ["公交车", "出租车", "火车"]
-        },
-        {
-          "word": "traffic",
-          "phonetic": "/ˈtræfɪk/",
-          "meaning": "交通",
-          "level_hint": "There is a lot of ____ in the morning.",
-          "sample_sentences": ["The traffic is heavy.", "Traffic lights are red.", "Traffic rules keep us safe."],
-          "distractor_words": ["road", "street", "highway"],
-          "distractor_meanings": ["道路", "街道", "高速公路"]
-        },
-        {
-          "word": "helmet",
-          "phonetic": "/ˈhelmɪt/",
-          "meaning": "头盔",
-          "level_hint": "Wear a ____ when you ride a bike.",
-          "sample_sentences": ["Wear your helmet.", "The helmet protects your head.", "I have a red helmet."],
-          "distractor_words": ["seatbelt", "glove", "boot"],
-          "distractor_meanings": ["安全带", "手套", "靴子"]
-        },
-        {
-          "word": "early",
-          "phonetic": "/ˈɜːrli/",
-          "meaning": "早的",
-          "level_hint": "I get up ____ every day.",
-          "sample_sentences": ["Wake up early.", "She comes early.", "The early bird catches the worm."],
-          "distractor_words": ["late", "slow", "quick"],
-          "distractor_meanings": ["迟的", "慢的", "快的"]
-        },
-        {
-          "word": "fast",
-          "phonetic": "/fæst/",
-          "meaning": "快的",
-          "level_hint": "The train is very ____.",
-          "sample_sentences": ["She runs fast.", "The car is fast.", "Don't drive too fast."],
-          "distractor_words": ["slow", "steady", "calm"],
-          "distractor_meanings": ["慢的", "稳定的", "平静的"]
-        },
-        {
-          "word": "attention",
-          "phonetic": "/əˈtenʃn/",
-          "meaning": "注意力",
-          "level_hint": "Pay ____ to the teacher.",
-          "sample_sentences": ["Pay attention.", "He has good attention.", "Attention, please!"],
-          "distractor_words": ["focus", "care", "thought"],
-          "distractor_meanings": ["专注", "关心", "思考"]
-        }
+        { "word": "on foot", "phonetic": "/ɑːn fʊt/", "meaning": "步行", "level_hint": "I go to school ____.", "sample_sentences": ["I go on foot.", "She walks on foot.", "Going on foot is healthy."], "distractor_words": ["by bus", "by car", "by bike"], "distractor_meanings": ["坐公交", "坐汽车", "骑车"] },
+        { "word": "by bus", "phonetic": "/baɪ bʌs/", "meaning": "坐公共汽车", "level_hint": "I go to school ____.", "sample_sentences": ["I go by bus.", "The bus is coming.", "She takes the bus."], "distractor_words": ["by car", "by bike", "by train"], "distractor_meanings": ["坐汽车", "骑车", "坐火车"] },
+        { "word": "by plane", "phonetic": "/baɪ pleɪn/", "meaning": "坐飞机", "level_hint": "We go to Beijing ____.", "sample_sentences": ["I travel by plane.", "The plane is fast.", "She goes by plane."], "distractor_words": ["by train", "by ship", "by bus"], "distractor_meanings": ["坐火车", "坐船", "坐公交"] },
+        { "word": "by taxi", "phonetic": "/baɪ ˈtæksi/", "meaning": "坐出租车", "level_hint": "Let's go ____.", "sample_sentences": ["I take a taxi.", "Going by taxi is fast.", "She goes by taxi."], "distractor_words": ["by bus", "by bike", "on foot"], "distractor_meanings": ["坐公交", "骑车", "步行"] },
+        { "word": "by ship", "phonetic": "/baɪ ʃɪp/", "meaning": "坐船", "level_hint": "We cross the river ____.", "sample_sentences": ["I go by ship.", "The ship is big.", "Traveling by ship is fun."], "distractor_words": ["by plane", "by train", "by bus"], "distractor_meanings": ["坐飞机", "坐火车", "坐公交"] },
+        { "word": "by subway", "phonetic": "/baɪ ˈsʌbweɪ/", "meaning": "坐地铁", "level_hint": "I go to work ____.", "sample_sentences": ["I go by subway.", "The subway is fast.", "She takes the subway."], "distractor_words": ["by bus", "by taxi", "by train"], "distractor_meanings": ["坐公交", "坐出租", "坐火车"] },
+        { "word": "by train", "phonetic": "/baɪ treɪn/", "meaning": "坐火车", "level_hint": "We go to Shanghai ____.", "sample_sentences": ["I go by train.", "The train is fast.", "He takes the train."], "distractor_words": ["by plane", "by bus", "by ship"], "distractor_meanings": ["坐飞机", "坐公交", "坐船"] },
+        { "word": "slow down", "phonetic": "/sloʊ daʊn/", "meaning": "慢下来", "level_hint": "Please ____ at the crossing.", "sample_sentences": ["Slow down, please.", "The car slows down.", "Don't run, slow down."], "distractor_words": ["speed up", "stop", "go"], "distractor_meanings": ["加速", "停下", "走"] }
       ]
     },
     {
       "unit": 3,
-      "title": "Unit 3 · My Weekend Plan",
+      "title": "Unit 3 · My weekend plan",
       "words": [
-        {
-          "word": "visit",
-          "phonetic": "/ˈvɪzɪt/",
-          "meaning": "拜访，参观",
-          "level_hint": "I will ____ my grandma.",
-          "sample_sentences": ["I visit my grandma.", "We visited the museum.", "She visits her friends."],
-          "distractor_words": ["meet", "call", "invite"],
-          "distractor_meanings": ["遇见", "打电话", "邀请"]
-        },
-        {
-          "word": "travel",
-          "phonetic": "/ˈtrævl/",
-          "meaning": "旅行",
-          "level_hint": "I like to ____.",
-          "sample_sentences": ["I love to travel.", "She travels a lot.", "Travel broadens the mind."],
-          "distractor_words": ["hike", "drive", "explore"],
-          "distractor_meanings": ["远足", "开车", "探索"]
-        },
-        {
-          "word": "tomorrow",
-          "phonetic": "/təˈmɑːroʊ/",
-          "meaning": "明天",
-          "level_hint": "I will go to school ____.",
-          "sample_sentences": ["See you tomorrow.", "Tomorrow is Monday.", "I have a test tomorrow."],
-          "distractor_words": ["yesterday", "today", "tonight"],
-          "distractor_meanings": ["昨天", "今天", "今晚"]
-        },
-        {
-          "word": "magazine",
-          "phonetic": "/ˌmæɡəˈziːn/",
-          "meaning": "杂志",
-          "level_hint": "I want to buy a ____.",
-          "sample_sentences": ["I read a magazine.", "The magazine is interesting.", "She likes science magazines."],
-          "distractor_words": ["newspaper", "novel", "comic"],
-          "distractor_meanings": ["报纸", "小说", "漫画"]
-        },
-        {
-          "word": "dictionary",
-          "phonetic": "/ˈdɪkʃəneri/",
-          "meaning": "字典",
-          "level_hint": "Look up the word in the ____.",
-          "sample_sentences": ["I use a dictionary.", "The dictionary is helpful.", "Look it up in the dictionary."],
-          "distractor_words": ["textbook", "notebook", "encyclopedia"],
-          "distractor_meanings": ["课本", "笔记本", "百科全书"]
-        },
-        {
-          "word": "plan",
-          "phonetic": "/plæn/",
-          "meaning": "计划",
-          "level_hint": "What is your ____ for the weekend?",
-          "sample_sentences": ["I have a plan.", "Let's make a plan.", "What's your plan?"],
-          "distractor_words": ["dream", "idea", "goal"],
-          "distractor_meanings": ["梦想", "主意", "目标"]
-        }
+        { "word": "visit", "phonetic": "/ˈvɪzɪt/", "meaning": "拜访", "level_hint": "I'm going to ____ my grandma.", "sample_sentences": ["I will visit my friend.", "She visits the museum.", "We plan to visit Beijing."], "distractor_words": ["leave", "stay", "call"], "distractor_meanings": ["离开", "停留", "打电话"] },
+        { "word": "film", "phonetic": "/fɪlm/", "meaning": "电影", "level_hint": "I'm going to see a ____.", "sample_sentences": ["I like this film.", "Let's see a film.", "The film is interesting."], "distractor_words": ["book", "song", "game"], "distractor_meanings": ["书", "歌", "游戏"] },
+        { "word": "trip", "phonetic": "/trɪp/", "meaning": "旅行", "level_hint": "We're going to take a ____.", "sample_sentences": ["I plan a trip.", "The trip is fun.", "She takes a trip to Shanghai."], "distractor_words": ["walk", "ride", "flight"], "distractor_meanings": ["散步", "骑车", "航班"] },
+        { "word": "supermarket", "phonetic": "/ˈsuːpərmɑːrkɪt/", "meaning": "超市", "level_hint": "I'm going to the ____.", "sample_sentences": ["The supermarket is big.", "I buy food at the supermarket.", "She goes to the supermarket."], "distractor_words": ["market", "store", "mall"], "distractor_meanings": ["市场", "商店", "商场"] },
+        { "word": "evening", "phonetic": "/ˈiːvnɪŋ/", "meaning": "傍晚", "level_hint": "I read books in the ____.", "sample_sentences": ["Good evening!", "The evening is cool.", "I watch TV in the evening."], "distractor_words": ["morning", "afternoon", "night"], "distractor_meanings": ["早上", "下午", "夜晚"] },
+        { "word": "tonight", "phonetic": "/təˈnaɪt/", "meaning": "今晚", "level_hint": "I'm going to study ____.", "sample_sentences": ["What are you doing tonight?", "Tonight is special.", "See you tonight!"], "distractor_words": ["today", "tomorrow", "yesterday"], "distractor_meanings": ["今天", "明天", "昨天"] },
+        { "word": "tomorrow", "phonetic": "/təˈmɔːroʊ/", "meaning": "明天", "level_hint": "I'm going to the park ____.", "sample_sentences": ["See you tomorrow.", "Tomorrow is Monday.", "What will you do tomorrow?"], "distractor_words": ["today", "yesterday", "tonight"], "distractor_meanings": ["今天", "昨天", "今晚"] },
+        { "word": "next week", "phonetic": "/nekst wiːk/", "meaning": "下周", "level_hint": "We have a test ____.", "sample_sentences": ["Next week is busy.", "I will travel next week.", "See you next week!"], "distractor_words": ["this week", "last week", "next month"], "distractor_meanings": ["这周", "上周", "下个月"] }
       ]
     },
     {
       "unit": 4,
-      "title": "Unit 4 · I Have a Pen Pal",
+      "title": "Unit 4 · I have a pen pal",
       "words": [
-        {
-          "word": "hobby",
-          "phonetic": "/ˈhɑːbi/",
-          "meaning": "爱好",
-          "level_hint": "My ____ is reading.",
-          "sample_sentences": ["What's your hobby?", "I have many hobbies.", "Her hobby is painting."],
-          "distractor_words": ["habit", "job", "sport"],
-          "distractor_meanings": ["习惯", "工作", "运动"]
-        },
-        {
-          "word": "hiking",
-          "phonetic": "/ˈhaɪkɪŋ/",
-          "meaning": "远足，徒步",
-          "level_hint": "I like going ____.",
-          "sample_sentences": ["I like hiking.", "Let's go hiking.", "Hiking is good exercise."],
-          "distractor_words": ["swimming", "running", "cycling"],
-          "distractor_meanings": ["游泳", "跑步", "骑自行车"]
-        },
-        {
-          "word": "puzzle",
-          "phonetic": "/ˈpʌzl/",
-          "meaning": "拼图，谜题",
-          "level_hint": "I like doing ____.",
-          "sample_sentences": ["I like puzzles.", "This puzzle is hard.", "Let's do a puzzle together."],
-          "distractor_words": ["game", "toy", "riddle"],
-          "distractor_meanings": ["游戏", "玩具", "谜语"]
-        },
-        {
-          "word": "amazing",
-          "phonetic": "/əˈmeɪzɪŋ/",
-          "meaning": "令人惊叹的",
-          "level_hint": "The magic show was ____.",
-          "sample_sentences": ["It's amazing!", "She is amazing.", "What an amazing day!"],
-          "distractor_words": ["boring", "normal", "terrible"],
-          "distractor_meanings": ["无聊的", "普通的", "糟糕的"]
-        },
-        {
-          "word": "country",
-          "phonetic": "/ˈkʌntri/",
-          "meaning": "国家，乡村",
-          "level_hint": "China is a big ____.",
-          "sample_sentences": ["I love my country.", "The country is beautiful.", "Many countries have flags."],
-          "distractor_words": ["city", "town", "village"],
-          "distractor_meanings": ["城市", "镇", "村庄"]
-        },
-        {
-          "word": "live",
-          "phonetic": "/lɪv/",
-          "meaning": "居住",
-          "level_hint": "I ____ in Beijing.",
-          "sample_sentences": ["I live in China.", "Where do you live?", "She lives near the school."],
-          "distractor_words": ["work", "stay", "move"],
-          "distractor_meanings": ["工作", "停留", "搬家"]
-        }
+        { "word": "hobby", "phonetic": "/ˈhɑːbi/", "meaning": "爱好", "level_hint": "My ____ is reading.", "sample_sentences": ["What's your hobby?", "I have many hobbies.", "Her hobby is singing."], "distractor_words": ["job", "name", "age"], "distractor_meanings": ["工作", "名字", "年龄"] },
+        { "word": "reading", "phonetic": "/ˈriːdɪŋ/", "meaning": "阅读", "level_hint": "I like ____ books.", "sample_sentences": ["I like reading.", "Reading is fun.", "She enjoys reading stories."], "distractor_words": ["writing", "drawing", "singing"], "distractor_meanings": ["写作", "画画", "唱歌"] },
+        { "word": "cooking", "phonetic": "/ˈkʊkɪŋ/", "meaning": "做饭", "level_hint": "She likes ____.", "sample_sentences": ["I like cooking.", "Cooking is fun.", "He is good at cooking."], "distractor_words": ["cleaning", "washing", "eating"], "distractor_meanings": ["打扫", "洗", "吃"] },
+        { "word": "swimming", "phonetic": "/ˈswɪmɪŋ/", "meaning": "游泳", "level_hint": "He likes ____.", "sample_sentences": ["I like swimming.", "Swimming is good exercise.", "She goes swimming every week."], "distractor_words": ["running", "jumping", "fishing"], "distractor_meanings": ["跑步", "跳", "钓鱼"] },
+        { "word": "watching", "phonetic": "/ˈwɑːtʃɪŋ/", "meaning": "观看", "level_hint": "I like ____ TV.", "sample_sentences": ["I like watching TV.", "She is watching a movie.", "He enjoys watching football."], "distractor_words": ["listening", "playing", "reading"], "distractor_meanings": ["听", "玩", "读"] },
+        { "word": "playing", "phonetic": "/ˈpleɪɪŋ/", "meaning": "玩", "level_hint": "He likes ____ football.", "sample_sentences": ["I like playing games.", "She is playing the piano.", "They enjoy playing together."], "distractor_words": ["studying", "working", "sleeping"], "distractor_meanings": ["学习", "工作", "睡觉"] },
+        { "word": "singing", "phonetic": "/ˈsɪŋɪŋ/", "meaning": "唱歌", "level_hint": "She likes ____.", "sample_sentences": ["I like singing.", "Singing makes me happy.", "He enjoys singing songs."], "distractor_words": ["dancing", "drawing", "reading"], "distractor_meanings": ["跳舞", "画画", "读书"] },
+        { "word": "dancing", "phonetic": "/ˈdænsɪŋ/", "meaning": "跳舞", "level_hint": "She likes ____.", "sample_sentences": ["I like dancing.", "Dancing is fun.", "She is good at dancing."], "distractor_words": ["singing", "running", "swimming"], "distractor_meanings": ["唱歌", "跑步", "游泳"] }
       ]
     },
     {
       "unit": 5,
-      "title": "Unit 5 · What Does He Do?",
+      "title": "Unit 5 · What does he do?",
       "words": [
-        {
-          "word": "factory",
-          "phonetic": "/ˈfæktəri/",
-          "meaning": "工厂",
-          "level_hint": "My father works in a ____.",
-          "sample_sentences": ["The factory is big.", "He works in a factory.", "The factory makes toys."],
-          "distractor_words": ["office", "farm", "store"],
-          "distractor_meanings": ["办公室", "农场", "商店"]
-        },
-        {
-          "word": "worker",
-          "phonetic": "/ˈwɜːrkər/",
-          "meaning": "工人",
-          "level_hint": "His father is a ____.",
-          "sample_sentences": ["He is a factory worker.", "The workers are busy.", "She is a hard worker."],
-          "distractor_words": ["doctor", "driver", "farmer"],
-          "distractor_meanings": ["医生", "司机", "农民"]
-        },
-        {
-          "word": "pilot",
-          "phonetic": "/ˈpaɪlət/",
-          "meaning": "飞行员",
-          "level_hint": "My uncle is a ____.",
-          "sample_sentences": ["He is a pilot.", "The pilot flies planes.", "She wants to be a pilot."],
-          "distractor_words": ["sailor", "astronaut", "captain"],
-          "distractor_meanings": ["水手", "宇航员", "船长"]
-        },
-        {
-          "word": "scientist",
-          "phonetic": "/ˈsaɪəntɪst/",
-          "meaning": "科学家",
-          "level_hint": "She is a famous ____.",
-          "sample_sentences": ["He is a scientist.", "Scientists study nature.", "I want to be a scientist."],
-          "distractor_words": ["artist", "musician", "engineer"],
-          "distractor_meanings": ["艺术家", "音乐家", "工程师"]
-        },
-        {
-          "word": "coach",
-          "phonetic": "/koʊtʃ/",
-          "meaning": "教练",
-          "level_hint": "Our PE ____ is very good.",
-          "sample_sentences": ["He is a football coach.", "The coach trains us.", "She is a swimming coach."],
-          "distractor_words": ["judge", "referee", "player"],
-          "distractor_meanings": ["裁判", "裁判员", "运动员"]
-        },
-        {
-          "word": "reporter",
-          "phonetic": "/rɪˈpɔːrtər/",
-          "meaning": "记者",
-          "level_hint": "She is a TV ____.",
-          "sample_sentences": ["She is a reporter.", "Reporters write news.", "The reporter asked questions."],
-          "distractor_words": ["writer", "editor", "teacher"],
-          "distractor_meanings": ["作家", "编辑", "老师"]
-        }
+        { "word": "factory", "phonetic": "/ˈfæktəri/", "meaning": "工厂", "level_hint": "He works in a ____.", "sample_sentences": ["The factory is big.", "She works at a factory.", "There are many factories."], "distractor_words": ["office", "school", "hospital"], "distractor_meanings": ["办公室", "学校", "医院"] },
+        { "word": "worker", "phonetic": "/ˈwɜːrkər/", "meaning": "工人", "level_hint": "My father is a ____.", "sample_sentences": ["He is a worker.", "The worker is busy.", "She works as a factory worker."], "distractor_words": ["teacher", "doctor", "driver"], "distractor_meanings": ["老师", "医生", "司机"] },
+        { "word": "postman", "phonetic": "/ˈpoʊstmən/", "meaning": "邮递员", "level_hint": "The ____ brings letters.", "sample_sentences": ["The postman is here.", "He is a postman.", "The postman delivers mail."], "distractor_words": ["policeman", "fireman", "milkman"], "distractor_meanings": ["警察", "消防员", "送奶工"] },
+        { "word": "businessman", "phonetic": "/ˈbɪznəsmən/", "meaning": "商人", "level_hint": "He is a ____.", "sample_sentences": ["He is a businessman.", "The businessman works hard.", "She is a businesswoman."], "distractor_words": ["worker", "farmer", "teacher"], "distractor_meanings": ["工人", "农民", "老师"] },
+        { "word": "police", "phonetic": "/pəˈliːs/", "meaning": "警察", "level_hint": "The ____ help people.", "sample_sentences": ["The police are coming.", "He is a police officer.", "Call the police!"], "distractor_words": ["army", "nurse", "teacher"], "distractor_meanings": ["军队", "护士", "老师"] },
+        { "word": "fisherman", "phonetic": "/ˈfɪʃərmən/", "meaning": "渔民", "level_hint": "He is a ____.", "sample_sentences": ["The fisherman catches fish.", "He works as a fisherman.", "A fisherman goes to sea."], "distractor_words": ["farmer", "hunter", "sailor"], "distractor_meanings": ["农民", "猎人", "水手"] },
+        { "word": "scientist", "phonetic": "/ˈsaɪəntɪst/", "meaning": "科学家", "level_hint": "She is a ____.", "sample_sentences": ["She is a scientist.", "The scientist works in a lab.", "I want to be a scientist."], "distractor_words": ["artist", "teacher", "doctor"], "distractor_meanings": ["艺术家", "老师", "医生"] },
+        { "word": "pilot", "phonetic": "/ˈpaɪlət/", "meaning": "飞行员", "level_hint": "He is a ____.", "sample_sentences": ["He is a pilot.", "The pilot flies planes.", "I want to be a pilot."], "distractor_words": ["driver", "sailor", "astronaut"], "distractor_meanings": ["司机", "水手", "宇航员"] }
+      ]
+    },
+    {
+      "unit": 6,
+      "title": "Unit 6 · How do you feel?",
+      "words": [
+        { "word": "angry", "phonetic": "/ˈæŋɡri/", "meaning": "生气的", "level_hint": "She is very ____.", "sample_sentences": ["Don't be angry.", "He looks angry.", "I am angry with him."], "distractor_words": ["happy", "sad", "calm"], "distractor_meanings": ["开心的", "伤心的", "平静的"] },
+        { "word": "afraid", "phonetic": "/əˈfreɪd/", "meaning": "害怕的", "level_hint": "I am ____ of dogs.", "sample_sentences": ["Don't be afraid.", "She is afraid of the dark.", "Are you afraid?"], "distractor_words": ["brave", "happy", "excited"], "distractor_meanings": ["勇敢的", "开心的", "兴奋的"] },
+        { "word": "sad", "phonetic": "/sæd/", "meaning": "伤心的", "level_hint": "She looks ____.", "sample_sentences": ["I am sad.", "Don't be sad.", "She feels sad today."], "distractor_words": ["happy", "angry", "tired"], "distractor_meanings": ["开心的", "生气的", "疲惫的"] },
+        { "word": "worried", "phonetic": "/ˈwɜːrid/", "meaning": "担心的", "level_hint": "He is ____ about the test.", "sample_sentences": ["I am worried.", "Don't be worried.", "She looks worried."], "distractor_words": ["relaxed", "happy", "calm"], "distractor_meanings": ["放松的", "开心的", "平静的"] },
+        { "word": "happy", "phonetic": "/ˈhæpi/", "meaning": "开心的", "level_hint": "I am very ____.", "sample_sentences": ["I am happy.", "She looks happy.", "Happy birthday!"], "distractor_words": ["sad", "angry", "tired"], "distractor_meanings": ["伤心的", "生气的", "疲惫的"] },
+        { "word": "ill", "phonetic": "/ɪl/", "meaning": "生病的", "level_hint": "She is ____ today.", "sample_sentences": ["I feel ill.", "He is ill in bed.", "She is too ill to go to school."], "distractor_words": ["well", "strong", "healthy"], "distractor_meanings": ["健康的", "强壮的", "健康的"] },
+        { "word": "see", "phonetic": "/siː/", "meaning": "看，明白", "level_hint": "I ____ a doctor.", "sample_sentences": ["I see a bird.", "Let me see.", "You should see a doctor."], "distractor_words": ["hear", "feel", "look"], "distractor_meanings": ["听", "感觉", "看"] },
+        { "word": "doctor", "phonetic": "/ˈdɑːktər/", "meaning": "医生", "level_hint": "I need to see a ____.", "sample_sentences": ["The doctor is kind.", "She is a doctor.", "Go see a doctor."], "distractor_words": ["nurse", "teacher", "driver"], "distractor_meanings": ["护士", "老师", "司机"] }
+      ]
+    },
+    {
+      "unit": 7,
+      "title": "Unit 7 · Then and now",
+      "words": [
+        { "word": "grass", "phonetic": "/ɡræs/", "meaning": "草地", "level_hint": "The ____ is green.", "sample_sentences": ["The grass is green.", "Don't walk on the grass.", "She sits on the grass."], "distractor_words": ["tree", "flower", "sand"], "distractor_meanings": ["树", "花", "沙子"] },
+        { "word": "gym", "phonetic": "/dʒɪm/", "meaning": "体育馆", "level_hint": "We have PE in the ____.", "sample_sentences": ["The gym is big.", "We play basketball in the gym.", "I go to the gym."], "distractor_words": ["library", "lab", "office"], "distractor_meanings": ["图书馆", "实验室", "办公室"] },
+        { "word": "ago", "phonetic": "/əˈɡoʊ/", "meaning": "以前", "level_hint": "Ten years ____, I was a baby.", "sample_sentences": ["Long ago, there were no cars.", "Three days ago, it rained.", "A year ago, I was in Grade 5."], "distractor_words": ["later", "now", "soon"], "distractor_meanings": ["以后", "现在", "很快"] },
+        { "word": "cycling", "phonetic": "/ˈsaɪklɪŋ/", "meaning": "骑自行车", "level_hint": "I like ____.", "sample_sentences": ["I go cycling on weekends.", "Cycling is fun.", "She likes cycling too."], "distractor_words": ["running", "swimming", "hiking"], "distractor_meanings": ["跑步", "游泳", "远足"] },
+        { "word": "ice-skate", "phonetic": "/aɪs skeɪt/", "meaning": "滑冰", "level_hint": "I can ____ in winter.", "sample_sentences": ["I like ice-skating.", "Let's go ice-skating.", "She ice-skates well."], "distractor_words": ["ski", "swim", "run"], "distractor_meanings": ["滑雪", "游泳", "跑步"] },
+        { "word": "badminton", "phonetic": "/ˈbædmɪntən/", "meaning": "羽毛球", "level_hint": "I play ____ after school.", "sample_sentences": ["I like badminton.", "Let's play badminton.", "She plays badminton well."], "distractor_words": ["tennis", "football", "basketball"], "distractor_meanings": ["网球", "足球", "篮球"] },
+        { "word": "star", "phonetic": "/stɑːr/", "meaning": "星星", "level_hint": "I can see many ____s at night.", "sample_sentences": ["The stars are bright.", "I see a star.", "She wants to be a star."], "distractor_words": ["moon", "sun", "cloud"], "distractor_meanings": ["月亮", "太阳", "云"] },
+        { "word": "different", "phonetic": "/ˈdɪfrənt/", "meaning": "不同的", "level_hint": "We are ____.", "sample_sentences": ["They look different.", "This is different from that.", "We have different ideas."], "distractor_words": ["same", "similar", "equal"], "distractor_meanings": ["相同的", "相似的", "平等的"] }
+      ]
+    },
+    {
+      "unit": 8,
+      "title": "Unit 8 · Holidays and festivals",
+      "words": [
+        { "word": "country", "phonetic": "/ˈkʌntri/", "meaning": "国家", "level_hint": "China is a big ____.", "sample_sentences": ["I love my country.", "This country is beautiful.", "Many countries celebrate New Year."], "distractor_words": ["city", "town", "village"], "distractor_meanings": ["城市", "镇", "村庄"] },
+        { "word": "holiday", "phonetic": "/ˈhɑːlədeɪ/", "meaning": "假日", "level_hint": "Summer ____ is long.", "sample_sentences": ["I like holidays.", "Happy holiday!", "We have a long holiday."], "distractor_words": ["weekday", "workday", "school day"], "distractor_meanings": ["工作日", "上班日", "上学日"] },
+        { "word": "Christmas", "phonetic": "/ˈkrɪsməs/", "meaning": "圣诞节", "level_hint": "____ is in December.", "sample_sentences": ["Merry Christmas!", "We celebrate Christmas.", "Christmas is a happy holiday."], "distractor_words": ["Easter", "Halloween", "New Year"], "distractor_meanings": ["复活节", "万圣节", "新年"] },
+        { "word": "Thanksgiving", "phonetic": "/ˌθæŋksˈɡɪvɪŋ/", "meaning": "感恩节", "level_hint": "____ is in November.", "sample_sentences": ["Happy Thanksgiving!", "We celebrate Thanksgiving.", "Thanksgiving is about being thankful."], "distractor_words": ["Christmas", "Easter", "Halloween"], "distractor_meanings": ["圣诞节", "复活节", "万圣节"] },
+        { "word": "Halloween", "phonetic": "/ˌhæloʊˈiːn/", "meaning": "万圣节", "level_hint": "____ is in October.", "sample_sentences": ["Happy Halloween!", "We dress up for Halloween.", "Halloween is fun."], "distractor_words": ["Christmas", "Easter", "New Year"], "distractor_meanings": ["圣诞节", "复活节", "新年"] },
+        { "word": "Easter", "phonetic": "/ˈiːstər/", "meaning": "复活节", "level_hint": "____ is in spring.", "sample_sentences": ["Happy Easter!", "We paint eggs for Easter.", "Easter is a spring festival."], "distractor_words": ["Christmas", "Halloween", "New Year"], "distractor_meanings": ["圣诞节", "万圣节", "新年"] },
+        { "word": "festival", "phonetic": "/ˈfestɪvl/", "meaning": "节日", "level_hint": "Spring ____ is important.", "sample_sentences": ["I like festivals.", "The festival is fun.", "We have many festivals in China."], "distractor_words": ["holiday", "party", "meeting"], "distractor_meanings": ["假日", "派对", "会议"] },
+        { "word": "together", "phonetic": "/təˈɡeðər/", "meaning": "一起", "level_hint": "We play ____.", "sample_sentences": ["Let's go together.", "We study together.", "They sing together."], "distractor_words": ["alone", "apart", "separate"], "distractor_meanings": ["单独", "分开", "分离的"] }
       ]
     }
   ]

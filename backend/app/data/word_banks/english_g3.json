@@ -6,300 +6,112 @@
       "unit": 1,
       "title": "Unit 1 · Hello!",
       "words": [
-        {
-          "word": "hello",
-          "phonetic": "/həˈloʊ/",
-          "meaning": "你好",
-          "level_hint": "____! Nice to meet you.",
-          "sample_sentences": ["Hello! How are you?", "Hello, my name is Tom.", "She said hello to me."],
-          "distractor_words": ["goodbye", "sorry", "please"],
-          "distractor_meanings": ["再见", "对不起", "请"]
-        },
-        {
-          "word": "name",
-          "phonetic": "/neɪm/",
-          "meaning": "名字",
-          "level_hint": "My ____ is Li Ming.",
-          "sample_sentences": ["What is your name?", "My name is Sarah.", "His name is Jack."],
-          "distractor_words": ["age", "home", "school"],
-          "distractor_meanings": ["年龄", "家", "学校"]
-        },
-        {
-          "word": "friend",
-          "phonetic": "/frend/",
-          "meaning": "朋友",
-          "level_hint": "She is my best ____.",
-          "sample_sentences": ["She is my friend.", "I have many friends.", "Let's be friends!"],
-          "distractor_words": ["teacher", "student", "family"],
-          "distractor_meanings": ["老师", "学生", "家人"]
-        },
-        {
-          "word": "school",
-          "phonetic": "/skuːl/",
-          "meaning": "学校",
-          "level_hint": "I go to ____ every day.",
-          "sample_sentences": ["I like my school.", "We go to school by bus.", "The school is big."],
-          "distractor_words": ["home", "park", "shop"],
-          "distractor_meanings": ["家", "公园", "商店"]
-        },
-        {
-          "word": "teacher",
-          "phonetic": "/ˈtiːtʃər/",
-          "meaning": "老师",
-          "level_hint": "Our ____ is very kind.",
-          "sample_sentences": ["My teacher is nice.", "The teacher reads a book.", "I love my teacher."],
-          "distractor_words": ["student", "doctor", "driver"],
-          "distractor_meanings": ["学生", "医生", "司机"]
-        },
-        {
-          "word": "book",
-          "phonetic": "/bʊk/",
-          "meaning": "书",
-          "level_hint": "I am reading a ____.",
-          "sample_sentences": ["I read a book.", "This is a good book.", "Please open your book."],
-          "distractor_words": ["pen", "bag", "desk"],
-          "distractor_meanings": ["笔", "书包", "桌子"]
-        }
+        { "word": "hello", "phonetic": "/həˈloʊ/", "meaning": "你好", "level_hint": "____! Nice to meet you.", "sample_sentences": ["Hello! How are you?", "Hello, my name is Tom.", "She said hello to me."], "distractor_words": ["goodbye", "sorry", "please"], "distractor_meanings": ["再见", "对不起", "请"] },
+        { "word": "hi", "phonetic": "/haɪ/", "meaning": "嗨，你好", "level_hint": "____! I'm Sarah.", "sample_sentences": ["Hi! What's your name?", "Hi, how are you?", "She said hi to me."], "distractor_words": ["bye", "hey", "oh"], "distractor_meanings": ["再见", "嘿", "哦"] },
+        { "word": "name", "phonetic": "/neɪm/", "meaning": "名字", "level_hint": "My ____ is Li Ming.", "sample_sentences": ["What is your name?", "My name is Sarah.", "His name is Jack."], "distractor_words": ["age", "home", "school"], "distractor_meanings": ["年龄", "家", "学校"] },
+        { "word": "goodbye", "phonetic": "/ɡʊdˈbaɪ/", "meaning": "再见", "level_hint": "____! See you tomorrow.", "sample_sentences": ["Goodbye, everyone!", "She said goodbye.", "Time to say goodbye."], "distractor_words": ["hello", "sorry", "thanks"], "distractor_meanings": ["你好", "对不起", "谢谢"] },
+        { "word": "friend", "phonetic": "/frend/", "meaning": "朋友", "level_hint": "She is my best ____.", "sample_sentences": ["She is my friend.", "I have many friends.", "Let's be friends!"], "distractor_words": ["teacher", "student", "family"], "distractor_meanings": ["老师", "学生", "家人"] },
+        { "word": "school", "phonetic": "/skuːl/", "meaning": "学校", "level_hint": "I go to ____ every day.", "sample_sentences": ["I like my school.", "We go to school by bus.", "The school is big."], "distractor_words": ["home", "park", "shop"], "distractor_meanings": ["家", "公园", "商店"] },
+        { "word": "I", "phonetic": "/aɪ/", "meaning": "我", "level_hint": "____ am a student.", "sample_sentences": ["I am happy.", "I like apples.", "I can read."], "distractor_words": ["you", "he", "she"], "distractor_meanings": ["你", "他", "她"] },
+        { "word": "Miss", "phonetic": "/mɪs/", "meaning": "小姐（称呼女老师）", "level_hint": "____ White is my teacher.", "sample_sentences": ["Miss Li is our teacher.", "Good morning, Miss Wang.", "Miss Green is kind."], "distractor_words": ["Mr", "Mrs", "Ms"], "distractor_meanings": ["先生", "夫人", "女士"] }
       ]
     },
     {
       "unit": 2,
       "title": "Unit 2 · Colors",
       "words": [
-        {
-          "word": "red",
-          "phonetic": "/red/",
-          "meaning": "红色的",
-          "level_hint": "The apple is ____.",
-          "sample_sentences": ["I like red.", "The flower is red.", "She has a red bag."],
-          "distractor_words": ["blue", "green", "yellow"],
-          "distractor_meanings": ["蓝色的", "绿色的", "黄色的"]
-        },
-        {
-          "word": "blue",
-          "phonetic": "/bluː/",
-          "meaning": "蓝色的",
-          "level_hint": "The sky is ____.",
-          "sample_sentences": ["The sky is blue.", "I have a blue pen.", "Blue is my favorite color."],
-          "distractor_words": ["red", "green", "white"],
-          "distractor_meanings": ["红色的", "绿色的", "白色的"]
-        },
-        {
-          "word": "green",
-          "phonetic": "/ɡriːn/",
-          "meaning": "绿色的",
-          "level_hint": "The grass is ____.",
-          "sample_sentences": ["The tree is green.", "I like green apples.", "Spring is green."],
-          "distractor_words": ["red", "yellow", "black"],
-          "distractor_meanings": ["红色的", "黄色的", "黑色的"]
-        },
-        {
-          "word": "yellow",
-          "phonetic": "/ˈjeloʊ/",
-          "meaning": "黄色的",
-          "level_hint": "The banana is ____.",
-          "sample_sentences": ["The sun is yellow.", "I have a yellow dress.", "Ducks are yellow."],
-          "distractor_words": ["red", "blue", "green"],
-          "distractor_meanings": ["红色的", "蓝色的", "绿色的"]
-        },
-        {
-          "word": "white",
-          "phonetic": "/waɪt/",
-          "meaning": "白色的",
-          "level_hint": "The snow is ____.",
-          "sample_sentences": ["The cloud is white.", "I like white flowers.", "She has white shoes."],
-          "distractor_words": ["black", "red", "blue"],
-          "distractor_meanings": ["黑色的", "红色的", "蓝色的"]
-        },
-        {
-          "word": "black",
-          "phonetic": "/blæk/",
-          "meaning": "黑色的",
-          "level_hint": "The cat is ____.",
-          "sample_sentences": ["I have a black cat.", "Her hair is black.", "The board is black."],
-          "distractor_words": ["white", "red", "green"],
-          "distractor_meanings": ["白色的", "红色的", "绿色的"]
-        }
+        { "word": "red", "phonetic": "/red/", "meaning": "红色的", "level_hint": "The apple is ____.", "sample_sentences": ["I like red.", "The flower is red.", "She has a red bag."], "distractor_words": ["blue", "green", "yellow"], "distractor_meanings": ["蓝色的", "绿色的", "黄色的"] },
+        { "word": "blue", "phonetic": "/bluː/", "meaning": "蓝色的", "level_hint": "The sky is ____.", "sample_sentences": ["The sky is blue.", "I have a blue pen.", "Blue is my favorite color."], "distractor_words": ["red", "green", "white"], "distractor_meanings": ["红色的", "绿色的", "白色的"] },
+        { "word": "green", "phonetic": "/ɡriːn/", "meaning": "绿色的", "level_hint": "The grass is ____.", "sample_sentences": ["The tree is green.", "I like green apples.", "Spring is green."], "distractor_words": ["red", "yellow", "black"], "distractor_meanings": ["红色的", "黄色的", "黑色的"] },
+        { "word": "yellow", "phonetic": "/ˈjeloʊ/", "meaning": "黄色的", "level_hint": "The banana is ____.", "sample_sentences": ["The sun is yellow.", "I have a yellow dress.", "Ducks are yellow."], "distractor_words": ["red", "blue", "green"], "distractor_meanings": ["红色的", "蓝色的", "绿色的"] },
+        { "word": "black", "phonetic": "/blæk/", "meaning": "黑色的", "level_hint": "The cat is ____.", "sample_sentences": ["I have a black cat.", "Her hair is black.", "The board is black."], "distractor_words": ["white", "red", "brown"], "distractor_meanings": ["白色的", "红色的", "棕色的"] },
+        { "word": "white", "phonetic": "/waɪt/", "meaning": "白色的", "level_hint": "The snow is ____.", "sample_sentences": ["The cloud is white.", "I like white flowers.", "She has white shoes."], "distractor_words": ["black", "red", "blue"], "distractor_meanings": ["黑色的", "红色的", "蓝色的"] },
+        { "word": "orange", "phonetic": "/ˈɔːrɪndʒ/", "meaning": "橙色的", "level_hint": "The ____ is sweet.", "sample_sentences": ["I like orange juice.", "The cat is orange.", "Orange is a warm color."], "distractor_words": ["purple", "pink", "brown"], "distractor_meanings": ["紫色的", "粉色的", "棕色的"] },
+        { "word": "brown", "phonetic": "/braʊn/", "meaning": "棕色的", "level_hint": "The tree trunk is ____.", "sample_sentences": ["The dog is brown.", "I like brown bread.", "The bear is brown."], "distractor_words": ["black", "white", "green"], "distractor_meanings": ["黑色的", "白色的", "绿色的"] }
       ]
     },
     {
       "unit": 3,
-      "title": "Unit 3 · Animals",
+      "title": "Unit 3 · Look at me!",
       "words": [
-        {
-          "word": "cat",
-          "phonetic": "/kæt/",
-          "meaning": "猫",
-          "level_hint": "I have a ____ at home.",
-          "sample_sentences": ["The cat is cute.", "I like cats.", "The cat is sleeping."],
-          "distractor_words": ["dog", "bird", "fish"],
-          "distractor_meanings": ["狗", "鸟", "鱼"]
-        },
-        {
-          "word": "dog",
-          "phonetic": "/dɔːɡ/",
-          "meaning": "狗",
-          "level_hint": "The ____ is running.",
-          "sample_sentences": ["I have a dog.", "The dog is big.", "Dogs are friendly."],
-          "distractor_words": ["cat", "bird", "fish"],
-          "distractor_meanings": ["猫", "鸟", "鱼"]
-        },
-        {
-          "word": "bird",
-          "phonetic": "/bɜːrd/",
-          "meaning": "鸟",
-          "level_hint": "The ____ can fly.",
-          "sample_sentences": ["The bird sings.", "Look at the bird!", "Birds fly in the sky."],
-          "distractor_words": ["cat", "dog", "fish"],
-          "distractor_meanings": ["猫", "狗", "鱼"]
-        },
-        {
-          "word": "fish",
-          "phonetic": "/fɪʃ/",
-          "meaning": "鱼",
-          "level_hint": "The ____ swims in the water.",
-          "sample_sentences": ["I like fish.", "The fish is small.", "There are many fish."],
-          "distractor_words": ["bird", "cat", "dog"],
-          "distractor_meanings": ["鸟", "猫", "狗"]
-        },
-        {
-          "word": "rabbit",
-          "phonetic": "/ˈræbɪt/",
-          "meaning": "兔子",
-          "level_hint": "The ____ has long ears.",
-          "sample_sentences": ["The rabbit is white.", "Rabbits like carrots.", "I see a rabbit."],
-          "distractor_words": ["cat", "dog", "bird"],
-          "distractor_meanings": ["猫", "狗", "鸟"]
-        },
-        {
-          "word": "duck",
-          "phonetic": "/dʌk/",
-          "meaning": "鸭子",
-          "level_hint": "The ____ swims in the pond.",
-          "sample_sentences": ["The duck says quack.", "Ducks can swim.", "I feed the ducks."],
-          "distractor_words": ["chicken", "bird", "fish"],
-          "distractor_meanings": ["鸡", "鸟", "鱼"]
-        }
+        { "word": "face", "phonetic": "/feɪs/", "meaning": "脸", "level_hint": "Wash your ____.", "sample_sentences": ["This is my face.", "She has a round face.", "Look at my face!"], "distractor_words": ["head", "hand", "foot"], "distractor_meanings": ["头", "手", "脚"] },
+        { "word": "ear", "phonetic": "/ɪr/", "meaning": "耳朵", "level_hint": "I have two ____s.", "sample_sentences": ["This is my ear.", "The rabbit has long ears.", "Touch your ear."], "distractor_words": ["eye", "nose", "mouth"], "distractor_meanings": ["眼睛", "鼻子", "嘴巴"] },
+        { "word": "eye", "phonetic": "/aɪ/", "meaning": "眼睛", "level_hint": "I have two ____s.", "sample_sentences": ["Open your eyes.", "Her eyes are big.", "I see with my eyes."], "distractor_words": ["ear", "nose", "mouth"], "distractor_meanings": ["耳朵", "鼻子", "嘴巴"] },
+        { "word": "nose", "phonetic": "/noʊz/", "meaning": "鼻子", "level_hint": "Touch your ____.", "sample_sentences": ["This is my nose.", "The elephant has a long nose.", "My nose is small."], "distractor_words": ["eye", "ear", "mouth"], "distractor_meanings": ["眼睛", "耳朵", "嘴巴"] },
+        { "word": "mouth", "phonetic": "/maʊθ/", "meaning": "嘴巴", "level_hint": "Open your ____.", "sample_sentences": ["Open your mouth.", "Close your mouth.", "I eat with my mouth."], "distractor_words": ["nose", "eye", "ear"], "distractor_meanings": ["鼻子", "眼睛", "耳朵"] },
+        { "word": "head", "phonetic": "/hed/", "meaning": "头", "level_hint": "Nod your ____.", "sample_sentences": ["This is my head.", "Touch your head.", "Shake your head."], "distractor_words": ["hand", "foot", "leg"], "distractor_meanings": ["手", "脚", "腿"] },
+        { "word": "hand", "phonetic": "/hænd/", "meaning": "手", "level_hint": "Clap your ____s.", "sample_sentences": ["Wash your hands.", "Raise your hand.", "I write with my hand."], "distractor_words": ["foot", "head", "arm"], "distractor_meanings": ["脚", "头", "手臂"] },
+        { "word": "arm", "phonetic": "/ɑːrm/", "meaning": "手臂", "level_hint": "Raise your ____.", "sample_sentences": ["Wave your arm.", "My arm is strong.", "She broke her arm."], "distractor_words": ["leg", "foot", "hand"], "distractor_meanings": ["腿", "脚", "手"] }
       ]
     },
     {
       "unit": 4,
-      "title": "Unit 4 · Food",
+      "title": "Unit 4 · We love animals",
       "words": [
-        {
-          "word": "apple",
-          "phonetic": "/ˈæpl/",
-          "meaning": "苹果",
-          "level_hint": "I eat an ____ every day.",
-          "sample_sentences": ["I like apples.", "The apple is red.", "Can I have an apple?"],
-          "distractor_words": ["banana", "orange", "cake"],
-          "distractor_meanings": ["香蕉", "橙子", "蛋糕"]
-        },
-        {
-          "word": "milk",
-          "phonetic": "/mɪlk/",
-          "meaning": "牛奶",
-          "level_hint": "I drink ____ every morning.",
-          "sample_sentences": ["I drink milk.", "Milk is good for you.", "The cat likes milk."],
-          "distractor_words": ["water", "juice", "tea"],
-          "distractor_meanings": ["水", "果汁", "茶"]
-        },
-        {
-          "word": "bread",
-          "phonetic": "/bred/",
-          "meaning": "面包",
-          "level_hint": "I have ____ for breakfast.",
-          "sample_sentences": ["I eat bread.", "The bread is fresh.", "Do you like bread?"],
-          "distractor_words": ["cake", "rice", "egg"],
-          "distractor_meanings": ["蛋糕", "米饭", "鸡蛋"]
-        },
-        {
-          "word": "egg",
-          "phonetic": "/eɡ/",
-          "meaning": "鸡蛋",
-          "level_hint": "I eat an ____ for breakfast.",
-          "sample_sentences": ["I like eggs.", "The egg is big.", "Boil an egg, please."],
-          "distractor_words": ["milk", "bread", "rice"],
-          "distractor_meanings": ["牛奶", "面包", "米饭"]
-        },
-        {
-          "word": "water",
-          "phonetic": "/ˈwɔːtər/",
-          "meaning": "水",
-          "level_hint": "Please give me some ____.",
-          "sample_sentences": ["I drink water.", "Fish live in water.", "I want water."],
-          "distractor_words": ["milk", "juice", "tea"],
-          "distractor_meanings": ["牛奶", "果汁", "茶"]
-        },
-        {
-          "word": "cake",
-          "phonetic": "/keɪk/",
-          "meaning": "蛋糕",
-          "level_hint": "Today is my birthday. I have a ____.",
-          "sample_sentences": ["I like cake.", "The cake is sweet.", "Happy birthday! Here is a cake."],
-          "distractor_words": ["bread", "egg", "apple"],
-          "distractor_meanings": ["面包", "鸡蛋", "苹果"]
-        }
+        { "word": "cat", "phonetic": "/kæt/", "meaning": "猫", "level_hint": "I have a ____.", "sample_sentences": ["The cat is cute.", "I like cats.", "The cat is sleeping."], "distractor_words": ["dog", "bird", "fish"], "distractor_meanings": ["狗", "鸟", "鱼"] },
+        { "word": "dog", "phonetic": "/dɔːɡ/", "meaning": "狗", "level_hint": "The ____ is running.", "sample_sentences": ["I have a dog.", "The dog is big.", "Dogs are friendly."], "distractor_words": ["cat", "bird", "fish"], "distractor_meanings": ["猫", "鸟", "鱼"] },
+        { "word": "duck", "phonetic": "/dʌk/", "meaning": "鸭子", "level_hint": "The ____ can swim.", "sample_sentences": ["The duck says quack.", "Ducks can swim.", "I feed the ducks."], "distractor_words": ["chicken", "bird", "fish"], "distractor_meanings": ["鸡", "鸟", "鱼"] },
+        { "word": "pig", "phonetic": "/pɪɡ/", "meaning": "猪", "level_hint": "The ____ is pink.", "sample_sentences": ["The pig is fat.", "Pigs live on a farm.", "The little pig is cute."], "distractor_words": ["dog", "cat", "cow"], "distractor_meanings": ["狗", "猫", "牛"] },
+        { "word": "bear", "phonetic": "/ber/", "meaning": "熊", "level_hint": "The ____ is big.", "sample_sentences": ["The bear is strong.", "I like teddy bears.", "Bears sleep in winter."], "distractor_words": ["lion", "tiger", "wolf"], "distractor_meanings": ["狮子", "老虎", "狼"] },
+        { "word": "bird", "phonetic": "/bɜːrd/", "meaning": "鸟", "level_hint": "The ____ can fly.", "sample_sentences": ["The bird sings.", "Look at the bird!", "Birds fly in the sky."], "distractor_words": ["fish", "cat", "dog"], "distractor_meanings": ["鱼", "猫", "狗"] },
+        { "word": "fish", "phonetic": "/fɪʃ/", "meaning": "鱼", "level_hint": "The ____ swims.", "sample_sentences": ["I like fish.", "The fish is small.", "There are many fish."], "distractor_words": ["bird", "cat", "dog"], "distractor_meanings": ["鸟", "猫", "狗"] },
+        { "word": "rabbit", "phonetic": "/ˈræbɪt/", "meaning": "兔子", "level_hint": "The ____ has long ears.", "sample_sentences": ["The rabbit is white.", "Rabbits like carrots.", "I see a rabbit."], "distractor_words": ["cat", "dog", "bird"], "distractor_meanings": ["猫", "狗", "鸟"] }
       ]
     },
     {
       "unit": 5,
-      "title": "Unit 5 · Family",
+      "title": "Unit 5 · Let's eat!",
       "words": [
-        {
-          "word": "mother",
-          "phonetic": "/ˈmʌðər/",
-          "meaning": "妈妈",
-          "level_hint": "My ____ loves me.",
-          "sample_sentences": ["My mother is kind.", "I love my mother.", "Mother cooks for us."],
-          "distractor_words": ["father", "sister", "brother"],
-          "distractor_meanings": ["爸爸", "姐妹", "兄弟"]
-        },
-        {
-          "word": "father",
-          "phonetic": "/ˈfɑːðər/",
-          "meaning": "爸爸",
-          "level_hint": "My ____ is tall.",
-          "sample_sentences": ["My father is strong.", "I love my father.", "Father reads to me."],
-          "distractor_words": ["mother", "brother", "sister"],
-          "distractor_meanings": ["妈妈", "兄弟", "姐妹"]
-        },
-        {
-          "word": "sister",
-          "phonetic": "/ˈsɪstər/",
-          "meaning": "姐妹",
-          "level_hint": "My ____ is older than me.",
-          "sample_sentences": ["I have a sister.", "My sister is nice.", "She is my sister."],
-          "distractor_words": ["brother", "mother", "friend"],
-          "distractor_meanings": ["兄弟", "妈妈", "朋友"]
-        },
-        {
-          "word": "brother",
-          "phonetic": "/ˈbrʌðər/",
-          "meaning": "兄弟",
-          "level_hint": "My ____ plays with me.",
-          "sample_sentences": ["I have a brother.", "My brother is funny.", "He is my brother."],
-          "distractor_words": ["sister", "father", "friend"],
-          "distractor_meanings": ["姐妹", "爸爸", "朋友"]
-        },
-        {
-          "word": "family",
-          "phonetic": "/ˈfæməli/",
-          "meaning": "家庭",
-          "level_hint": "I love my ____.",
-          "sample_sentences": ["I love my family.", "My family is big.", "Family is important."],
-          "distractor_words": ["school", "friend", "class"],
-          "distractor_meanings": ["学校", "朋友", "班级"]
-        },
-        {
-          "word": "home",
-          "phonetic": "/hoʊm/",
-          "meaning": "家",
-          "level_hint": "I go ____ after school.",
-          "sample_sentences": ["I go home.", "My home is nice.", "Welcome to my home."],
-          "distractor_words": ["school", "park", "shop"],
-          "distractor_meanings": ["学校", "公园", "商店"]
-        }
+        { "word": "cake", "phonetic": "/keɪk/", "meaning": "蛋糕", "level_hint": "I like ____.", "sample_sentences": ["I like cake.", "The cake is sweet.", "Happy birthday! Have some cake."], "distractor_words": ["bread", "egg", "rice"], "distractor_meanings": ["面包", "鸡蛋", "米饭"] },
+        { "word": "bread", "phonetic": "/bred/", "meaning": "面包", "level_hint": "I have ____ for breakfast.", "sample_sentences": ["I eat bread.", "The bread is fresh.", "Do you like bread?"], "distractor_words": ["cake", "rice", "egg"], "distractor_meanings": ["蛋糕", "米饭", "鸡蛋"] },
+        { "word": "egg", "phonetic": "/eɡ/", "meaning": "鸡蛋", "level_hint": "I eat an ____ for breakfast.", "sample_sentences": ["I like eggs.", "The egg is big.", "Boil an egg, please."], "distractor_words": ["milk", "bread", "rice"], "distractor_meanings": ["牛奶", "面包", "米饭"] },
+        { "word": "milk", "phonetic": "/mɪlk/", "meaning": "牛奶", "level_hint": "I drink ____ every morning.", "sample_sentences": ["I drink milk.", "Milk is good for you.", "The cat likes milk."], "distractor_words": ["water", "juice", "tea"], "distractor_meanings": ["水", "果汁", "茶"] },
+        { "word": "water", "phonetic": "/ˈwɔːtər/", "meaning": "水", "level_hint": "Please give me some ____.", "sample_sentences": ["I drink water.", "Fish live in water.", "I want water."], "distractor_words": ["milk", "juice", "tea"], "distractor_meanings": ["牛奶", "果汁", "茶"] },
+        { "word": "juice", "phonetic": "/dʒuːs/", "meaning": "果汁", "level_hint": "I like apple ____.", "sample_sentences": ["I like orange juice.", "The juice is sweet.", "Have some juice."], "distractor_words": ["milk", "water", "tea"], "distractor_meanings": ["牛奶", "水", "茶"] },
+        { "word": "rice", "phonetic": "/raɪs/", "meaning": "米饭", "level_hint": "We eat ____ for lunch.", "sample_sentences": ["I like rice.", "Have some rice.", "Rice is yummy."], "distractor_words": ["bread", "cake", "noodle"], "distractor_meanings": ["面包", "蛋糕", "面条"] },
+        { "word": "apple", "phonetic": "/ˈæpl/", "meaning": "苹果", "level_hint": "I eat an ____ every day.", "sample_sentences": ["I like apples.", "The apple is red.", "Can I have an apple?"], "distractor_words": ["banana", "orange", "pear"], "distractor_meanings": ["香蕉", "橙子", "梨"] }
+      ]
+    },
+    {
+      "unit": 6,
+      "title": "Unit 6 · Happy birthday!",
+      "words": [
+        { "word": "one", "phonetic": "/wʌn/", "meaning": "一", "level_hint": "I have ____ pen.", "sample_sentences": ["I am one.", "One plus one is two.", "I have one book."], "distractor_words": ["two", "three", "four"], "distractor_meanings": ["二", "三", "四"] },
+        { "word": "two", "phonetic": "/tuː/", "meaning": "二", "level_hint": "I have ____ hands.", "sample_sentences": ["I have two eyes.", "Two and two is four.", "Give me two."], "distractor_words": ["one", "three", "five"], "distractor_meanings": ["一", "三", "五"] },
+        { "word": "three", "phonetic": "/θriː/", "meaning": "三", "level_hint": "There are ____ cats.", "sample_sentences": ["I am three.", "Three cats are cute.", "One two three go!"], "distractor_words": ["two", "four", "five"], "distractor_meanings": ["二", "四", "五"] },
+        { "word": "four", "phonetic": "/fɔːr/", "meaning": "四", "level_hint": "A dog has ____ legs.", "sample_sentences": ["I am four years old.", "Four seasons in a year.", "The table has four legs."], "distractor_words": ["three", "five", "six"], "distractor_meanings": ["三", "五", "六"] },
+        { "word": "five", "phonetic": "/faɪv/", "meaning": "五", "level_hint": "I have ____ fingers.", "sample_sentences": ["I am five.", "Five flowers are red.", "High five!"], "distractor_words": ["four", "six", "seven"], "distractor_meanings": ["四", "六", "七"] },
+        { "word": "six", "phonetic": "/sɪks/", "meaning": "六", "level_hint": "I am ____ years old.", "sample_sentences": ["I am six.", "Six eggs in the box.", "Six is a nice number."], "distractor_words": ["five", "seven", "eight"], "distractor_meanings": ["五", "七", "八"] },
+        { "word": "seven", "phonetic": "/ˈsevn/", "meaning": "七", "level_hint": "There are ____ days in a week.", "sample_sentences": ["I am seven.", "Seven colors in a rainbow.", "Lucky seven!"], "distractor_words": ["six", "eight", "nine"], "distractor_meanings": ["六", "八", "九"] },
+        { "word": "eight", "phonetic": "/eɪt/", "meaning": "八", "level_hint": "An octopus has ____ legs.", "sample_sentences": ["I am eight.", "Eight students are here.", "Eight apples on the tree."], "distractor_words": ["seven", "nine", "ten"], "distractor_meanings": ["七", "九", "十"] }
+      ]
+    },
+    {
+      "unit": 7,
+      "title": "Unit 7 · My classroom",
+      "words": [
+        { "word": "ruler", "phonetic": "/ˈruːlər/", "meaning": "尺子", "level_hint": "I use a ____ to draw lines.", "sample_sentences": ["This is my ruler.", "I have a ruler.", "The ruler is long."], "distractor_words": ["pen", "book", "bag"], "distractor_meanings": ["笔", "书", "书包"] },
+        { "word": "pencil", "phonetic": "/ˈpensl/", "meaning": "铅笔", "level_hint": "I write with a ____.", "sample_sentences": ["I have a pencil.", "The pencil is yellow.", "Sharpen your pencil."], "distractor_words": ["ruler", "eraser", "book"], "distractor_meanings": ["尺子", "橡皮", "书"] },
+        { "word": "eraser", "phonetic": "/ɪˈreɪsər/", "meaning": "橡皮", "level_hint": "I use an ____ to erase mistakes.", "sample_sentences": ["I have an eraser.", "The eraser is white.", "Where is my eraser?"], "distractor_words": ["pencil", "ruler", "pen"], "distractor_meanings": ["铅笔", "尺子", "钢笔"] },
+        { "word": "crayon", "phonetic": "/ˈkreɪən/", "meaning": "蜡笔", "level_hint": "I draw with ____s.", "sample_sentences": ["I have crayons.", "The crayon is red.", "Color with crayons."], "distractor_words": ["pencil", "pen", "brush"], "distractor_meanings": ["铅笔", "钢笔", "画笔"] },
+        { "word": "bag", "phonetic": "/bæɡ/", "meaning": "书包", "level_hint": "My ____ is heavy.", "sample_sentences": ["This is my bag.", "Put it in your bag.", "My bag is blue."], "distractor_words": ["box", "desk", "chair"], "distractor_meanings": ["盒子", "桌子", "椅子"] },
+        { "word": "pen", "phonetic": "/pen/", "meaning": "钢笔", "level_hint": "I write with a ____.", "sample_sentences": ["This is my pen.", "The pen is black.", "Give me a pen."], "distractor_words": ["pencil", "ruler", "book"], "distractor_meanings": ["铅笔", "尺子", "书"] },
+        { "word": "book", "phonetic": "/bʊk/", "meaning": "书", "level_hint": "I am reading a ____.", "sample_sentences": ["I read a book.", "This is a good book.", "Open your book."], "distractor_words": ["pen", "bag", "desk"], "distractor_meanings": ["笔", "书包", "桌子"] },
+        { "word": "no", "phonetic": "/noʊ/", "meaning": "不", "level_hint": "____, thank you.", "sample_sentences": ["No, I don't.", "No way!", "No, thank you."], "distractor_words": ["yes", "ok", "sure"], "distractor_meanings": ["是的", "好的", "当然"] }
+      ]
+    },
+    {
+      "unit": 8,
+      "title": "Unit 8 · My body",
+      "words": [
+        { "word": "foot", "phonetic": "/fʊt/", "meaning": "脚", "level_hint": "I have two ____s.", "sample_sentences": ["Stamp your foot.", "I hurt my foot.", "My feet are big."], "distractor_words": ["hand", "head", "arm"], "distractor_meanings": ["手", "头", "手臂"] },
+        { "word": "leg", "phonetic": "/leɡ/", "meaning": "腿", "level_hint": "I have two ____s.", "sample_sentences": ["I run with my legs.", "My leg hurts.", "She has long legs."], "distractor_words": ["arm", "hand", "foot"], "distractor_meanings": ["手臂", "手", "脚"] },
+        { "word": "body", "phonetic": "/ˈbɑːdi/", "meaning": "身体", "level_hint": "This is my ____.", "sample_sentences": ["Move your body.", "This is my body.", "Keep your body healthy."], "distractor_words": ["head", "hand", "face"], "distractor_meanings": ["头", "手", "脸"] },
+        { "word": "mouth", "phonetic": "/maʊθ/", "meaning": "嘴", "level_hint": "Open your ____.", "sample_sentences": ["Open your mouth.", "I eat with my mouth.", "Close your mouth."], "distractor_words": ["eye", "nose", "ear"], "distractor_meanings": ["眼睛", "鼻子", "耳朵"] },
+        { "word": "eye", "phonetic": "/aɪ/", "meaning": "眼睛", "level_hint": "I see with my ____s.", "sample_sentences": ["Open your eyes.", "I have two eyes.", "Her eyes are big."], "distractor_words": ["ear", "nose", "mouth"], "distractor_meanings": ["耳朵", "鼻子", "嘴"] },
+        { "word": "ear", "phonetic": "/ɪr/", "meaning": "耳朵", "level_hint": "I hear with my ____s.", "sample_sentences": ["I have two ears.", "Touch your ear.", "The rabbit has long ears."], "distractor_words": ["eye", "nose", "mouth"], "distractor_meanings": ["眼睛", "鼻子", "嘴"] },
+        { "word": "nose", "phonetic": "/noʊz/", "meaning": "鼻子", "level_hint": "I smell with my ____.", "sample_sentences": ["Touch your nose.", "My nose is small.", "The dog has a big nose."], "distractor_words": ["eye", "ear", "mouth"], "distractor_meanings": ["眼睛", "耳朵", "嘴"] },
+        { "word": "face", "phonetic": "/feɪs/", "meaning": "脸", "level_hint": "Wash your ____.", "sample_sentences": ["This is my face.", "She has a round face.", "Look at my face!"], "distractor_words": ["head", "hand", "body"], "distractor_meanings": ["头", "手", "身体"] }
       ]
     }
   ]

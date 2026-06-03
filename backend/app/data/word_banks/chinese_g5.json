@@ -6,300 +6,112 @@
       "unit": 1,
       "title": "第一单元·万物有灵",
       "words": [
-        {
-          "word": "嫌",
-          "pinyin": "xián",
-          "meaning": "不满意，不喜欢",
-          "level_hint": "妈妈总____弃我做得不好。",
-          "sample_sentences": ["不要嫌弃别人。", "他嫌弃这件衣服旧了。", "妈妈嫌我太慢。"],
-          "distractor_words": ["厌", "恶", "恨"],
-          "distractor_meanings": ["厌烦，不想再看到", "讨厌，非常不喜欢", "恨，强烈不满"]
-        },
-        {
-          "word": "喙",
-          "pinyin": "huì",
-          "meaning": "鸟的嘴",
-          "level_hint": "啄木鸟用长长的____捉虫子。",
-          "sample_sentences": ["鸟儿的喙很尖。", "鹦鹉的喙弯弯的。", "翠鸟用喙捕鱼。"],
-          "distractor_words": ["爪", "翼", "尾"],
-          "distractor_meanings": ["爪子，动物脚上的指甲", "翅膀，鸟类飞行的器官", "尾巴，动物身体后部"]
-        },
-        {
-          "word": "黛",
-          "pinyin": "dài",
-          "meaning": "青黑色的颜色",
-          "level_hint": "远处的山呈现出____色。",
-          "sample_sentences": ["远山如黛。", "黛色的山峰连绵起伏。", "她的眉毛如远黛。"],
-          "distractor_words": ["青", "墨", "苍"],
-          "distractor_meanings": ["青色，蓝绿色", "墨色，深黑色", "苍色，灰白色"]
-        },
-        {
-          "word": "嵌",
-          "pinyin": "qiàn",
-          "meaning": "把东西卡在空隙里",
-          "level_hint": "蓝宝石____在王冠上。",
-          "sample_sentences": ["珍珠镶嵌在王冠上。", "窗户上镶嵌着彩色玻璃。", "画框嵌在墙壁里。"],
-          "distractor_words": ["镶", "贴", "插"],
-          "distractor_meanings": ["镶嵌，把物体嵌入", "粘贴，用胶水粘住", "插入，放进缝隙中"]
-        },
-        {
-          "word": "框",
-          "pinyin": "kuàng",
-          "meaning": "嵌在周围的边框",
-          "level_hint": "这幅画的画____很漂亮。",
-          "sample_sentences": ["门框上挂着灯笼。", "照片放在相框里。", "窗户框是木头的。"],
-          "distractor_words": ["架", "栏", "边"],
-          "distractor_meanings": ["支架，支撑的架子", "栏杆，围挡的东西", "边缘，物体的外圈"]
-        },
-        {
-          "word": "嗜",
-          "pinyin": "shì",
-          "meaning": "特别喜爱",
-          "level_hint": "他有一种特殊的爱____。",
-          "sample_sentences": ["他嗜好读书。", "嗜书如命。", "不要嗜睡贪玩。"],
-          "distractor_words": ["癖", "迷", "恋"],
-          "distractor_meanings": ["癖好，特殊的爱好", "着迷，非常感兴趣", "眷恋，依依不舍"]
-        }
+        { "word": "鹭", "pinyin": "lù", "meaning": "一种水鸟，嘴长腿长", "level_hint": "白____在河边站着。", "sample_sentences": ["白鹭在河边捕鱼。", "鹭是一种美丽的鸟。", "一群白鹭飞过水面。"], "distractor_words": ["鹤", "雁", "鸥"], "distractor_meanings": ["鹤，长腿大型水鸟", "大雁，迁徙的鸟", "海鸥，海边的鸟"] },
+        { "word": "嫌", "pinyin": "xián", "meaning": "不满意，不喜欢", "level_hint": "不要____弃别人。", "sample_sentences": ["不要嫌弃别人。", "他嫌弃这件衣服旧了。", "妈妈嫌我太慢。"], "distractor_words": ["厌", "恶", "恨"], "distractor_meanings": ["厌烦，不想再看到", "讨厌，非常不喜欢", "恨，强烈不满"] },
+        { "word": "喙", "pinyin": "huì", "meaning": "鸟的嘴", "level_hint": "这只鸟的____很尖。", "sample_sentences": ["白鹭的喙很尖。", "鹦鹉的喙是弯的。", "鹰的喙很锋利。"], "distractor_words": ["嘴", "爪", "翅"], "distractor_meanings": ["嘴巴，动物的口", "爪子，动物的指甲", "翅膀，鸟用来飞的"] },
+        { "word": "黛", "pinyin": "dài", "meaning": "青黑色", "level_hint": "远处的山是____色的。", "sample_sentences": ["远山如黛。", "黛色笼罩山间。", "她的眉毛像远黛。"], "distractor_words": ["翠", "碧", "苍"], "distractor_meanings": ["翠绿色，像翡翠", "碧绿色，像碧玉", "苍色，灰绿色"] },
+        { "word": "嵌", "pinyin": "qiàn", "meaning": "把东西填入空隙", "level_hint": "宝石____在王冠上。", "sample_sentences": ["珍珠镶嵌在盒子上。", "画面嵌入相框。", "蓝天上嵌着白云。"], "distractor_words": ["镶", "镶", "贴"], "distractor_meanings": ["镶嵌，嵌入装饰", "贴合，紧紧贴着", "贴上，粘在一起"] },
+        { "word": "框", "pinyin": "kuàng", "meaning": "围住东西的框架", "level_hint": "照片放进相____里。", "sample_sentences": ["画框很好看。", "门框是木头做的。", "请看这个框里的字。"], "distractor_words": ["架", "栏", "栏"], "distractor_meanings": ["架子，支撑的东西", "栏杆，围栏", "围栏，防护的栏"] },
+        { "word": "亩", "pinyin": "mǔ", "meaning": "面积单位", "level_hint": "我们家有三____地。", "sample_sentences": ["这块地有五亩。", "一亩地产很多粮食。", "农民种了几十亩地。"], "distractor_words": ["顷", "顷", "坪"], "distractor_meanings": ["顷，更大的面积单位", "面积单位，等于十五亩", "坪，小块平地"] },
+        { "word": "播", "pinyin": "bō", "meaning": "撒种子", "level_hint": "春天农民____种。", "sample_sentences": ["春天播种。", "播种希望。", "广播里播出了新闻。"], "distractor_words": ["种", "撒", "插"], "distractor_meanings": ["种植，把苗栽入土中", "撒开，散落", "插入，插进土里"] }
       ]
     },
     {
       "unit": 2,
       "title": "第二单元·策略阅读",
       "words": [
-        {
-          "word": "怯",
-          "pinyin": "qiè",
-          "meaning": "胆小，害怕",
-          "level_hint": "他胆____地走上讲台。",
-          "sample_sentences": ["不要胆怯，勇敢一点。", "他怯生生地举起了手。", "怯懦的人成不了大事。"],
-          "distractor_words": ["惧", "畏", "慌"],
-          "distractor_meanings": ["恐惧，非常害怕", "畏惧，心中害怕", "慌张，手足无措"]
-        },
-        {
-          "word": "释",
-          "pinyin": "shì",
-          "meaning": "解释，说明",
-          "level_hint": "老师给我们解____了这道题。",
-          "sample_sentences": ["请解释一下你的意思。", "注释帮助理解文章。", "他释然地笑了。"],
-          "distractor_words": ["解", "说", "明"],
-          "distractor_meanings": ["解答，给出答案", "说明，讲清楚", "明白，弄懂了"]
-        },
-        {
-          "word": "弃",
-          "pinyin": "qì",
-          "meaning": "扔掉，不要了",
-          "level_hint": "他放____了这次机会。",
-          "sample_sentences": ["不要放弃希望。", "丢弃垃圾要分类。", "他被同伴抛弃了。"],
-          "distractor_words": ["丢", "扔", "舍"],
-          "distractor_meanings": ["丢失，不见了", "抛掷，用力扔出去", "舍得，愿意放弃"]
-        },
-        {
-          "word": "斩",
-          "pinyin": "zhǎn",
-          "meaning": "用刀砍断",
-          "level_hint": "将军一剑____断了绳索。",
-          "sample_sentences": ["他斩钉截铁地说。", "斩草要除根。", "将军斩杀了敌将。"],
-          "distractor_words": ["砍", "劈", "削"],
-          "distractor_meanings": ["砍伐，用力斩断", "劈开，从中间分成两半", "削去，用刀削掉表面"]
-        },
-        {
-          "word": "磁",
-          "pinyin": "cí",
-          "meaning": "能吸引铁的性质",
-          "level_hint": "这块____铁能吸住钉子。",
-          "sample_sentences": ["磁铁能吸引铁。", "地球是个大磁场。", "磁力非常强大。"],
-          "distractor_words": ["铁", "钢", "铜"],
-          "distractor_meanings": ["铁，一种金属元素", "钢铁，铁和碳的合金", "铜，一种红色金属"]
-        },
-        {
-          "word": "惫",
-          "pinyin": "bèi",
-          "meaning": "非常疲乏",
-          "level_hint": "跑了一天后，我疲____不堪。",
-          "sample_sentences": ["他疲惫不堪。", "工作了一天很疲惫。", "别把自己弄得太疲惫。"],
-          "distractor_words": ["倦", "乏", "困"],
-          "distractor_meanings": ["疲倦，精神不好", "乏力，没有力气", "困倦，想睡觉"]
-        }
+        { "word": "汛", "pinyin": "xùn", "meaning": "江河定期涨水", "level_hint": "秋天到了____期。", "sample_sentences": ["汛期要注意安全。", "防汛工作很重要。", "春汛来临时河水上涨。"], "distractor_words": ["洪", "涝", "旱"], "distractor_meanings": ["洪水，大水", "涝灾，水淹", "旱灾，缺水"] },
+        { "word": "挽", "pinyin": "wǎn", "meaning": "拉，牵引", "level_hint": "他____着妈妈的手。", "sample_sentences": ["挽着胳膊一起走。", "他挽救了公司。", "力挽狂澜。"], "distractor_words": ["拉", "牵", "扶"], "distractor_meanings": ["拉扯，用力拽", "牵引，引导方向", "搀扶，帮助站稳"] },
+        { "word": "隔", "pinyin": "gé", "meaning": "分开，阻断", "level_hint": "一条河____开了两个村庄。", "sample_sentences": ["隔着窗户看。", "隔了一天。", "我们隔了一座山。"], "distractor_words": ["阻", "断", "离"], "distractor_meanings": ["阻挡，不让通过", "断裂，断开", "离开，分离"] },
+        { "word": "惰", "pinyin": "duò", "meaning": "懒惰", "level_hint": "我们不能懒____。", "sample_sentences": ["不要懒惰。", "他生性惰慢。", "惰性让人不进步。"], "distractor_words": ["勤", "懒", "怠"], "distractor_meanings": ["勤快，做事积极", "懒散，不想动", "怠慢，不认真"] },
+        { "word": "稳", "pinyin": "wěn", "meaning": "稳固，不摇晃", "level_hint": "桌子放得很____。", "sample_sentences": ["他走路很稳。", "稳住，别慌。", "这座桥很稳固。"], "distractor_words": ["晃", "摇", "颠"], "distractor_meanings": ["晃动，来回摇摆", "摇晃，不稳定", "颠簸，上下起伏"] },
+        { "word": "衡", "pinyin": "héng", "meaning": "平衡，平稳", "level_hint": "保持平____很重要。", "sample_sentences": ["平衡身体。", "衡量利弊。", "均衡发展。"], "distractor_words": ["倾", "歪", "偏"], "distractor_meanings": ["倾斜，偏向一边", "歪斜，不正", "偏向，不公正"] },
+        { "word": "协", "pinyin": "xié", "meaning": "共同合作", "level_hint": "我们要____作完成。", "sample_sentences": ["大家协作。", "齐心协力。", "协会成员一起努力。"], "distractor_words": ["分", "散", "离"], "distractor_meanings": ["分开，各做各的", "分散，不集中", "离开，分开走"] },
+        { "word": "绰", "pinyin": "chuò", "meaning": "宽裕，从容", "level_hint": "时间很宽____。", "sample_sentences": ["时间绰绰有余。", "他走路绰绰有余。", "宽绰的空间。"], "distractor_words": ["紧", "窄", "促"], "distractor_meanings": ["紧迫，不宽裕", "狭窄，不宽敞", "仓促，来不及"] }
       ]
     },
     {
       "unit": 3,
       "title": "第三单元·民间故事",
       "words": [
-        {
-          "word": "嫂",
-          "pinyin": "sǎo",
-          "meaning": "哥哥的妻子",
-          "level_hint": "他____子对他很不好。",
-          "sample_sentences": ["嫂子对他很好。", "大嫂在家做饭。", "他叫她嫂嫂。"],
-          "distractor_words": ["婶", "姑", "姨"],
-          "distractor_meanings": ["婶婶，叔叔的妻子", "姑姑，父亲的姐妹", "阿姨，母亲的姐妹"]
-        },
-        {
-          "word": "衰",
-          "pinyin": "shuāi",
-          "meaning": "减弱，变差",
-          "level_hint": "爷爷的身体日渐____弱。",
-          "sample_sentences": ["他衰老了许多。", "不要衰败下去。", "身体衰弱要注意休息。"],
-          "distractor_words": ["弱", "退", "落"],
-          "distractor_meanings": ["软弱，不强壮", "退步，不如从前", "落败，输给别人"]
-        },
-        {
-          "word": "泰",
-          "pinyin": "tài",
-          "meaning": "安宁，平安",
-          "level_hint": "国泰民安是人民的心愿。",
-          "sample_sentences": ["泰山是五岳之首。", "国泰民安。", "他泰然自若。"],
-          "distractor_words": ["安", "宁", "平"],
-          "distractor_meanings": ["安定，不动摇", "安宁，平静无事", "平安，没有危险"]
-        },
-        {
-          "word": "惩",
-          "pinyin": "chéng",
-          "meaning": "处罚，警戒",
-          "level_hint": "做坏事会受____罚。",
-          "sample_sentences": ["惩罚不是目的。", "奖惩分明。", "严惩不贷。"],
-          "distractor_words": ["罚", "处", "治"],
-          "distractor_meanings": ["罚款，罚钱", "处理，解决问题", "治理，管理整顿"]
-        },
-        {
-          "word": "拗",
-          "pinyin": "niù",
-          "meaning": "固执，不听劝",
-          "level_hint": "他的脾气很执____。",
-          "sample_sentences": ["他很执拗，不听劝。", "脾气拗的人不容易相处。", "别拗了，听大家的吧。"],
-          "distractor_words": ["倔", "强", "固"],
-          "distractor_meanings": ["倔强，不屈服", "强硬，不退让", "顽固，不愿改变"]
-        },
-        {
-          "word": "乃",
-          "pinyin": "nǎi",
-          "meaning": "是，就是（文言词）",
-          "level_hint": "失败____成功之母。",
-          "sample_sentences": ["失败乃成功之母。", "家乃避风之港。", "知错能改，善莫大焉。"],
-          "distractor_words": ["即", "系", "为"],
-          "distractor_meanings": ["即是，也就是", "系，是（文言）", "为，是（文言）"]
-        }
+        { "word": "璧", "pinyin": "bì", "meaning": "珍贵的玉石", "level_hint": "和氏____是稀世珍宝。", "sample_sentences": ["完璧归赵。", "这块璧很珍贵。", "白璧无瑕。"], "distractor_words": ["玉", "珠", "宝"], "distractor_meanings": ["玉石，美石", "珍珠，贝壳产出的", "宝物，珍贵之物"] },
+        { "word": "臣", "pinyin": "chén", "meaning": "古代官员的自称", "level_hint": "大____向皇帝报告。", "sample_sentences": ["大臣们商议国事。", "忠臣爱国。", "君臣之间要信任。"], "distractor_words": ["君", "将", "民"], "distractor_meanings": ["君王，统治者", "将军，军事领袖", "百姓，普通人民"] },
+        { "word": "诺", "pinyin": "nuò", "meaning": "答应，应允", "level_hint": "他承____会来。", "sample_sentences": ["一诺千金。", "许下的诺言要遵守。", "他爽快地答应了。"], "distractor_words": ["拒", "辞", "退"], "distractor_meanings": ["拒绝，不答应", "推辞，不接受", "退回，退却"] },
+        { "word": "怯", "pinyin": "qiè", "meaning": "害怕，胆小", "level_hint": "不要胆____。", "sample_sentences": ["他怯生生地走进来。", "不要怯场。", "胆怯是不勇敢的表现。"], "distractor_words": ["勇", "猛", "刚"], "distractor_meanings": ["勇敢，不害怕", "凶猛，很有气势", "刚强，坚强不屈"] },
+        { "word": "瑟", "pinyin": "sè", "meaning": "古代弦乐器", "level_hint": "她弹____很好听。", "sample_sentences": ["琴瑟和鸣。", "瑟是一种乐器。", "鼓瑟吹笙。"], "distractor_words": ["琴", "筝", "箫"], "distractor_meanings": ["古琴，拨弦乐器", "古筝，弦乐器", "箫，管乐器"] },
+        { "word": "拒", "pinyin": "jù", "meaning": "不接受", "level_hint": "他____绝了邀请。", "sample_sentences": ["拒绝不合理的要求。", "他把门拒之门外。", "不要拒绝帮助。"], "distractor_words": ["接", "纳", "受"], "distractor_meanings": ["接受，收下", "接纳，接收", "承受，接受"] },
+        { "word": "荆", "pinyin": "jīng", "meaning": "一种带刺的灌木", "level_hint": "负____请罪是知错能改。", "sample_sentences": ["披荆斩棘。", "荆棘丛生。", "负荆请罪。"], "distractor_words": ["棘", "藤", "蔓"], "distractor_meanings": ["有刺的植物", "藤蔓，攀爬植物", "蔓生植物"] },
+        { "word": "罪", "pinyin": "zuì", "meaning": "犯法的行为", "level_hint": "他犯了____。", "sample_sentences": ["认罪悔过。", "罪有应得。", "不要犯罪。"], "distractor_words": ["功", "德", "善"], "distractor_meanings": ["功劳，做的贡献", "品德，道德修养", "善良，做好事"] }
       ]
     },
     {
       "unit": 4,
-      "title": "第四单元·爱国情怀",
+      "title": "第四单元·家国情怀",
       "words": [
-        {
-          "word": "祭",
-          "pinyin": "jì",
-          "meaning": "对逝者表示悼念的仪式",
-          "level_hint": "清明节人们会____扫先人。",
-          "sample_sentences": ["清明节祭扫先人。", "祭奠英灵。", "祭祀是传统习俗。"],
-          "distractor_words": ["奠", "拜", "供"],
-          "distractor_meanings": ["祭奠，向死者供品", "跪拜，行礼致敬", "供奉，献上祭品"]
-        },
-        {
-          "word": "乃",
-          "pinyin": "nǎi",
-          "meaning": "于是，就",
-          "level_hint": "他思前想后，____决定出发。",
-          "sample_sentences": ["苦思冥想，乃得良策。", "事已至此，乃只好如此。", "学而时习之，不亦说乎。"],
-          "distractor_words": ["遂", "便", "即"],
-          "distractor_meanings": ["于是，就", "便，就", "立即，马上"]
-        },
-        {
-          "word": "熏",
-          "pinyin": "xūn",
-          "meaning": "烟气接触物体，使变色或沾上气味",
-          "level_hint": "厨房被油烟____黑了。",
-          "sample_sentences": ["烟把墙熏黑了。", "熏肉很好吃。", "被烟熏得睁不开眼。"],
-          "distractor_words": ["烤", "蒸", "煮"],
-          "distractor_meanings": ["烧烤，用火直接加热", "蒸煮，用水蒸气加热", "水煮，放在水里加热"]
-        },
-        {
-          "word": "杭",
-          "pinyin": "háng",
-          "meaning": "杭州，浙江省省会",
-          "level_hint": "上____西湖风景如画。",
-          "sample_sentences": ["杭州西湖很美。", "上有天堂，下有苏杭。", "杭州丝绸闻名天下。"],
-          "distractor_words": ["苏", "甬", "越"],
-          "distractor_meanings": ["苏州，江苏名城", "宁波，浙江港口城市", "绍兴，浙江文化名城"]
-        },
-        {
-          "word": "亥",
-          "pinyin": "hài",
-          "meaning": "地支的第十二位",
-          "level_hint": "____时是晚上九点到十一点。",
-          "sample_sentences": ["亥时是一天最后一个时辰。", "辛亥革命推翻了清朝。", "十二地支以亥结尾。"],
-          "distractor_words": ["子", "丑", "戌"],
-          "distractor_meanings": ["子时，半夜十一点到一点", "丑时，凌晨一点到三点", "戌时，晚上七点到九点"]
-        },
-        {
-          "word": "恃",
-          "pinyin": "shì",
-          "meaning": "依赖，仗着",
-          "level_hint": "他有才华，但不能____才傲物。",
-          "sample_sentences": ["有恃无恐。", "恃才傲物不好。", "不能恃强凌弱。"],
-          "distractor_words": ["仗", "依", "凭"],
-          "distractor_meanings": ["仗着，依靠某种优势", "依靠，仰仗别人", "凭借，利用条件"]
-        }
+        { "word": "鸵", "pinyin": "tuó", "meaning": "鸵鸟，最大的鸟", "level_hint": "____鸟跑得很快。", "sample_sentences": ["鸵鸟是世界上最大的鸟。", "鸵鸟不会飞但跑得快。", "鸵鸟蛋很大。"], "distractor_words": ["鹤", "鹰", "鹏"], "distractor_meanings": ["鹤，长寿的象征", "鹰，凶猛的猛禽", "鹏，传说中的大鸟"] },
+        { "word": "赢", "pinyin": "yíng", "meaning": "获胜", "level_hint": "我们队____了比赛。", "sample_sentences": ["我们赢了！", "赢了比赛很高兴。", "输赢不重要。"], "distractor_words": ["输", "败", "负"], "distractor_meanings": ["输了，没赢", "失败，被打败", "负于，输给"] },
+        { "word": "冠", "pinyin": "guàn", "meaning": "第一名，冠军", "level_hint": "他获得了____军。", "sample_sentences": ["勇夺冠军。", "冠绝全场。", "夺冠归来。"], "distractor_words": ["亚", "季", "末"], "distractor_meanings": ["亚军，第二名", "季军，第三名", "末位，最后一名"] },
+        { "word": "俯", "pinyin": "fǔ", "meaning": "向下看", "level_hint": "从山顶____视大地。", "sample_sentences": ["俯瞰城市。", "俯首认错。", "他俯下身子。"], "distractor_words": ["仰", "望", "眺"], "distractor_meanings": ["仰望，向上看", "看，远处看", "远眺，向远处看"] },
+        { "word": "箭", "pinyin": "jiàn", "meaning": "弓箭的箭", "level_hint": "弓____射出去了。", "sample_sentences": ["箭飞快地射出去。", "火箭升空了。", "射箭运动很有趣。"], "distractor_words": ["弓", "矛", "剑"], "distractor_meanings": ["弓，射箭的工具", "矛，长柄兵器", "剑，双刃兵器"] },
+        { "word": "筒", "pinyin": "tǒng", "meaning": "管状的容器", "level_hint": "蜡____用来画画。", "sample_sentences": ["望远镜看得很远。", "竹筒饭很好吃。", "他把纸放进纸筒。"], "distractor_words": ["管", "桶", "缸"], "distractor_meanings": ["管子，圆柱形", "桶，装水的容器", "缸，大容器"] },
+        { "word": "束", "pinyin": "shù", "meaning": "捆绑，约束", "level_hint": "他捧着一____花。", "sample_sentences": ["一束鲜花。", "约束自己的行为。", "结束比赛。"], "distractor_words": ["散", "放", "解"], "distractor_meanings": ["散开，不绑", "放开，松手", "解开，释放"] },
+        { "word": "浩", "pinyin": "hào", "meaning": "广大，众多", "level_hint": "____浩荡荡的大军。", "sample_sentences": ["浩瀚的海洋。", "浩浩荡荡。", "工程浩大。"], "distractor_words": ["渺", "微", "小"], "distractor_meanings": ["渺小，不大", "微小，很小", "细小，不大"] }
       ]
     },
     {
       "unit": 5,
-      "title": "第五单元·描写人物",
+      "title": "第五单元·说明文",
       "words": [
-        {
-          "word": "疤",
-          "pinyin": "bā",
-          "meaning": "伤口愈合后留下的痕迹",
-          "level_hint": "他额头上有一道____。",
-          "sample_sentences": ["他手上有一道疤。", "伤好了留下了疤。", "不要揭伤疤。"],
-          "distractor_words": ["痕", "伤", "创"],
-          "distractor_meanings": ["痕迹，留下的印迹", "伤口，身体受的伤", "创口，新伤口"]
-        },
-        {
-          "word": "监",
-          "pinyin": "jiān",
-          "meaning": "监视，督察",
-          "level_hint": "老师在____考同学们考试。",
-          "sample_sentences": ["老师监考很严格。", "监控录像记录了一切。", "监察人员检查了工厂。"],
-          "distractor_words": ["察", "督", "视"],
-          "distractor_meanings": ["观察，仔细看", "督促，监督催促", "注视，盯着看"]
-        },
-        {
-          "word": "怔",
-          "pinyin": "zhèng",
-          "meaning": "发愣，发呆",
-          "level_hint": "他听了这话，____了一下。",
-          "sample_sentences": ["他怔了一下才反应过来。", "她怔怔地看着远方。", "他愣怔了好一会儿。"],
-          "distractor_words": ["愣", "呆", "惊"],
-          "distractor_meanings": ["发愣，一时没反应", "发呆，出神了", "惊讶，感到意外"]
-        },
-        {
-          "word": "馅",
-          "pinyin": "xiàn",
-          "meaning": "包在面食里的肉菜等",
-          "level_hint": "妈妈包的饺子____很香。",
-          "sample_sentences": ["饺子馅是猪肉白菜。", "馅饼很好吃。", "豆沙馅的包子最香。"],
-          "distractor_words": ["皮", "料", "酱"],
-          "distractor_meanings": ["面皮，包在外面的面", "材料，做东西用的原料", "酱料，调味用的糊状物"]
-        },
-        {
-          "word": "撑",
-          "pinyin": "chēng",
-          "meaning": "支持，顶住",
-          "level_hint": "下雨了，快____起雨伞。",
-          "sample_sentences": ["撑起雨伞。", "他撑着船过河。", "咬牙撑住，别放弃。"],
-          "distractor_words": ["举", "顶", "支"],
-          "distractor_meanings": ["举起，抬起来", "顶住，承受压力", "支撑，支持不倒"]
-        },
-        {
-          "word": "搅",
-          "pinyin": "jiǎo",
-          "meaning": "拌动，混合",
-          "level_hint": "用勺子____拌均匀。",
-          "sample_sentences": ["搅拌牛奶和面粉。", "不要搅浑水。", "他把咖啡搅了搅。"],
-          "distractor_words": ["拌", "混", "摇"],
-          "distractor_meanings": ["搅拌，混合在一起", "混合，把不同的东西合在一起", "摇动，来回晃"]
-        }
+        { "word": "侵", "pinyin": "qīn", "meaning": "强行进入，侵犯", "level_hint": "敌人____犯了领地。", "sample_sentences": ["入侵者被赶走了。", "侵略战争是错误的。", "不要侵犯别人的权利。"], "distractor_words": ["守", "防", "卫"], "distractor_meanings": ["守卫，看守", "防御，抵挡", "保卫，守护"] },
+        { "word": "略", "pinyin": "lüè", "meaning": "简单，省去", "level_hint": "请____述一下。", "sample_sentences": ["战略很重要。", "略过这一段。", "粗略地看了一下。"], "distractor_words": ["详", "细", "全"], "distractor_meanings": ["详细，详细说明", "仔细，认真看", "全面，所有方面"] },
+        { "word": "筑", "pinyin": "zhù", "meaning": "建造", "level_hint": "工人们在____路。", "sample_sentences": ["筑起一道墙。", "建筑高楼。", "筑巢的鸟儿。"], "distractor_words": ["拆", "毁", "破"], "distractor_meanings": ["拆除，推倒", "毁坏，弄坏", "破坏，打破"] },
+        { "word": "堡", "pinyin": "bǎo", "meaning": "防御性建筑", "level_hint": "城____很高很厚。", "sample_sentences": ["城堡很壮观。", "碉堡是防御用的。", "堡垒坚不可摧。"], "distractor_words": ["塔", "楼", "亭"], "distractor_meanings": ["塔，高耸的建筑", "楼，多层建筑", "亭，休息的小建筑"] },
+        { "word": "党", "pinyin": "dǎng", "meaning": "政党，团体", "level_hint": "中国共产____。", "sample_sentences": ["党员要为人民服务。", "党和人民心连心。", "党的领导很重要。"], "distractor_words": ["军", "政", "民"], "distractor_meanings": ["军队，武装力量", "政府，管理机构", "人民，百姓"] },
+        { "word": "碍", "pinyin": "ài", "meaning": "阻挡，妨碍", "level_hint": "不要阻____别人。", "sample_sentences": ["碍事，请让开。", "障碍要清除。", "不要碍手碍脚。"], "distractor_words": ["助", "帮", "便"], "distractor_meanings": ["帮助，协助", "帮忙，协助", "方便，便利"] },
+        { "word": "陷", "pinyin": "xiàn", "meaning": "掉入，凹进", "level_hint": "车子____进了泥里。", "sample_sentences": ["陷害别人是不对的。", "地面塌陷了。", "陷阱很危险。"], "distractor_words": ["升", "出", "脱"], "distractor_meanings": ["升起，上去", "出去，出来", "脱离，逃出"] },
+        { "word": "拐", "pinyin": "guǎi", "meaning": "转弯", "level_hint": "前面____弯就到了。", "sample_sentences": ["拐角处有商店。", "拐弯抹角。", "拐杖帮助走路。"], "distractor_words": ["直", "穿", "冲"], "distractor_meanings": ["直走，不转弯", "穿过，通过", "冲刺，快速前进"] }
+      ]
+    },
+    {
+      "unit": 6,
+      "title": "第六单元·舐犊情深",
+      "words": [
+        { "word": "陪", "pinyin": "péi", "meaning": "伴随，陪同", "level_hint": "妈妈____我写作业。", "sample_sentences": ["陪伴家人。", "他陪我去医院。", "谢谢你陪我。"], "distractor_words": ["离", "别", "弃"], "distractor_meanings": ["离开，走开", "分别，离开", "放弃，丢下"] },
+        { "word": "疼", "pinyin": "téng", "meaning": "疼痛，痛爱", "level_hint": "妈妈很____我。", "sample_sentences": ["头疼难受。", "妈妈疼爱孩子。", "伤口很疼。"], "distractor_words": ["痒", "麻", "舒"], "distractor_meanings": ["发痒，想挠", "麻木，没感觉", "舒服，感觉好"] },
+        { "word": "酷", "pinyin": "kù", "meaning": "非常，极", "level_hint": "夏天天气很____热。", "sample_sentences": ["酷暑难耐。", "冷酷无情。", "他长得很酷。"], "distractor_words": ["温", "和", "暖"], "distractor_meanings": ["温和，不极端", "和善，友善", "温暖，不冷"] },
+        { "word": "暑", "pinyin": "shǔ", "meaning": "炎热的季节", "level_hint": "暑假是两个月的假期。", "sample_sentences": ["暑假去旅游。", "中暑了要休息。", "酷暑天气很热。"], "distractor_words": ["寒", "冬", "凉"], "distractor_meanings": ["寒冷，低温", "冬天，冷季节", "凉爽，不太热"] },
+        { "word": "考", "pinyin": "kǎo", "meaning": "测试，检查", "level_hint": "明天要____试了。", "sample_sentences": ["考试要好好复习。", "考验你的能力。", "考古发现了文物。"], "distractor_words": ["学", "教", "练"], "distractor_meanings": ["学习，获取知识", "教授，传授", "练习，反复做"] },
+        { "word": "悔", "pinyin": "huǐ", "meaning": "后悔，懊悔", "level_hint": "他很后____。", "sample_sentences": ["后悔没好好学习。", "做了错事很后悔。", "悔恨交加。"], "distractor_words": ["喜", "乐", "欢"], "distractor_meanings": ["高兴，开心", "快乐，愉快", "欢喜，高兴"] },
+        { "word": "启", "pinyin": "qǐ", "meaning": "打开，启发", "level_hint": "老话给我很____发。", "sample_sentences": ["启发了我的思考。", "开启新篇章。", "启发式教学。"], "distractor_words": ["闭", "关", "封"], "distractor_meanings": ["关闭，合上", "关上，关闭", "封闭，封住"] },
+        { "word": "迪", "pinyin": "dí", "meaning": "开导，引导", "level_hint": "老师的启____让我受益。", "sample_sentences": ["启迪智慧。", "这段话启迪了我。", "启迪心灵。"], "distractor_words": ["阻", "碍", "拦"], "distractor_meanings": ["阻止，不让前进", "妨碍，影响进行", "拦截，中途拦住"] }
+      ]
+    },
+    {
+      "unit": 7,
+      "title": "第七单元·四季之美",
+      "words": [
+        { "word": "黎", "pinyin": "lí", "meaning": "天快亮的时候", "level_hint": "____明时分天空泛白。", "sample_sentences": ["黎明很安静。", "黎明前的黑暗。", "黎族是中国的一个民族。"], "distractor_words": ["暮", "昏", "夜"], "distractor_meanings": ["日暮，天将黑", "黄昏，日落时分", "夜晚，天黑了"] },
+        { "word": "晕", "pinyin": "yūn", "meaning": "头脑发昏", "level_hint": "他感觉头____。", "sample_sentences": ["头晕眼花。", "晕车很难受。", "太阳旁边有光晕。"], "distractor_words": ["清", "醒", "明"], "distractor_meanings": ["清醒，不迷糊", "醒着，没睡着", "明亮，清楚"] },
+        { "word": "漆", "pinyin": "qī", "meaning": "涂料，涂", "level_hint": "黑____漆的夜晚。", "sample_sentences": ["漆黑一片。", "油漆家具。", "他漆了一面墙。"], "distractor_words": ["明", "亮", "白"], "distractor_meanings": ["明亮，有光", "亮堂，不暗", "白色，浅色"] },
+        { "word": "幕", "pinyin": "mù", "meaning": "帐幕，戏剧的一幕", "level_hint": "夜____降临了。", "sample_sentences": ["夜幕降临。", "开幕典礼。", "这一幕很精彩。"], "distractor_words": ["晨", "曙", "旭"], "distractor_meanings": ["清晨，早上", "曙光，微光", "旭日，初升的太阳"] },
+        { "word": "愈", "pinyin": "yù", "meaning": "更加，痊愈", "level_hint": "他的病____好了。", "sample_sentences": ["病痊愈了。", "愈发精彩。", "愈来愈好。"], "distractor_words": ["差", "坏", "恶"], "distractor_meanings": ["变差，不好了", "变坏，更糟", "恶化，更严重"] },
+        { "word": "旷", "pinyin": "kuàng", "meaning": "空旷，开阔", "level_hint": "田野很空____。", "sample_sentences": ["旷野无边无际。", "心旷神怡。", "旷课是不对的。"], "distractor_words": ["狭", "窄", "挤"], "distractor_meanings": ["狭窄，不宽", "窄小，空间有限", "拥挤，人很多"] },
+        { "word": "怡", "pinyin": "yí", "meaning": "愉快，和悦", "level_hint": "心旷神____。", "sample_sentences": ["心旷神怡。", "怡然自得。", "怡情养性。"], "distractor_words": ["忧", "愁", "烦"], "distractor_meanings": ["忧愁，不开心", "发愁，担心", "烦恼，心情不好"] },
+        { "word": "逸", "pinyin": "yì", "meaning": "安闲，逃走", "level_hint": "他过得很安____。", "sample_sentences": ["安逸的生活。", "逸闻趣事。", "逃逸了。"], "distractor_words": ["忙", "劳", "累"], "distractor_meanings": ["忙碌，没空", "劳作，辛苦", "劳累，疲惫"] }
+      ]
+    },
+    {
+      "unit": 8,
+      "title": "第八单元·读书明智",
+      "words": [
+        { "word": "卷", "pinyin": "juǎn", "meaning": "书卷，卷起来", "level_hint": "这____书很有趣。", "sample_sentences": ["试卷很难。", "手不释卷。", "风卷残云。"], "distractor_words": ["册", "篇", "页"], "distractor_meanings": ["册子，小本", "篇章，文章", "页面，一页"] },
+        { "word": "刊", "pinyin": "kān", "meaning": "出版物", "level_hint": "这篇文章发表在杂____上。", "sample_sentences": ["报刊亭买报纸。", "刊物定期出版。", "刊登了重要新闻。"], "distractor_words": ["书", "报", "网"], "distractor_meanings": ["书籍，读物", "报纸，新闻纸", "网络，互联网"] },
+        { "word": "荐", "pinyin": "jiàn", "meaning": "推荐", "level_hint": "老师推____了一本好书。", "sample_sentences": ["推荐好书。", "举荐人才。", "引荐朋友。"], "distractor_words": ["拒", "贬", "斥"], "distractor_meanings": ["拒绝，不接受", "贬低，说不好", "排斥，不接受"] },
+        { "word": "阅", "pinyin": "yuè", "meaning": "看，读", "level_hint": "每天要____读。", "sample_sentences": ["阅读好文章。", "阅兵仪式。", "仔细阅读课文。"], "distractor_words": ["写", "听", "说"], "distractor_meanings": ["书写，记录", "倾听，用耳朵", "说话，口头表达"] },
+        { "word": "鉴", "pinyin": "jiàn", "meaning": "镜子，照", "level_hint": "以史为____。", "sample_sentences": ["借鉴别人的经验。", "鉴赏艺术品。", "鉴定真伪。"], "distractor_words": ["遮", "掩", "藏"], "distractor_meanings": ["遮挡，挡住", "掩盖，遮住", "隐藏，藏起来"] },
+        { "word": "察", "pinyin": "chá", "meaning": "仔细看", "level_hint": "仔细观____。", "sample_sentences": ["观察天气变化。", "警察维持秩序。", "察觉到危险。"], "distractor_words": ["略", "忽", "漏"], "distractor_meanings": ["忽略，没注意", "忽视，不重视", "遗漏，漏掉了"] },
+        { "word": "辨", "pinyin": "biàn", "meaning": "区分，分辨", "level_hint": "要学会____别是非。", "sample_sentences": ["辨别方向。", "分辨颜色。", "明辨是非。"], "distractor_words": ["混", "合", "杂"], "distractor_meanings": ["混淆，分不清", "混合，合在一起", "杂乱，不整齐"] },
+        { "word": "卓", "pinyin": "zhuó", "meaning": "优秀，卓越", "level_hint": "他取得了____越的成绩。", "sample_sentences": ["卓越的贡献。", "卓有成效。", "远见卓识。"], "distractor_words": ["平", "庸", "劣"], "distractor_meanings": ["平凡，一般", "平庸，不出色", "低劣，不好"] }
       ]
     }
   ]
