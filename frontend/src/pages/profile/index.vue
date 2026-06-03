@@ -1,0 +1,463 @@
+<template>
+  <view class="container">
+    <view class="user-card">
+      <text class="avatar">{{ currentAvatar }}</text>
+      <view class="user-info">
+        <text class="nickname">{{ nickname }}</text>
+        <text v-if="isLoggedIn" class="login-status logged">已登录</text>
+        <text v-else class="login-status" @tap="doLogin">点击登录</text>
+      </view>
+    </view>
+
+    <view class="section">
+      <view class="section-header">
+        <text class="section-title">我的孩子</text>
+        <text class="add-btn" @tap="showAddStudent = true">+ 添加</text>
+      </view>
+      <view v-if="students.length === 0" class="empty-tip">
+        <text>还没有添加孩子，点击右上角添加</text>
+      </view>
+      <view
+        v-for="s in students"
+        :key="s.id"
+        :class="['student-card', { active: s.is_active }]"
+        @tap="switchStudent(s)"
+      >
+        <text class="student-avatar">{{ s.avatar_tag }}</text>
+        <view class="student-info">
+          <text class="student-name">{{ s.name }}</text>
+          <text class="student-grade">{{ s.grade }}年级</text>
+        </view>
+        <view v-if="s.is_active" class="active-tag">
+          <text>当前</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="section">
+      <text class="section-title">学习提醒</text>
+      <view class="reminder-card">
+        <text class="reminder-label">每日提醒时间</text>
+        <picker mode="time" :value="reminderTime" @change="setReminderTime">
+          <text class="reminder-time">{{ reminderTime || '未设置' }}</text>
+        </picker>
+      </view>
+    </view>
+
+    <view class="section">
+      <text class="section-title">其他</text>
+      <view class="menu-item" @tap="goReport">
+        <text>学习报告</text>
+        <text class="arrow">></text>
+      </view>
+      <view class="menu-item" @tap="goAbout">
+        <text>关于AI助学</text>
+        <text class="arrow">></text>
+      </view>
+      <view v-if="isLoggedIn" class="menu-item logout" @tap="doLogout">
+        <text>退出登录</text>
+      </view>
+    </view>
+
+    <!-- 添加孩子弹窗 -->
+    <view v-if="showAddStudent" class="modal-mask" @tap="showAddStudent = false">
+      <view class="modal-content" @tap.stop>
+        <text class="modal-title">添加孩子</text>
+        <input v-model="newName" class="modal-input" placeholder="孩子姓名" />
+        <view class="grade-picker">
+          <view
+            v-for="g in [3, 4, 5, 6]"
+            :key="g"
+            :class="['grade-btn', { active: newGrade === g }]"
+            @tap="newGrade = g"
+          >
+            <text>{{ g }}年级</text>
+          </view>
+        </view>
+        <text class="section-title" style="margin: 16rpx 0 12rpx;">选择头像</text>
+        <view class="avatar-picker">
+          <view
+            v-for="av in avatarOptions"
+            :key="av"
+            :class="['avatar-option', { active: newAvatar === av }]"
+            @tap="newAvatar = av"
+          >
+            <text>{{ av }}</text>
+          </view>
+        </view>
+        <view class="modal-actions">
+          <view class="btn-cancel" @tap="showAddStudent = false"><text>取消</text></view>
+          <view class="btn-confirm" @tap="doAddStudent"><text>确认</text></view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>
+
+<script setup lang="ts">
+import { ref, onMounted } from 'vue'
+import { getStudents, addStudent, activateStudent, type StudentInfo } from '@/api/students'
+
+const isLoggedIn = ref(false)
+const nickname = ref('家长')
+const currentAvatar = ref('👤')
+const students = ref<StudentInfo[]>([])
+const showAddStudent = ref(false)
+const newName = ref('')
+const newGrade = ref(3)
+const newAvatar = ref('👦')
+const reminderTime = ref('')
+
+const avatarOptions = ['👦', '👧', '🧒', '👶', '🐱', '🐶']
+
+const token = uni.getStorageSync('token')
+isLoggedIn.value = !!token
+if (token) {
+  nickname.value = uni.getStorageSync('nickname') || '家长'
+}
+
+reminderTime.value = uni.getStorageSync('reminder_time') || ''
+
+const loadStudents = async () => {
+  try {
+    students.value = await getStudents()
+    const active = students.value.find(s => s.is_active)
+    if (active) {
+      currentAvatar.value = active.avatar_tag
+    }
+  } catch { /* ignore */ }
+}
+
+const doLogin = () => {
+  uni.login({
+    success: async (res) => {
+      if (res.code) {
+        const { wxLogin } = await import('@/api/auth')
+        try {
+          const result = await wxLogin(res.code)
+          uni.setStorageSync('token', result.token)
+          uni.setStorageSync('nickname', result.nickname)
+          isLoggedIn.value = true
+          nickname.value = result.nickname
+          uni.showToast({ title: '登录成功', icon: 'success' })
+        } catch {
+          uni.showToast({ title: '登录失败', icon: 'none' })
+        }
+      }
+    },
+  })
+}
+
+const doLogout = () => {
+  uni.removeStorageSync('token')
+  uni.removeStorageSync('nickname')
+  isLoggedIn.value = false
+  nickname.value = '家长'
+  uni.showToast({ title: '已退出', icon: 'none' })
+}
+
+const switchStudent = async (s: StudentInfo) => {
+  if (s.is_active) return
+  try {
+    await activateStudent(s.id)
+    await loadStudents()
+    uni.showToast({ title: `已切换到 ${s.name}`, icon: 'none' })
+  } catch { /* ignore */ }
+}
+
+const doAddStudent = async () => {
+  if (!newName.value.trim()) {
+    uni.showToast({ title: '请输入姓名', icon: 'none' })
+    return
+  }
+  try {
+    await addStudent({ name: newName.value, grade: newGrade.value, avatar_tag: newAvatar.value })
+    showAddStudent.value = false
+    newName.value = ''
+    newGrade.value = 3
+    newAvatar.value = '👦'
+    await loadStudents()
+    uni.showToast({ title: '添加成功', icon: 'success' })
+  } catch {
+    uni.showToast({ title: '添加失败', icon: 'none' })
+  }
+}
+
+const setReminderTime = (e: any) => {
+  reminderTime.value = e.detail.value
+  uni.setStorageSync('reminder_time', reminderTime.value)
+  uni.showToast({ title: `提醒时间设为 ${reminderTime.value}`, icon: 'none' })
+}
+
+const goReport = () => {
+  uni.navigateTo({ url: '/pages/report/index' })
+}
+
+const goAbout = () => {
+  uni.showToast({ title: 'AI助学 v1.0', icon: 'none' })
+}
+
+onMounted(() => {
+  loadStudents()
+})
+</script>
+
+<style scoped>
+.container {
+  padding: 30rpx;
+  min-height: 100vh;
+  background: #f5f5f5;
+}
+
+.user-card {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, #4A90D9, #67B8DE);
+  border-radius: 20rpx;
+  padding: 40rpx;
+  margin-bottom: 30rpx;
+}
+
+.avatar {
+  font-size: 80rpx;
+  margin-right: 24rpx;
+}
+
+.user-info {
+  flex: 1;
+}
+
+.nickname {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #fff;
+  display: block;
+  margin-bottom: 8rpx;
+}
+
+.login-status {
+  font-size: 26rpx;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.logged { color: #4CAF50; }
+
+.section {
+  background: #fff;
+  border-radius: 16rpx;
+  padding: 30rpx;
+  margin-bottom: 24rpx;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.section-title {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.add-btn {
+  font-size: 28rpx;
+  color: #4A90D9;
+  font-weight: bold;
+}
+
+.empty-tip {
+  text-align: center;
+  padding: 30rpx;
+  font-size: 26rpx;
+  color: #999;
+}
+
+.student-card {
+  display: flex;
+  align-items: center;
+  padding: 20rpx;
+  border-radius: 12rpx;
+  margin-bottom: 12rpx;
+  background: #f8f9fa;
+}
+
+.student-card.active {
+  background: #e3f2fd;
+  border: 2rpx solid #4A90D9;
+}
+
+.student-avatar {
+  font-size: 48rpx;
+  margin-right: 20rpx;
+}
+
+.student-info {
+  flex: 1;
+}
+
+.student-name {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #333;
+  display: block;
+}
+
+.student-grade {
+  font-size: 26rpx;
+  color: #999;
+}
+
+.active-tag {
+  background: #4A90D9;
+  color: #fff;
+  font-size: 22rpx;
+  padding: 4rpx 12rpx;
+  border-radius: 8rpx;
+}
+
+.reminder-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16rpx 0;
+}
+
+.reminder-label {
+  font-size: 28rpx;
+  color: #555;
+}
+
+.reminder-time {
+  font-size: 28rpx;
+  color: #4A90D9;
+  font-weight: bold;
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24rpx 0;
+  border-bottom: 1rpx solid #f0f0f0;
+  font-size: 30rpx;
+  color: #333;
+}
+
+.arrow {
+  color: #ccc;
+  font-size: 28rpx;
+}
+
+.logout {
+  color: #FF6B6B;
+  justify-content: center;
+  border: none;
+}
+
+.modal-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background: #fff;
+  border-radius: 20rpx;
+  padding: 40rpx;
+  width: 80%;
+}
+
+.modal-title {
+  font-size: 34rpx;
+  font-weight: bold;
+  text-align: center;
+  display: block;
+  margin-bottom: 30rpx;
+}
+
+.modal-input {
+  border: 2rpx solid #e0e0e0;
+  border-radius: 12rpx;
+  padding: 20rpx;
+  font-size: 30rpx;
+  margin-bottom: 20rpx;
+}
+
+.grade-picker {
+  display: flex;
+  gap: 12rpx;
+  margin-bottom: 30rpx;
+}
+
+.grade-btn {
+  flex: 1;
+  text-align: center;
+  padding: 16rpx 0;
+  background: #f5f5f5;
+  border-radius: 12rpx;
+  font-size: 28rpx;
+  color: #666;
+}
+
+.grade-btn.active {
+  background: #4A90D9;
+  color: #fff;
+}
+
+.avatar-picker {
+  display: flex;
+  gap: 16rpx;
+  margin-bottom: 24rpx;
+}
+
+.avatar-option {
+  width: 72rpx;
+  height: 72rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40rpx;
+  border-radius: 50%;
+  border: 2rpx solid #e0e0e0;
+}
+
+.avatar-option.active {
+  border-color: #4A90D9;
+  border-width: 4rpx;
+  background: #e3f2fd;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 20rpx;
+}
+
+.btn-cancel, .btn-confirm {
+  flex: 1;
+  text-align: center;
+  padding: 20rpx 0;
+  border-radius: 12rpx;
+  font-size: 30rpx;
+}
+
+.btn-cancel {
+  background: #f5f5f5;
+  color: #666;
+}
+
+.btn-confirm {
+  background: #4A90D9;
+  color: #fff;
+  font-weight: bold;
+}
+</style>

@@ -1,0 +1,306 @@
+{
+  "subject": "chinese",
+  "grade": 6,
+  "units": [
+    {
+      "unit": 1,
+      "title": "第一单元·触摸自然",
+      "words": [
+        {
+          "word": "襟",
+          "pinyin": "jīn",
+          "meaning": "衣服的前幅",
+          "level_hint": "他衣____整齐地去面试。",
+          "sample_sentences": ["他衣襟整齐。", "连襟是指姐妹的丈夫。", "胸襟开阔。"],
+          "distractor_words": ["袖", "领", "袍"],
+          "distractor_meanings": ["袖子，衣服套胳膊的部分", "领子，衣服围脖子的部分", "长袍，长衣服"]
+        },
+        {
+          "word": "蹄",
+          "pinyin": "tí",
+          "meaning": "马牛羊等动物的脚",
+          "level_hint": "马____声由远而近。",
+          "sample_sentences": ["马蹄声得得响。", "牛蹄很大。", "铁蹄踏过草原。"],
+          "distractor_words": ["爪", "掌", "角"],
+          "distractor_meanings": ["爪子，动物的尖指甲", "脚掌，脚底的部分", "牛角，动物头上的角"]
+        },
+        {
+          "word": "腐",
+          "pinyin": "fǔ",
+          "meaning": "腐烂，变质",
+          "level_hint": "食物放久了会____烂。",
+          "sample_sentences": ["食物腐烂了不能吃。", "反腐倡廉。", "豆腐是一种健康食品。"],
+          "distractor_words": ["烂", "朽", "败"],
+          "distractor_meanings": ["破烂，坏掉了", "腐朽，木头烂了", "败坏，变坏"]
+        },
+        {
+          "word": "羞",
+          "pinyin": "xiū",
+          "meaning": "难为情，不好意思",
+          "level_hint": "她____红了脸。",
+          "sample_sentences": ["她羞红了脸。", "不要羞愧，错了就改。", "害羞是正常的。"],
+          "distractor_words": ["愧", "怯", "窘"],
+          "distractor_meanings": ["惭愧，觉得自己做错了", "胆怯，不够勇敢", "窘迫，不知道怎么办"]
+        },
+        {
+          "word": "翰",
+          "pinyin": "hàn",
+          "meaning": "毛笔，也指文章书法",
+          "level_hint": "他____墨飘香，书法极好。",
+          "sample_sentences": ["翰墨飘香。", "文翰出众。", "翰林是古代的文学官。"],
+          "distractor_words": ["墨", "笔", "砚"],
+          "distractor_meanings": ["墨水，写字用的黑色液体", "毛笔，写字画的工具", "砚台，磨墨用的石头"]
+        },
+        {
+          "word": "遐",
+          "pinyin": "xiá",
+          "meaning": "远",
+          "level_hint": "他的名声远____闻名。",
+          "sample_sentences": ["遐想连篇。", "名闻遐迩。", "遐思无限。"],
+          "distractor_words": ["远", "遥", "旷"],
+          "distractor_meanings": ["远方，很远的地方", "遥远，距离很远", "空旷，宽广无边"]
+        }
+      ]
+    },
+    {
+      "unit": 2,
+      "title": "第二单元·革命岁月",
+      "words": [
+        {
+          "word": "崖",
+          "pinyin": "yá",
+          "meaning": "高地的陡峭边缘",
+          "level_hint": "山____上开着一朵野花。",
+          "sample_sentences": ["悬崖峭壁十分险峻。", "他站在山崖上眺望。", "崖壁上刻着几个大字。"],
+          "distractor_words": ["壁", "岭", "峰"],
+          "distractor_meanings": ["峭壁，陡直的山壁", "山岭，连绵的山脉", "山峰，山的最高处"]
+        },
+        {
+          "word": "渡",
+          "pinyin": "dù",
+          "meaning": "从这岸过到那岸",
+          "level_hint": "红军强____大渡河。",
+          "sample_sentences": ["渡过了一条河。", "渡船在河上行驶。", "过渡时期要注意安全。"],
+          "distractor_words": ["过", "穿", "涉"],
+          "distractor_meanings": ["过去，走过去", "穿越，从中间穿过", "涉水，蹚水过去"]
+        },
+        {
+          "word": "屈",
+          "pinyin": "qū",
+          "meaning": "弯曲，不直",
+          "level_hint": "他宁死不____。",
+          "sample_sentences": ["他能屈能伸。", "委屈你了。", "屈原是一位伟大的诗人。"],
+          "distractor_words": ["弯", "折", "曲"],
+          "distractor_meanings": ["弯曲，不笔直", "折弯，使之弯曲", "曲折，弯弯曲曲"]
+        },
+        {
+          "word": "挠",
+          "pinyin": "náo",
+          "meaning": "搅乱，阻止",
+          "level_hint": "困难面前不折不____。",
+          "sample_sentences": ["百折不挠。", "不要阻挠别人。", "他挠了挠头。"],
+          "distractor_words": ["阻", "挡", "抗"],
+          "distractor_meanings": ["阻碍，挡住去路", "阻挡，不让通过", "抵抗，不屈服"]
+        },
+        {
+          "word": "铲",
+          "pinyin": "chǎn",
+          "meaning": "削平，清除",
+          "level_hint": "他用铁____把土铲平。",
+          "sample_sentences": ["用铁铲铲土。", "铲除杂草。", "铲子放在墙角。"],
+          "distractor_words": ["锹", "镐", "锄"],
+          "distractor_meanings": ["铁锹，挖土的工具", "镐头，刨地工具", "锄头，除草工具"]
+        },
+        {
+          "word": "碑",
+          "pinyin": "bēi",
+          "meaning": "刻着文字或图案的石块",
+          "level_hint": "人民英雄纪念____矗立在广场上。",
+          "sample_sentences": ["纪念碑高高矗立。", "石碑上刻着古文。", "这块碑有百年历史。"],
+          "distractor_words": ["碣", "刻", "铭"],
+          "distractor_meanings": ["石碣，刻字的石头", "雕刻，在石头上刻字", "铭文，刻写的文字"]
+        }
+      ]
+    },
+    {
+      "unit": 3,
+      "title": "第三单元·让生活更美好",
+      "words": [
+        {
+          "word": "颓",
+          "pinyin": "tuí",
+          "meaning": "衰败，消沉",
+          "level_hint": "不要因为失败就____丧。",
+          "sample_sentences": ["他颓丧地低下了头。", "不要颓废下去。", "墙壁颓败不堪。"],
+          "distractor_words": ["丧", "萎", "沉"],
+          "distractor_meanings": ["沮丧，灰心丧气", "萎靡，精神不振", "消沉，情绪低落"]
+        },
+        {
+          "word": "沮",
+          "pinyin": "jǔ",
+          "meaning": "灰心，失望",
+          "level_hint": "比赛输了，他很____丧。",
+          "sample_sentences": ["他很沮丧。", "不要因为失败就沮丧。", "遇到挫折不要沮丧。"],
+          "distractor_words": ["灰", "气", "馁"],
+          "distractor_meanings": ["灰心，失去信心", "泄气，没劲了", "气馁，放弃努力"]
+        },
+        {
+          "word": "侣",
+          "pinyin": "lǚ",
+          "meaning": "同伴，伴侣",
+          "level_hint": "书是人类的好伙____。",
+          "sample_sentences": ["伴侣是一生的相伴。", "旅途中结交了伴侣。", "情侣在公园散步。"],
+          "distractor_words": ["伴", "友", "朋"],
+          "distractor_meanings": ["伙伴，一起做事的人", "朋友，交好的人", "朋友，互相认识的人"]
+        },
+        {
+          "word": "娱",
+          "pinyin": "yú",
+          "meaning": "快乐，欢乐",
+          "level_hint": "课余时间要做一些____乐活动。",
+          "sample_sentences": ["娱乐活动丰富了生活。", "自娱自乐。", "休闲娱乐很重要。"],
+          "distractor_words": ["乐", "欢", "趣"],
+          "distractor_meanings": ["快乐，心情愉快", "欢乐，非常开心", "有趣，引人发笑"]
+        },
+        {
+          "word": "零",
+          "pinyin": "líng",
+          "meaning": "零碎，不完整",
+          "level_hint": "地上____散着一些树叶。",
+          "sample_sentences": ["零花钱要节省着用。", "零件散落一地。", "零食不能吃太多。"],
+          "distractor_words": ["碎", "散", "片"],
+          "distractor_meanings": ["碎裂，成小块", "分散，不集中", "片面，不完整"]
+        },
+        {
+          "word": "某",
+          "pinyin": "mǒu",
+          "meaning": "指不确定的人或事",
+          "level_hint": "____天他来找我借书。",
+          "sample_sentences": ["某天他会回来的。", "某种原因导致失败。", "某人说了一句话。"],
+          "distractor_words": ["某", "些", "啥"],
+          "distractor_meanings": ["某些，一些不确定的", "一些，几个", "什么，什么东西"]
+        }
+      ]
+    },
+    {
+      "unit": 4,
+      "title": "第四单元·小说阅读",
+      "words": [
+        {
+          "word": "咳",
+          "pinyin": "ké",
+          "meaning": "气管受刺激而向外吐气",
+          "level_hint": "感冒了总是____嗽。",
+          "sample_sentences": ["他咳嗽了几声。", "咳嗽要多喝水。", "她咳得脸都红了。"],
+          "distractor_words": ["喘", "吐", "噎"],
+          "distractor_meanings": ["气喘，呼吸急促", "呕吐，从嘴里吐出", "噎住，食物卡住"]
+        },
+        {
+          "word": "嗡",
+          "pinyin": "wēng",
+          "meaning": "形容昆虫飞动的声音",
+          "level_hint": "蜜蜂________地飞来飞去。",
+          "sample_sentences": ["蜜蜂嗡嗡地叫着。", "蚊子的嗡嗡声很烦人。", "他脑子里嗡嗡响。"],
+          "distractor_words": ["嗡", "鸣", "嗡"],
+          "distractor_meanings": ["嗡嗡，昆虫振翅声", "鸣叫，动物发出声音", "嗡嗡，持续低响声"]
+        },
+        {
+          "word": "缩",
+          "pinyin": "suō",
+          "meaning": "变小，退缩",
+          "level_hint": "天太冷了，他____成一团。",
+          "sample_sentences": ["他缩着脖子。", "不要退缩。", "衣服缩水了。"],
+          "distractor_words": ["退", "收", "蜷"],
+          "distractor_meanings": ["后退，往后退", "收回，拿回来", "蜷缩，身体弯曲"]
+        },
+        {
+          "word": "窃",
+          "pinyin": "qiè",
+          "meaning": "偷，私下",
+          "level_hint": "他____窃地笑了。",
+          "sample_sentences": ["窃窃私语。", "不要窃取别人的东西。", "他窃喜不已。"],
+          "distractor_words": ["偷", "盗", "暗"],
+          "distractor_meanings": ["偷拿，不告而取", "盗窃，偷东西", "暗中，不让人知道"]
+        },
+        {
+          "word": "挪",
+          "pinyin": "nuó",
+          "meaning": "移动位置",
+          "level_hint": "请把桌子____一下。",
+          "sample_sentences": ["他挪了挪椅子。", "挪动脚步。", "她小心翼翼地挪过去。"],
+          "distractor_words": ["移", "搬", "动"],
+          "distractor_meanings": ["移动，改变位置", "搬运，搬到别处", "动作，身体活动"]
+        },
+        {
+          "word": "蒸",
+          "pinyin": "zhēng",
+          "meaning": "利用水蒸气加热",
+          "level_hint": "妈妈在____馒头。",
+          "sample_sentences": ["蒸馒头要大火。", "蒸汽机改变了世界。", "蒸出来的鱼很鲜美。"],
+          "distractor_words": ["煮", "烤", "炸"],
+          "distractor_meanings": ["水煮，放在水里加热", "烘烤，用干热加热", "油炸，放在油里加热"]
+        }
+      ]
+    },
+    {
+      "unit": 5,
+      "title": "第五单元·科学精神",
+      "words": [
+        {
+          "word": "伟",
+          "pinyin": "wěi",
+          "meaning": "伟大，卓越",
+          "level_hint": "科学家做出了____大的贡献。",
+          "sample_sentences": ["伟大的祖国。", "伟人令人敬佩。", "丰功伟绩。"],
+          "distractor_words": ["大", "巨", "宏"],
+          "distractor_meanings": ["巨大，非常大", "庞大，很大很大", "宏大，规模很大"]
+        },
+        {
+          "word": "辩",
+          "pinyin": "biàn",
+          "meaning": "争论，说明是非",
+          "level_hint": "双方展开了激烈的____论。",
+          "sample_sentences": ["辩论赛很精彩。", "争辩没有意义。", "他辩解自己的行为。"],
+          "distractor_words": ["论", "议", "争"],
+          "distractor_meanings": ["讨论，交换意见", "议论，评论是非", "争论，激烈争吵"]
+        },
+        {
+          "word": "盾",
+          "pinyin": "dùn",
+          "meaning": "用来挡住攻击的防护器具",
+          "level_hint": "矛和____的故事很有趣。",
+          "sample_sentences": ["自相矛盾。", "盾牌挡住了攻击。", "矛盾需要解决。"],
+          "distractor_words": ["矛", "甲", "铠"],
+          "distractor_meanings": ["长矛，进攻用的兵器", "盔甲，防护装具", "铠甲，金属做的护甲"]
+        },
+        {
+          "word": "盲",
+          "pinyin": "máng",
+          "meaning": "看不见",
+          "level_hint": "他从小____了，但很坚强。",
+          "sample_sentences": ["盲人需要帮助。", "不要盲目跟风。", "盲区是看不到的地方。"],
+          "distractor_words": ["聋", "哑", "跛"],
+          "distractor_meanings": ["耳聋，听不见", "哑巴，说不出话", "跛脚，走路不稳"]
+        },
+        {
+          "word": "悟",
+          "pinyin": "wù",
+          "meaning": "明白，觉醒",
+          "level_hint": "他终于恍然大____。",
+          "sample_sentences": ["恍然大悟。", "领悟了其中的道理。", "觉悟提高了。"],
+          "distractor_words": ["觉", "醒", "懂"],
+          "distractor_meanings": ["觉醒，明白了", "清醒，不再糊涂", "理解，弄明白了"]
+        },
+        {
+          "word": "奥",
+          "pinyin": "ào",
+          "meaning": "深奥，不容易理解",
+          "level_hint": "宇宙充满了____秘。",
+          "sample_sentences": ["奥林匹克运动会在北京举办。", "深奥的问题需要思考。", "奥秘等待探索。"],
+          "distractor_words": ["秘", "深", "玄"],
+          "distractor_meanings": ["秘密，不让人知道的事", "深邃，非常深", "玄妙，难以捉摸"]
+        }
+      ]
+    }
+  ]
+}

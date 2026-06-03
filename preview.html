@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>AI助学 - 产品预览</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f0f0f0; display: flex; justify-content: center; align-items: flex-start; min-height: 100vh; padding: 20px; }
+.phone-frame {
+  width: 375px; min-height: 812px; background: #f5f5f5; border-radius: 40px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3), inset 0 0 0 2px #333;
+  overflow: hidden; position: relative;
+}
+.phone-notch { width: 150px; height: 30px; background: #333; border-radius: 0 0 20px 20px; margin: 0 auto; position: relative; z-index: 100; }
+.phone-screen { padding: 0 15px 30px; overflow-y: auto; height: calc(100% - 30px); }
+
+/* Tab bar */
+.tab-bar { display: flex; background: #fff; border-top: 1px solid #eee; position: sticky; bottom: 0; left: 0; right: 0; z-index: 50; margin: 0 -15px; padding: 8px 0 20px; }
+.tab-item { flex: 1; text-align: center; font-size: 10px; color: #999; cursor: pointer; }
+.tab-item.active { color: #4A90D9; font-weight: 600; }
+.tab-item .tab-icon { font-size: 20px; display: block; margin-bottom: 2px; }
+
+/* Nav */
+.nav-bar { background: #4A90D9; color: #fff; text-align: center; padding: 10px; font-size: 16px; font-weight: 600; margin: 0 -15px; position: sticky; top: 0; z-index: 50; }
+
+/* Page visibility */
+.page { display: none; }
+.page.active { display: block; }
+
+/* ===== 首页 ===== */
+.header { text-align: center; padding: 20px 0 15px; }
+.header .title { font-size: 24px; font-weight: bold; color: #333; }
+.header .subtitle { font-size: 13px; color: #888; margin-top: 4px; }
+.section-title { font-size: 15px; font-weight: bold; color: #333; margin-bottom: 10px; }
+.grade-selector { margin: 10px 0 15px; }
+.grade-list { display: flex; justify-content: space-between; }
+.grade-item { flex: 1; text-align: center; padding: 10px 0; margin: 0 5px; background: #fff; border-radius: 8px; font-size: 13px; color: #666; box-shadow: 0 1px 4px rgba(0,0,0,0.06); cursor: pointer; }
+.grade-item.active { background: #4A90D9; color: #fff; }
+.subject-cards { margin-top: 15px; }
+.card { padding: 20px; border-radius: 12px; margin-bottom: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); cursor: pointer; transition: transform 0.1s; }
+.card:active { transform: scale(0.98); }
+.chinese-card { background: linear-gradient(135deg, #FF6B6B, #FF8E53); color: #fff; }
+.english-card { background: linear-gradient(135deg, #4A90D9, #67B8DE); color: #fff; }
+.card-icon { font-size: 28px; display: block; margin-bottom: 6px; }
+.card-title { font-size: 17px; font-weight: bold; display: block; margin-bottom: 4px; }
+.card-desc { font-size: 11px; opacity: 0.85; }
+.tools-section { margin-top: 10px; }
+.tools-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.tool-card { background: #fff; border-radius: 12px; padding: 18px 12px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.04); cursor: pointer; }
+.tool-icon { font-size: 26px; display: block; margin-bottom: 6px; }
+.tool-title { font-size: 14px; font-weight: bold; color: #333; display: block; margin-bottom: 2px; }
+.tool-desc { font-size: 11px; color: #999; }
+
+/* ===== 聊天页 ===== */
+.chat-messages { padding: 10px 0; }
+.msg { margin-bottom: 12px; display: flex; }
+.msg.user { justify-content: flex-end; }
+.msg.ai { justify-content: flex-start; }
+.msg-bubble { max-width: 75%; padding: 10px 14px; border-radius: 16px; font-size: 14px; line-height: 1.5; }
+.msg.user .msg-bubble { background: #4A90D9; color: #fff; border-bottom-right-radius: 4px; }
+.msg.ai .msg-bubble { background: #fff; color: #333; border-bottom-left-radius: 4px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+.chat-input-bar { display: flex; gap: 8px; padding: 10px 0; position: sticky; bottom: 0; background: #f5f5f5; }
+.chat-input { flex: 1; border: 1px solid #e0e0e0; border-radius: 20px; padding: 8px 16px; font-size: 14px; outline: none; }
+.chat-send { background: #4A90D9; color: #fff; border: none; border-radius: 20px; padding: 8px 16px; font-size: 14px; cursor: pointer; }
+
+/* ===== 作业批改 ===== */
+.subject-tabs { display: flex; background: #fff; border-radius: 8px; overflow: hidden; margin-bottom: 12px; }
+.subject-tab { flex: 1; text-align: center; padding: 10px 0; font-size: 14px; color: #666; cursor: pointer; }
+.subject-tab.active { background: #4A90D9; color: #fff; font-weight: 600; }
+.upload-area { background: #fff; border-radius: 12px; padding: 40px 20px; text-align: center; cursor: pointer; }
+.upload-icon { font-size: 48px; display: block; margin-bottom: 10px; }
+.upload-text { font-size: 17px; font-weight: bold; color: #333; display: block; margin-bottom: 6px; }
+.upload-hint { font-size: 12px; color: #999; }
+.score-card { background: linear-gradient(135deg, #4A90D9, #67B8DE); border-radius: 12px; padding: 20px; text-align: center; margin-bottom: 12px; color: #fff; }
+.score-label { font-size: 12px; opacity: 0.85; }
+.score-number { font-size: 42px; font-weight: bold; }
+.question-card { background: #fff; border-radius: 10px; margin-bottom: 8px; overflow: hidden; }
+.question-card.wrong { border-left: 3px solid #FF6B6B; }
+.question-card.correct { border-left: 3px solid #4CAF50; }
+.question-header { display: flex; justify-content: space-between; align-items: center; padding: 12px 14px; cursor: pointer; }
+.q-badge { width: 20px; height: 20px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 12px; color: #fff; margin-right: 8px; }
+.q-badge.correct { background: #4CAF50; }
+.q-badge.wrong { background: #FF6B6B; }
+.q-num { font-size: 14px; font-weight: bold; color: #333; }
+.q-detail { padding: 0 14px 12px; border-top: 1px solid #f0f0f0; font-size: 13px; color: #555; line-height: 1.6; }
+.q-detail .correct-ans { color: #4CAF50; font-weight: bold; }
+
+/* ===== 错题本 ===== */
+.filter-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+.filter-tabs { display: flex; background: #fff; border-radius: 8px; overflow: hidden; }
+.filter-tab { padding: 8px 16px; font-size: 13px; color: #666; cursor: pointer; }
+.filter-tab.active { background: #4A90D9; color: #fff; }
+.review-toggle { padding: 8px 14px; background: #fff; border-radius: 8px; font-size: 12px; color: #666; cursor: pointer; }
+.review-toggle.active { background: #FF8E53; color: #fff; }
+.mistake-card { background: #fff; border-radius: 10px; margin-bottom: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.04); overflow: hidden; }
+.mistake-header { display: flex; justify-content: space-between; align-items: center; padding: 12px 14px; cursor: pointer; }
+.mistake-left { display: flex; align-items: center; gap: 8px; flex: 1; overflow: hidden; }
+.subject-tag { padding: 2px 8px; border-radius: 4px; font-size: 10px; color: #fff; flex-shrink: 0; }
+.subject-tag.chinese { background: #FF6B6B; }
+.subject-tag.english { background: #4A90D9; }
+.mistake-preview { font-size: 13px; color: #333; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.mastery-dots { display: flex; gap: 3px; }
+.dot { width: 8px; height: 8px; border-radius: 50%; background: #e0e0e0; }
+.dot.filled { background: #FF6B6B; }
+.dot.filled.l2 { background: #FFB74D; }
+.dot.filled.l3 { background: #4CAF50; }
+
+/* ===== 字词闯关 ===== */
+.game-header { display: flex; align-items: center; justify-content: space-between; padding: 10px 14px; background: #fff; border-radius: 10px; margin-bottom: 12px; }
+.level-dots { display: flex; gap: 5px; }
+.level-dot { width: 12px; height: 12px; border-radius: 50%; background: #e0e0e0; }
+.level-dot.active { background: #FF8E53; }
+.level-name { font-size: 13px; font-weight: bold; color: #FF8E53; }
+.streak { font-size: 12px; color: #4A90D9; font-weight: bold; }
+.question-area { background: #fff; border-radius: 12px; padding: 30px 20px; margin-bottom: 12px; text-align: center; }
+.big-word { font-size: 56px; font-weight: bold; color: #333; display: block; margin-bottom: 6px; }
+.pinyin { font-size: 16px; color: #999; display: block; margin-bottom: 10px; }
+.question-text { font-size: 15px; color: #555; line-height: 1.5; }
+.options { display: flex; flex-direction: column; gap: 8px; }
+.option-card { background: #fff; border-radius: 10px; padding: 14px 18px; font-size: 14px; color: #333; box-shadow: 0 1px 4px rgba(0,0,0,0.04); cursor: pointer; transition: transform 0.1s, background 0.1s; }
+.option-card:hover { background: #f0f7ff; }
+.option-card:active { transform: scale(0.98); }
+.task-card-preview { background: #fff; border-radius: 12px; padding: 20px; margin-bottom: 12px; }
+.task-title-p { font-size: 16px; font-weight: bold; color: #333; }
+.task-date { font-size: 12px; color: #999; margin-top: 4px; display: block; }
+.task-info { font-size: 13px; color: #555; margin-top: 8px; display: block; }
+.progress-bar { height: 8px; background: #e0e0e0; border-radius: 4px; overflow: hidden; margin-top: 8px; }
+.progress-fill { height: 100%; background: linear-gradient(90deg, #4A90D9, #67B8DE); border-radius: 4px; }
+.stats-card-preview { display: flex; background: #fff; border-radius: 12px; padding: 16px; margin-bottom: 12px; }
+.stat-item { flex: 1; text-align: center; }
+.stat-value { font-size: 20px; font-weight: bold; color: #4A90D9; display: block; }
+.stat-label { font-size: 11px; color: #999; margin-top: 2px; display: block; }
+.btn-start { text-align: center; padding: 14px; background: linear-gradient(135deg, #FF8E53, #FF6B6B); border-radius: 12px; font-size: 17px; font-weight: bold; color: #fff; cursor: pointer; box-shadow: 0 3px 10px rgba(255,107,107,0.3); }
+
+/* ===== 学习报告 ===== */
+.overview-cards { display: flex; gap: 6px; margin-bottom: 12px; }
+.ov-card { flex: 1; background: #fff; border-radius: 10px; padding: 10px 6px; text-align: center; }
+.ov-value { font-size: 18px; font-weight: bold; color: #4A90D9; display: block; }
+.ov-label { font-size: 10px; color: #999; display: block; margin-top: 2px; }
+.chart-card { background: #fff; border-radius: 10px; padding: 14px; margin-bottom: 10px; }
+.card-title { font-size: 13px; font-weight: bold; color: #333; display: block; margin-bottom: 10px; }
+.bar-row { display: flex; align-items: center; gap: 6px; margin-bottom: 8px; }
+.bar-label { font-size: 12px; color: #666; width: 30px; }
+.bar-track { flex: 1; height: 12px; background: #f0f0f0; border-radius: 6px; overflow: hidden; }
+.bar-fill { height: 100%; border-radius: 6px; }
+.bar-fill.chinese { background: linear-gradient(90deg, #FF6B6B, #FF8E53); }
+.bar-fill.english { background: linear-gradient(90deg, #4A90D9, #67B8DE); }
+.bar-num { font-size: 12px; color: #666; width: 24px; text-align: right; }
+.trend-chart { display: flex; align-items: flex-end; justify-content: space-around; height: 100px; }
+.trend-col { display: flex; flex-direction: column; align-items: center; flex: 1; }
+.trend-bar { width: 20px; background: linear-gradient(180deg, #4A90D9, #67B8DE); border-radius: 4px 4px 0 0; }
+.trend-day { font-size: 9px; color: #999; margin-top: 4px; }
+
+/* ===== 个人中心 ===== */
+.user-card { display: flex; align-items: center; background: linear-gradient(135deg, #4A90D9, #67B8DE); border-radius: 12px; padding: 20px; margin-bottom: 12px; color: #fff; }
+.avatar { font-size: 36px; margin-right: 14px; }
+.nickname { font-size: 17px; font-weight: bold; display: block; margin-bottom: 4px; }
+.login-status { font-size: 12px; opacity: 0.7; }
+.section-card { background: #fff; border-radius: 10px; padding: 14px; margin-bottom: 10px; }
+.section-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+.section-h { font-size: 14px; font-weight: bold; color: #333; }
+.add-btn { font-size: 13px; color: #4A90D9; font-weight: bold; cursor: pointer; }
+.student-row { display: flex; align-items: center; padding: 10px; border-radius: 8px; margin-bottom: 6px; background: #f8f9fa; }
+.student-row.active { background: #e3f2fd; border: 1px solid #4A90D9; }
+.stu-avatar { font-size: 22px; margin-right: 10px; }
+.stu-name { font-size: 14px; font-weight: bold; color: #333; }
+.stu-grade { font-size: 12px; color: #999; }
+.active-tag { background: #4A90D9; color: #fff; font-size: 10px; padding: 2px 8px; border-radius: 6px; margin-left: auto; }
+.menu-row { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #f5f5f5; font-size: 14px; color: #333; cursor: pointer; }
+.menu-arrow { color: #ccc; }
+.menu-logout { color: #FF6B6B; text-align: center; border: none; cursor: pointer; }
+
+/* Feedback overlay */
+.feedback-overlay { text-align: center; padding: 40px 0; }
+.feedback-icon { width: 60px; height: 60px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 28px; color: #fff; margin-bottom: 12px; }
+.feedback-icon.correct { background: #4CAF50; }
+.feedback-icon.wrong { background: #FF6B6B; }
+.feedback-text { font-size: 18px; font-weight: bold; display: block; margin-bottom: 8px; }
+.feedback-text.correct { color: #4CAF50; }
+.feedback-text.wrong { color: #FF6B6B; }
+.encouragement { font-size: 14px; color: #666; }
+</style>
+</head>
+<body>
+
+<div class="phone-frame">
+  <div class="phone-notch"></div>
+  <div class="phone-screen" id="screen">
+
+    <!-- ===== 首页 ===== -->
+    <div class="page active" id="page-home">
+      <div class="header">
+        <div class="title">AI助学</div>
+        <div class="subtitle">帮助小学3-6年级打好语文和英语基础</div>
+      </div>
+      <div class="grade-selector">
+        <div class="section-title">选择年级</div>
+        <div class="grade-list">
+          <div class="grade-item active" onclick="selectGrade(this)">3年级</div>
+          <div class="grade-item" onclick="selectGrade(this)">4年级</div>
+          <div class="grade-item" onclick="selectGrade(this)">5年级</div>
+          <div class="grade-item" onclick="selectGrade(this)">6年级</div>
+        </div>
+      </div>
+      <div class="subject-cards">
+        <div class="card chinese-card" onclick="showPage('chat')">
+          <span class="card-icon">📖</span>
+          <span class="card-title">语文辅导</span>
+          <span class="card-desc">课文理解、作文指导、阅读训练</span>
+        </div>
+        <div class="card english-card" onclick="showPage('chat-en')">
+          <span class="card-icon">🔤</span>
+          <span class="card-title">英语辅导</span>
+          <span class="card-desc">单词练习、语法讲解、情景对话</span>
+        </div>
+      </div>
+      <div class="tools-section">
+        <div class="section-title">学习工具</div>
+        <div class="tools-grid">
+          <div class="tool-card" onclick="showPage('homework')">
+            <span class="tool-icon">📸</span>
+            <span class="tool-title">作业批改</span>
+            <span class="tool-desc">拍照批改作业</span>
+          </div>
+          <div class="tool-card" onclick="showPage('mistakes')">
+            <span class="tool-icon">📝</span>
+            <span class="tool-title">错题本</span>
+            <span class="tool-desc">复习巩固错题</span>
+          </div>
+          <div class="tool-card" onclick="showPage('challenge')">
+            <span class="tool-icon">🎯</span>
+            <span class="tool-title">字词闯关</span>
+            <span class="tool-desc">每日生字单词</span>
+          </div>
+          <div class="tool-card" onclick="showPage('report')">
+            <span class="tool-icon">📊</span>
+            <span class="tool-title">学习报告</span>
+            <span class="tool-desc">查看学习数据</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== AI对话（语文） ===== -->
+    <div class="page" id="page-chat">
+      <div class="nav-bar">📖 语文辅导 · 3年级</div>
+      <div class="chat-messages">
+        <div class="msg ai"><div class="msg-bubble">你好呀同学！我是你的语文老师。今天想学什么呢？可以问我课文理解、字词、作文的问题哦 😊</div></div>
+        <div class="msg user"><div class="msg-bubble">"绚烂"是什么意思？</div></div>
+        <div class="msg ai"><div class="msg-bubble">好问题！✨ "绚烂"的意思是非常美丽、光彩夺目。就像天上的烟花绽放时，五颜六色、非常漂亮，那就是"绚烂"的景象。<br><br>你可以这样记：绚 = 美丽，烂 = 灿烂，合起来就是"美丽灿烂"的意思。<br><br>试着用"绚烂"造个句吧？</div></div>
+        <div class="msg user"><div class="msg-bubble">春天的花园里开满了绚烂的花朵。</div></div>
+        <div class="msg ai"><div class="msg-bubble">太棒了！👏 这个句子用得非常好！春天的花园里确实有各种颜色的花，用"绚烂"来形容非常恰当。你已经学会这个词语了！</div></div>
+      </div>
+      <div class="chat-input-bar">
+        <input class="chat-input" placeholder="输入你的问题..." />
+        <button class="chat-send">发送</button>
+      </div>
+    </div>
+
+    <!-- ===== AI对话（英语） ===== -->
+    <div class="page" id="page-chat-en">
+      <div class="nav-bar">🔤 英语辅导 · 3年级</div>
+      <div class="chat-messages">
+        <div class="msg ai"><div class="msg-bubble">Hi there! I'm your English teacher. 今天想练习什么？单词、语法还是对话？</div></div>
+        <div class="msg user"><div class="msg-bubble">What is apple?</div></div>
+        <div class="msg ai"><div class="msg-bubble">An <b>apple</b> is a round fruit! 🍎 It's usually red, green, or yellow. In Chinese we say "苹果" (píng guǒ).<br><br>Sentence: <i>"I eat an apple every day."</i><br>我每天吃一个苹果。<br><br>Can you use "apple" in a sentence?</div></div>
+      </div>
+      <div class="chat-input-bar">
+        <input class="chat-input" placeholder="Type your question..." />
+        <button class="chat-send">Send</button>
+      </div>
+    </div>
+
+    <!-- ===== 作业批改 ===== -->
+    <div class="page" id="page-homework">
+      <div class="nav-bar">📸 作业批改</div>
+      <div class="subject-tabs">
+        <div class="subject-tab active">语文</div>
+        <div class="subject-tab">英语</div>
+      </div>
+      <!-- 批改结果 -->
+      <div class="score-card">
+        <div class="score-label">批改结果</div>
+        <span class="score-number">85</span> 分
+      </div>
+      <div style="background:linear-gradient(135deg,#FF8E53,#FF6B6B);border-radius:10px;padding:14px;margin-bottom:12px;color:#fff;font-size:13px;">
+        做得很棒！大部分题目都答对了，继续加油！有几个小错误我们一起来学习吧~
+      </div>
+      <div style="background:#fff;border-radius:10px;padding:14px;margin-bottom:12px;font-size:13px;color:#555;">
+        作业整体完成度很好，字迹工整。第3题的造句需要再想想哦，用"快乐"造句可以更丰富一些。
+      </div>
+      <div class="question-card correct">
+        <div class="question-header">
+          <span><span class="q-badge correct">✓</span><span class="q-num">第1题</span></span>
+        </div>
+        <div class="q-detail">题目：写出反义词：大（ ）<br>你的答案：<b>小</b> ✓</div>
+      </div>
+      <div class="question-card correct">
+        <div class="question-header">
+          <span><span class="q-badge correct">✓</span><span class="q-num">第2题</span></span>
+        </div>
+        <div class="q-detail">题目：组词：春（ ）<br>你的答案：<b>春天</b> ✓</div>
+      </div>
+      <div class="question-card wrong">
+        <div class="question-header">
+          <span><span class="q-badge wrong">✗</span><span class="q-num">第3题</span></span>
+        </div>
+        <div class="q-detail">题目：用"快乐"造句<br>你的答案：我很快乐。<br><span class="correct-ans">建议：可以更丰富，如"春天来了，小鸟在树上快乐地唱歌。"</span></div>
+      </div>
+      <div style="display:flex;gap:10px;margin-top:14px;">
+        <div style="flex:1;text-align:center;padding:12px;background:linear-gradient(135deg,#FF6B6B,#FF8E53);border-radius:10px;font-size:14px;font-weight:bold;color:#fff;cursor:pointer;">查看错题本 (1)</div>
+        <div style="flex:1;text-align:center;padding:12px;background:#fff;border-radius:10px;font-size:14px;color:#666;cursor:pointer;">再拍一份</div>
+      </div>
+    </div>
+
+    <!-- ===== 错题本 ===== -->
+    <div class="page" id="page-mistakes">
+      <div class="nav-bar">📝 错题本</div>
+      <div class="filter-bar">
+        <div class="filter-tabs">
+          <div class="filter-tab active">全部</div>
+          <div class="filter-tab">语文</div>
+          <div class="filter-tab">英语</div>
+        </div>
+        <div class="review-toggle active">待复习</div>
+      </div>
+      <div class="mistake-card">
+        <div class="mistake-header">
+          <div class="mistake-left">
+            <span class="subject-tag chinese">语文</span>
+            <span class="mistake-preview">用"快乐"造句</span>
+          </div>
+          <div class="mastery-dots"><div class="dot filled"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+        </div>
+      </div>
+      <div class="mistake-card">
+        <div class="mistake-header">
+          <div class="mistake-left">
+            <span class="subject-tag chinese">语文</span>
+            <span class="mistake-preview">反义词：多（ ）</span>
+          </div>
+          <div class="mastery-dots"><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled l2"></div><div class="dot"></div><div class="dot"></div></div>
+        </div>
+      </div>
+      <div class="mistake-card">
+        <div class="mistake-header">
+          <div class="mistake-left">
+            <span class="subject-tag english">英语</span>
+            <span class="mistake-preview">apple = banana ✗</span>
+          </div>
+          <div class="mastery-dots"><div class="dot filled"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+        </div>
+      </div>
+      <div class="mistake-card">
+        <div class="mistake-header">
+          <div class="mistake-left">
+            <span class="subject-tag english">英语</span>
+            <span class="mistake-preview">red = 蓝色的</span>
+          </div>
+          <div class="mastery-dots"><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled l3"></div><div class="dot filled l3"></div><div class="dot"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== 字词闯关 ===== -->
+    <div class="page" id="page-challenge">
+      <div class="nav-bar">🎯 字词闯关</div>
+      <div class="task-card-preview">
+        <div class="task-title-p">今日任务</div>
+        <span class="task-date">2026-05-28</span>
+        <span class="task-info">已完成 3/10 个字词</span>
+        <div class="progress-bar"><div class="progress-fill" style="width:30%"></div></div>
+      </div>
+      <div class="stats-card-preview">
+        <div class="stat-item"><span class="stat-value">25</span><span class="stat-label">总积分</span></div>
+        <div class="stat-item"><span class="stat-value">3</span><span class="stat-label">连续天数</span></div>
+        <div class="stat-item"><span class="stat-value">8</span><span class="stat-label">已掌握</span></div>
+      </div>
+      <div style="padding:4px 0 10px; font-size:12px; color:#999;">— 以下为答题界面预览 —</div>
+      <div class="game-header">
+        <div class="level-dots">
+          <div class="level-dot active"></div>
+          <div class="level-dot active"></div>
+          <div class="level-dot active"></div>
+          <div class="level-dot"></div>
+        </div>
+        <span class="level-name">造句</span>
+        <span class="streak">3 连对</span>
+      </div>
+      <div class="question-area">
+        <span class="big-word">春</span>
+        <span class="pinyin">chūn</span>
+        <span class="question-text">哪个句子正确使用了"春"？</span>
+      </div>
+      <div class="options">
+        <div class="option-card">A. 夏天来了，百花盛开。</div>
+        <div class="option-card">B. 春天来了，小草绿了。</div>
+        <div class="option-card">C. 秋风吹过，落叶飘零。</div>
+        <div class="option-card">D. 冬天的早晨，鸟儿在唱歌。</div>
+      </div>
+    </div>
+
+    <!-- ===== 学习报告 ===== -->
+    <div class="page" id="page-report">
+      <div class="nav-bar">📊 学习报告</div>
+      <div class="subject-tabs" style="margin-bottom:12px;">
+        <div class="subject-tab active">日报</div>
+        <div class="subject-tab">周报</div>
+      </div>
+      <div style="text-align:center;margin-bottom:10px;font-size:12px;color:#999;">2026-05-28</div>
+      <div class="overview-cards">
+        <div class="ov-card"><span class="ov-value">12</span><span class="ov-label">学习次数</span></div>
+        <div class="ov-card"><span class="ov-value">5</span><span class="ov-label">字词学习</span></div>
+        <div class="ov-card"><span class="ov-value">2</span><span class="ov-label">错题数</span></div>
+        <div class="ov-card"><span class="ov-value">1</span><span class="ov-label">作业</span></div>
+      </div>
+      <div class="chart-card">
+        <div class="card-title">科目分布</div>
+        <div class="bar-row">
+          <span class="bar-label">语文</span>
+          <div class="bar-track"><div class="bar-fill chinese" style="width:70%"></div></div>
+          <span class="bar-num">8</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">英语</span>
+          <div class="bar-track"><div class="bar-fill english" style="width:40%"></div></div>
+          <span class="bar-num">4</span>
+        </div>
+      </div>
+      <div class="chart-card">
+        <div class="card-title">7日趋势</div>
+        <div class="trend-chart">
+          <div class="trend-col"><div class="trend-bar" style="height:20px"></div><span class="trend-day">05-22</span></div>
+          <div class="trend-col"><div class="trend-bar" style="height:50px"></div><span class="trend-day">05-23</span></div>
+          <div class="trend-col"><div class="trend-bar" style="height:35px"></div><span class="trend-day">05-24</span></div>
+          <div class="trend-col"><div class="trend-bar" style="height:65px"></div><span class="trend-day">05-25</span></div>
+          <div class="trend-col"><div class="trend-bar" style="height:40px"></div><span class="trend-day">05-26</span></div>
+          <div class="trend-col"><div class="trend-bar" style="height:80px"></div><span class="trend-day">05-27</span></div>
+          <div class="trend-col"><div class="trend-bar" style="height:95px"></div><span class="trend-day">05-28</span></div>
+        </div>
+      </div>
+      <div class="chart-card">
+        <div class="card-title">薄弱知识点</div>
+        <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #f5f5f5;font-size:13px;">
+          <span style="color:#333">组词</span><span style="color:#FF6B6B;font-weight:bold">3次</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #f5f5f5;font-size:13px;">
+          <span style="color:#333">反义词</span><span style="color:#FF6B6B;font-weight:bold">2次</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;padding:8px 0;font-size:13px;">
+          <span style="color:#333">vocabulary</span><span style="color:#FF6B6B;font-weight:bold">2次</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== 个人中心 ===== -->
+    <div class="page" id="page-profile">
+      <div class="nav-bar">👤 个人中心</div>
+      <div class="user-card">
+        <span class="avatar">👩</span>
+        <div>
+          <span class="nickname">张妈妈</span>
+          <span class="login-status">已登录</span>
+        </div>
+      </div>
+      <div class="section-card">
+        <div class="section-header">
+          <span class="section-h">我的孩子</span>
+          <span class="add-btn">+ 添加</span>
+        </div>
+        <div class="student-row active">
+          <span class="stu-avatar">👦</span>
+          <div style="flex:1"><span class="stu-name">小明</span><br><span class="stu-grade">3年级</span></div>
+          <span class="active-tag">当前</span>
+        </div>
+        <div class="student-row">
+          <span class="stu-avatar">👧</span>
+          <div style="flex:1"><span class="stu-name">小红</span><br><span class="stu-grade">5年级</span></div>
+        </div>
+      </div>
+      <div class="section-card">
+        <div class="section-h" style="margin-bottom:10px;">学习提醒</div>
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <span style="font-size:13px;color:#555;">每日提醒时间</span>
+          <span style="font-size:14px;color:#4A90D9;font-weight:bold;">19:00</span>
+        </div>
+      </div>
+      <div class="section-card">
+        <div class="menu-row" onclick="showPage('report')"><span>学习报告</span><span class="menu-arrow">></span></div>
+        <div class="menu-row"><span>关于AI助学</span><span class="menu-arrow">></span></div>
+        <div class="menu-row menu-logout" style="justify-content:center;border:none;color:#FF6B6B;">退出登录</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bottom Tab Bar -->
+  <div style="display:flex;background:#fff;border-top:1px solid #eee;padding:6px 0 18px;margin-top:auto;">
+    <div class="tab-item active" onclick="showPage('home')"><span class="tab-icon">🏠</span>首页</div>
+    <div class="tab-item" onclick="showPage('chat')"><span class="tab-icon">💬</span>AI辅导</div>
+    <div class="tab-item" onclick="showPage('profile')"><span class="tab-icon">👤</span>我的</div>
+  </div>
+</div>
+
+<script>
+function showPage(name) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  const page = document.getElementById('page-' + name);
+  if (page) page.classList.add('active');
+  document.getElementById('screen').scrollTop = 0;
+  document.querySelectorAll('.tab-item').forEach(t => t.classList.remove('active'));
+}
+function selectGrade(el) {
+  document.querySelectorAll('.grade-item').forEach(g => g.classList.remove('active'));
+  el.classList.add('active');
+}
+</script>
+</body>
+</html>

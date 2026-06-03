@@ -1,0 +1,306 @@
+{
+  "subject": "english",
+  "grade": 5,
+  "units": [
+    {
+      "unit": 1,
+      "title": "Unit 1 · What's He Like?",
+      "words": [
+        {
+          "word": "old",
+          "phonetic": "/oʊld/",
+          "meaning": "年老的，旧的",
+          "level_hint": "My grandfather is ____.",
+          "sample_sentences": ["He is old.", "The book is old.", "How old are you?"],
+          "distractor_words": ["young", "new", "modern"],
+          "distractor_meanings": ["年轻的", "新的", "现代的"]
+        },
+        {
+          "word": "young",
+          "phonetic": "/jʌŋ/",
+          "meaning": "年轻的",
+          "level_hint": "She is very ____.",
+          "sample_sentences": ["She is young.", "Young people like sports.", "He looks young."],
+          "distractor_words": ["old", "tall", "small"],
+          "distractor_meanings": ["年老的", "高的", "小的"]
+        },
+        {
+          "word": "funny",
+          "phonetic": "/ˈfʌni/",
+          "meaning": "有趣的，好笑的",
+          "level_hint": "The story is very ____.",
+          "sample_sentences": ["He is funny.", "That's funny!", "The joke is funny."],
+          "distractor_words": ["boring", "sad", "serious"],
+          "distractor_meanings": ["无聊的", "伤心的", "严肃的"]
+        },
+        {
+          "word": "kind",
+          "phonetic": "/kaɪnd/",
+          "meaning": "善良的，和蔼的",
+          "level_hint": "Our teacher is very ____.",
+          "sample_sentences": ["She is kind.", "Be kind to animals.", "Thank you for being kind."],
+          "distractor_words": ["strict", "mean", "rude"],
+          "distractor_meanings": ["严格的", "刻薄的", "粗鲁的"]
+        },
+        {
+          "word": "strict",
+          "phonetic": "/strɪkt/",
+          "meaning": "严格的",
+          "level_hint": "My father is very ____.",
+          "sample_sentences": ["The teacher is strict.", "Be strict with yourself.", "He is strict but kind."],
+          "distractor_words": ["kind", "gentle", "soft"],
+          "distractor_meanings": ["善良的", "温柔的", "柔软的"]
+        },
+        {
+          "word": "polite",
+          "phonetic": "/pəˈlaɪt/",
+          "meaning": "有礼貌的",
+          "level_hint": "He is very ____ to everyone.",
+          "sample_sentences": ["Be polite.", "She is polite.", "A polite student says please."],
+          "distractor_words": ["rude", "shy", "loud"],
+          "distractor_meanings": ["粗鲁的", "害羞的", "大声的"]
+        }
+      ]
+    },
+    {
+      "unit": 2,
+      "title": "Unit 2 · My Week",
+      "words": [
+        {
+          "word": "Monday",
+          "phonetic": "/ˈmʌndeɪ/",
+          "meaning": "星期一",
+          "level_hint": "____ is the first day of the week.",
+          "sample_sentences": ["I have class on Monday.", "Monday is busy.", "See you on Monday."],
+          "distractor_words": ["Friday", "Sunday", "Saturday"],
+          "distractor_meanings": ["星期五", "星期日", "星期六"]
+        },
+        {
+          "word": "Tuesday",
+          "phonetic": "/ˈtuːzdeɪ/",
+          "meaning": "星期二",
+          "level_hint": "We have PE on ____.",
+          "sample_sentences": ["Tuesday is after Monday.", "I like Tuesday.", "See you Tuesday."],
+          "distractor_words": ["Thursday", "Wednesday", "Friday"],
+          "distractor_meanings": ["星期四", "星期三", "星期五"]
+        },
+        {
+          "word": "Wednesday",
+          "phonetic": "/ˈwenzdeɪ/",
+          "meaning": "星期三",
+          "level_hint": "We have art on ____.",
+          "sample_sentences": ["Wednesday is the middle of the week.", "I like Wednesday.", "Today is Wednesday."],
+          "distractor_words": ["Monday", "Friday", "Thursday"],
+          "distractor_meanings": ["星期一", "星期五", "星期四"]
+        },
+        {
+          "word": "homework",
+          "phonetic": "/ˈhoʊmwɜːrk/",
+          "meaning": "家庭作业",
+          "level_hint": "I do my ____ after school.",
+          "sample_sentences": ["I do homework every day.", "The homework is easy.", "Finish your homework."],
+          "distractor_words": ["housework", "classwork", "teamwork"],
+          "distractor_meanings": ["家务", "课堂作业", "团队合作"]
+        },
+        {
+          "word": "weekend",
+          "phonetic": "/ˌwiːkˈend/",
+          "meaning": "周末",
+          "level_hint": "I play on the ____.",
+          "sample_sentences": ["I love the weekend.", "What do you do on the weekend?", "The weekend is fun."],
+          "distractor_words": ["weekday", "holiday", "vacation"],
+          "distractor_meanings": ["工作日", "假日", "假期"]
+        },
+        {
+          "word": "often",
+          "phonetic": "/ˈɔːfn/",
+          "meaning": "经常",
+          "level_hint": "I ____ play football.",
+          "sample_sentences": ["I often read books.", "She often helps me.", "How often do you go?"],
+          "distractor_words": ["seldom", "never", "always"],
+          "distractor_meanings": ["很少", "从不", "总是"]
+        }
+      ]
+    },
+    {
+      "unit": 3,
+      "title": "Unit 3 · What Would You Like?",
+      "words": [
+        {
+          "word": "sandwich",
+          "phonetic": "/ˈsænwɪtʃ/",
+          "meaning": "三明治",
+          "level_hint": "I'd like a ____.",
+          "sample_sentences": ["I like sandwiches.", "Make me a sandwich.", "The sandwich is delicious."],
+          "distractor_words": ["hamburger", "salad", "pizza"],
+          "distractor_meanings": ["汉堡", "沙拉", "比萨"]
+        },
+        {
+          "word": "salad",
+          "phonetic": "/ˈsæləd/",
+          "meaning": "沙拉",
+          "level_hint": "The ____ is fresh.",
+          "sample_sentences": ["I like fruit salad.", "Make a salad.", "The salad is healthy."],
+          "distractor_words": ["soup", "sauce", "snack"],
+          "distractor_meanings": ["汤", "酱汁", "零食"]
+        },
+        {
+          "word": "fresh",
+          "phonetic": "/freʃ/",
+          "meaning": "新鲜的",
+          "level_hint": "The fruit is very ____.",
+          "sample_sentences": ["The vegetables are fresh.", "I like fresh fruit.", "Fresh air is good."],
+          "distractor_words": ["frozen", "dry", "old"],
+          "distractor_meanings": ["冷冻的", "干的", "陈旧的"]
+        },
+        {
+          "word": "healthy",
+          "phonetic": "/ˈhelθi/",
+          "meaning": "健康的",
+          "level_hint": "Eat ____ food.",
+          "sample_sentences": ["Vegetables are healthy.", "Stay healthy.", "A healthy breakfast is important."],
+          "distractor_words": ["junk", "sweet", "spicy"],
+          "distractor_meanings": ["垃圾的", "甜的", "辣的"]
+        },
+        {
+          "word": "delicious",
+          "phonetic": "/dɪˈlɪʃəs/",
+          "meaning": "美味的",
+          "level_hint": "The cake is ____.",
+          "sample_sentences": ["The food is delicious.", "This tastes delicious.", "Mom makes delicious food."],
+          "distractor_words": ["terrible", "bland", "sour"],
+          "distractor_meanings": ["糟糕的", "无味的", "酸的"]
+        },
+        {
+          "word": "thirsty",
+          "phonetic": "/ˈθɜːrsti/",
+          "meaning": "口渴的",
+          "level_hint": "I'm ____. Can I have water?",
+          "sample_sentences": ["I am thirsty.", "Are you thirsty?", "She feels thirsty after running."],
+          "distractor_words": ["hungry", "tired", "sleepy"],
+          "distractor_meanings": ["饥饿的", "疲倦的", "困的"]
+        }
+      ]
+    },
+    {
+      "unit": 4,
+      "title": "Unit 4 · What Can You Do?",
+      "words": [
+        {
+          "word": "sing",
+          "phonetic": "/sɪŋ/",
+          "meaning": "唱歌",
+          "level_hint": "I can ____ English songs.",
+          "sample_sentences": ["I like to sing.", "She sings well.", "Let's sing together."],
+          "distractor_words": ["dance", "draw", "swim"],
+          "distractor_meanings": ["跳舞", "画画", "游泳"]
+        },
+        {
+          "word": "dance",
+          "phonetic": "/dæns/",
+          "meaning": "跳舞",
+          "level_hint": "She can ____ very well.",
+          "sample_sentences": ["I like to dance.", "She dances beautifully.", "Let's dance!"],
+          "distractor_words": ["jump", "run", "climb"],
+          "distractor_meanings": ["跳", "跑", "攀爬"]
+        },
+        {
+          "word": "draw",
+          "phonetic": "/drɔː/",
+          "meaning": "画画",
+          "level_hint": "I can ____ pictures.",
+          "sample_sentences": ["I like to draw.", "She draws a cat.", "Can you draw a tree?"],
+          "distractor_words": ["paint", "write", "read"],
+          "distractor_meanings": ["涂色", "写字", "阅读"]
+        },
+        {
+          "word": "cook",
+          "phonetic": "/kʊk/",
+          "meaning": "做饭",
+          "level_hint": "My mom can ____ well.",
+          "sample_sentences": ["I can cook rice.", "She cooks dinner.", "He likes cooking."],
+          "distractor_words": ["bake", "wash", "clean"],
+          "distractor_meanings": ["烘焙", "洗", "打扫"]
+        },
+        {
+          "word": "speak",
+          "phonetic": "/spiːk/",
+          "meaning": "说（某种语言）",
+          "level_hint": "I can ____ English.",
+          "sample_sentences": ["I can speak English.", "She speaks Chinese.", "Can you speak slowly?"],
+          "distractor_words": ["hear", "listen", "write"],
+          "distractor_meanings": ["听到", "听", "写"]
+        },
+        {
+          "word": "practice",
+          "phonetic": "/ˈpræktɪs/",
+          "meaning": "练习",
+          "level_hint": "I ____ every day.",
+          "sample_sentences": ["Practice makes perfect.", "I practice the piano.", "She practices English daily."],
+          "distractor_words": ["study", "review", "learn"],
+          "distractor_meanings": ["学习", "复习", "学会"]
+        }
+      ]
+    },
+    {
+      "unit": 5,
+      "title": "Unit 5 · There Is a Big Bed",
+      "words": [
+        {
+          "word": "plant",
+          "phonetic": "/plænt/",
+          "meaning": "植物",
+          "level_hint": "There is a ____ near the window.",
+          "sample_sentences": ["The plant is green.", "Water the plant.", "I like plants."],
+          "distractor_words": ["flower", "tree", "grass"],
+          "distractor_meanings": ["花", "树", "草"]
+        },
+        {
+          "word": "clock",
+          "phonetic": "/klɑːk/",
+          "meaning": "钟",
+          "level_hint": "The ____ says seven o'clock.",
+          "sample_sentences": ["Look at the clock.", "The clock is on the wall.", "What time does the clock say?"],
+          "distractor_words": ["watch", "calendar", "timer"],
+          "distractor_meanings": ["手表", "日历", "计时器"]
+        },
+        {
+          "word": "photo",
+          "phonetic": "/ˈfoʊtoʊ/",
+          "meaning": "照片",
+          "level_hint": "There is a ____ on the desk.",
+          "sample_sentences": ["This is my photo.", "Take a photo.", "I like this photo."],
+          "distractor_words": ["picture", "poster", "letter"],
+          "distractor_meanings": ["图片", "海报", "信"]
+        },
+        {
+          "word": "behind",
+          "phonetic": "/bɪˈhaɪnd/",
+          "meaning": "在...后面",
+          "level_hint": "The cat is ____ the door.",
+          "sample_sentences": ["He is behind the tree.", "The ball is behind the box.", "Look behind you."],
+          "distractor_words": ["beside", "between", "above"],
+          "distractor_meanings": ["在...旁边", "在...之间", "在...上面"]
+        },
+        {
+          "word": "beside",
+          "phonetic": "/bɪˈsaɪd/",
+          "meaning": "在...旁边",
+          "level_hint": "The lamp is ____ the bed.",
+          "sample_sentences": ["Sit beside me.", "The school is beside the park.", "He stands beside his mom."],
+          "distractor_words": ["above", "below", "behind"],
+          "distractor_meanings": ["在...上方", "在...下方", "在...后面"]
+        },
+        {
+          "word": "between",
+          "phonetic": "/bɪˈtwiːn/",
+          "meaning": "在...之间",
+          "level_hint": "The school is ____ the park and the shop.",
+          "sample_sentences": ["Sit between us.", "The ball is between the boxes.", "I am between 9 and 10 years old."],
+          "distractor_words": ["among", "around", "through"],
+          "distractor_meanings": ["在...之中", "在...周围", "穿过"]
+        }
+      ]
+    }
+  ]
+}

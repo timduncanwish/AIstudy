@@ -1,0 +1,306 @@
+{
+  "subject": "chinese",
+  "grade": 4,
+  "units": [
+    {
+      "unit": 1,
+      "title": "第一单元·自然之美",
+      "words": [
+        {
+          "word": "雾",
+          "pinyin": "wù",
+          "meaning": "空气中弥漫的水汽，看不清远处",
+          "level_hint": "早晨起了大____，什么都看不清。",
+          "sample_sentences": ["江面上起了大雾。", "雾散了，太阳出来了。", "浓雾笼罩着整个城市。"],
+          "distractor_words": ["露", "霜", "烟"],
+          "distractor_meanings": ["露水，清晨凝结在草叶上的水珠", "霜，寒冷时地面结的白色冰晶", "烟，燃烧产生的气体"]
+        },
+        {
+          "word": "潮",
+          "pinyin": "cháo",
+          "meaning": "海水定期涨落的现象",
+          "level_hint": "钱塘江大____非常壮观。",
+          "sample_sentences": ["钱塘江大潮天下闻名。", "潮水退去，沙滩露出来了。", "涨潮了，海水漫过脚面。"],
+          "distractor_words": ["浪", "涛", "波"],
+          "distractor_meanings": ["波浪，水面起伏的运动", "波涛，大波浪", "水波，水面上的纹路"]
+        },
+        {
+          "word": "据",
+          "pinyin": "jù",
+          "meaning": "依据，按照",
+          "level_hint": "根____天气预报，明天会下雨。",
+          "sample_sentences": ["据老师说，下周要考试。", "据我观察，天要晴了。", "据说那里很美。"],
+          "distractor_words": ["依", "凭", "按"],
+          "distractor_meanings": ["依靠，倚仗", "凭借，利用", "按照，依照"]
+        },
+        {
+          "word": "堤",
+          "pinyin": "dī",
+          "meaning": "沿河或沿海修建的防水建筑物",
+          "level_hint": "河____上种了一排柳树。",
+          "sample_sentences": ["堤岸上长满了青草。", "大堤保护着村庄。", "他们在堤上散步。"],
+          "distractor_words": ["坝", "桥", "岸"],
+          "distractor_meanings": ["水坝，拦水的建筑物", "桥梁，跨越水面的建筑", "岸边，水边的陆地"]
+        },
+        {
+          "word": "阔",
+          "pinyin": "kuò",
+          "meaning": "宽广，面积大",
+          "level_hint": "大海非常广____。",
+          "sample_sentences": ["草原非常辽阔。", "宽阔的马路两旁种着树。", "视野开阔，能看到很远。"],
+          "distractor_words": ["窄", "狭", "小"],
+          "distractor_meanings": ["狭窄，不宽", "狭小，空间有限", "微小，不大"]
+        },
+        {
+          "word": "笼",
+          "pinyin": "lǒng",
+          "meaning": "遮盖，笼罩",
+          "level_hint": "夜幕____罩着大地。",
+          "sample_sentences": ["晨雾笼罩着村庄。", "月光笼罩着湖面。", "大地笼罩在夜色中。"],
+          "distractor_words": ["罩", "遮", "盖"],
+          "distractor_meanings": ["覆盖，从上面遮住", "遮挡，挡住光线", "盖住，覆盖在上面"]
+        }
+      ]
+    },
+    {
+      "unit": 2,
+      "title": "第二单元·观察发现",
+      "words": [
+        {
+          "word": "虑",
+          "pinyin": "lǜ",
+          "meaning": "思考，考虑",
+          "level_hint": "他经过深____熟虑后做了决定。",
+          "sample_sentences": ["这件事需要仔细考虑。", "不要忧虑，一切都会好的。", "他深思熟虑后才回答。"],
+          "distractor_words": ["思", "想", "念"],
+          "distractor_meanings": ["思考，动脑筋想", "思考，动脑筋", "想念，挂念"]
+        },
+        {
+          "word": "屏",
+          "pinyin": "bǐng",
+          "meaning": "忍住，抑制",
+          "level_hint": "大家____住呼吸，等待结果。",
+          "sample_sentences": ["他屏住呼吸跳水。", "大家屏息凝视。", "她屏气不敢出声。"],
+          "distractor_words": ["忍", "停", "憋"],
+          "distractor_meanings": ["忍耐，克制自己", "停止，不再继续", "憋住，强忍着"]
+        },
+        {
+          "word": "蹭",
+          "pinyin": "cèng",
+          "meaning": "慢慢地磨擦",
+          "level_hint": "小猫在我腿上____来____去。",
+          "sample_sentences": ["小猫蹭着主人的腿。", "他在墙上蹭了蹭。", "别蹭来蹭去的。"],
+          "distractor_words": ["擦", "磨", "碰"],
+          "distractor_meanings": ["摩擦，两个物体来回接触", "磨擦，反复接触", "碰触，轻轻接触"]
+        },
+        {
+          "word": "稿",
+          "pinyin": "gǎo",
+          "meaning": "草稿，文章的初稿",
+          "level_hint": "他在纸上打____写文章。",
+          "sample_sentences": ["写作文要先打稿。", "稿纸上写满了字。", "他把稿件修改了三遍。"],
+          "distractor_words": ["纸", "笔", "墨"],
+          "distractor_meanings": ["纸张，写字用的薄片", "毛笔，写字的工具", "墨水，写字用的液体"]
+        },
+        {
+          "word": "腔",
+          "pinyin": "qiāng",
+          "meaning": "说话的腔调或口音",
+          "level_hint": "他说话带着一口京____。",
+          "sample_sentences": ["她唱腔优美动听。", "他说话带腔调。", "不要装腔作势。"],
+          "distractor_words": ["调", "音", "声"],
+          "distractor_meanings": ["声调，说话的高低变化", "声音，耳朵能听到的", "声音，发出的声响"]
+        },
+        {
+          "word": "解",
+          "pinyin": "jiě",
+          "meaning": "理解，明白",
+          "level_hint": "这道题我终于____开了。",
+          "sample_sentences": ["我理解了老师的意思。", "这个问题很难解答。", "请你解释一下。"],
+          "distractor_words": ["释", "悟", "懂"],
+          "distractor_meanings": ["解释，说明原因", "领悟，忽然明白", "懂得，知道明白"]
+        }
+      ]
+    },
+    {
+      "unit": 3,
+      "title": "第三单元·童话世界",
+      "words": [
+        {
+          "word": "幻",
+          "pinyin": "huàn",
+          "meaning": "不真实的，想象中的",
+          "level_hint": "这个魔术太____妙了。",
+          "sample_sentences": ["科幻故事真有趣。", "魔术变化如梦如幻。", "不要幻想不劳而获。"],
+          "distractor_words": ["梦", "想", "虚"],
+          "distractor_meanings": ["梦境，睡觉时看到的", "想象，脑海中构思", "虚假，不真实的"]
+        },
+        {
+          "word": "邀",
+          "pinyin": "yāo",
+          "meaning": "请别人来",
+          "level_hint": "他____请同学们来家里玩。",
+          "sample_sentences": ["我邀请你来我家。", "他发出了邀请函。", "受邀参加生日聚会。"],
+          "distractor_words": ["请", "叫", "约"],
+          "distractor_meanings": ["邀请，请求别人来", "叫唤，让别人过来", "约定，说好时间"]
+        },
+        {
+          "word": "填",
+          "pinyin": "tián",
+          "meaning": "把空的地方补上",
+          "level_hint": "请在括号里____上正确的答案。",
+          "sample_sentences": ["请填写你的姓名。", "把坑填平了。", "填空题要做完。"],
+          "distractor_words": ["写", "补", "画"],
+          "distractor_meanings": ["书写，用笔记录", "修补，补上缺少的", "画图，用笔画出"]
+        },
+        {
+          "word": "训",
+          "pinyin": "xùn",
+          "meaning": "教导，训练",
+          "level_hint": "教练在____练队员们。",
+          "sample_sentences": ["老师训练我们跑步。", "足球训练很辛苦。", "军训锻炼了意志。"],
+          "distractor_words": ["练", "教", "导"],
+          "distractor_meanings": ["练习，反复做来提高", "教授，传授知识", "引导，带领指导"]
+        },
+        {
+          "word": "斥",
+          "pinyin": "chì",
+          "meaning": "责备，批评",
+          "level_hint": "妈妈____责了他一顿。",
+          "sample_sentences": ["老师斥责了迟到的人。", "他怒斥这种行为。", "不要斥责孩子。"],
+          "distractor_words": ["骂", "批", "责"],
+          "distractor_meanings": ["谩骂，用粗话骂人", "批评，指出错误", "责备，怪罪别人"]
+        },
+        {
+          "word": "骄",
+          "pinyin": "jiāo",
+          "meaning": "自满，自大",
+          "level_hint": "我们不能____傲自满。",
+          "sample_sentences": ["不要骄傲，继续努力。", "骄兵必败。", "他为祖国感到骄傲。"],
+          "distractor_words": ["傲", "谦", "狂"],
+          "distractor_meanings": ["高傲，看不起别人", "谦虚，不自满", "疯狂，失去理智"]
+        }
+      ]
+    },
+    {
+      "unit": 4,
+      "title": "第四单元·动物朋友",
+      "words": [
+        {
+          "word": "虑",
+          "pinyin": "lǜ",
+          "meaning": "担忧，忧虑",
+          "level_hint": "妈妈总是忧____我的学习。",
+          "sample_sentences": ["他满脸忧虑。", "不要过度忧虑。", "这件事无需顾虑。"],
+          "distractor_words": ["愁", "烦", "忧"],
+          "distractor_meanings": ["发愁，心中不安", "烦闷，心情不好", "担忧，心中不安"]
+        },
+        {
+          "word": "唤",
+          "pinyin": "huàn",
+          "meaning": "大声叫，召唤",
+          "level_hint": "妈妈在门口____我回家吃饭。",
+          "sample_sentences": ["妈妈呼唤我回家。", "他大声唤醒了沉睡的伙伴。", "呼唤是一种爱的表达。"],
+          "distractor_words": ["喊", "叫", "喊"],
+          "distractor_meanings": ["大喊，大声地叫", "呼叫，大声叫唤", "叫唤，发出声音"]
+        },
+        {
+          "word": "割",
+          "pinyin": "gē",
+          "meaning": "用刀截断",
+          "level_hint": "农民在田里____麦子。",
+          "sample_sentences": ["爷爷在割草。", "刀很锋利，小心割手。", "割完麦子休息一下。"],
+          "distractor_words": ["砍", "切", "剪"],
+          "distractor_meanings": ["砍伐，用力斩断", "切割，分成小块", "剪裁，用剪刀截断"]
+        },
+        {
+          "word": "蛇",
+          "pinyin": "shé",
+          "meaning": "一种爬行动物，身体细长",
+          "level_hint": "草丛里有一条小____。",
+          "sample_sentences": ["蛇是爬行动物。", "不要靠近蛇。", "蛇在草丛中爬行。"],
+          "distractor_words": ["蜥", "蛙", "龟"],
+          "distractor_meanings": ["蜥蜴，一种爬行动物", "青蛙，会跳的两栖动物", "乌龟，有壳的爬行动物"]
+        },
+        {
+          "word": "柔",
+          "pinyin": "róu",
+          "meaning": "软，温和",
+          "level_hint": "妈妈的目光很温____。",
+          "sample_sentences": ["柳条柔软地垂下来。", "她说话温柔极了。", "柔风轻轻吹过。"],
+          "distractor_words": ["刚", "硬", "粗"],
+          "distractor_meanings": ["刚强，坚强不屈", "坚硬，不容易变形", "粗糙，不光滑"]
+        },
+        {
+          "word": "猛",
+          "pinyin": "měng",
+          "meaning": "凶猛，猛烈",
+          "level_hint": "台风来得很凶____。",
+          "sample_sentences": ["猛虎下山。", "风猛烈地吹着。", "他猛然转过身来。"],
+          "distractor_words": ["凶", "烈", "强"],
+          "distractor_meanings": ["凶狠，不友善", "剧烈，程度很深", "强大，力量很大"]
+        }
+      ]
+    },
+    {
+      "unit": 5,
+      "title": "第五单元·成长故事",
+      "words": [
+        {
+          "word": "悔",
+          "pinyin": "huǐ",
+          "meaning": "做了错事后心里难过",
+          "level_hint": "他很后____说了那句话。",
+          "sample_sentences": ["我很后悔没有好好学习。", "做了错事要后悔。", "后悔已经来不及了。"],
+          "distractor_words": ["恨", "怨", "愧"],
+          "distractor_meanings": ["怨恨，心中不满", "抱怨，责怪别人", "惭愧，觉得不好意思"]
+        },
+        {
+          "word": "境",
+          "pinyin": "jìng",
+          "meaning": "环境，情况",
+          "level_hint": "我们要保护自然环____。",
+          "sample_sentences": ["优美的环境让人心情好。", "处境困难不要放弃。", "学习环境很重要。"],
+          "distractor_words": ["况", "态", "势"],
+          "distractor_meanings": ["情况，事情的态势", "状态，当前的样子", "形势，发展的趋势"]
+        },
+        {
+          "word": "欺",
+          "pinyin": "qī",
+          "meaning": "欺负，欺骗",
+          "level_hint": "我们不能____负弱小。",
+          "sample_sentences": ["不要欺负同学。", "欺骗别人是不对的。", "以大欺小不好。"],
+          "distractor_words": ["骗", "辱", "打"],
+          "distractor_meanings": ["欺骗，说谎骗人", "侮辱，伤害别人自尊", "动手打人"]
+        },
+        {
+          "word": "励",
+          "pinyin": "lì",
+          "meaning": "鼓励，激发",
+          "level_hint": "老师鼓____我们好好学习。",
+          "sample_sentences": ["老师鼓励我不要放弃。", "互相激励，共同进步。", "励志的故事让人感动。"],
+          "distractor_words": ["鼓", "激", "奋"],
+          "distractor_meanings": ["鼓舞，使振作", "激发，调动积极性", "振奋，精神饱满"]
+        },
+        {
+          "word": "坚",
+          "pinyin": "jiān",
+          "meaning": "牢固，不动摇",
+          "level_hint": "我们要____持到底。",
+          "sample_sentences": ["坚持就是胜利。", "岩石非常坚硬。", "他坚定地点了点头。"],
+          "distractor_words": ["硬", "牢", "固"],
+          "distractor_meanings": ["坚硬，不容易变形", "牢固，不容易松开", "固定，不改变"]
+        },
+        {
+          "word": "毅",
+          "pinyin": "yì",
+          "meaning": "意志坚强，不动摇",
+          "level_hint": "他有坚强的意____。",
+          "sample_sentences": ["他毅力很强。", "刚毅的性格令人佩服。", "做事要有毅力。"],
+          "distractor_words": ["志", "气", "力"],
+          "distractor_meanings": ["志向，想要达到的目标", "勇气，面对困难不害怕", "力量，做事的能力"]
+        }
+      ]
+    }
+  ]
+}

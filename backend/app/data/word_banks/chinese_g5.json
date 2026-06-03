@@ -1,0 +1,306 @@
+{
+  "subject": "chinese",
+  "grade": 5,
+  "units": [
+    {
+      "unit": 1,
+      "title": "第一单元·万物有灵",
+      "words": [
+        {
+          "word": "嫌",
+          "pinyin": "xián",
+          "meaning": "不满意，不喜欢",
+          "level_hint": "妈妈总____弃我做得不好。",
+          "sample_sentences": ["不要嫌弃别人。", "他嫌弃这件衣服旧了。", "妈妈嫌我太慢。"],
+          "distractor_words": ["厌", "恶", "恨"],
+          "distractor_meanings": ["厌烦，不想再看到", "讨厌，非常不喜欢", "恨，强烈不满"]
+        },
+        {
+          "word": "喙",
+          "pinyin": "huì",
+          "meaning": "鸟的嘴",
+          "level_hint": "啄木鸟用长长的____捉虫子。",
+          "sample_sentences": ["鸟儿的喙很尖。", "鹦鹉的喙弯弯的。", "翠鸟用喙捕鱼。"],
+          "distractor_words": ["爪", "翼", "尾"],
+          "distractor_meanings": ["爪子，动物脚上的指甲", "翅膀，鸟类飞行的器官", "尾巴，动物身体后部"]
+        },
+        {
+          "word": "黛",
+          "pinyin": "dài",
+          "meaning": "青黑色的颜色",
+          "level_hint": "远处的山呈现出____色。",
+          "sample_sentences": ["远山如黛。", "黛色的山峰连绵起伏。", "她的眉毛如远黛。"],
+          "distractor_words": ["青", "墨", "苍"],
+          "distractor_meanings": ["青色，蓝绿色", "墨色，深黑色", "苍色，灰白色"]
+        },
+        {
+          "word": "嵌",
+          "pinyin": "qiàn",
+          "meaning": "把东西卡在空隙里",
+          "level_hint": "蓝宝石____在王冠上。",
+          "sample_sentences": ["珍珠镶嵌在王冠上。", "窗户上镶嵌着彩色玻璃。", "画框嵌在墙壁里。"],
+          "distractor_words": ["镶", "贴", "插"],
+          "distractor_meanings": ["镶嵌，把物体嵌入", "粘贴，用胶水粘住", "插入，放进缝隙中"]
+        },
+        {
+          "word": "框",
+          "pinyin": "kuàng",
+          "meaning": "嵌在周围的边框",
+          "level_hint": "这幅画的画____很漂亮。",
+          "sample_sentences": ["门框上挂着灯笼。", "照片放在相框里。", "窗户框是木头的。"],
+          "distractor_words": ["架", "栏", "边"],
+          "distractor_meanings": ["支架，支撑的架子", "栏杆，围挡的东西", "边缘，物体的外圈"]
+        },
+        {
+          "word": "嗜",
+          "pinyin": "shì",
+          "meaning": "特别喜爱",
+          "level_hint": "他有一种特殊的爱____。",
+          "sample_sentences": ["他嗜好读书。", "嗜书如命。", "不要嗜睡贪玩。"],
+          "distractor_words": ["癖", "迷", "恋"],
+          "distractor_meanings": ["癖好，特殊的爱好", "着迷，非常感兴趣", "眷恋，依依不舍"]
+        }
+      ]
+    },
+    {
+      "unit": 2,
+      "title": "第二单元·策略阅读",
+      "words": [
+        {
+          "word": "怯",
+          "pinyin": "qiè",
+          "meaning": "胆小，害怕",
+          "level_hint": "他胆____地走上讲台。",
+          "sample_sentences": ["不要胆怯，勇敢一点。", "他怯生生地举起了手。", "怯懦的人成不了大事。"],
+          "distractor_words": ["惧", "畏", "慌"],
+          "distractor_meanings": ["恐惧，非常害怕", "畏惧，心中害怕", "慌张，手足无措"]
+        },
+        {
+          "word": "释",
+          "pinyin": "shì",
+          "meaning": "解释，说明",
+          "level_hint": "老师给我们解____了这道题。",
+          "sample_sentences": ["请解释一下你的意思。", "注释帮助理解文章。", "他释然地笑了。"],
+          "distractor_words": ["解", "说", "明"],
+          "distractor_meanings": ["解答，给出答案", "说明，讲清楚", "明白，弄懂了"]
+        },
+        {
+          "word": "弃",
+          "pinyin": "qì",
+          "meaning": "扔掉，不要了",
+          "level_hint": "他放____了这次机会。",
+          "sample_sentences": ["不要放弃希望。", "丢弃垃圾要分类。", "他被同伴抛弃了。"],
+          "distractor_words": ["丢", "扔", "舍"],
+          "distractor_meanings": ["丢失，不见了", "抛掷，用力扔出去", "舍得，愿意放弃"]
+        },
+        {
+          "word": "斩",
+          "pinyin": "zhǎn",
+          "meaning": "用刀砍断",
+          "level_hint": "将军一剑____断了绳索。",
+          "sample_sentences": ["他斩钉截铁地说。", "斩草要除根。", "将军斩杀了敌将。"],
+          "distractor_words": ["砍", "劈", "削"],
+          "distractor_meanings": ["砍伐，用力斩断", "劈开，从中间分成两半", "削去，用刀削掉表面"]
+        },
+        {
+          "word": "磁",
+          "pinyin": "cí",
+          "meaning": "能吸引铁的性质",
+          "level_hint": "这块____铁能吸住钉子。",
+          "sample_sentences": ["磁铁能吸引铁。", "地球是个大磁场。", "磁力非常强大。"],
+          "distractor_words": ["铁", "钢", "铜"],
+          "distractor_meanings": ["铁，一种金属元素", "钢铁，铁和碳的合金", "铜，一种红色金属"]
+        },
+        {
+          "word": "惫",
+          "pinyin": "bèi",
+          "meaning": "非常疲乏",
+          "level_hint": "跑了一天后，我疲____不堪。",
+          "sample_sentences": ["他疲惫不堪。", "工作了一天很疲惫。", "别把自己弄得太疲惫。"],
+          "distractor_words": ["倦", "乏", "困"],
+          "distractor_meanings": ["疲倦，精神不好", "乏力，没有力气", "困倦，想睡觉"]
+        }
+      ]
+    },
+    {
+      "unit": 3,
+      "title": "第三单元·民间故事",
+      "words": [
+        {
+          "word": "嫂",
+          "pinyin": "sǎo",
+          "meaning": "哥哥的妻子",
+          "level_hint": "他____子对他很不好。",
+          "sample_sentences": ["嫂子对他很好。", "大嫂在家做饭。", "他叫她嫂嫂。"],
+          "distractor_words": ["婶", "姑", "姨"],
+          "distractor_meanings": ["婶婶，叔叔的妻子", "姑姑，父亲的姐妹", "阿姨，母亲的姐妹"]
+        },
+        {
+          "word": "衰",
+          "pinyin": "shuāi",
+          "meaning": "减弱，变差",
+          "level_hint": "爷爷的身体日渐____弱。",
+          "sample_sentences": ["他衰老了许多。", "不要衰败下去。", "身体衰弱要注意休息。"],
+          "distractor_words": ["弱", "退", "落"],
+          "distractor_meanings": ["软弱，不强壮", "退步，不如从前", "落败，输给别人"]
+        },
+        {
+          "word": "泰",
+          "pinyin": "tài",
+          "meaning": "安宁，平安",
+          "level_hint": "国泰民安是人民的心愿。",
+          "sample_sentences": ["泰山是五岳之首。", "国泰民安。", "他泰然自若。"],
+          "distractor_words": ["安", "宁", "平"],
+          "distractor_meanings": ["安定，不动摇", "安宁，平静无事", "平安，没有危险"]
+        },
+        {
+          "word": "惩",
+          "pinyin": "chéng",
+          "meaning": "处罚，警戒",
+          "level_hint": "做坏事会受____罚。",
+          "sample_sentences": ["惩罚不是目的。", "奖惩分明。", "严惩不贷。"],
+          "distractor_words": ["罚", "处", "治"],
+          "distractor_meanings": ["罚款，罚钱", "处理，解决问题", "治理，管理整顿"]
+        },
+        {
+          "word": "拗",
+          "pinyin": "niù",
+          "meaning": "固执，不听劝",
+          "level_hint": "他的脾气很执____。",
+          "sample_sentences": ["他很执拗，不听劝。", "脾气拗的人不容易相处。", "别拗了，听大家的吧。"],
+          "distractor_words": ["倔", "强", "固"],
+          "distractor_meanings": ["倔强，不屈服", "强硬，不退让", "顽固，不愿改变"]
+        },
+        {
+          "word": "乃",
+          "pinyin": "nǎi",
+          "meaning": "是，就是（文言词）",
+          "level_hint": "失败____成功之母。",
+          "sample_sentences": ["失败乃成功之母。", "家乃避风之港。", "知错能改，善莫大焉。"],
+          "distractor_words": ["即", "系", "为"],
+          "distractor_meanings": ["即是，也就是", "系，是（文言）", "为，是（文言）"]
+        }
+      ]
+    },
+    {
+      "unit": 4,
+      "title": "第四单元·爱国情怀",
+      "words": [
+        {
+          "word": "祭",
+          "pinyin": "jì",
+          "meaning": "对逝者表示悼念的仪式",
+          "level_hint": "清明节人们会____扫先人。",
+          "sample_sentences": ["清明节祭扫先人。", "祭奠英灵。", "祭祀是传统习俗。"],
+          "distractor_words": ["奠", "拜", "供"],
+          "distractor_meanings": ["祭奠，向死者供品", "跪拜，行礼致敬", "供奉，献上祭品"]
+        },
+        {
+          "word": "乃",
+          "pinyin": "nǎi",
+          "meaning": "于是，就",
+          "level_hint": "他思前想后，____决定出发。",
+          "sample_sentences": ["苦思冥想，乃得良策。", "事已至此，乃只好如此。", "学而时习之，不亦说乎。"],
+          "distractor_words": ["遂", "便", "即"],
+          "distractor_meanings": ["于是，就", "便，就", "立即，马上"]
+        },
+        {
+          "word": "熏",
+          "pinyin": "xūn",
+          "meaning": "烟气接触物体，使变色或沾上气味",
+          "level_hint": "厨房被油烟____黑了。",
+          "sample_sentences": ["烟把墙熏黑了。", "熏肉很好吃。", "被烟熏得睁不开眼。"],
+          "distractor_words": ["烤", "蒸", "煮"],
+          "distractor_meanings": ["烧烤，用火直接加热", "蒸煮，用水蒸气加热", "水煮，放在水里加热"]
+        },
+        {
+          "word": "杭",
+          "pinyin": "háng",
+          "meaning": "杭州，浙江省省会",
+          "level_hint": "上____西湖风景如画。",
+          "sample_sentences": ["杭州西湖很美。", "上有天堂，下有苏杭。", "杭州丝绸闻名天下。"],
+          "distractor_words": ["苏", "甬", "越"],
+          "distractor_meanings": ["苏州，江苏名城", "宁波，浙江港口城市", "绍兴，浙江文化名城"]
+        },
+        {
+          "word": "亥",
+          "pinyin": "hài",
+          "meaning": "地支的第十二位",
+          "level_hint": "____时是晚上九点到十一点。",
+          "sample_sentences": ["亥时是一天最后一个时辰。", "辛亥革命推翻了清朝。", "十二地支以亥结尾。"],
+          "distractor_words": ["子", "丑", "戌"],
+          "distractor_meanings": ["子时，半夜十一点到一点", "丑时，凌晨一点到三点", "戌时，晚上七点到九点"]
+        },
+        {
+          "word": "恃",
+          "pinyin": "shì",
+          "meaning": "依赖，仗着",
+          "level_hint": "他有才华，但不能____才傲物。",
+          "sample_sentences": ["有恃无恐。", "恃才傲物不好。", "不能恃强凌弱。"],
+          "distractor_words": ["仗", "依", "凭"],
+          "distractor_meanings": ["仗着，依靠某种优势", "依靠，仰仗别人", "凭借，利用条件"]
+        }
+      ]
+    },
+    {
+      "unit": 5,
+      "title": "第五单元·描写人物",
+      "words": [
+        {
+          "word": "疤",
+          "pinyin": "bā",
+          "meaning": "伤口愈合后留下的痕迹",
+          "level_hint": "他额头上有一道____。",
+          "sample_sentences": ["他手上有一道疤。", "伤好了留下了疤。", "不要揭伤疤。"],
+          "distractor_words": ["痕", "伤", "创"],
+          "distractor_meanings": ["痕迹，留下的印迹", "伤口，身体受的伤", "创口，新伤口"]
+        },
+        {
+          "word": "监",
+          "pinyin": "jiān",
+          "meaning": "监视，督察",
+          "level_hint": "老师在____考同学们考试。",
+          "sample_sentences": ["老师监考很严格。", "监控录像记录了一切。", "监察人员检查了工厂。"],
+          "distractor_words": ["察", "督", "视"],
+          "distractor_meanings": ["观察，仔细看", "督促，监督催促", "注视，盯着看"]
+        },
+        {
+          "word": "怔",
+          "pinyin": "zhèng",
+          "meaning": "发愣，发呆",
+          "level_hint": "他听了这话，____了一下。",
+          "sample_sentences": ["他怔了一下才反应过来。", "她怔怔地看着远方。", "他愣怔了好一会儿。"],
+          "distractor_words": ["愣", "呆", "惊"],
+          "distractor_meanings": ["发愣，一时没反应", "发呆，出神了", "惊讶，感到意外"]
+        },
+        {
+          "word": "馅",
+          "pinyin": "xiàn",
+          "meaning": "包在面食里的肉菜等",
+          "level_hint": "妈妈包的饺子____很香。",
+          "sample_sentences": ["饺子馅是猪肉白菜。", "馅饼很好吃。", "豆沙馅的包子最香。"],
+          "distractor_words": ["皮", "料", "酱"],
+          "distractor_meanings": ["面皮，包在外面的面", "材料，做东西用的原料", "酱料，调味用的糊状物"]
+        },
+        {
+          "word": "撑",
+          "pinyin": "chēng",
+          "meaning": "支持，顶住",
+          "level_hint": "下雨了，快____起雨伞。",
+          "sample_sentences": ["撑起雨伞。", "他撑着船过河。", "咬牙撑住，别放弃。"],
+          "distractor_words": ["举", "顶", "支"],
+          "distractor_meanings": ["举起，抬起来", "顶住，承受压力", "支撑，支持不倒"]
+        },
+        {
+          "word": "搅",
+          "pinyin": "jiǎo",
+          "meaning": "拌动，混合",
+          "level_hint": "用勺子____拌均匀。",
+          "sample_sentences": ["搅拌牛奶和面粉。", "不要搅浑水。", "他把咖啡搅了搅。"],
+          "distractor_words": ["拌", "混", "摇"],
+          "distractor_meanings": ["搅拌，混合在一起", "混合，把不同的东西合在一起", "摇动，来回晃"]
+        }
+      ]
+    }
+  ]
+}

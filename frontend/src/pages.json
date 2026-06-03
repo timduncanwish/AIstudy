@@ -1,0 +1,71 @@
+{
+	"pages": [
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "AI助学"
+			}
+		},
+		{
+			"path": "pages/chat/index",
+			"style": {
+				"navigationBarTitleText": "AI对话辅导"
+			}
+		},
+		{
+			"path": "pages/homework/index",
+			"style": {
+				"navigationBarTitleText": "作业批改"
+			}
+		},
+		{
+			"path": "pages/mistakes/index",
+			"style": {
+				"navigationBarTitleText": "错题本"
+			}
+		},
+		{
+			"path": "pages/challenge/index",
+			"style": {
+				"navigationBarTitleText": "字词闯关"
+			}
+		},
+		{
+			"path": "pages/profile/index",
+			"style": {
+				"navigationBarTitleText": "个人中心"
+			}
+		},
+		{
+			"path": "pages/report/index",
+			"style": {
+				"navigationBarTitleText": "学习报告"
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "white",
+		"navigationBarTitleText": "AI助学",
+		"navigationBarBackgroundColor": "#4A90D9",
+		"backgroundColor": "#F5F5F5"
+	},
+	"tabBar": {
+		"color": "#999999",
+		"selectedColor": "#4A90D9",
+		"backgroundColor": "#FFFFFF",
+		"list": [
+			{
+				"pagePath": "pages/index/index",
+				"text": "首页"
+			},
+			{
+				"pagePath": "pages/chat/index",
+				"text": "AI辅导"
+			},
+			{
+				"pagePath": "pages/profile/index",
+				"text": "我的"
+			}
+		]
+	}
+}

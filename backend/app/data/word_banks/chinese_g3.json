@@ -1,0 +1,306 @@
+{
+  "subject": "chinese",
+  "grade": 3,
+  "units": [
+    {
+      "unit": 1,
+      "title": "第一单元·春天",
+      "words": [
+        {
+          "word": "春",
+          "pinyin": "chūn",
+          "meaning": "春天，一年的第一季",
+          "level_hint": "____天来了，百花盛开。",
+          "sample_sentences": ["春天来了，小草绿了。", "春风吹过，花瓣飘落。", "春天的早晨，鸟儿在唱歌。"],
+          "distractor_words": ["夏", "秋", "冬"],
+          "distractor_meanings": ["夏天，一年中最热的季节", "秋天，落叶的季节", "冬天，天气寒冷的季节"]
+        },
+        {
+          "word": "花",
+          "pinyin": "huā",
+          "meaning": "花朵，植物的繁殖器官",
+          "level_hint": "公园里的____开了，五颜六色。",
+          "sample_sentences": ["花园里开满了鲜花。", "春天，桃花开了。", "蝴蝶在花丛中飞舞。"],
+          "distractor_words": ["草", "叶", "果"],
+          "distractor_meanings": ["草，地面生长的植物", "叶子，植物的绿色部分", "果实，植物结出的果子"]
+        },
+        {
+          "word": "草",
+          "pinyin": "cǎo",
+          "meaning": "青草，地面生长的绿色植物",
+          "level_hint": "小____从地里探出头来。",
+          "sample_sentences": ["小草绿了，春天来了。", "草地上开满了小花。", "牛在草地上吃草。"],
+          "distractor_words": ["花", "树", "木"],
+          "distractor_meanings": ["花朵，植物开出的", "树木，高大的植物", "木头，树木的材料"]
+        },
+        {
+          "word": "飞",
+          "pinyin": "fēi",
+          "meaning": "鸟或虫在空中移动",
+          "level_hint": "小鸟在天空____。",
+          "sample_sentences": ["小鸟在天上飞。", "蝴蝶在花丛中飞舞。", "飞机飞得很高。"],
+          "distractor_words": ["跑", "走", "跳"],
+          "distractor_meanings": ["跑步，用脚快速前进", "行走，一步一步地移动", "跳跃，双脚离地"]
+        },
+        {
+          "word": "风",
+          "pinyin": "fēng",
+          "meaning": "空气流动的现象",
+          "level_hint": "____吹过，树叶沙沙响。",
+          "sample_sentences": ["秋风吹过，树叶飘落。", "春风暖暖的。", "大风把门吹开了。"],
+          "distractor_words": ["雨", "雪", "云"],
+          "distractor_meanings": ["雨水，从天空落下的水滴", "雪花，冬天天上飘下来的", "云朵，天空中的白色团状物"]
+        },
+        {
+          "word": "暖",
+          "pinyin": "nuǎn",
+          "meaning": "温暖，不冷不热",
+          "level_hint": "春天的阳光很____。",
+          "sample_sentences": ["春天很暖和。", "太阳照得暖暖的。", "妈妈的手很温暖。"],
+          "distractor_words": ["冷", "热", "凉"],
+          "distractor_meanings": ["寒冷，温度很低", "炎热，温度很高", "凉爽，有些凉快"]
+        }
+      ]
+    },
+    {
+      "unit": 2,
+      "title": "第二单元·学校",
+      "words": [
+        {
+          "word": "读",
+          "pinyin": "dú",
+          "meaning": "看着文字念出来",
+          "level_hint": "每天早上我都____书。",
+          "sample_sentences": ["我每天读书。", "同学们在教室里读课文。", "请你大声读出来。"],
+          "distractor_words": ["写", "说", "听"],
+          "distractor_meanings": ["书写，用笔记录文字", "说话，用嘴巴表达", "聆听，用耳朵接收声音"]
+        },
+        {
+          "word": "写",
+          "pinyin": "xiě",
+          "meaning": "用笔记录文字",
+          "level_hint": "我在作业本上____字。",
+          "sample_sentences": ["我在本子上写字。", "请你把答案写下来。", "她写的字很漂亮。"],
+          "distractor_words": ["读", "画", "看"],
+          "distractor_meanings": ["阅读，看着文字念出来", "画画，用笔画图画", "观看，用眼睛看"]
+        },
+        {
+          "word": "学",
+          "pinyin": "xué",
+          "meaning": "学习，获得知识",
+          "level_hint": "我在____校里上课。",
+          "sample_sentences": ["我爱学习。", "我们在学校学知识。", "学而时习之，不亦说乎。"],
+          "distractor_words": ["教", "玩", "做"],
+          "distractor_meanings": ["教授，把知识传授给别人", "玩耍，做游戏", "做事，进行某项活动"]
+        },
+        {
+          "word": "笔",
+          "pinyin": "bǐ",
+          "meaning": "书写工具",
+          "level_hint": "请用铅____写字。",
+          "sample_sentences": ["我有一支铅笔。", "请用笔写下来。", "他的笔丢了。"],
+          "distractor_words": ["书", "纸", "本"],
+          "distractor_meanings": ["书籍，装订成册的读物", "纸张，写字用的薄片", "本子，用来写字的册子"]
+        },
+        {
+          "word": "课",
+          "pinyin": "kè",
+          "meaning": "教学的科目或时间",
+          "level_hint": "现在是语文____。",
+          "sample_sentences": ["我们正在上语文课。", "下课后我们去玩。", "今天有四节课。"],
+          "distractor_words": ["班", "级", "组"],
+          "distractor_meanings": ["班级，学校的组织单位", "年级，学校的分级单位", "小组，几个人的集合"]
+        },
+        {
+          "word": "班",
+          "pinyin": "bān",
+          "meaning": "学校的组织单位",
+          "level_hint": "我是三年一____的学生。",
+          "sample_sentences": ["我们班有四十个人。", "我在三年级二班。", "班长管理班级。"],
+          "distractor_words": ["级", "组", "队"],
+          "distractor_meanings": ["年级，学校的分级单位", "小组，几个人的集合", "队伍，排成一列的人"]
+        }
+      ]
+    },
+    {
+      "unit": 3,
+      "title": "第三单元·家庭",
+      "words": [
+        {
+          "word": "家",
+          "pinyin": "jiā",
+          "meaning": "家庭，居住的地方",
+          "level_hint": "我每天放学回____。",
+          "sample_sentences": ["我家有三口人。", "放学后我回家。", "我爱我的家。"],
+          "distractor_words": ["校", "园", "院"],
+          "distractor_meanings": ["学校，学习的地方", "花园，种花的地方", "院子，围起来的空地"]
+        },
+        {
+          "word": "妈",
+          "pinyin": "mā",
+          "meaning": "母亲",
+          "level_hint": "__妈每天做饭给我吃。",
+          "sample_sentences": ["妈妈做的饭真好吃。", "我爱妈妈。", "妈妈每天送我上学。"],
+          "distractor_words": ["爸", "姐", "奶"],
+          "distractor_meanings": ["爸爸，父亲", "姐姐，比自己大的女性", "奶奶，父亲的母亲"]
+        },
+        {
+          "word": "爱",
+          "pinyin": "ài",
+          "meaning": "喜爱，对人或事物有感情",
+          "level_hint": "我____我的家人。",
+          "sample_sentences": ["我爱我的家。", "妈妈爱我，我也爱妈妈。", "他爱读书。"],
+          "distractor_words": ["想", "看", "要"],
+          "distractor_meanings": ["想念，思念某人", "观看，用眼睛看", "想要，希望得到"]
+        },
+        {
+          "word": "亲",
+          "pinyin": "qīn",
+          "meaning": "亲属，关系亲密",
+          "level_hint": "__人是我们的家人。",
+          "sample_sentences": ["亲人在身边真幸福。", "妈妈是我的亲人。", "亲近大自然。"],
+          "distractor_words": ["友", "邻", "伴"],
+          "distractor_meanings": ["朋友，友好的人", "邻居，住在旁边的人", "伙伴，一起玩耍的人"]
+        },
+        {
+          "word": "笑",
+          "pinyin": "xiào",
+          "meaning": "露出愉快的表情",
+          "level_hint": "妹妹____得很开心。",
+          "sample_sentences": ["她笑了。", "同学们笑得前仰后合。", "妈妈笑着说。"],
+          "distractor_words": ["哭", "叫", "说"],
+          "distractor_meanings": ["哭泣，流眼泪", "叫喊，大声说话", "说话，用语言表达"]
+        },
+        {
+          "word": "乐",
+          "pinyin": "lè",
+          "meaning": "快乐，高兴",
+          "level_hint": "大家玩得很____。",
+          "sample_sentences": ["大家快乐地玩耍。", "祝您生日快乐。", "乐在其中。"],
+          "distractor_words": ["悲", "怒", "愁"],
+          "distractor_meanings": ["悲伤，心里难过", "发怒，非常生气", "发愁，担心忧虑"]
+        }
+      ]
+    },
+    {
+      "unit": 4,
+      "title": "第四单元·自然",
+      "words": [
+        {
+          "word": "山",
+          "pinyin": "shān",
+          "meaning": "地面隆起的高处",
+          "level_hint": "远处有一座大____。",
+          "sample_sentences": ["远处有一座高山。", "我们去爬山吧。", "山上有很多树。"],
+          "distractor_words": ["水", "海", "河"],
+          "distractor_meanings": ["水，无色透明的液体", "大海，广阔的水域", "河流，流淌的水道"]
+        },
+        {
+          "word": "水",
+          "pinyin": "shuǐ",
+          "meaning": "无色无味的液体",
+          "level_hint": "鱼在____里游来游去。",
+          "sample_sentences": ["我要喝水。", "水是生命之源。", "小河里有清澈的水。"],
+          "distractor_words": ["火", "土", "木"],
+          "distractor_meanings": ["火，燃烧产生的光和热", "土地，地面上的泥土", "木头，树木的材料"]
+        },
+        {
+          "word": "树",
+          "pinyin": "shù",
+          "meaning": "高大的木本植物",
+          "level_hint": "院子里有一棵大____。",
+          "sample_sentences": ["大树下面好乘凉。", "树上结满了果子。", "种树可以让空气变好。"],
+          "distractor_words": ["花", "草", "石"],
+          "distractor_meanings": ["花朵，植物开出的", "小草，地面生长的植物", "石头，坚硬的矿物"]
+        },
+        {
+          "word": "云",
+          "pinyin": "yún",
+          "meaning": "天空中的白色团状物",
+          "level_hint": "天上的____像棉花糖。",
+          "sample_sentences": ["天空飘着白云。", "云朵像棉花糖。", "乌云密布，要下雨了。"],
+          "distractor_words": ["雨", "雪", "雾"],
+          "distractor_meanings": ["雨，从天空落下的水滴", "雪花，冬天天上飘下来的", "雾，空气中弥漫的水汽"]
+        },
+        {
+          "word": "光",
+          "pinyin": "guāng",
+          "meaning": "光线，明亮的东西",
+          "level_hint": "太阳____照亮了大地。",
+          "sample_sentences": ["阳光照在身上暖洋洋的。", "月光很美。", "灯光照亮了房间。"],
+          "distractor_words": ["影", "暗", "色"],
+          "distractor_meanings": ["影子，光线被挡住的部分", "黑暗，没有光线", "颜色，事物的色彩"]
+        },
+        {
+          "word": "雨",
+          "pinyin": "yǔ",
+          "meaning": "从天空落下的水滴",
+          "level_hint": "外面下____了，带把伞。",
+          "sample_sentences": ["下雨了，快回家。", "春雨细细的。", "雨后天空出现了彩虹。"],
+          "distractor_words": ["晴", "阴", "风"],
+          "distractor_meanings": ["晴天，天空无云", "阴天，天空被云遮住", "风，空气流动"]
+        }
+      ]
+    },
+    {
+      "unit": 5,
+      "title": "第五单元·动物",
+      "words": [
+        {
+          "word": "鸟",
+          "pinyin": "niǎo",
+          "meaning": "有翅膀会飞的动物",
+          "level_hint": "树上有一只小____。",
+          "sample_sentences": ["小鸟在树上唱歌。", "鸟儿飞向南方。", "这只鸟真漂亮。"],
+          "distractor_words": ["鱼", "虫", "猫"],
+          "distractor_meanings": ["鱼，生活在水里的动物", "虫子，小小的爬行动物", "猫，一种家养的小动物"]
+        },
+        {
+          "word": "鱼",
+          "pinyin": "yú",
+          "meaning": "生活在水中的动物",
+          "level_hint": "小____在水里游来游去。",
+          "sample_sentences": ["河里有很多小鱼。", "鱼儿在水中快乐地游。", "小鱼吐泡泡。"],
+          "distractor_words": ["鸟", "虾", "蛙"],
+          "distractor_meanings": ["鸟，有翅膀会飞的动物", "虾，水中的甲壳动物", "青蛙，会跳的两栖动物"]
+        },
+        {
+          "word": "虫",
+          "pinyin": "chóng",
+          "meaning": "小小的爬行动物",
+          "level_hint": "树叶上有一只小____。",
+          "sample_sentences": ["花上有小虫子。", "虫子慢慢爬行。", "蝴蝶是由毛毛虫变的。"],
+          "distractor_words": ["蚁", "蝶", "蜂"],
+          "distractor_meanings": ["蚂蚁，群居的小昆虫", "蝴蝶，有美丽翅膀的昆虫", "蜜蜂，采蜜的昆虫"]
+        },
+        {
+          "word": "跑",
+          "pinyin": "pǎo",
+          "meaning": "用脚快速前进",
+          "level_hint": "小狗在草地上____。",
+          "sample_sentences": ["小朋友们快乐地跑步。", "兔子跑得很快。", "大家快来跑。"],
+          "distractor_words": ["走", "跳", "爬"],
+          "distractor_meanings": ["行走，一步一步地移动", "跳跃，双脚离地", "爬行，贴着地面移动"]
+        },
+        {
+          "word": "叫",
+          "pinyin": "jiào",
+          "meaning": "发出声音",
+          "level_hint": "小狗汪汪____。",
+          "sample_sentences": ["公鸡叫了，天亮了。", "别大声叫。", "小鸟在树上叫。"],
+          "distractor_words": ["唱", "说", "喊"],
+          "distractor_meanings": ["唱歌，发出好听的声音", "说话，用语言交流", "喊叫，大声地叫"]
+        },
+        {
+          "word": "唱",
+          "pinyin": "chàng",
+          "meaning": "发出好听的声音",
+          "level_hint": "小鸟在树上____歌。",
+          "sample_sentences": ["同学们一起唱歌。", "她在舞台上唱歌。", "鸟儿唱着美妙的歌。"],
+          "distractor_words": ["说", "笑", "叫"],
+          "distractor_meanings": ["说话，用语言表达", "笑，露出愉快的表情", "叫，发出声音"]
+        }
+      ]
+    }
+  ]
+}
