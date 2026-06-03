@@ -5,5 +5,6 @@ from app.models.word_progress import WordProgress
 from app.models.daily_task import DailyTask
 from app.models.user_stats import UserStats
 from app.models.student import Student
+from app.models.chat_history import ChatHistory
 
-__all__ = ["User", "Homework", "Mistake", "WordProgress", "DailyTask", "UserStats", "Student"]
+__all__ = ["User", "Homework", "Mistake", "WordProgress", "DailyTask", "UserStats", "Student", "ChatHistory"]

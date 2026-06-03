@@ -17,7 +17,7 @@ async def get_db():
 
 
 async def init_db():
-    from app.models import User, Homework, Mistake, WordProgress, DailyTask, UserStats, Student  # noqa: F401
+    from app.models import User, Homework, Mistake, WordProgress, DailyTask, UserStats, Student, ChatHistory  # noqa: F401
 
     async with engine.begin() as conn:
         await conn.run_sync(Base.metadata.create_all)

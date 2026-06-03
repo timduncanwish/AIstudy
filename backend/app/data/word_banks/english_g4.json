@@ -4,301 +4,881 @@
   "units": [
     {
       "unit": 1,
-      "title": "Unit 1 · My Classroom",
+      "title": "Unit 1 · My classroom",
       "words": [
         {
           "word": "classroom",
-          "phonetic": "/ˈklæsruːm/",
+          "phonetic": "/ˈklɑːsruːm/",
           "meaning": "教室",
-          "level_hint": "We study in the ____.",
-          "sample_sentences": ["The classroom is big.", "We clean the classroom.", "I like my classroom."],
-          "distractor_words": ["playground", "library", "office"],
-          "distractor_meanings": ["操场", "图书馆", "办公室"]
+          "level_hint": "____room (教室)",
+          "sample_sentences": [
+            "This is my classroom.",
+            "Our classroom is big and clean.",
+            "There are many desks in the classroom."
+          ],
+          "distractor_words": ["bedroom", "bathroom", "school"],
+          "distractor_meanings": ["卧室", "浴室", "学校"]
         },
         {
           "word": "window",
-          "phonetic": "/ˈwɪndoʊ/",
+          "phonetic": "/ˈwɪndəʊ/",
           "meaning": "窗户",
-          "level_hint": "Please open the ____.",
-          "sample_sentences": ["The window is open.", "Look out the window.", "Close the window, please."],
+          "level_hint": "w____ow (窗户)",
+          "sample_sentences": [
+            "Open the window, please.",
+            "The window is very clean.",
+            "I can see trees through the window."
+          ],
           "distractor_words": ["door", "wall", "floor"],
-          "distractor_meanings": ["门", "墙", "地板"]
+          "distractor_meanings": ["门", "墙壁", "地板"]
         },
         {
-          "word": "picture",
-          "phonetic": "/ˈpɪktʃər/",
-          "meaning": "图片，画",
-          "level_hint": "There is a ____ on the wall.",
-          "sample_sentences": ["This is a beautiful picture.", "Draw a picture.", "I like this picture."],
-          "distractor_words": ["photo", "letter", "story"],
-          "distractor_meanings": ["照片", "信", "故事"]
+          "word": "blackboard",
+          "phonetic": "/ˈblækbɔːd/",
+          "meaning": "黑板",
+          "level_hint": "____board (黑板)",
+          "sample_sentences": [
+            "Look at the blackboard, please.",
+            "The teacher writes on the blackboard.",
+            "Please clean the blackboard."
+          ],
+          "distractor_words": ["notebook", "keyboard", "cupboard"],
+          "distractor_meanings": ["笔记本", "键盘", "橱柜"]
         },
         {
           "word": "light",
           "phonetic": "/laɪt/",
-          "meaning": "灯，光",
-          "level_hint": "Turn on the ____.",
-          "sample_sentences": ["Turn on the light.", "The light is bright.", "I can see the light."],
-          "distractor_words": ["fan", "switch", "lamp"],
-          "distractor_meanings": ["风扇", "开关", "台灯"]
+          "meaning": "灯；光",
+          "level_hint": "l____t (灯)",
+          "sample_sentences": [
+            "Turn on the light, please.",
+            "The light is very bright.",
+            "We have six lights in our classroom."
+          ],
+          "distractor_words": ["night", "right", "kite"],
+          "distractor_meanings": ["夜晚", "对的", "风筝"]
         },
         {
-          "word": "board",
-          "phonetic": "/bɔːrd/",
-          "meaning": "黑板",
-          "level_hint": "The teacher writes on the ____.",
-          "sample_sentences": ["Look at the blackboard.", "The board is clean.", "Write it on the board."],
-          "distractor_words": ["desk", "chair", "table"],
-          "distractor_meanings": ["课桌", "椅子", "桌子"]
+          "word": "picture",
+          "phonetic": "/ˈpɪktʃə/",
+          "meaning": "图画；照片",
+          "level_hint": "p____ure (图画)",
+          "sample_sentences": [
+            "This is a picture of my family.",
+            "The picture is on the wall.",
+            "I like this beautiful picture."
+          ],
+          "distractor_words": ["letter", "pencil", "plant"],
+          "distractor_meanings": ["信", "铅笔", "植物"]
         },
         {
-          "word": "computer",
-          "phonetic": "/kəmˈpjuːtər/",
-          "meaning": "电脑",
-          "level_hint": "We use a ____ in class.",
-          "sample_sentences": ["I use a computer.", "The computer is new.", "She likes computers."],
-          "distractor_words": ["phone", "tablet", "radio"],
-          "distractor_meanings": ["电话", "平板", "收音机"]
+          "word": "door",
+          "phonetic": "/dɔː/",
+          "meaning": "门",
+          "level_hint": "d____ (门)",
+          "sample_sentences": [
+            "Open the door, please.",
+            "Close the door, please.",
+            "The door is green."
+          ],
+          "distractor_words": ["book", "desk", "chair"],
+          "distractor_meanings": ["书", "课桌", "椅子"]
+        },
+        {
+          "word": "floor",
+          "phonetic": "/flɔː/",
+          "meaning": "地板",
+          "level_hint": "fl____ (地板)",
+          "sample_sentences": [
+            "The floor is clean.",
+            "Please sweep the floor.",
+            "My bag is on the floor."
+          ],
+          "distractor_words": ["door", "wall", "roof"],
+          "distractor_meanings": ["门", "墙壁", "屋顶"]
+        },
+        {
+          "word": "teacher's desk",
+          "phonetic": "/ˈtiːtʃəz desk/",
+          "meaning": "讲台",
+          "level_hint": "teacher's ____ (讲台)",
+          "sample_sentences": [
+            "The computer is on the teacher's desk.",
+            "The teacher's desk is near the window.",
+            "Please put the book on the teacher's desk."
+          ],
+          "distractor_words": ["schoolbag", "computer", "fan"],
+          "distractor_meanings": ["书包", "电脑", "电风扇"]
         }
       ]
     },
     {
       "unit": 2,
-      "title": "Unit 2 · My Schoolbag",
+      "title": "Unit 2 · My schoolbag",
       "words": [
         {
           "word": "schoolbag",
           "phonetic": "/ˈskuːlbæɡ/",
           "meaning": "书包",
-          "level_hint": "My ____ is heavy.",
-          "sample_sentences": ["My schoolbag is blue.", "I carry my schoolbag.", "The schoolbag is heavy."],
-          "distractor_words": ["backpack", "handbag", "luggage"],
-          "distractor_meanings": ["背包", "手提包", "行李箱"]
+          "level_hint": "____bag (书包)",
+          "sample_sentences": [
+            "I have a new schoolbag.",
+            "My schoolbag is blue and white.",
+            "What's in your schoolbag?"
+          ],
+          "distractor_words": ["handbag", "backpack", "luggage"],
+          "distractor_meanings": ["手提包", "背包", "行李箱"]
         },
         {
-          "word": "Chinese",
-          "phonetic": "/ˈtʃaɪˈniːz/",
-          "meaning": "语文，中文",
-          "level_hint": "I like ____ class.",
-          "sample_sentences": ["I study Chinese.", "Chinese is fun.", "She teaches Chinese."],
-          "distractor_words": ["English", "math", "music"],
-          "distractor_meanings": ["英语", "数学", "音乐"]
+          "word": "maths book",
+          "phonetic": "/mæθs bʊk/",
+          "meaning": "数学书",
+          "level_hint": "____s book (数学书)",
+          "sample_sentences": [
+            "I have a maths book.",
+            "The maths book is green.",
+            "Put your maths book in your bag."
+          ],
+          "distractor_words": ["storybook", "notebook", "textbook"],
+          "distractor_meanings": ["故事书", "笔记本", "课本"]
         },
         {
-          "word": "English",
-          "phonetic": "/ˈɪŋɡlɪʃ/",
-          "meaning": "英语",
-          "level_hint": "I study ____ every day.",
-          "sample_sentences": ["I like English.", "English is important.", "She speaks English well."],
-          "distractor_words": ["Chinese", "French", "Japanese"],
-          "distractor_meanings": ["中文", "法语", "日语"]
+          "word": "English book",
+          "phonetic": "/ˈɪŋɡlɪʃ bʊk/",
+          "meaning": "英语书",
+          "level_hint": "____sh book (英语书)",
+          "sample_sentences": [
+            "This is my English book.",
+            "I like my English book.",
+            "Open your English book to page 5."
+          ],
+          "distractor_words": ["Chinese book", "music book", "art book"],
+          "distractor_meanings": ["语文书", "音乐书", "美术书"]
         },
         {
-          "word": "math",
-          "phonetic": "/mæθ/",
-          "meaning": "数学",
-          "level_hint": "____ is my favorite subject.",
-          "sample_sentences": ["I like math.", "Math is hard but fun.", "She is good at math."],
-          "distractor_words": ["science", "art", "PE"],
-          "distractor_meanings": ["科学", "美术", "体育"]
+          "word": "Chinese book",
+          "phonetic": "/tʃaɪˈniːz bʊk/",
+          "meaning": "语文书",
+          "level_hint": "____se book (语文书)",
+          "sample_sentences": [
+            "I have a Chinese book.",
+            "The Chinese book is on the desk.",
+            "Please read your Chinese book."
+          ],
+          "distractor_words": ["English book", "science book", "maths book"],
+          "distractor_meanings": ["英语书", "科学书", "数学书"]
         },
         {
-          "word": "notebook",
-          "phonetic": "/ˈnoʊtbʊk/",
-          "meaning": "笔记本",
-          "level_hint": "Write in your ____.",
-          "sample_sentences": ["This is my notebook.", "Open your notebook.", "The notebook is green."],
-          "distractor_words": ["textbook", "workbook", "dictionary"],
-          "distractor_meanings": ["课本", "练习册", "字典"]
+          "word": "storybook",
+          "phonetic": "/ˈstɔːribʊk/",
+          "meaning": "故事书",
+          "level_hint": "____ybook (故事书)",
+          "sample_sentences": [
+            "I have a storybook.",
+            "This storybook is very interesting.",
+            "She reads a storybook every day."
+          ],
+          "distractor_words": ["notebook", "textbook", "handbook"],
+          "distractor_meanings": ["笔记本", "课本", "手册"]
         },
         {
           "word": "candy",
           "phonetic": "/ˈkændi/",
           "meaning": "糖果",
-          "level_hint": "I have some ____.",
-          "sample_sentences": ["I like candy.", "The candy is sweet.", "Don't eat too much candy."],
-          "distractor_words": ["chocolate", "cookie", "cake"],
-          "distractor_meanings": ["巧克力", "饼干", "蛋糕"]
+          "level_hint": "c____y (糖果)",
+          "sample_sentences": [
+            "I have some candy.",
+            "The candy is sweet.",
+            "Do you like candy?"
+          ],
+          "distractor_words": ["cookie", "cake", "bread"],
+          "distractor_meanings": ["饼干", "蛋糕", "面包"]
+        },
+        {
+          "word": "notebook",
+          "phonetic": "/ˈnəʊtbʊk/",
+          "meaning": "笔记本",
+          "level_hint": "____book (笔记本)",
+          "sample_sentences": [
+            "I have a new notebook.",
+            "Write in your notebook, please.",
+            "The notebook is on the desk."
+          ],
+          "distractor_words": ["storybook", "textbook", "workbook"],
+          "distractor_meanings": ["故事书", "课本", "练习册"]
+        },
+        {
+          "word": "toy",
+          "phonetic": "/tɔɪ/",
+          "meaning": "玩具",
+          "level_hint": "t____ (玩具)",
+          "sample_sentences": [
+            "I have a toy car.",
+            "The toy is very cute.",
+            "He likes to play with toys."
+          ],
+          "distractor_words": ["boy", "joy", "key"],
+          "distractor_meanings": ["男孩", "快乐", "钥匙"]
         }
       ]
     },
     {
       "unit": 3,
-      "title": "Unit 3 · My Friends",
+      "title": "Unit 3 · My friends",
       "words": [
         {
           "word": "strong",
-          "phonetic": "/strɔːŋ/",
+          "phonetic": "/strɒŋ/",
           "meaning": "强壮的",
-          "level_hint": "He is very ____.",
-          "sample_sentences": ["He is strong.", "She is strong too.", "Be strong!"],
-          "distractor_words": ["weak", "tall", "short"],
-          "distractor_meanings": ["瘦弱的", "高的", "矮的"]
+          "level_hint": "str____ (强壮的)",
+          "sample_sentences": [
+            "My friend is very strong.",
+            "He is tall and strong.",
+            "The strong boy can carry the box."
+          ],
+          "distractor_words": ["short", "thin", "small"],
+          "distractor_meanings": ["矮的", "瘦的", "小的"]
         },
         {
           "word": "friendly",
           "phonetic": "/ˈfrendli/",
           "meaning": "友好的",
-          "level_hint": "She is very ____.",
-          "sample_sentences": ["She is friendly.", "The teacher is friendly.", "Be friendly to others."],
+          "level_hint": "____ly (友好的)",
+          "sample_sentences": [
+            "She is very friendly.",
+            "My friend is friendly and kind.",
+            "The friendly girl helps everyone."
+          ],
           "distractor_words": ["quiet", "shy", "funny"],
-          "distractor_meanings": ["安静的", "害羞的", "有趣的"]
-        },
-        {
-          "word": "hair",
-          "phonetic": "/her/",
-          "meaning": "头发",
-          "level_hint": "She has long ____.",
-          "sample_sentences": ["She has long hair.", "His hair is short.", "I brush my hair."],
-          "distractor_words": ["nose", "eye", "ear"],
-          "distractor_meanings": ["鼻子", "眼睛", "耳朵"]
+          "distractor_meanings": ["安静的", "害羞的", "滑稽的"]
         },
         {
           "word": "quiet",
           "phonetic": "/ˈkwaɪət/",
           "meaning": "安静的",
-          "level_hint": "Please be ____.",
-          "sample_sentences": ["The library is quiet.", "She is a quiet girl.", "Keep quiet, please."],
-          "distractor_words": ["loud", "noisy", "active"],
-          "distractor_meanings": ["大声的", "吵闹的", "活跃的"]
+          "level_hint": "q____t (安静的)",
+          "sample_sentences": [
+            "She is very quiet.",
+            "Please be quiet in the library.",
+            "The quiet boy likes reading."
+          ],
+          "distractor_words": ["loud", "active", "noisy"],
+          "distractor_meanings": ["大声的", "活跃的", "吵闹的"]
+        },
+        {
+          "word": "hair",
+          "phonetic": "/heə/",
+          "meaning": "头发",
+          "level_hint": "h____ (头发)",
+          "sample_sentences": [
+            "She has long hair.",
+            "His hair is short and black.",
+            "My friend has brown hair."
+          ],
+          "distractor_words": ["ear", "head", "face"],
+          "distractor_meanings": ["耳朵", "头", "脸"]
         },
         {
           "word": "shoe",
           "phonetic": "/ʃuː/",
           "meaning": "鞋子",
-          "level_hint": "Put on your ____.",
-          "sample_sentences": ["My shoes are new.", "Take off your shoes.", "These shoes are nice."],
-          "distractor_words": ["sock", "hat", "coat"],
-          "distractor_meanings": ["袜子", "帽子", "外套"]
+          "level_hint": "sh____ (鞋子)",
+          "sample_sentences": [
+            "His shoes are blue.",
+            "Put on your shoes.",
+            "I like my new shoes."
+          ],
+          "distractor_words": ["sock", "hat", "shirt"],
+          "distractor_meanings": ["袜子", "帽子", "衬衫"]
         },
         {
           "word": "glasses",
-          "phonetic": "/ˈɡlæsɪz/",
+          "phonetic": "/ˈɡlɑːsɪz/",
           "meaning": "眼镜",
-          "level_hint": "He wears ____.",
-          "sample_sentences": ["She wears glasses.", "His glasses are blue.", "I need new glasses."],
-          "distractor_words": ["watch", "ring", "scarf"],
-          "distractor_meanings": ["手表", "戒指", "围巾"]
+          "level_hint": "gl____ (眼镜)",
+          "sample_sentences": [
+            "He wears glasses.",
+            "Her glasses are pink.",
+            "I need to wear glasses."
+          ],
+          "distractor_words": ["classes", "boxes", "dresses"],
+          "distractor_meanings": ["课程", "盒子", "连衣裙"]
+        },
+        {
+          "word": "tall",
+          "phonetic": "/tɔːl/",
+          "meaning": "高的",
+          "level_hint": "t____ (高的)",
+          "sample_sentences": [
+            "He is tall and strong.",
+            "My father is very tall.",
+            "The tall boy is my friend."
+          ],
+          "distractor_words": ["short", "small", "thin"],
+          "distractor_meanings": ["矮的", "小的", "瘦的"]
+        },
+        {
+          "word": "thin",
+          "phonetic": "/θɪn/",
+          "meaning": "瘦的",
+          "level_hint": "th____ (瘦的)",
+          "sample_sentences": [
+            "She is thin and quiet.",
+            "The thin girl is my sister.",
+            "My cat is very thin."
+          ],
+          "distractor_words": ["fat", "big", "tall"],
+          "distractor_meanings": ["胖的", "大的", "高的"]
         }
       ]
     },
     {
       "unit": 4,
-      "title": "Unit 4 · My Home",
+      "title": "Unit 4 · My home",
       "words": [
         {
           "word": "bedroom",
           "phonetic": "/ˈbedruːm/",
           "meaning": "卧室",
-          "level_hint": "I sleep in my ____.",
-          "sample_sentences": ["My bedroom is nice.", "Clean your bedroom.", "The bedroom is big."],
-          "distractor_words": ["kitchen", "bathroom", "living room"],
-          "distractor_meanings": ["厨房", "浴室", "客厅"]
+          "level_hint": "____room (卧室)",
+          "sample_sentences": [
+            "This is my bedroom.",
+            "My bedroom is small but nice.",
+            "Go to your bedroom, please."
+          ],
+          "distractor_words": ["classroom", "bathroom", "living room"],
+          "distractor_meanings": ["教室", "浴室", "客厅"]
+        },
+        {
+          "word": "living room",
+          "phonetic": "/ˈlɪvɪŋ ruːm/",
+          "meaning": "客厅",
+          "level_hint": "____ing room (客厅)",
+          "sample_sentences": [
+            "The TV is in the living room.",
+            "We watch TV in the living room.",
+            "The living room is very big."
+          ],
+          "distractor_words": ["bedroom", "kitchen", "bathroom"],
+          "distractor_meanings": ["卧室", "厨房", "浴室"]
+        },
+        {
+          "word": "study",
+          "phonetic": "/ˈstʌdi/",
+          "meaning": "书房",
+          "level_hint": "st____ (书房)",
+          "sample_sentences": [
+            "I read books in the study.",
+            "The study is near the bedroom.",
+            "My father works in the study."
+          ],
+          "distractor_words": ["kitchen", "garden", "garage"],
+          "distractor_meanings": ["厨房", "花园", "车库"]
         },
         {
           "word": "kitchen",
           "phonetic": "/ˈkɪtʃɪn/",
           "meaning": "厨房",
-          "level_hint": "Mom is cooking in the ____.",
-          "sample_sentences": ["The kitchen is clean.", "She cooks in the kitchen.", "I help in the kitchen."],
-          "distractor_words": ["garden", "garage", "balcony"],
-          "distractor_meanings": ["花园", "车库", "阳台"]
+          "level_hint": "k____en (厨房)",
+          "sample_sentences": [
+            "Mom is in the kitchen.",
+            "The kitchen is clean.",
+            "I help my mom in the kitchen."
+          ],
+          "distractor_words": ["chicken", "garden", "bedroom"],
+          "distractor_meanings": ["鸡", "花园", "卧室"]
         },
         {
-          "word": "sofa",
-          "phonetic": "/ˈsoʊfə/",
-          "meaning": "沙发",
-          "level_hint": "Sit on the ____.",
-          "sample_sentences": ["The sofa is soft.", "I sit on the sofa.", "The cat is on the sofa."],
-          "distractor_words": ["table", "bed", "chair"],
-          "distractor_meanings": ["桌子", "床", "椅子"]
+          "word": "bathroom",
+          "phonetic": "/ˈbɑːθruːm/",
+          "meaning": "浴室",
+          "level_hint": "____room (浴室)",
+          "sample_sentences": [
+            "The bathroom is next to the bedroom.",
+            "I wash my face in the bathroom.",
+            "The bathroom has a big mirror."
+          ],
+          "distractor_words": ["bedroom", "classroom", "living room"],
+          "distractor_meanings": ["卧室", "教室", "客厅"]
         },
         {
           "word": "phone",
-          "phonetic": "/foʊn/",
+          "phonetic": "/fəʊn/",
           "meaning": "电话",
-          "level_hint": "Answer the ____.",
-          "sample_sentences": ["The phone is ringing.", "May I use your phone?", "I have a new phone."],
-          "distractor_words": ["clock", "radio", "TV"],
-          "distractor_meanings": ["钟", "收音机", "电视"]
-        },
-        {
-          "word": "fridge",
-          "phonetic": "/frɪdʒ/",
-          "meaning": "冰箱",
-          "level_hint": "Put the milk in the ____.",
-          "sample_sentences": ["The fridge is full.", "Open the fridge.", "The milk is in the fridge."],
-          "distractor_words": ["oven", "stove", "microwave"],
-          "distractor_meanings": ["烤箱", "炉子", "微波炉"]
+          "level_hint": "ph____ (电话)",
+          "sample_sentences": [
+            "Answer the phone, please.",
+            "The phone is on the table.",
+            "May I use your phone?"
+          ],
+          "distractor_words": ["photo", "radio", "clock"],
+          "distractor_meanings": ["照片", "收音机", "钟"]
         },
         {
           "word": "table",
           "phonetic": "/ˈteɪbl/",
           "meaning": "桌子",
-          "level_hint": "Dinner is on the ____.",
-          "sample_sentences": ["The table is round.", "Set the table.", "Books are on the table."],
-          "distractor_words": ["desk", "shelf", "cabinet"],
-          "distractor_meanings": ["书桌", "书架", "柜子"]
+          "level_hint": "t____le (桌子)",
+          "sample_sentences": [
+            "The keys are on the table.",
+            "We have dinner at the table.",
+            "Put the book on the table."
+          ],
+          "distractor_words": ["chair", "desk", "sofa"],
+          "distractor_meanings": ["椅子", "课桌", "沙发"]
+        },
+        {
+          "word": "sofa",
+          "phonetic": "/ˈsəʊfə/",
+          "meaning": "沙发",
+          "level_hint": "s____ (沙发)",
+          "sample_sentences": [
+            "The cat is on the sofa.",
+            "The sofa is very soft.",
+            "I sit on the sofa to read."
+          ],
+          "distractor_words": ["table", "chair", "bed"],
+          "distractor_meanings": ["桌子", "椅子", "床"]
         }
       ]
     },
     {
       "unit": 5,
-      "title": "Unit 5 · Dinner's Ready",
+      "title": "Unit 5 · Dinner's ready",
       "words": [
         {
           "word": "beef",
           "phonetic": "/biːf/",
           "meaning": "牛肉",
-          "level_hint": "I'd like some ____.",
-          "sample_sentences": ["I like beef.", "The beef is delicious.", "Would you like some beef?"],
+          "level_hint": "b____ (牛肉)",
+          "sample_sentences": [
+            "I'd like some beef.",
+            "The beef is delicious.",
+            "Would you like some beef?"
+          ],
           "distractor_words": ["chicken", "fish", "pork"],
           "distractor_meanings": ["鸡肉", "鱼肉", "猪肉"]
         },
         {
-          "word": "vegetable",
-          "phonetic": "/ˈvedʒtəbl/",
-          "meaning": "蔬菜",
-          "level_hint": "Eat more ____.",
-          "sample_sentences": ["I like vegetables.", "Vegetables are healthy.", "Buy some vegetables."],
-          "distractor_words": ["fruit", "meat", "grain"],
-          "distractor_meanings": ["水果", "肉类", "谷物"]
+          "word": "chicken",
+          "phonetic": "/ˈtʃɪkɪn/",
+          "meaning": "鸡肉",
+          "level_hint": "ch____en (鸡肉)",
+          "sample_sentences": [
+            "I like chicken very much.",
+            "Would you like some chicken?",
+            "Mom cooks chicken for dinner."
+          ],
+          "distractor_words": ["kitchen", "children", "chick"],
+          "distractor_meanings": ["厨房", "孩子们", "小鸡"]
         },
         {
-          "word": "noodle",
-          "phonetic": "/ˈnuːdl/",
+          "word": "noodles",
+          "phonetic": "/ˈnuːdlz/",
           "meaning": "面条",
-          "level_hint": "I like eating ____.",
-          "sample_sentences": ["I want noodles.", "The noodles are hot.", "She makes noodles."],
-          "distractor_words": ["rice", "dumpling", "bread"],
-          "distractor_meanings": ["米饭", "饺子", "面包"]
+          "level_hint": "noo____ (面条)",
+          "sample_sentences": [
+            "I'd like some noodles.",
+            "The noodles are hot.",
+            "Chinese noodles are very yummy."
+          ],
+          "distractor_words": ["dumplings", "rice", "soup"],
+          "distractor_meanings": ["饺子", "米饭", "汤"]
         },
         {
           "word": "soup",
           "phonetic": "/suːp/",
           "meaning": "汤",
-          "level_hint": "The ____ is delicious.",
-          "sample_sentences": ["The soup is hot.", "Have some soup.", "I like tomato soup."],
-          "distractor_words": ["juice", "water", "milk"],
-          "distractor_meanings": ["果汁", "水", "牛奶"]
+          "level_hint": "s____p (汤)",
+          "sample_sentences": [
+            "The soup is very hot.",
+            "Have some soup, please.",
+            "I like tomato soup."
+          ],
+          "distractor_words": ["spoon", "soap", "sour"],
+          "distractor_meanings": ["勺子", "肥皂", "酸的"]
         },
         {
-          "word": "chopstick",
-          "phonetic": "/ˈtʃɑːpstɪk/",
+          "word": "vegetable",
+          "phonetic": "/ˈvedʒtəbl/",
+          "meaning": "蔬菜",
+          "level_hint": "vege____ (蔬菜)",
+          "sample_sentences": [
+            "Eat more vegetables.",
+            "I like green vegetables.",
+            "The vegetable is fresh."
+          ],
+          "distractor_words": ["fruit", "salad", "burger"],
+          "distractor_meanings": ["水果", "沙拉", "汉堡"]
+        },
+        {
+          "word": "chopsticks",
+          "phonetic": "/ˈtʃɒpstɪks/",
           "meaning": "筷子",
-          "level_hint": "Use ____ to eat.",
-          "sample_sentences": ["I use chopsticks.", "Chopsticks are from China.", "He can use chopsticks."],
+          "level_hint": "chop____ (筷子)",
+          "sample_sentences": [
+            "I can use chopsticks.",
+            "Pass me the chopsticks, please.",
+            "Chinese people use chopsticks."
+          ],
           "distractor_words": ["fork", "knife", "spoon"],
           "distractor_meanings": ["叉子", "刀", "勺子"]
         },
         {
           "word": "bowl",
-          "phonetic": "/boʊl/",
+          "phonetic": "/bəʊl/",
           "meaning": "碗",
-          "level_hint": "Put the rice in the ____.",
-          "sample_sentences": ["The bowl is big.", "Use a bowl for soup.", "I need a clean bowl."],
+          "level_hint": "b____l (碗)",
+          "sample_sentences": [
+            "Pass me a bowl, please.",
+            "The rice is in the bowl.",
+            "I'd like a big bowl of noodles."
+          ],
           "distractor_words": ["plate", "cup", "glass"],
           "distractor_meanings": ["盘子", "杯子", "玻璃杯"]
+        },
+        {
+          "word": "spoon",
+          "phonetic": "/spuːn/",
+          "meaning": "勺子",
+          "level_hint": "sp____ (勺子)",
+          "sample_sentences": [
+            "Use the spoon to eat soup.",
+            "Pass me a spoon, please.",
+            "The spoon is on the table."
+          ],
+          "distractor_words": ["fork", "knife", "plate"],
+          "distractor_meanings": ["叉子", "刀", "盘子"]
+        }
+      ]
+    },
+    {
+      "unit": 6,
+      "title": "Unit 6 · Meet my family",
+      "words": [
+        {
+          "word": "parents",
+          "phonetic": "/ˈpeərənts/",
+          "meaning": "父母",
+          "level_hint": "par____ (父母)",
+          "sample_sentences": [
+            "These are my parents.",
+            "I love my parents.",
+            "My parents are kind."
+          ],
+          "distractor_words": ["grandparents", "people", "presents"],
+          "distractor_meanings": ["祖父母", "人们", "礼物"]
+        },
+        {
+          "word": "uncle",
+          "phonetic": "/ˈʌŋkl/",
+          "meaning": "叔叔；舅舅",
+          "level_hint": "un____ (叔叔)",
+          "sample_sentences": [
+            "This is my uncle.",
+            "My uncle is tall and strong.",
+            "My uncle is a doctor."
+          ],
+          "distractor_words": ["aunt", "cousin", "nephew"],
+          "distractor_meanings": ["阿姨", "表亲", "侄子"]
+        },
+        {
+          "word": "aunt",
+          "phonetic": "/ɑːnt/",
+          "meaning": "阿姨；姑姑",
+          "level_hint": "a____ (阿姨)",
+          "sample_sentences": [
+            "This is my aunt.",
+            "My aunt is a nurse.",
+            "My aunt is very beautiful."
+          ],
+          "distractor_words": ["uncle", "mother", "sister"],
+          "distractor_meanings": ["叔叔", "妈妈", "姐妹"]
+        },
+        {
+          "word": "cousin",
+          "phonetic": "/ˈkʌzn/",
+          "meaning": "表兄弟姐妹",
+          "level_hint": "c____in (表亲)",
+          "sample_sentences": [
+            "This is my cousin.",
+            "My cousin is a student.",
+            "I play with my cousin on weekends."
+          ],
+          "distractor_words": ["sister", "brother", "friend"],
+          "distractor_meanings": ["姐妹", "兄弟", "朋友"]
+        },
+        {
+          "word": "baby brother",
+          "phonetic": "/ˈbeɪbi ˈbrʌðə/",
+          "meaning": "婴儿小弟弟",
+          "level_hint": "____ brother (婴儿弟弟)",
+          "sample_sentences": [
+            "This is my baby brother.",
+            "My baby brother is very cute.",
+            "My baby brother is one year old."
+          ],
+          "distractor_words": ["big brother", "baby sister", "little sister"],
+          "distractor_meanings": ["哥哥", "婴儿小妹妹", "小妹妹"]
+        },
+        {
+          "word": "football player",
+          "phonetic": "/ˈfʊtbɔːl ˈpleɪə/",
+          "meaning": "足球运动员",
+          "level_hint": "____ player (足球运动员)",
+          "sample_sentences": [
+            "My uncle is a football player.",
+            "He is a good football player.",
+            "I want to be a football player."
+          ],
+          "distractor_words": ["basketball player", "baseball player", "swimmer"],
+          "distractor_meanings": ["篮球运动员", "棒球运动员", "游泳运动员"]
+        },
+        {
+          "word": "nurse",
+          "phonetic": "/nɜːs/",
+          "meaning": "护士",
+          "level_hint": "n____e (护士)",
+          "sample_sentences": [
+            "My aunt is a nurse.",
+            "The nurse is very kind.",
+            "She works as a nurse in the hospital."
+          ],
+          "distractor_words": ["doctor", "teacher", "driver"],
+          "distractor_meanings": ["医生", "老师", "司机"]
+        },
+        {
+          "word": "doctor",
+          "phonetic": "/ˈdɒktə/",
+          "meaning": "医生",
+          "level_hint": "d____or (医生)",
+          "sample_sentences": [
+            "My father is a doctor.",
+            "The doctor helps sick people.",
+            "I want to be a doctor."
+          ],
+          "distractor_words": ["nurse", "driver", "farmer"],
+          "distractor_meanings": ["护士", "司机", "农民"]
+        }
+      ]
+    },
+    {
+      "unit": 7,
+      "title": "Unit 7 · What's the weather like?",
+      "words": [
+        {
+          "word": "weather",
+          "phonetic": "/ˈweðə/",
+          "meaning": "天气",
+          "level_hint": "w____er (天气)",
+          "sample_sentences": [
+            "What's the weather like today?",
+            "The weather is nice today.",
+            "I like warm weather."
+          ],
+          "distractor_words": ["water", "winter", "sweater"],
+          "distractor_meanings": ["水", "冬天", "毛衣"]
+        },
+        {
+          "word": "sunny",
+          "phonetic": "/ˈsʌni/",
+          "meaning": "晴朗的",
+          "level_hint": "s____y (晴朗的)",
+          "sample_sentences": [
+            "It's sunny today.",
+            "I like sunny days.",
+            "Let's go out on a sunny day."
+          ],
+          "distractor_words": ["rainy", "cloudy", "snowy"],
+          "distractor_meanings": ["下雨的", "多云的", "下雪的"]
+        },
+        {
+          "word": "cloudy",
+          "phonetic": "/ˈklaʊdi/",
+          "meaning": "多云的",
+          "level_hint": "cl____y (多云的)",
+          "sample_sentences": [
+            "It's cloudy today.",
+            "The sky is cloudy.",
+            "It may rain on a cloudy day."
+          ],
+          "distractor_words": ["windy", "sunny", "rainy"],
+          "distractor_meanings": ["有风的", "晴朗的", "下雨的"]
+        },
+        {
+          "word": "snowy",
+          "phonetic": "/ˈsnəʊi/",
+          "meaning": "下雪的",
+          "level_hint": "sn____y (下雪的)",
+          "sample_sentences": [
+            "It's snowy outside.",
+            "I like snowy days.",
+            "We can make a snowman on snowy days."
+          ],
+          "distractor_words": ["rainy", "windy", "sunny"],
+          "distractor_meanings": ["下雨的", "有风的", "晴朗的"]
+        },
+        {
+          "word": "windy",
+          "phonetic": "/ˈwɪndi/",
+          "meaning": "有风的",
+          "level_hint": "w____y (有风的)",
+          "sample_sentences": [
+            "It's windy today.",
+            "It's cold and windy outside.",
+            "We can fly kites on windy days."
+          ],
+          "distractor_words": ["rainy", "sunny", "cloudy"],
+          "distractor_meanings": ["下雨的", "晴朗的", "多云的"]
+        },
+        {
+          "word": "rainy",
+          "phonetic": "/ˈreɪni/",
+          "meaning": "下雨的",
+          "level_hint": "r____y (下雨的)",
+          "sample_sentences": [
+            "It's rainy today.",
+            "Take an umbrella on rainy days.",
+            "I don't like rainy weather."
+          ],
+          "distractor_words": ["sunny", "snowy", "windy"],
+          "distractor_meanings": ["晴朗的", "下雪的", "有风的"]
+        },
+        {
+          "word": "warm",
+          "phonetic": "/wɔːm/",
+          "meaning": "温暖的",
+          "level_hint": "w____m (温暖的)",
+          "sample_sentences": [
+            "It's warm in spring.",
+            "The water is warm.",
+            "I feel warm in the sun."
+          ],
+          "distractor_words": ["cool", "cold", "hot"],
+          "distractor_meanings": ["凉爽的", "寒冷的", "炎热的"]
+        },
+        {
+          "word": "cool",
+          "phonetic": "/kuːl/",
+          "meaning": "凉爽的",
+          "level_hint": "c____l (凉爽的)",
+          "sample_sentences": [
+            "It's cool in autumn.",
+            "The wind is cool.",
+            "I like cool weather."
+          ],
+          "distractor_words": ["warm", "cold", "hot"],
+          "distractor_meanings": ["温暖的", "寒冷的", "炎热的"]
+        }
+      ]
+    },
+    {
+      "unit": 8,
+      "title": "Unit 8 · My week",
+      "words": [
+        {
+          "word": "Monday",
+          "phonetic": "/ˈmʌndeɪ/",
+          "meaning": "星期一",
+          "level_hint": "M____day (星期一)",
+          "sample_sentences": [
+            "Today is Monday.",
+            "We have English class on Monday.",
+            "I go to school on Monday."
+          ],
+          "distractor_words": ["Friday", "Sunday", "Saturday"],
+          "distractor_meanings": ["星期五", "星期日", "星期六"]
+        },
+        {
+          "word": "Tuesday",
+          "phonetic": "/ˈtjuːzdeɪ/",
+          "meaning": "星期二",
+          "level_hint": "T____day (星期二)",
+          "sample_sentences": [
+            "I have music class on Tuesday.",
+            "Tuesday comes after Monday.",
+            "We play sports on Tuesday."
+          ],
+          "distractor_words": ["Thursday", "Wednesday", "Friday"],
+          "distractor_meanings": ["星期四", "星期三", "星期五"]
+        },
+        {
+          "word": "Wednesday",
+          "phonetic": "/ˈwenzdeɪ/",
+          "meaning": "星期三",
+          "level_hint": "W____day (星期三)",
+          "sample_sentences": [
+            "We have art class on Wednesday.",
+            "Wednesday is in the middle of the week.",
+            "I like Wednesday because we have PE."
+          ],
+          "distractor_words": ["Thursday", "Tuesday", "Monday"],
+          "distractor_meanings": ["星期四", "星期二", "星期一"]
+        },
+        {
+          "word": "Thursday",
+          "phonetic": "/ˈθɜːzdeɪ/",
+          "meaning": "星期四",
+          "level_hint": "T____sday (星期四)",
+          "sample_sentences": [
+            "We have science on Thursday.",
+            "Thursday comes before Friday.",
+            "I have a test on Thursday."
+          ],
+          "distractor_words": ["Tuesday", "Wednesday", "Friday"],
+          "distractor_meanings": ["星期二", "星期三", "星期五"]
+        },
+        {
+          "word": "Friday",
+          "phonetic": "/ˈfraɪdeɪ/",
+          "meaning": "星期五",
+          "level_hint": "F____day (星期五)",
+          "sample_sentences": [
+            "Tomorrow is Friday.",
+            "I like Friday because the weekend is coming.",
+            "We have a party on Friday."
+          ],
+          "distractor_words": ["Monday", "Sunday", "Wednesday"],
+          "distractor_meanings": ["星期一", "星期日", "星期三"]
+        },
+        {
+          "word": "Saturday",
+          "phonetic": "/ˈsætədeɪ/",
+          "meaning": "星期六",
+          "level_hint": "S____day (星期六)",
+          "sample_sentences": [
+            "I play football on Saturday.",
+            "Saturday is my favorite day.",
+            "We go to the park on Saturday."
+          ],
+          "distractor_words": ["Sunday", "Monday", "Friday"],
+          "distractor_meanings": ["星期日", "星期一", "星期五"]
+        },
+        {
+          "word": "Sunday",
+          "phonetic": "/ˈsʌndeɪ/",
+          "meaning": "星期日",
+          "level_hint": "S____day (星期日)",
+          "sample_sentences": [
+            "We visit grandma on Sunday.",
+            "Sunday is the first day of the week.",
+            "I rest at home on Sunday."
+          ],
+          "distractor_words": ["Saturday", "Monday", "Friday"],
+          "distractor_meanings": ["星期六", "星期一", "星期五"]
+        },
+        {
+          "word": "weekend",
+          "phonetic": "/ˌwiːkˈend/",
+          "meaning": "周末",
+          "level_hint": "week____ (周末)",
+          "sample_sentences": [
+            "What do you do on the weekend?",
+            "I play with my friends on the weekend.",
+            "The weekend is Saturday and Sunday."
+          ],
+          "distractor_words": ["weekday", "holiday", "birthday"],
+          "distractor_meanings": ["工作日", "假日", "生日"]
         }
       ]
     }

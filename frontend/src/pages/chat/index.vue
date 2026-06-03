@@ -2,10 +2,10 @@
   <view class="chat-container">
     <view class="subject-bar">
       <view :class="['subject-tab', { active: subject === 'chinese' }]" @tap="switchSubject('chinese')">
-        <text>📖 语文</text>
+        <text>语文</text>
       </view>
       <view :class="['subject-tab', { active: subject === 'english' }]" @tap="switchSubject('english')">
-        <text>🔤 英语</text>
+        <text>英语</text>
       </view>
       <text class="grade-tag">{{ grade }}年级</text>
     </view>
@@ -17,7 +17,7 @@
       :scroll-with-animation="true"
     >
       <view class="welcome-tip" v-if="messages.length === 0">
-        <text class="tip-icon">{{ subject === 'chinese' ? '📖' : '🔤' }}</text>
+        <text class="tip-icon">{{ subject === 'chinese' ? '语文' : '英文' }}</text>
         <text class="tip-text">
           你好！我是你的{{ subject === 'chinese' ? '语文' : '英语' }}小助手。
           有什么不懂的尽管问我吧！
@@ -67,8 +67,9 @@
 </template>
 
 <script setup lang="ts">
-import { ref, nextTick, onMounted } from 'vue'
+import { ref, onMounted } from 'vue'
 import { chat } from '@/api/chat'
+import { getUserId } from '@/utils/user'
 
 interface Message {
   role: 'user' | 'assistant'
@@ -77,6 +78,7 @@ interface Message {
 
 const subject = ref('chinese')
 const grade = ref(3)
+const sessionId = ref('')
 
 const messages = ref<Message[]>([])
 const inputText = ref('')
@@ -86,19 +88,21 @@ const scrollTop = ref(0)
 onMounted(() => {
   subject.value = uni.getStorageSync('chat_subject') || 'chinese'
   grade.value = parseInt(String(uni.getStorageSync('chat_grade') || '3'))
+  sessionId.value = 'sess_' + Date.now() + '_' + Math.random().toString(36).slice(2, 8)
 })
+
+const scrollToBottom = () => {
+  setTimeout(() => {
+    scrollTop.value = scrollTop.value + 1000
+  }, 50)
+}
 
 const switchSubject = (s: string) => {
   if (s === subject.value) return
   subject.value = s
   messages.value = []
+  sessionId.value = 'sess_' + Date.now() + '_' + Math.random().toString(36).slice(2, 8)
   uni.setStorageSync('chat_subject', s)
-}
-
-const scrollToBottom = () => {
-  nextTick(() => {
-    scrollTop.value = scrollTop.value + 1000
-  })
 }
 
 const sendMessage = async () => {
@@ -116,16 +120,20 @@ const sendMessage = async () => {
       content: m.content,
     }))
 
+    const dbUserId = uni.getStorageSync('db_user_id') || null
+
     const data = await chat({
       messages: chatMessages,
       subject: subject.value,
       grade: grade.value,
+      user_id: dbUserId,
+      session_id: sessionId.value,
     })
 
     if (data.reply) {
       messages.value.push({ role: 'assistant', content: data.reply })
     }
-  } catch (e) {
+  } catch {
     messages.value.push({
       role: 'assistant',
       content: '抱歉，网络出了点问题，请稍后再试。',
