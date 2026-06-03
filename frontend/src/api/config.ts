@@ -6,7 +6,7 @@ export function request<T>(options: {
   data?: any
   header?: Record<string, string>
 }): Promise<T> {
-  const userId = uni.getStorageSync('device_id') || ''
+  const userId = uni.getStorageSync('db_user_id') || uni.getStorageSync('device_id') || ''
   const token = uni.getStorageSync('token') || ''
   const headers: Record<string, string> = {
     'Content-Type': 'application/json',
