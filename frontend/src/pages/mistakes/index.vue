@@ -189,6 +189,7 @@ const fetchMistakes = async () => {
     const res = await getMistakes({
       subject: filterSubject.value || undefined,
       review_due: reviewDueOnly.value || undefined,
+      topic: filterTopic.value || undefined,
       page: page.value,
       size: pageSize,
     })
@@ -225,6 +226,7 @@ const doReview = async (id: number, correct: boolean) => {
     page.value = 1
     expandedId.value = null
     await fetchMistakes()
+    fetchStats()
   } catch {
     uni.showToast({ title: '操作失败', icon: 'none' })
   }

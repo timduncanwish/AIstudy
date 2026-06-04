@@ -19,6 +19,7 @@ router = APIRouter(prefix="/mistakes", tags=["mistakes"])
 @router.get("", response_model=MistakeListResponse)
 async def get_mistakes(
     subject: str | None = None,
+    topic: str | None = None,
     review_due: bool = False,
     page: int = Query(1, ge=1),
     size: int = Query(20, ge=1, le=50),
@@ -26,7 +27,7 @@ async def get_mistakes(
     x_user_id: str = Header(None, alias="X-User-Id"),
 ):
     user = await get_or_create_user(db, x_user_id or "anonymous")
-    items, total = await list_mistakes(db, user.id, subject, review_due, page, size)
+    items, total = await list_mistakes(db, user.id, subject, review_due, topic, page, size)
     return MistakeListResponse(
         items=[MistakeResponse.model_validate(m) for m in items],
         total=total,
@@ -42,6 +43,33 @@ async def get_stats(
     user = await get_or_create_user(db, x_user_id or "anonymous")
     stats = await get_mistake_stats(db, user.id)
     return MistakeStatsResponse(**stats)
+
+
+@router.post("/build-kb")
+async def build_knowledge_base(
+    db: AsyncSession = Depends(get_db),
+    x_user_id: str = Header(None, alias="X-User-Id"),
+):
+    try:
+        from app.services import knowledge_service
+    except ImportError:
+        raise HTTPException(status_code=503, detail="知识库服务未安装，请先安装 chromadb")
+
+    user = await get_or_create_user(db, x_user_id or "anonymous")
+    result = await db.execute(
+        select(Mistake).where(Mistake.user_id == user.id)
+    )
+    mistakes = list(result.scalars().all())
+
+    added = 0
+    for m in mistakes:
+        try:
+            await knowledge_service.add_mistake_to_kb(m)
+            added += 1
+        except Exception:
+            pass
+
+    return {"detail": f"已将 {added} 条错题导入知识库", "total": len(mistakes), "added": added}
 
 
 @router.get("/{mistake_id}", response_model=MistakeResponse)
@@ -70,30 +98,3 @@ async def review_mistake_api(
         raise HTTPException(status_code=404, detail="错题不存在")
     updated = await review_mistake(db, mistake, body.correct)
     return MistakeResponse.model_validate(updated)
-
-
-@router.post("/build-kb")
-async def build_knowledge_base(
-    db: AsyncSession = Depends(get_db),
-    x_user_id: str = Header(None, alias="X-User-Id"),
-):
-    try:
-        from app.services import knowledge_service
-    except ImportError:
-        raise HTTPException(status_code=503, detail="知识库服务未安装，请先安装 chromadb")
-
-    user = await get_or_create_user(db, x_user_id or "anonymous")
-    result = await db.execute(
-        select(Mistake).where(Mistake.user_id == user.id)
-    )
-    mistakes = list(result.scalars().all())
-
-    added = 0
-    for m in mistakes:
-        try:
-            await knowledge_service.add_mistake_to_kb(m)
-            added += 1
-        except Exception:
-            pass
-
-    return {"detail": f"已将 {added} 条错题导入知识库", "total": len(mistakes), "added": added}

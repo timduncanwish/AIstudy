@@ -23,6 +23,7 @@ interface MistakeListResponse {
 interface MistakeListParams {
   subject?: string
   review_due?: boolean
+  topic?: string
   page?: number
   size?: number
 }
@@ -31,6 +32,7 @@ export function getMistakes(params: MistakeListParams = {}): Promise<MistakeList
   const query: string[] = []
   if (params.subject) query.push(`subject=${params.subject}`)
   if (params.review_due) query.push(`review_due=true`)
+  if (params.topic) query.push(`topic=${encodeURIComponent(params.topic)}`)
   if (params.page) query.push(`page=${params.page}`)
   if (params.size) query.push(`size=${params.size}`)
   const qs = query.length > 0 ? '?' + query.join('&') : ''
