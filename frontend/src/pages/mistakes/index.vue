@@ -1,5 +1,40 @@
 <template>
   <view class="container">
+    <view v-if="stats" class="stats-card">
+      <view class="stats-row">
+        <view class="stat-item">
+          <text class="stat-number">{{ stats.total_mistakes }}</text>
+          <text class="stat-label">总错题</text>
+        </view>
+        <view class="stat-item">
+          <text class="stat-number mastered">{{ stats.mastered_count }}</text>
+          <text class="stat-label">已掌握</text>
+        </view>
+        <view class="stat-item">
+          <text class="stat-number reviewing">{{ stats.reviewing_count }}</text>
+          <text class="stat-label">复习中</text>
+        </view>
+        <view class="stat-item">
+          <text class="stat-number new-count">{{ stats.new_count }}</text>
+          <text class="stat-label">新错题</text>
+        </view>
+      </view>
+      <view v-if="stats.topics.length > 0" class="topics-row">
+        <text class="topics-label">薄弱知识点：</text>
+        <view class="topic-tags">
+          <view
+            v-for="t in stats.topics.slice(0, 6)"
+            :key="t.topic"
+            :class="['topic-chip', { active: filterTopic === t.topic }]"
+            @tap="toggleTopic(t.topic)"
+          >
+            <text class="topic-chip-text">{{ t.topic }}</text>
+            <text class="topic-chip-count">{{ t.count }}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
     <view class="filter-bar">
       <view class="subject-filter">
         <view
@@ -111,10 +146,11 @@
 
 <script setup lang="ts">
 import { ref, watch } from 'vue'
-import { getMistakes, reviewMistake, type MistakeItem } from '@/api/mistakes'
+import { getMistakes, reviewMistake, getMistakeStats, type MistakeItem, type MistakeStatsResponse } from '@/api/mistakes'
 import { getUserId } from '@/utils/user'
 
 const filterSubject = ref('')
+const filterTopic = ref('')
 const reviewDueOnly = ref(false)
 const mistakes = ref<MistakeItem[]>([])
 const expandedId = ref<number | null>(null)
@@ -122,10 +158,26 @@ const loading = ref(false)
 const page = ref(1)
 const total = ref(0)
 const hasMore = ref(false)
+const stats = ref<MistakeStatsResponse | null>(null)
 
 getUserId()
 
 const pageSize = 20
+
+const fetchStats = async () => {
+  try {
+    stats.value = await getMistakeStats()
+  } catch {}
+}
+
+const toggleTopic = (topic: string) => {
+  filterTopic.value = filterTopic.value === topic ? '' : topic
+  page.value = 1
+  expandedId.value = null
+  fetchMistakes()
+}
+
+fetchStats()
 
 const truncate = (text: string, max: number) => {
   return text.length > max ? text.slice(0, max) + '...' : text
@@ -178,7 +230,7 @@ const doReview = async (id: number, correct: boolean) => {
   }
 }
 
-watch([filterSubject, reviewDueOnly], () => {
+watch([filterSubject, reviewDueOnly, filterTopic], () => {
   page.value = 1
   expandedId.value = null
   fetchMistakes()
@@ -192,6 +244,104 @@ fetchMistakes()
   padding: 30rpx;
   min-height: 100vh;
   background: #f5f5f5;
+}
+
+.stats-card {
+  background: #fff;
+  border-radius: 16rpx;
+  padding: 24rpx 28rpx;
+  margin-bottom: 24rpx;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.04);
+}
+
+.stats-row {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20rpx;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-number {
+  font-size: 40rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.stat-number.mastered {
+  color: #4CAF50;
+}
+
+.stat-number.reviewing {
+  color: #FFB74D;
+}
+
+.stat-number.new-count {
+  color: #FF6B6B;
+}
+
+.stat-label {
+  font-size: 22rpx;
+  color: #999;
+  margin-top: 4rpx;
+}
+
+.topics-row {
+  padding-top: 16rpx;
+  border-top: 1rpx solid #f0f0f0;
+}
+
+.topics-label {
+  font-size: 24rpx;
+  color: #999;
+  display: block;
+  margin-bottom: 12rpx;
+}
+
+.topic-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12rpx;
+}
+
+.topic-chip {
+  display: flex;
+  align-items: center;
+  gap: 6rpx;
+  padding: 8rpx 18rpx;
+  background: #f5f5f5;
+  border-radius: 20rpx;
+}
+
+.topic-chip.active {
+  background: #e3f2fd;
+}
+
+.topic-chip-text {
+  font-size: 24rpx;
+  color: #333;
+}
+
+.topic-chip-count {
+  font-size: 20rpx;
+  color: #999;
+  background: #e0e0e0;
+  border-radius: 10rpx;
+  padding: 2rpx 8rpx;
+}
+
+.topic-chip.active .topic-chip-text {
+  color: #4A90D9;
+  font-weight: bold;
+}
+
+.topic-chip.active .topic-chip-count {
+  background: #4A90D9;
+  color: #fff;
 }
 
 .filter-bar {

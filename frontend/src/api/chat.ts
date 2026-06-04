@@ -10,6 +10,7 @@ interface ChatRequest {
 
 interface ChatResponse {
   reply: string
+  mistakes_referenced: number
 }
 
 export function chat(data: ChatRequest): Promise<ChatResponse> {

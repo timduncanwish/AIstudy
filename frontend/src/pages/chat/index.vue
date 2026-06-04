@@ -34,6 +34,9 @@
         </view>
         <view :class="['bubble', msg.role === 'user' ? 'bubble-user' : 'bubble-ai']">
           <text class="bubble-text">{{ msg.content }}</text>
+          <view v-if="msg.role === 'assistant' && msg.mistakesReferenced" class="kb-hint">
+            <text class="kb-hint-text">参考了 {{ msg.mistakesReferenced }} 条错题记录</text>
+          </view>
         </view>
       </view>
 
@@ -74,6 +77,7 @@ import { getUserId } from '@/utils/user'
 interface Message {
   role: 'user' | 'assistant'
   content: string
+  mistakesReferenced?: number
 }
 
 const subject = ref('chinese')
@@ -131,7 +135,11 @@ const sendMessage = async () => {
     })
 
     if (data.reply) {
-      messages.value.push({ role: 'assistant', content: data.reply })
+      messages.value.push({
+        role: 'assistant',
+        content: data.reply,
+        mistakesReferenced: data.mistakes_referenced || 0,
+      })
     }
   } catch {
     messages.value.push({
@@ -276,6 +284,17 @@ const sendMessage = async () => {
 }
 
 .typing {
+  color: #aaa;
+}
+
+.kb-hint {
+  margin-top: 12rpx;
+  padding-top: 8rpx;
+  border-top: 1rpx solid #f0f0f0;
+}
+
+.kb-hint-text {
+  font-size: 20rpx;
   color: #aaa;
 }
 

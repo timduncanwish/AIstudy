@@ -48,3 +48,22 @@ export function reviewMistake(id: number, correct: boolean): Promise<MistakeItem
     data: { correct },
   })
 }
+
+export interface TopicStat {
+  topic: string
+  count: number
+  avg_mastery: number
+}
+
+export interface MistakeStatsResponse {
+  total_mistakes: number
+  mastered_count: number
+  reviewing_count: number
+  new_count: number
+  topics: TopicStat[]
+  subject_dist: Record<string, number>
+}
+
+export function getMistakeStats(): Promise<MistakeStatsResponse> {
+  return request<MistakeStatsResponse>({ url: '/mistakes/stats', method: 'GET' })
+}

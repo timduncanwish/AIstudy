@@ -9,6 +9,7 @@ from app.routers import auth, chat, homework, mistakes, challenge, students, rep
 from app.database import init_db
 
 os.makedirs("uploads", exist_ok=True)
+os.makedirs("chroma_data", exist_ok=True)
 
 app = FastAPI(title="AI助学", description="小学3-6年级AI辅导助手")
 

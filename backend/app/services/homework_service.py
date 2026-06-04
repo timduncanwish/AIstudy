@@ -8,6 +8,18 @@ from app.models.homework import Homework
 from app.models.mistake import Mistake
 from app.services.ai_service import grade_homework
 
+_knowledge_service = None
+
+def _get_knowledge_service():
+    global _knowledge_service
+    if _knowledge_service is None:
+        try:
+            from app.services import knowledge_service as ks
+            _knowledge_service = ks
+        except ImportError:
+            pass
+    return _knowledge_service
+
 
 async def process_homework(
     db: AsyncSession,
@@ -33,6 +45,7 @@ async def process_homework(
         result = await grade_homework(image_base64, subject, grade)
 
         mistake_count = 0
+        new_mistakes = []
         for q in result.get("questions", []):
             if not q.get("is_correct", False):
                 mistake_count += 1
@@ -49,10 +62,20 @@ async def process_homework(
                     next_review=datetime.now(),
                 )
                 db.add(mistake)
+                new_mistakes.append(mistake)
 
         homework.status = "done"
         homework.result_json = json.dumps(result, ensure_ascii=False)
         await db.commit()
+
+        for m in new_mistakes:
+            await db.refresh(m)
+            try:
+                ks = _get_knowledge_service()
+                if ks:
+                    await ks.add_mistake_to_kb(m)
+            except Exception:
+                pass
 
         result["homework_id"] = homework.id
         result["mistake_count"] = mistake_count

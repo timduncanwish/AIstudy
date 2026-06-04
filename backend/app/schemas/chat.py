@@ -17,6 +17,7 @@ class ChatRequest(BaseModel):
 class ChatResponse(BaseModel):
     reply: str
     subject: str
+    mistakes_referenced: int = 0
 
 
 class ChatHistoryMessage(BaseModel):

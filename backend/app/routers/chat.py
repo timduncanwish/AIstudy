@@ -16,6 +16,7 @@ from app.schemas.chat import (
     ChatSessionSummary,
 )
 from app.services.ai_service import chat as ai_chat
+from app.services.mistake_service import get_relevant_mistakes
 
 router = APIRouter(prefix="/chat", tags=["chat"])
 
@@ -34,8 +35,25 @@ async def chat_endpoint(req: ChatRequest, db: AsyncSession = Depends(get_db)):
 
     messages = [{"role": m.role, "content": m.content} for m in req.messages]
 
+    mistakes_context = None
+    mistakes_referenced = 0
+    if req.user_id:
+        relevant = await get_relevant_mistakes(db, req.user_id, req.subject)
+        if relevant:
+            mistakes_context = [
+                {
+                    "question_text": m.question_text,
+                    "student_answer": m.student_answer,
+                    "correct_answer": m.correct_answer,
+                    "topic": m.topic,
+                    "mastery": m.mastery,
+                }
+                for m in relevant
+            ]
+            mistakes_referenced = len(relevant)
+
     try:
-        reply = await ai_chat(messages, req.subject, req.grade)
+        reply = await ai_chat(messages, req.subject, req.grade, mistakes_context)
     except Exception as e:
         raise HTTPException(status_code=502, detail=f"AI服务调用失败: {str(e)}")
 
@@ -61,7 +79,7 @@ async def chat_endpoint(req: ChatRequest, db: AsyncSession = Depends(get_db)):
         ))
         await db.commit()
 
-    return ChatResponse(reply=reply, subject=req.subject)
+    return ChatResponse(reply=reply, subject=req.subject, mistakes_referenced=mistakes_referenced)
 
 
 @router.get("/sessions/{user_id}", response_model=ChatSessionListResponse)

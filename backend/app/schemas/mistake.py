@@ -27,3 +27,18 @@ class MistakeListResponse(BaseModel):
 
 class ReviewRequest(BaseModel):
     correct: bool
+
+
+class TopicStat(BaseModel):
+    topic: str
+    count: int
+    avg_mastery: float
+
+
+class MistakeStatsResponse(BaseModel):
+    total_mistakes: int
+    mastered_count: int
+    reviewing_count: int
+    new_count: int
+    topics: list[TopicStat]
+    subject_dist: dict[str, int]

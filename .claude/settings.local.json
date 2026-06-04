@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pip install *)",
+      "Bash(mkdir -p \"d:/AI助学/backend/app/data/word_banks\")",
+      "Bash(rm -f ai_tutor.db)",
+      "Bash(python -c \"from app.main import app; print\\('Import OK'\\)\")"
+    ],
+    "additionalDirectories": [
+      "d:\\AI助学\\backend\\app\\data"
+    ]
+  }
+}

@@ -1,13 +1,16 @@
 from fastapi import APIRouter, Depends, Header, Query, HTTPException
+from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.database import get_db
+from app.models.mistake import Mistake
 from app.services.user_service import get_or_create_user
-from app.services.mistake_service import list_mistakes, get_mistake, review_mistake
+from app.services.mistake_service import list_mistakes, get_mistake, review_mistake, get_mistake_stats
 from app.schemas.mistake import (
     MistakeResponse,
     MistakeListResponse,
     ReviewRequest,
+    MistakeStatsResponse,
 )
 
 router = APIRouter(prefix="/mistakes", tags=["mistakes"])
@@ -29,6 +32,16 @@ async def get_mistakes(
         total=total,
         page=page,
     )
+
+
+@router.get("/stats", response_model=MistakeStatsResponse)
+async def get_stats(
+    db: AsyncSession = Depends(get_db),
+    x_user_id: str = Header(None, alias="X-User-Id"),
+):
+    user = await get_or_create_user(db, x_user_id or "anonymous")
+    stats = await get_mistake_stats(db, user.id)
+    return MistakeStatsResponse(**stats)
 
 
 @router.get("/{mistake_id}", response_model=MistakeResponse)
@@ -57,3 +70,30 @@ async def review_mistake_api(
         raise HTTPException(status_code=404, detail="错题不存在")
     updated = await review_mistake(db, mistake, body.correct)
     return MistakeResponse.model_validate(updated)
+
+
+@router.post("/build-kb")
+async def build_knowledge_base(
+    db: AsyncSession = Depends(get_db),
+    x_user_id: str = Header(None, alias="X-User-Id"),
+):
+    try:
+        from app.services import knowledge_service
+    except ImportError:
+        raise HTTPException(status_code=503, detail="知识库服务未安装，请先安装 chromadb")
+
+    user = await get_or_create_user(db, x_user_id or "anonymous")
+    result = await db.execute(
+        select(Mistake).where(Mistake.user_id == user.id)
+    )
+    mistakes = list(result.scalars().all())
+
+    added = 0
+    for m in mistakes:
+        try:
+            await knowledge_service.add_mistake_to_kb(m)
+            added += 1
+        except Exception:
+            pass
+
+    return {"detail": f"已将 {added} 条错题导入知识库", "total": len(mistakes), "added": added}

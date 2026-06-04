@@ -47,10 +47,44 @@ HOMEWORK_GRADING_PROMPTS = {
 }
 
 
-async def chat(messages: list[dict], subject: str, grade: int) -> str:
+MISTAKE_CONTEXT_TEMPLATE = {
+    "chinese": (
+        "\n\n以下是该学生之前做错过的相关题目（错题知识库）：\n{mistakes}\n"
+        "请在辅导时参考这些信息。如果学生当前问题涉及类似知识点，"
+        "温和地引导他们回顾之前的错误，帮助巩固掌握。"
+    ),
+    "english": (
+        "\n\nThe student previously made mistakes on these related questions (mistake knowledge base):\n{mistakes}\n"
+        "Please reference this information during tutoring. If the student's current question involves similar concepts, "
+        "gently guide them to recall and learn from past mistakes."
+    ),
+}
+
+
+def _format_mistake_context(mistakes: list[dict], subject: str) -> str:
+    parts = []
+    for i, m in enumerate(mistakes, 1):
+        parts.append(
+            f"{i}. 题目: {m['question_text']}\n"
+            f"   学生答案: {m['student_answer']}\n"
+            f"   正确答案: {m['correct_answer']}\n"
+            f"   知识点: {m.get('topic', '')}\n"
+            f"   掌握度: {m['mastery']}/5"
+        )
+    return "\n".join(parts)
+
+
+async def chat(
+    messages: list[dict], subject: str, grade: int, mistake_context: list[dict] | None = None
+) -> str:
     system_prompt = SYSTEM_PROMPTS.get(subject, SYSTEM_PROMPTS["chinese"]).format(
         grade=grade
     )
+
+    if mistake_context:
+        formatted = _format_mistake_context(mistake_context, subject)
+        template = MISTAKE_CONTEXT_TEMPLATE.get(subject, MISTAKE_CONTEXT_TEMPLATE["chinese"])
+        system_prompt += template.format(mistakes=formatted)
 
     api_messages = [{"role": "system", "content": system_prompt}] + messages
 

@@ -8,3 +8,4 @@ aiosqlite==0.20.0
 python-multipart==0.0.9
 greenlet
 PyJWT==2.8.0
+chromadb>=0.5.0
