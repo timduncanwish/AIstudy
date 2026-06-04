@@ -5,12 +5,21 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from app.database import get_db
 from app.models.mistake import Mistake
 from app.services.user_service import get_or_create_user
-from app.services.mistake_service import list_mistakes, get_mistake, review_mistake, get_mistake_stats
+from app.services.mistake_service import (
+    list_mistakes, get_mistake, review_mistake, get_mistake_stats,
+    get_knowledge_map, get_topic_detail, generate_practice_questions,
+)
 from app.schemas.mistake import (
     MistakeResponse,
     MistakeListResponse,
     ReviewRequest,
     MistakeStatsResponse,
+    KnowledgeMapResponse,
+    KnowledgeTopic,
+    TopicDetailResponse,
+    PracticeRequest,
+    PracticeResponse,
+    PracticeQuestion,
 )
 
 router = APIRouter(prefix="/mistakes", tags=["mistakes"])
@@ -45,6 +54,55 @@ async def get_stats(
     return MistakeStatsResponse(**stats)
 
 
+@router.get("/knowledge-map", response_model=KnowledgeMapResponse)
+async def knowledge_map(
+    db: AsyncSession = Depends(get_db),
+    x_user_id: str = Header(None, alias="X-User-Id"),
+):
+    user = await get_or_create_user(db, x_user_id or "anonymous")
+    data = await get_knowledge_map(db, user.id)
+    return KnowledgeMapResponse(
+        subjects={
+            s: [KnowledgeTopic(**t) for t in topics]
+            for s, topics in data["subjects"].items()
+        }
+    )
+
+
+@router.get("/topic/{subject}/{topic:path}", response_model=TopicDetailResponse)
+async def topic_detail(
+    subject: str,
+    topic: str,
+    db: AsyncSession = Depends(get_db),
+    x_user_id: str = Header(None, alias="X-User-Id"),
+):
+    user = await get_or_create_user(db, x_user_id or "anonymous")
+    data = await get_topic_detail(db, user.id, subject, topic)
+    if not data:
+        raise HTTPException(status_code=404, detail="知识点不存在")
+    return TopicDetailResponse(
+        topic=data["topic"],
+        subject=data["subject"],
+        count=data["count"],
+        avg_mastery=data["avg_mastery"],
+        mistakes=[MistakeResponse.model_validate(m) for m in data["mistakes"]],
+    )
+
+
+@router.post("/practice", response_model=PracticeResponse)
+async def practice(
+    body: PracticeRequest,
+    db: AsyncSession = Depends(get_db),
+    x_user_id: str = Header(None, alias="X-User-Id"),
+):
+    user = await get_or_create_user(db, x_user_id or "anonymous")
+    questions = await generate_practice_questions(db, user.id, body.subject, body.topic)
+    return PracticeResponse(
+        topic=body.topic,
+        questions=[PracticeQuestion(**q) for q in questions],
+    )
+
+
 @router.post("/build-kb")
 async def build_knowledge_base(
     db: AsyncSession = Depends(get_db),
@@ -72,7 +130,7 @@ async def build_knowledge_base(
     return {"detail": f"已将 {added} 条错题导入知识库", "total": len(mistakes), "added": added}
 
 
-@router.get("/{mistake_id}", response_model=MistakeResponse)
+@router.get("/detail/{mistake_id}", response_model=MistakeResponse)
 async def get_mistake_detail(
     mistake_id: int,
     db: AsyncSession = Depends(get_db),
@@ -85,7 +143,7 @@ async def get_mistake_detail(
     return MistakeResponse.model_validate(mistake)
 
 
-@router.post("/{mistake_id}/review", response_model=MistakeResponse)
+@router.post("/detail/{mistake_id}/review", response_model=MistakeResponse)
 async def review_mistake_api(
     mistake_id: int,
     body: ReviewRequest,

@@ -55,6 +55,11 @@
           <text class="tool-title">学习报告</text>
           <text class="tool-desc">查看学习数据</text>
         </view>
+        <view class="tool-card knowledge-card" @tap="goKnowledge">
+          <text class="tool-icon">📚</text>
+          <text class="tool-title">知识库</text>
+          <text class="tool-desc">薄弱知识点图谱</text>
+        </view>
       </view>
     </view>
   </view>
@@ -101,6 +106,12 @@ const goChallenge = () => {
 const goReport = () => {
   uni.navigateTo({
     url: '/pages/report/index',
+  })
+}
+
+const goKnowledge = () => {
+  uni.navigateTo({
+    url: '/pages/knowledge/index',
   })
 }
 </script>

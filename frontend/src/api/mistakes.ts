@@ -40,12 +40,12 @@ export function getMistakes(params: MistakeListParams = {}): Promise<MistakeList
 }
 
 export function getMistakeDetail(id: number): Promise<MistakeItem> {
-  return request<MistakeItem>({ url: `/mistakes/${id}`, method: 'GET' })
+  return request<MistakeItem>({ url: `/mistakes/detail/${id}`, method: 'GET' })
 }
 
 export function reviewMistake(id: number, correct: boolean): Promise<MistakeItem> {
   return request<MistakeItem>({
-    url: `/mistakes/${id}/review`,
+    url: `/mistakes/detail/${id}/review`,
     method: 'POST',
     data: { correct },
   })

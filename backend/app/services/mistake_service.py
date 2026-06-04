@@ -150,3 +150,122 @@ async def get_mistake_stats(db: AsyncSession, user_id: int) -> dict:
         "topics": topics,
         "subject_dist": subject_dist,
     }
+
+
+async def get_knowledge_map(db: AsyncSession, user_id: int) -> dict:
+    stmt = (
+        select(
+            Mistake.subject,
+            Mistake.topic,
+            func.count().label("count"),
+            func.avg(Mistake.mastery).label("avg_mastery"),
+            func.max(Mistake.created_at).label("latest"),
+        )
+        .where(Mistake.user_id == user_id, Mistake.topic != "", Mistake.topic.isnot(None))
+        .group_by(Mistake.subject, Mistake.topic)
+        .order_by(Mistake.subject, func.count().desc())
+    )
+    rows = (await db.execute(stmt)).all()
+
+    subjects: dict[str, list[dict]] = {}
+    for r in rows:
+        subjects.setdefault(r[0], []).append({
+            "topic": r[1],
+            "subject": r[0],
+            "count": r[2],
+            "avg_mastery": round(float(r[3]), 1),
+            "latest_mistake_at": str(r[4]),
+        })
+    return {"subjects": subjects}
+
+
+async def get_topic_detail(
+    db: AsyncSession, user_id: int, subject: str, topic: str
+) -> dict | None:
+    avg_stmt = select(
+        func.count().label("count"),
+        func.avg(Mistake.mastery).label("avg_mastery"),
+    ).where(
+        Mistake.user_id == user_id,
+        Mistake.subject == subject,
+        Mistake.topic == topic,
+    )
+    row = (await db.execute(avg_stmt)).one()
+    if not row or row[0] == 0:
+        return None
+
+    stmt = (
+        select(Mistake)
+        .where(Mistake.user_id == user_id, Mistake.subject == subject, Mistake.topic == topic)
+        .order_by(Mistake.mastery.asc(), Mistake.created_at.desc())
+    )
+    mistakes = list((await db.execute(stmt)).scalars().all())
+
+    return {
+        "topic": topic,
+        "subject": subject,
+        "count": row[0],
+        "avg_mastery": round(float(row[1]), 1),
+        "mistakes": mistakes,
+    }
+
+
+async def generate_practice_questions(
+    db: AsyncSession, user_id: int, subject: str, topic: str
+) -> list[dict]:
+    detail = await get_topic_detail(db, user_id, subject, topic)
+    if not detail:
+        return []
+
+    weak_mistakes = [m for m in detail["mistakes"] if m.mastery <= 3][:3]
+    if not weak_mistakes:
+        weak_mistakes = detail["mistakes"][:3]
+
+    context_parts = []
+    for m in weak_mistakes:
+        context_parts.append(
+            f"题目: {m.question_text}\n正确答案: {m.correct_answer}\n学生错误答案: {m.student_answer}"
+        )
+    context = "\n\n".join(context_parts)
+
+    from app.services.ai_service import _client
+    from app.config import ZHIPU_MODEL
+
+    if subject == "chinese":
+        prompt = (
+            f"你是一位小学语文老师。学生以下题目做错了，请根据这些错题生成3道类似但不同的练习题。\n"
+            f"知识点: {topic}\n\n"
+            f"学生错题:\n{context}\n\n"
+            f"直接返回JSON数组，每项格式: {{\"question\": \"题目\", \"options\": [\"A选项\", \"B选项\", \"C选项\", \"D选项\"], "
+            f"\"correct_index\": 正确选项索引(0-3), \"explanation\": \"解析\"}}\n"
+            f"不要加markdown标记。"
+        )
+    else:
+        prompt = (
+            f"You are an elementary English teacher. The student got these questions wrong. "
+            f"Generate 3 similar but different practice questions.\n"
+            f"Topic: {topic}\n\n"
+            f"Student mistakes:\n{context}\n\n"
+            f"Return a raw JSON array. Each item: {{\"question\": \"...\", \"options\": [\"A\", \"B\", \"C\", \"D\"], "
+            f"\"correct_index\": 0-3, \"explanation\": \"...in Chinese...\"}}\n"
+            f"No markdown."
+        )
+
+    response = await _client.chat.completions.create(
+        model=ZHIPU_MODEL,
+        messages=[{"role": "user", "content": prompt}],
+        max_tokens=1024,
+        temperature=0.7,
+    )
+    text = response.choices[0].message.content
+
+    import json, re
+    cleaned = re.sub(r'```json\s*', '', text)
+    cleaned = re.sub(r'```\s*', '', cleaned).strip()
+    arr_match = re.search(r'\[[\s\S]*\]', cleaned)
+    if arr_match:
+        try:
+            return json.loads(arr_match.group())
+        except json.JSONDecodeError:
+            pass
+    return []

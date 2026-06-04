@@ -42,3 +42,40 @@ class MistakeStatsResponse(BaseModel):
     new_count: int
     topics: list[TopicStat]
     subject_dist: dict[str, int]
+
+
+class KnowledgeTopic(BaseModel):
+    topic: str
+    subject: str
+    count: int
+    avg_mastery: float
+    latest_mistake_at: str
+
+
+class KnowledgeMapResponse(BaseModel):
+    subjects: dict[str, list[KnowledgeTopic]]
+
+
+class TopicDetailResponse(BaseModel):
+    topic: str
+    subject: str
+    count: int
+    avg_mastery: float
+    mistakes: list[MistakeResponse]
+
+
+class PracticeRequest(BaseModel):
+    subject: str
+    topic: str
+
+
+class PracticeQuestion(BaseModel):
+    question: str
+    options: list[str]
+    correct_index: int
+    explanation: str
+
+
+class PracticeResponse(BaseModel):
+    topic: str
+    questions: list[PracticeQuestion]

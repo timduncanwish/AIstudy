@@ -41,6 +41,12 @@
 			"style": {
 				"navigationBarTitleText": "学习报告"
 			}
+		},
+		{
+			"path": "pages/knowledge/index",
+			"style": {
+				"navigationBarTitleText": "知识库"
+			}
 		}
 	],
 	"globalStyle": {
