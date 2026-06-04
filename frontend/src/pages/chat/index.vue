@@ -2,12 +2,16 @@
   <view class="chat-container">
     <view class="subject-bar">
       <view :class="['subject-tab', { active: subject === 'chinese' }]" @tap="switchSubject('chinese')">
+        <view v-if="subject === 'chinese'" class="tab-dot chinese-dot" />
         <text>语文</text>
       </view>
       <view :class="['subject-tab', { active: subject === 'english' }]" @tap="switchSubject('english')">
+        <view v-if="subject === 'english'" class="tab-dot english-dot" />
         <text>英语</text>
       </view>
-      <text class="grade-tag">{{ grade }}年级</text>
+      <view class="grade-pill">
+        <text class="grade-text">{{ grade }}年级</text>
+      </view>
     </view>
 
     <scroll-view
@@ -17,7 +21,9 @@
       :scroll-with-animation="true"
     >
       <view class="welcome-tip" v-if="messages.length === 0">
-        <text class="tip-icon">{{ subject === 'chinese' ? '语文' : '英文' }}</text>
+        <view class="welcome-avatar">
+          <text class="welcome-avatar-text">AI</text>
+        </view>
         <text class="tip-text">
           你好！我是你的{{ subject === 'chinese' ? '语文' : '英语' }}小助手。
           有什么不懂的尽管问我吧！
@@ -44,21 +50,27 @@
         <view class="avatar avatar-ai">
           <text class="avatar-text">AI</text>
         </view>
-        <view class="bubble bubble-ai">
-          <text class="bubble-text typing">正在思考...</text>
+        <view class="bubble bubble-ai typing-bubble">
+          <view class="typing-dots">
+            <view class="dot-anim" />
+            <view class="dot-anim" />
+            <view class="dot-anim" />
+          </view>
         </view>
       </view>
     </scroll-view>
 
     <view class="input-bar">
-      <input
-        class="input-field"
-        v-model="inputText"
-        placeholder="输入你的问题..."
-        :disabled="loading"
-        confirm-type="send"
-        @confirm="sendMessage"
-      />
+      <view class="input-wrap">
+        <input
+          class="input-field"
+          v-model="inputText"
+          placeholder="输入你的问题..."
+          :disabled="loading"
+          confirm-type="send"
+          @confirm="sendMessage"
+        />
+      </view>
       <view
         :class="['send-btn', { disabled: !inputText.trim() || loading }]"
         @tap="sendMessage"
@@ -158,38 +170,64 @@ const sendMessage = async () => {
   display: flex;
   flex-direction: column;
   height: 100vh;
-  background: #f0f0f0;
+  background: #EEF2FF;
 }
 
 .subject-bar {
   display: flex;
   align-items: center;
   background: #fff;
-  padding: 12rpx 20rpx;
-  border-bottom: 1rpx solid #e0e0e0;
+  padding: 16rpx 24rpx;
+  border-bottom: 2rpx solid #E0E7FF;
+  gap: 12rpx;
 }
 
 .subject-tab {
+  display: flex;
+  align-items: center;
+  gap: 8rpx;
   padding: 12rpx 28rpx;
   border-radius: 24rpx;
   font-size: 26rpx;
-  color: #666;
-  margin-right: 16rpx;
+  color: #6B7280;
+  background: #F5F3FF;
+  border: 2rpx solid #E0E7FF;
 }
 
 .subject-tab.active {
-  background: #4A90D9;
+  background: linear-gradient(135deg, #818CF8, #4F46E5);
   color: #fff;
-  font-weight: bold;
+  font-weight: 700;
+  border-color: transparent;
+  box-shadow: 2rpx 2rpx 8rpx rgba(79, 70, 229, 0.2);
 }
 
-.grade-tag {
+.tab-dot {
+  width: 12rpx;
+  height: 12rpx;
+  border-radius: 50%;
+}
+
+.chinese-dot {
+  background: #FB923C;
+}
+
+.english-dot {
+  background: #38BDF8;
+}
+
+.grade-pill {
   margin-left: auto;
-  font-size: 24rpx;
-  color: #999;
   padding: 8rpx 20rpx;
-  background: #f5f5f5;
+  background: #F5F3FF;
   border-radius: 20rpx;
+  border: 2rpx solid #E0E7FF;
+}
+
+.grade-text {
+  font-size: 22rpx;
+  color: #6366F1;
+  font-weight: 600;
 }
 
 .message-list {
@@ -203,17 +241,30 @@ const sendMessage = async () => {
   padding: 60rpx 40rpx;
 }
 
-.tip-icon {
-  font-size: 80rpx;
-  display: block;
-  margin-bottom: 20rpx;
+.welcome-avatar {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #818CF8, #4F46E5);
+  margin: 0 auto 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 3rpx 3rpx 10rpx rgba(79, 70, 229, 0.25);
+}
+
+.welcome-avatar-text {
+  color: #fff;
+  font-size: 28rpx;
+  font-weight: bold;
 }
 
 .tip-text {
   font-size: 28rpx;
-  color: #888;
+  color: #6366F1;
   line-height: 1.6;
   display: block;
+  opacity: 0.8;
 }
 
 .message-row {
@@ -234,15 +285,16 @@ const sendMessage = async () => {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  box-shadow: 2rpx 2rpx 8rpx rgba(0, 0, 0, 0.08);
 }
 
 .avatar-user {
-  background: #4A90D9;
+  background: linear-gradient(135deg, #818CF8, #4F46E5);
   margin-left: 16rpx;
 }
 
 .avatar-ai {
-  background: #FF8E53;
+  background: linear-gradient(135deg, #FDBA74, #FB923C);
   margin-right: 16rpx;
 }
 
@@ -255,23 +307,26 @@ const sendMessage = async () => {
 .bubble {
   max-width: 70%;
   padding: 20rpx 28rpx;
-  border-radius: 20rpx;
+  border-radius: 24rpx;
   word-break: break-all;
 }
 
 .bubble-user {
-  background: #4A90D9;
-  border-top-right-radius: 4rpx;
+  background: linear-gradient(135deg, #818CF8, #4F46E5);
+  border-bottom-right-radius: 8rpx;
+  box-shadow: 2rpx 2rpx 10rpx rgba(79, 70, 229, 0.2);
 }
 
 .bubble-ai {
   background: #fff;
-  border-top-left-radius: 4rpx;
+  border-bottom-left-radius: 8rpx;
+  border: 2rpx solid #E0E7FF;
+  box-shadow: 3rpx 3rpx 10rpx rgba(79, 70, 229, 0.06);
 }
 
 .bubble-text {
   font-size: 28rpx;
-  line-height: 1.6;
+  line-height: 1.7;
   display: block;
 }
 
@@ -280,57 +335,91 @@ const sendMessage = async () => {
 }
 
 .bubble-ai .bubble-text {
-  color: #333;
+  color: #312E81;
 }
 
-.typing {
-  color: #aaa;
+.typing-bubble {
+  padding: 24rpx 32rpx;
+}
+
+.typing-dots {
+  display: flex;
+  gap: 10rpx;
+  align-items: center;
+}
+
+.dot-anim {
+  width: 14rpx;
+  height: 14rpx;
+  border-radius: 50%;
+  background: #818CF8;
+  animation: bounce-dot 1.4s infinite ease-in-out both;
+}
+
+.dot-anim:nth-child(1) { animation-delay: 0s; }
+.dot-anim:nth-child(2) { animation-delay: 0.16s; }
+.dot-anim:nth-child(3) { animation-delay: 0.32s; }
+
+@keyframes bounce-dot {
+  0%, 80%, 100% { transform: scale(0.6); opacity: 0.4; }
+  40% { transform: scale(1); opacity: 1; }
 }
 
 .kb-hint {
-  margin-top: 12rpx;
-  padding-top: 8rpx;
-  border-top: 1rpx solid #f0f0f0;
+  margin-top: 14rpx;
+  padding-top: 10rpx;
+  border-top: 1rpx solid #E0E7FF;
 }
 
 .kb-hint-text {
   font-size: 20rpx;
-  color: #aaa;
+  color: #818CF8;
 }
 
 .input-bar {
   display: flex;
   padding: 16rpx 20rpx;
   background: #fff;
-  border-top: 1rpx solid #e0e0e0;
+  border-top: 2rpx solid #E0E7FF;
   padding-bottom: calc(16rpx + env(safe-area-inset-bottom));
+  gap: 16rpx;
+  align-items: center;
+}
+
+.input-wrap {
+  flex: 1;
+  background: #F5F3FF;
+  border-radius: 28rpx;
+  border: 2rpx solid #E0E7FF;
+  overflow: hidden;
 }
 
 .input-field {
-  flex: 1;
   height: 72rpx;
-  padding: 0 24rpx;
-  background: #f5f5f5;
-  border-radius: 36rpx;
+  padding: 0 28rpx;
   font-size: 28rpx;
+  color: #312E81;
 }
 
 .send-btn {
-  margin-left: 16rpx;
-  background: #4A90D9;
-  border-radius: 36rpx;
-  padding: 0 32rpx;
+  background: linear-gradient(135deg, #818CF8, #4F46E5);
+  border-radius: 28rpx;
+  padding: 0 36rpx;
+  height: 72rpx;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 2rpx 2rpx 8rpx rgba(79, 70, 229, 0.25);
 }
 
 .send-btn.disabled {
-  background: #ccc;
+  background: #CBD5E1;
+  box-shadow: none;
 }
 
 .send-text {
   color: #fff;
   font-size: 28rpx;
+  font-weight: 600;
 }
 </style>

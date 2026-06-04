@@ -5,7 +5,9 @@
     </view>
 
     <view v-else-if="isEmpty" class="empty">
-      <text class="empty-icon">📚</text>
+      <view class="empty-circle">
+        <text class="empty-icon-text">空</text>
+      </view>
       <text class="empty-text">还没有知识沉淀，快去做作业积累错题吧！</text>
     </view>
 
@@ -271,38 +273,52 @@ fetchKnowledgeMap()
 .container {
   padding: 30rpx;
   min-height: 100vh;
-  background: #f5f5f5;
+  background: #EEF2FF;
 }
 
 .loading {
   text-align: center;
   padding: 100rpx 0;
-  font-size: 28rpx;
-  color: #999;
+  color: #818CF8;
 }
 
 .empty {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 120rpx 0;
 }
 
-.empty-icon {
-  font-size: 100rpx;
-  display: block;
-  margin-bottom: 20rpx;
+.empty-circle {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  background: #E0E7FF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24rpx;
+  box-shadow: 3rpx 3rpx 8rpx rgba(79, 70, 229, 0.1);
+}
+
+.empty-icon-text {
+  font-size: 36rpx;
+  color: #818CF8;
+  font-weight: bold;
 }
 
 .empty-text {
   font-size: 28rpx;
-  color: #999;
+  color: #6B7280;
 }
 
 .subject-tabs {
   display: flex;
   background: #fff;
-  border-radius: 16rpx;
+  border-radius: 20rpx;
   overflow: hidden;
-  margin-bottom: 24rpx;
+  margin-bottom: 20rpx;
+  border: 2rpx solid #E0E7FF;
 }
 
 .subject-tab {
@@ -310,22 +326,23 @@ fetchKnowledgeMap()
   text-align: center;
   padding: 20rpx 0;
   font-size: 28rpx;
-  color: #666;
+  color: #6B7280;
 }
 
 .subject-tab.active {
-  background: #4A90D9;
+  background: linear-gradient(135deg, #818CF8, #4F46E5);
   color: #fff;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 .overview-bar {
   display: flex;
   background: #fff;
-  border-radius: 16rpx;
+  border-radius: 20rpx;
   padding: 24rpx;
-  margin-bottom: 24rpx;
-  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.04);
+  margin-bottom: 20rpx;
+  border: 2rpx solid #E0E7FF;
+  box-shadow: 4rpx 4rpx 12rpx rgba(79, 70, 229, 0.06);
 }
 
 .overview-item {
@@ -338,20 +355,20 @@ fetchKnowledgeMap()
 .overview-number {
   font-size: 44rpx;
   font-weight: bold;
-  color: #333;
+  color: #312E81;
 }
 
 .overview-number.weak {
-  color: #FF6B6B;
+  color: #EF4444;
 }
 
 .overview-number.mastered {
-  color: #4CAF50;
+  color: #16A34A;
 }
 
 .overview-label {
   font-size: 22rpx;
-  color: #999;
+  color: #6B7280;
   margin-top: 4rpx;
 }
 
@@ -361,10 +378,11 @@ fetchKnowledgeMap()
 
 .topic-card {
   background: #fff;
-  border-radius: 16rpx;
+  border-radius: 20rpx;
   padding: 24rpx 28rpx;
   margin-bottom: 16rpx;
-  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.04);
+  border: 2rpx solid #E0E7FF;
+  box-shadow: 3rpx 3rpx 10rpx rgba(79, 70, 229, 0.05);
 }
 
 .topic-header {
@@ -377,7 +395,7 @@ fetchKnowledgeMap()
 .topic-name {
   font-size: 30rpx;
   font-weight: bold;
-  color: #333;
+  color: #312E81;
   flex: 1;
 }
 
@@ -388,27 +406,27 @@ fetchKnowledgeMap()
 }
 
 .mastery-badge.level-weak {
-  background: #ffebee;
+  background: #FEE2E2;
 }
 
 .mastery-badge.level-weak .mastery-badge-text {
-  color: #FF6B6B;
+  color: #EF4444;
 }
 
 .mastery-badge.level-medium {
-  background: #fff3e0;
+  background: #FEF3C7;
 }
 
 .mastery-badge.level-medium .mastery-badge-text {
-  color: #FF8E53;
+  color: #D97706;
 }
 
 .mastery-badge.level-good {
-  background: #e8f5e9;
+  background: #DCFCE7;
 }
 
 .mastery-badge.level-good .mastery-badge-text {
-  color: #4CAF50;
+  color: #16A34A;
 }
 
 .topic-meta {
@@ -426,7 +444,7 @@ fetchKnowledgeMap()
 .mastery-bar {
   flex: 1;
   height: 12rpx;
-  background: #e0e0e0;
+  background: #E0E7FF;
   border-radius: 6rpx;
   overflow: hidden;
 }
@@ -503,11 +521,11 @@ fetchKnowledgeMap()
 }
 
 .modal-subject.chinese {
-  background: #FF6B6B;
+  background: #F97316;
 }
 
 .modal-subject.english {
-  background: #4A90D9;
+  background: #3B82F6;
 }
 
 .modal-count {
@@ -551,17 +569,17 @@ fetchKnowledgeMap()
 
 .dm-wrong {
   font-size: 26rpx;
-  color: #FF6B6B;
+  color: #EF4444;
 }
 
 .dm-arrow {
-  color: #999;
+  color: #818CF8;
   font-size: 24rpx;
 }
 
 .dm-correct {
   font-size: 26rpx;
-  color: #4CAF50;
+  color: #16A34A;
   font-weight: bold;
 }
 
@@ -585,21 +603,21 @@ fetchKnowledgeMap()
   width: 14rpx;
   height: 14rpx;
   border-radius: 50%;
-  background: #e0e0e0;
+  background: #E0E7FF;
 }
 
 .dm-dot.filled {
-  background: #4CAF50;
+  background: #4F46E5;
 }
 
 .modal-footer {
   padding: 20rpx 32rpx;
-  border-top: 1rpx solid #f0f0f0;
+  border-top: 2rpx solid #E0E7FF;
   padding-bottom: calc(20rpx + env(safe-area-inset-bottom));
 }
 
 .btn-practice {
-  background: linear-gradient(135deg, #4A90D9, #357ABD);
+  background: linear-gradient(135deg, #818CF8, #4F46E5);
   text-align: center;
   padding: 24rpx 0;
   border-radius: 16rpx;
@@ -627,7 +645,7 @@ fetchKnowledgeMap()
 
 .pq-number {
   font-size: 22rpx;
-  color: #4A90D9;
+  color: #4F46E5;
   font-weight: bold;
   display: block;
   margin-bottom: 8rpx;
@@ -651,14 +669,14 @@ fetchKnowledgeMap()
 }
 
 .pq-option.correct {
-  background: #e8f5e9;
-  color: #4CAF50;
+  background: #DCFCE7;
+  color: #16A34A;
   font-weight: bold;
 }
 
 .pq-option.wrong {
-  background: #ffebee;
-  color: #FF6B6B;
+  background: #FEE2E2;
+  color: #EF4444;
 }
 
 .pq-option.dimmed {

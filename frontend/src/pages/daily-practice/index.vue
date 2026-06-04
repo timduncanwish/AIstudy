@@ -212,7 +212,7 @@ startPractice()
 .container {
   padding: 30rpx;
   min-height: 100vh;
-  background: #f5f5f5;
+  background: #EEF2FF;
 }
 
 /* Loading */
@@ -253,7 +253,7 @@ startPractice()
 
 .progress-fill {
   height: 100%;
-  background: #4A90D9;
+  background: linear-gradient(90deg, #818CF8, #4F46E5);
   border-radius: 4rpx;
   transition: width 0.3s;
 }
@@ -269,18 +269,19 @@ startPractice()
 
 .topic-tag {
   padding: 4rpx 16rpx;
-  background: #e3f2fd;
-  color: #4A90D9;
+  background: #E0E7FF;
+  color: #4F46E5;
   border-radius: 8rpx;
   font-size: 24rpx;
 }
 
 .question-card {
   background: #fff;
-  border-radius: 20rpx;
+  border-radius: 24rpx;
   padding: 32rpx;
   margin-bottom: 24rpx;
-  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.06);
+  border: 2rpx solid #E0E7FF;
+  box-shadow: 3rpx 3rpx 12rpx rgba(79, 70, 229, 0.06);
 }
 
 .question-text {
@@ -303,13 +304,13 @@ startPractice()
 }
 
 .option-item.correct {
-  background: #e8f5e9;
-  border: 2rpx solid #4CAF50;
+  background: #DCFCE7;
+  border: 2rpx solid #16A34A;
 }
 
 .option-item.wrong {
-  background: #ffebee;
-  border: 2rpx solid #FF6B6B;
+  background: #FEE2E2;
+  border: 2rpx solid #EF4444;
 }
 
 .option-item.dimmed {
@@ -342,14 +343,14 @@ startPractice()
 }
 
 .option-check {
-  color: #4CAF50;
+  color: #16A34A;
   font-size: 32rpx;
   font-weight: bold;
   margin-left: 12rpx;
 }
 
 .option-cross {
-  color: #FF6B6B;
+  color: #EF4444;
   font-size: 32rpx;
   font-weight: bold;
   margin-left: 12rpx;
@@ -360,12 +361,12 @@ startPractice()
   border-radius: 16rpx;
   padding: 24rpx;
   margin-bottom: 24rpx;
-  border-left: 6rpx solid #4A90D9;
+  border-left: 6rpx solid #818CF8;
 }
 
 .explanation-label {
   font-size: 24rpx;
-  color: #4A90D9;
+  color: #4F46E5;
   font-weight: bold;
   display: block;
   margin-bottom: 8rpx;
@@ -378,7 +379,7 @@ startPractice()
 }
 
 .next-btn {
-  background: linear-gradient(135deg, #4A90D9, #357ABD);
+  background: linear-gradient(135deg, #818CF8, #4F46E5);
   text-align: center;
   padding: 28rpx 0;
   border-radius: 16rpx;
@@ -435,7 +436,7 @@ startPractice()
 
 .result-topic-name {
   font-size: 30rpx;
-  color: #4A90D9;
+  color: #4F46E5;
   font-weight: bold;
   display: block;
 }
@@ -462,7 +463,7 @@ startPractice()
 
 .btn-retry {
   flex: 1;
-  background: linear-gradient(135deg, #4A90D9, #357ABD);
+  background: linear-gradient(135deg, #818CF8, #4F46E5);
   text-align: center;
   padding: 24rpx 0;
   border-radius: 16rpx;
@@ -504,7 +505,7 @@ startPractice()
 
 .streak-text {
   font-size: 28rpx;
-  color: #FF8E53;
+  color: #F97316;
   font-weight: bold;
 }
 
