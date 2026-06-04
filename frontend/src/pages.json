@@ -47,6 +47,12 @@
 			"style": {
 				"navigationBarTitleText": "知识库"
 			}
+		},
+		{
+			"path": "pages/daily-practice/index",
+			"style": {
+				"navigationBarTitleText": "每日一练"
+			}
 		}
 	],
 	"globalStyle": {

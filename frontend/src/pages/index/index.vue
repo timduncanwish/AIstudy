@@ -32,6 +32,14 @@
       </view>
     </view>
 
+    <view class="daily-practice-card" @tap="goDailyPractice">
+      <view class="dp-left">
+        <text class="dp-title">🎯 每日一练</text>
+        <text class="dp-desc">基于薄弱知识点，AI智能出题</text>
+      </view>
+      <text class="dp-arrow">开始 →</text>
+    </view>
+
     <view class="tools-section">
       <text class="section-title">学习工具</text>
       <view class="tools-row">
@@ -112,6 +120,13 @@ const goReport = () => {
 const goKnowledge = () => {
   uni.navigateTo({
     url: '/pages/knowledge/index',
+  })
+}
+
+const goDailyPractice = () => {
+  const subject = uni.getStorageSync('chat_subject') || 'chinese'
+  uni.navigateTo({
+    url: `/pages/daily-practice/index?subject=${subject}`,
   })
 }
 </script>
@@ -213,6 +228,44 @@ const goKnowledge = () => {
   font-size: 24rpx;
   color: rgba(255, 255, 255, 0.85);
   display: block;
+}
+
+.daily-practice-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border-radius: 20rpx;
+  padding: 32rpx 36rpx;
+  margin-top: 20rpx;
+  box-shadow: 0 4rpx 16rpx rgba(102, 126, 234, 0.3);
+}
+
+.dp-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.dp-title {
+  font-size: 34rpx;
+  font-weight: bold;
+  color: #fff;
+  display: block;
+  margin-bottom: 8rpx;
+}
+
+.dp-desc {
+  font-size: 24rpx;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.dp-arrow {
+  color: #fff;
+  font-size: 28rpx;
+  font-weight: bold;
+  padding: 12rpx 24rpx;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 24rpx;
 }
 
 .tools-section {

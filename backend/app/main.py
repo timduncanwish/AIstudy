@@ -5,7 +5,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 
 from app.config import APP_HOST, APP_PORT, DEBUG
-from app.routers import auth, chat, homework, mistakes, challenge, students, reports
+from app.routers import auth, chat, homework, mistakes, challenge, students, reports, practice
 from app.database import init_db
 
 os.makedirs("uploads", exist_ok=True)
@@ -28,6 +28,7 @@ app.include_router(mistakes.router)
 app.include_router(challenge.router)
 app.include_router(students.router)
 app.include_router(reports.router)
+app.include_router(practice.router)
 app.mount("/uploads", StaticFiles(directory="uploads"), name="uploads")
 
 

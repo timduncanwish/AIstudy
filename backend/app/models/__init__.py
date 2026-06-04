@@ -6,5 +6,6 @@ from app.models.daily_task import DailyTask
 from app.models.user_stats import UserStats
 from app.models.student import Student
 from app.models.chat_history import ChatHistory
+from app.models.daily_practice import DailyPractice
 
-__all__ = ["User", "Homework", "Mistake", "WordProgress", "DailyTask", "UserStats", "Student", "ChatHistory"]
+__all__ = ["User", "Homework", "Mistake", "WordProgress", "DailyTask", "UserStats", "Student", "ChatHistory", "DailyPractice"]
