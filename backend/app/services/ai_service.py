@@ -128,10 +128,15 @@ async def chat_stream(
             yield delta
 
 
-async def grade_homework(image_base64: str, subject: str, grade: int) -> dict:
+async def grade_homework(image_base64: str, subject: str, grade: int, ocr_hint: str = "") -> dict:
     system_prompt = HOMEWORK_GRADING_PROMPTS.get(
         subject, HOMEWORK_GRADING_PROMPTS["chinese"]
     ).format(grade=grade)
+
+    text_prompt = system_prompt
+    if ocr_hint:
+        text_prompt += f"\n\n以下是OCR预识别的文字（可能有误，仅供参考）：\n{ocr_hint}"
+    text_prompt += "\n\nGrade this homework now."
 
     response = await _client.chat.completions.create(
         model="glm-4v-flash",
@@ -147,7 +152,7 @@ async def grade_homework(image_base64: str, subject: str, grade: int) -> dict:
                     },
                     {
                         "type": "text",
-                        "text": system_prompt + "\n\nGrade this homework now.",
+                        "text": text_prompt,
                     },
                 ],
             },
