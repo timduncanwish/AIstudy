@@ -11,6 +11,7 @@
 | Web | FastAPI + uvicorn（异步） |
 | ORM | SQLAlchemy 2.0 + aiosqlite（开发）|
 | AI | 智谱AI GLM-4-flash（OpenAI 兼容接口）|
+| OCR | 百度OCR 手写识别（可选，增强作业批改）|
 | 向量库 | chromadb（错题知识库，语义检索）|
 | 鉴权 | JWT（Bearer）|
 | 限流 | slowapi |
@@ -66,6 +67,8 @@ python -m pytest
 - **多孩子数据隔离**：学习数据（错题/作业/对话/每日一练）按「当前活跃孩子」隔离，
   见 `app/scope.py`。启动时对存量表做幂等迁移并回填 `student_id`。
 - **AI 失败韧性**：出题失败抛 503、批改失败标记 failed、通知失败静默不影响主流程。
+- **作业 OCR 增强**：批改前先用百度 OCR 识别文字注入视觉模型提示；未配置
+  `BAIDU_OCR_*` 或 OCR 失败时自动降级为纯视觉批改。
 
 ## 生产部署须知
 
