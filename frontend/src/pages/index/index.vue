@@ -14,7 +14,9 @@
         <view
           v-for="g in grades"
           :key="g"
-          :class="['grade-item', { active: selectedGrade === g }]"
+          :class="['grade-item', 'clay-tap', { active: selectedGrade === g }]"
+          hover-class="clay-pressed"
+          hover-stay-time="80"
           @tap="selectGrade(g)"
         >
           <text class="grade-text">{{ g }}年级</text>
@@ -23,14 +25,14 @@
     </view>
 
     <view class="subject-cards">
-      <view class="card chinese-card" @tap="startChat('chinese')">
+      <view class="card chinese-card clay-tap" hover-class="clay-pressed" hover-stay-time="80" @tap="startChat('chinese')">
         <view class="card-badge chinese-badge">
           <text class="badge-text">语</text>
         </view>
         <text class="card-title">语文辅导</text>
         <text class="card-desc">课文理解 · 作文指导 · 阅读训练</text>
       </view>
-      <view class="card english-card" @tap="startChat('english')">
+      <view class="card english-card clay-tap" hover-class="clay-pressed" hover-stay-time="80" @tap="startChat('english')">
         <view class="card-badge english-badge">
           <text class="badge-text">En</text>
         </view>
@@ -39,7 +41,7 @@
       </view>
     </view>
 
-    <view class="daily-practice-card" @tap="goDailyPractice">
+    <view class="daily-practice-card clay-tap" hover-class="clay-pressed" hover-stay-time="80" @tap="goDailyPractice">
       <view class="dp-left">
         <view class="dp-icon-wrap">
           <text class="dp-icon-text">练</text>
@@ -57,35 +59,38 @@
     <view class="tools-section">
       <text class="section-title">学习工具</text>
       <view class="tools-grid">
-        <view class="tool-card" @tap="goHomework">
+        <view class="tool-card clay-tap" hover-class="clay-pressed" hover-stay-time="80" @tap="goHomework">
           <view class="tool-icon-wrap homework-icon">
             <text class="tool-icon-text">批</text>
           </view>
           <text class="tool-title">作业批改</text>
           <text class="tool-desc">拍照批改作业</text>
         </view>
-        <view class="tool-card" @tap="goMistakes">
+        <view class="tool-card clay-tap" hover-class="clay-pressed" hover-stay-time="80" @tap="goMistakes">
           <view class="tool-icon-wrap mistakes-icon">
             <text class="tool-icon-text">错</text>
+            <view v-if="dueCount > 0" class="due-badge">
+              <text class="due-badge-text">{{ dueCount > 99 ? '99+' : dueCount }}</text>
+            </view>
           </view>
           <text class="tool-title">错题本</text>
-          <text class="tool-desc">复习巩固错题</text>
+          <text class="tool-desc">{{ dueCount > 0 ? `今日待复习 ${dueCount} 题` : '复习巩固错题' }}</text>
         </view>
-        <view class="tool-card" @tap="goChallenge">
+        <view class="tool-card clay-tap" hover-class="clay-pressed" hover-stay-time="80" @tap="goChallenge">
           <view class="tool-icon-wrap challenge-icon">
             <text class="tool-icon-text">闯</text>
           </view>
           <text class="tool-title">字词闯关</text>
           <text class="tool-desc">每日生字单词</text>
         </view>
-        <view class="tool-card" @tap="goReport">
+        <view class="tool-card clay-tap" hover-class="clay-pressed" hover-stay-time="80" @tap="goReport">
           <view class="tool-icon-wrap report-icon">
             <text class="tool-icon-text">报</text>
           </view>
           <text class="tool-title">学习报告</text>
           <text class="tool-desc">查看学习数据</text>
         </view>
-        <view class="tool-card" @tap="goKnowledge">
+        <view class="tool-card clay-tap" hover-class="clay-pressed" hover-stay-time="80" @tap="goKnowledge">
           <view class="tool-icon-wrap knowledge-icon">
             <text class="tool-icon-text">识</text>
           </view>
@@ -98,13 +103,22 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import { getUserId } from '@/utils/user'
 
 const grades = [3, 4, 5, 6]
 const selectedGrade = ref(parseInt(String(uni.getStorageSync('selected_grade'))) || 3)
+const dueCount = ref(0)
 
 getUserId()
+
+onMounted(async () => {
+  try {
+    const { request } = await import('@/api/config')
+    const res = await request<{ count: number }>({ url: '/mistakes/due-count', method: 'GET' })
+    dueCount.value = res.count
+  } catch { /* ignore */ }
+})
 
 const selectGrade = (grade: number) => {
   selectedGrade.value = grade
@@ -393,6 +407,28 @@ const goDailyPractice = () => {
   align-items: center;
   justify-content: center;
   box-shadow: 3rpx 3rpx 8rpx rgba(0, 0, 0, 0.08), inset -1rpx -1rpx 4rpx rgba(0, 0, 0, 0.04);
+  position: relative;
+}
+
+.due-badge {
+  position: absolute;
+  top: -10rpx;
+  right: -10rpx;
+  background: #EF4444;
+  border-radius: 20rpx;
+  min-width: 32rpx;
+  height: 32rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 6rpx;
+  border: 2rpx solid #fff;
+}
+
+.due-badge-text {
+  color: #fff;
+  font-size: 18rpx;
+  font-weight: bold;
 }
 
 .homework-icon {

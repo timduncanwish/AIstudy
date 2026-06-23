@@ -1,10 +1,13 @@
+from datetime import datetime
+
 from fastapi import APIRouter, Depends, Header, Query, HTTPException
-from sqlalchemy import select
+from sqlalchemy import select, func
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.database import get_db
 from app.models.mistake import Mistake
 from app.services.user_service import get_or_create_user
+from app.scope import active_student_id
 from app.services.mistake_service import (
     list_mistakes, get_mistake, review_mistake, get_mistake_stats,
     get_knowledge_map, get_topic_detail, generate_practice_questions,
@@ -23,6 +26,27 @@ from app.schemas.mistake import (
 )
 
 router = APIRouter(prefix="/mistakes", tags=["mistakes"])
+
+
+@router.get("/due-count")
+async def get_due_count(
+    db: AsyncSession = Depends(get_db),
+    x_user_id: str = Header(None, alias="X-User-Id"),
+):
+    """返回今日待复习错题数量，供首页 badge 使用"""
+    user = await get_or_create_user(db, x_user_id or "anonymous")
+    sid = await active_student_id(db, user.id)
+    student_conds = [Mistake.student_id == sid] if sid is not None else []
+    now = datetime.now()
+    result = await db.execute(
+        select(func.count()).select_from(Mistake).where(
+            Mistake.user_id == user.id,
+            *student_conds,
+            Mistake.mastery < 5,
+            Mistake.next_review <= now,
+        )
+    )
+    return {"count": result.scalar() or 0}
 
 
 @router.get("", response_model=MistakeListResponse)
@@ -114,8 +138,10 @@ async def build_knowledge_base(
         raise HTTPException(status_code=503, detail="知识库服务未安装，请先安装 chromadb")
 
     user = await get_or_create_user(db, x_user_id or "anonymous")
+    sid = await active_student_id(db, user.id)
+    student_conds = [Mistake.student_id == sid] if sid is not None else []
     result = await db.execute(
-        select(Mistake).where(Mistake.user_id == user.id)
+        select(Mistake).where(Mistake.user_id == user.id, *student_conds)
     )
     mistakes = list(result.scalars().all())
 

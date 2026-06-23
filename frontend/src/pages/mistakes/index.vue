@@ -155,6 +155,57 @@
         <text>加载更多</text>
       </view>
     </view>
+
+    <!-- 待复习入口 banner -->
+    <view v-if="dueItems.length > 0 && reviewMode === 'off'" class="review-start-banner" @tap="startReviewMode">
+      <text class="review-start-text">📖 开始复习 {{ dueItems.length }} 道待复习错题</text>
+    </view>
+
+    <!-- 专注复习模式覆盖层 -->
+    <view v-if="reviewMode === 'on'" class="review-overlay">
+      <view class="review-header">
+        <text class="review-progress">{{ reviewIndex + 1 }} / {{ dueItems.length }}</text>
+        <view class="review-close" @tap="reviewMode = 'off'"><text>✕ 退出</text></view>
+      </view>
+
+      <view class="review-card">
+        <text class="review-subject-tag">{{ dueItems[reviewIndex]?.subject === 'chinese' ? '语文' : '英语' }}</text>
+        <text class="review-question">{{ dueItems[reviewIndex]?.question_text }}</text>
+
+        <view v-if="!answerRevealed" class="reveal-btn" @tap="answerRevealed = true">
+          <text>点击显示答案</text>
+        </view>
+
+        <view v-else class="answer-area">
+          <view class="answer-block wrong-block">
+            <text class="answer-label">你曾回答</text>
+            <text class="answer-text">{{ dueItems[reviewIndex]?.student_answer }}</text>
+          </view>
+          <view class="answer-block correct-block">
+            <text class="answer-label">正确答案</text>
+            <text class="answer-text">{{ dueItems[reviewIndex]?.correct_answer }}</text>
+          </view>
+          <view v-if="dueItems[reviewIndex]?.explanation" class="review-explanation">
+            <text>{{ dueItems[reviewIndex]?.explanation }}</text>
+          </view>
+
+          <view class="review-actions">
+            <view class="btn-review-wrong" @tap="reviewCurrent(false)"><text>还不会 😞</text></view>
+            <view class="btn-review-correct" @tap="reviewCurrent(true)"><text>会了！🎉</text></view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 复习完成 -->
+    <view v-if="reviewMode === 'done'" class="review-done">
+      <text class="done-icon">🎊</text>
+      <text class="done-title">复习完成！</text>
+      <text class="done-sub">共复习了 {{ dueItems.length }} 道题，继续加油！</text>
+      <view class="done-btn" @tap="reviewMode = 'off'; fetchMistakes(); fetchStats(); loadDueItems()">
+        <text>返回错题本</text>
+      </view>
+    </view>
   </view>
 </template>
 
@@ -173,6 +224,12 @@ const page = ref(1)
 const total = ref(0)
 const hasMore = ref(false)
 const stats = ref<MistakeStatsResponse | null>(null)
+
+// 专注复习模式
+const dueItems = ref<MistakeItem[]>([])
+const reviewMode = ref<'off' | 'on' | 'done'>('off')
+const reviewIndex = ref(0)
+const answerRevealed = ref(false)
 
 getUserId()
 
@@ -254,6 +311,34 @@ const doReview = async (id: number, correct: boolean) => {
   }
 }
 
+const startReviewMode = () => {
+  reviewIndex.value = 0
+  answerRevealed.value = false
+  reviewMode.value = 'on'
+}
+
+const reviewCurrent = async (correct: boolean) => {
+  const item = dueItems.value[reviewIndex.value]
+  if (!item) return
+  try {
+    await reviewMistake(item.id, correct)
+  } catch { /* ignore */ }
+
+  if (reviewIndex.value + 1 < dueItems.value.length) {
+    reviewIndex.value++
+    answerRevealed.value = false
+  } else {
+    reviewMode.value = 'done'
+  }
+}
+
+const loadDueItems = async () => {
+  try {
+    const res = await getMistakes({ review_due: true, page: 1, size: 50 })
+    dueItems.value = res.items
+  } catch { /* ignore */ }
+}
+
 watch([filterSubject, reviewDueOnly, filterTopic], () => {
   page.value = 1
   expandedId.value = null
@@ -261,6 +346,7 @@ watch([filterSubject, reviewDueOnly, filterTopic], () => {
 })
 
 fetchMistakes()
+loadDueItems()
 </script>
 
 <style scoped>
@@ -678,4 +764,110 @@ fetchMistakes()
   font-size: 28rpx;
   color: #6366F1;
 }
+/* 待复习入口 */
+.review-start-banner {
+  position: fixed;
+  bottom: 32rpx;
+  left: 32rpx;
+  right: 32rpx;
+  background: linear-gradient(135deg, #818CF8, #4F46E5);
+  border-radius: 24rpx;
+  padding: 28rpx 32rpx;
+  text-align: center;
+  box-shadow: 0 6rpx 20rpx rgba(79, 70, 229, 0.35);
+  z-index: 10;
+}
+.review-start-text { color: #fff; font-size: 30rpx; font-weight: 700; }
+
+/* 专注复习覆盖层 */
+.review-overlay {
+  position: fixed;
+  inset: 0;
+  background: #EEF2FF;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  padding: 40rpx 32rpx;
+}
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32rpx;
+}
+.review-progress { font-size: 28rpx; color: #6366F1; font-weight: 700; }
+.review-close { padding: 10rpx 24rpx; background: #E0E7FF; border-radius: 20rpx; }
+.review-close text { font-size: 24rpx; color: #4F46E5; }
+
+.review-card {
+  background: #fff;
+  border-radius: 28rpx;
+  padding: 40rpx 32rpx;
+  flex: 1;
+  box-shadow: 4rpx 4rpx 16rpx rgba(79, 70, 229, 0.1);
+}
+.review-subject-tag {
+  display: inline-block;
+  background: #E0E7FF;
+  color: #4F46E5;
+  font-size: 22rpx;
+  font-weight: 600;
+  padding: 6rpx 20rpx;
+  border-radius: 20rpx;
+  margin-bottom: 24rpx;
+}
+.review-question { font-size: 34rpx; color: #1E1B4B; font-weight: 600; line-height: 1.6; display: block; margin-bottom: 40rpx; }
+
+.reveal-btn {
+  background: linear-gradient(135deg, #C4B5FD, #8B5CF6);
+  border-radius: 20rpx;
+  padding: 28rpx 0;
+  text-align: center;
+}
+.reveal-btn text { color: #fff; font-size: 30rpx; font-weight: 700; }
+
+.answer-area { display: flex; flex-direction: column; gap: 20rpx; }
+.answer-block { padding: 20rpx 24rpx; border-radius: 16rpx; }
+.wrong-block { background: #FEF2F2; border: 2rpx solid #FECACA; }
+.correct-block { background: #F0FDF4; border: 2rpx solid #BBF7D0; }
+.answer-label { font-size: 22rpx; color: #9CA3AF; display: block; margin-bottom: 6rpx; }
+.wrong-block .answer-text { color: #EF4444; font-size: 28rpx; font-weight: 600; }
+.correct-block .answer-text { color: #16A34A; font-size: 28rpx; font-weight: 600; }
+.review-explanation { background: #F5F3FF; border-radius: 16rpx; padding: 16rpx 20rpx; }
+.review-explanation text { font-size: 26rpx; color: #6366F1; line-height: 1.6; }
+
+.review-actions { display: flex; gap: 20rpx; margin-top: 8rpx; }
+.btn-review-wrong, .btn-review-correct {
+  flex: 1;
+  text-align: center;
+  padding: 26rpx 0;
+  border-radius: 20rpx;
+  font-size: 28rpx;
+  font-weight: 700;
+}
+.btn-review-wrong { background: #FEE2E2; color: #DC2626; }
+.btn-review-correct { background: #DCFCE7; color: #16A34A; }
+
+/* 复习完成 */
+.review-done {
+  position: fixed;
+  inset: 0;
+  background: #EEF2FF;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20rpx;
+}
+.done-icon { font-size: 100rpx; }
+.done-title { font-size: 48rpx; font-weight: 800; color: #312E81; }
+.done-sub { font-size: 28rpx; color: #6366F1; }
+.done-btn {
+  margin-top: 40rpx;
+  background: linear-gradient(135deg, #818CF8, #4F46E5);
+  border-radius: 24rpx;
+  padding: 28rpx 80rpx;
+}
+.done-btn text { color: #fff; font-size: 30rpx; font-weight: 700; }
 </style>
