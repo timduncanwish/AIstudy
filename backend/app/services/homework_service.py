@@ -9,6 +9,7 @@ from app.models.homework import Homework
 from app.models.mistake import Mistake
 from app.models.user import User
 from app.services.ai_service import grade_homework
+from app.services import ocr_service
 from app.scope import active_student_id
 
 _knowledge_service = None
@@ -32,7 +33,10 @@ async def process_homework(
     file_path: str,
 ) -> dict:
     with open(file_path, "rb") as f:
-        image_base64 = base64.b64encode(f.read()).decode("utf-8")
+        raw_bytes = f.read()
+    image_base64 = base64.b64encode(raw_bytes).decode("utf-8")
+
+    ocr_text = await ocr_service.recognize_text(raw_bytes)
 
     sid = await active_student_id(db, user_id)
 
@@ -48,7 +52,7 @@ async def process_homework(
     await db.refresh(homework)
 
     try:
-        result = await grade_homework(image_base64, subject, grade)
+        result = await grade_homework(image_base64, subject, grade, ocr_hint=ocr_text)
 
         mistake_count = 0
         new_mistakes = []
