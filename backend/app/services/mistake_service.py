@@ -4,6 +4,16 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select, func
 
 from app.models.mistake import Mistake
+from app.scope import active_student_id
+
+
+def _scope(user_id: int, student_id: int | None):
+    """返回错题作用域条件：user 级 + （若有活跃孩子）student 级。"""
+    conds = [Mistake.user_id == user_id]
+    if student_id is not None:
+        conds.append(Mistake.student_id == student_id)
+    return conds
+
 
 _knowledge_service = None
 
@@ -30,8 +40,9 @@ async def list_mistakes(
     page: int = 1,
     size: int = 20,
 ) -> tuple[list[Mistake], int]:
-    query = select(Mistake).where(Mistake.user_id == user_id)
-    count_query = select(func.count()).select_from(Mistake).where(Mistake.user_id == user_id)
+    sid = await active_student_id(db, user_id)
+    query = select(Mistake).where(*_scope(user_id, sid))
+    count_query = select(func.count()).select_from(Mistake).where(*_scope(user_id, sid))
 
     if subject:
         query = query.where(Mistake.subject == subject)
@@ -56,8 +67,9 @@ async def list_mistakes(
 
 
 async def get_mistake(db: AsyncSession, mistake_id: int, user_id: int) -> Mistake | None:
+    sid = await active_student_id(db, user_id)
     result = await db.execute(
-        select(Mistake).where(Mistake.id == mistake_id, Mistake.user_id == user_id)
+        select(Mistake).where(Mistake.id == mistake_id, *_scope(user_id, sid))
     )
     return result.scalar_one_or_none()
 
@@ -92,9 +104,10 @@ async def get_relevant_mistakes(
     subject: str,
     limit: int = 5,
 ) -> list[Mistake]:
+    sid = await active_student_id(db, user_id)
     query = (
         select(Mistake)
-        .where(Mistake.user_id == user_id, Mistake.subject == subject)
+        .where(*_scope(user_id, sid), Mistake.subject == subject)
         .order_by(Mistake.mastery.asc(), Mistake.created_at.desc())
         .limit(limit)
     )
@@ -103,20 +116,22 @@ async def get_relevant_mistakes(
 
 
 async def get_mistake_stats(db: AsyncSession, user_id: int) -> dict:
-    total_q = select(func.count()).select_from(Mistake).where(Mistake.user_id == user_id)
+    sid = await active_student_id(db, user_id)
+    scope = _scope(user_id, sid)
+    total_q = select(func.count()).select_from(Mistake).where(*scope)
     mastered_q = select(func.count()).select_from(Mistake).where(
-        Mistake.user_id == user_id, Mistake.mastery >= 4
+        *scope, Mistake.mastery >= 4
     )
     reviewing_q = select(func.count()).select_from(Mistake).where(
-        Mistake.user_id == user_id, Mistake.mastery >= 1, Mistake.mastery <= 3
+        *scope, Mistake.mastery >= 1, Mistake.mastery <= 3
     )
     new_q = select(func.count()).select_from(Mistake).where(
-        Mistake.user_id == user_id, Mistake.mastery == 0
+        *scope, Mistake.mastery == 0
     )
 
     topic_q = (
         select(Mistake.topic, func.count().label("count"), func.avg(Mistake.mastery).label("avg_mastery"))
-        .where(Mistake.user_id == user_id, Mistake.topic != "", Mistake.topic.isnot(None))
+        .where(*scope, Mistake.topic != "", Mistake.topic.isnot(None))
         .group_by(Mistake.topic)
         .order_by(func.count().desc())
         .limit(10)
@@ -124,7 +139,7 @@ async def get_mistake_stats(db: AsyncSession, user_id: int) -> dict:
 
     subject_q = (
         select(Mistake.subject, func.count().label("count"))
-        .where(Mistake.user_id == user_id)
+        .where(*scope)
         .group_by(Mistake.subject)
     )
 
@@ -153,6 +168,7 @@ async def get_mistake_stats(db: AsyncSession, user_id: int) -> dict:
 
 
 async def get_knowledge_map(db: AsyncSession, user_id: int) -> dict:
+    sid = await active_student_id(db, user_id)
     stmt = (
         select(
             Mistake.subject,
@@ -161,7 +177,7 @@ async def get_knowledge_map(db: AsyncSession, user_id: int) -> dict:
             func.avg(Mistake.mastery).label("avg_mastery"),
             func.max(Mistake.created_at).label("latest"),
         )
-        .where(Mistake.user_id == user_id, Mistake.topic != "", Mistake.topic.isnot(None))
+        .where(*_scope(user_id, sid), Mistake.topic != "", Mistake.topic.isnot(None))
         .group_by(Mistake.subject, Mistake.topic)
         .order_by(Mistake.subject, func.count().desc())
     )
@@ -182,11 +198,13 @@ async def get_knowledge_map(db: AsyncSession, user_id: int) -> dict:
 async def get_topic_detail(
     db: AsyncSession, user_id: int, subject: str, topic: str
 ) -> dict | None:
+    sid = await active_student_id(db, user_id)
+    scope = _scope(user_id, sid)
     avg_stmt = select(
         func.count().label("count"),
         func.avg(Mistake.mastery).label("avg_mastery"),
     ).where(
-        Mistake.user_id == user_id,
+        *scope,
         Mistake.subject == subject,
         Mistake.topic == topic,
     )
@@ -196,7 +214,7 @@ async def get_topic_detail(
 
     stmt = (
         select(Mistake)
-        .where(Mistake.user_id == user_id, Mistake.subject == subject, Mistake.topic == topic)
+        .where(*scope, Mistake.subject == subject, Mistake.topic == topic)
         .order_by(Mistake.mastery.asc(), Mistake.created_at.desc())
     )
     mistakes = list((await db.execute(stmt)).scalars().all())

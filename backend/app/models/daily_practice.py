@@ -11,6 +11,7 @@ class DailyPractice(Base):
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
     user_id = mapped_column(Integer, ForeignKey("users.id"), nullable=False)
+    student_id = mapped_column(Integer, ForeignKey("students.id"), nullable=True, index=True)
     subject = mapped_column(String(20), nullable=False)
     topic = mapped_column(String(100), nullable=False)
     questions_json = mapped_column(Text, nullable=False)

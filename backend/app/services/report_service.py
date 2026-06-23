@@ -3,19 +3,34 @@ from datetime import datetime, timedelta
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select, func
 
+from app.models.chat_history import ChatHistory
 from app.models.homework import Homework
 from app.models.mistake import Mistake
 from app.models.word_progress import WordProgress
 from app.models.daily_task import DailyTask
 from app.models.user_stats import UserStats
+from app.scope import active_student_id
 
 
 async def get_daily_report(db: AsyncSession, user_id: int, date: str) -> dict:
     target = datetime.strptime(date, "%Y-%m-%d")
     next_day = target + timedelta(days=1)
+    sid = await active_student_id(db, user_id)
 
-    homework_count = await _count_range(db, Homework, user_id, target, next_day)
-    mistakes = await _get_mistakes_range(db, user_id, target, next_day)
+    chat_student_conds = [ChatHistory.student_id == sid] if sid is not None else []
+    chat_count_result = await db.execute(
+        select(func.count()).select_from(ChatHistory).where(
+            ChatHistory.user_id == user_id,
+            *chat_student_conds,
+            ChatHistory.role == "user",
+            ChatHistory.created_at >= target,
+            ChatHistory.created_at < next_day,
+        )
+    )
+    chat_count = chat_count_result.scalar() or 0
+
+    homework_count = await _count_range(db, Homework, user_id, target, next_day, student_id=sid)
+    mistakes = await _get_mistakes_range(db, user_id, target, next_day, student_id=sid)
     mistakes_count = len(mistakes)
 
     words_result = await db.execute(
@@ -37,8 +52,8 @@ async def get_daily_report(db: AsyncSession, user_id: int, date: str) -> dict:
     )
     review_count = review_result.scalar() or 0
 
-    chinese_hw = await _count_range(db, Homework, user_id, target, next_day, "chinese")
-    english_hw = await _count_range(db, Homework, user_id, target, next_day, "english")
+    chinese_hw = await _count_range(db, Homework, user_id, target, next_day, "chinese", student_id=sid)
+    english_hw = await _count_range(db, Homework, user_id, target, next_day, "english", student_id=sid)
     chinese_m = sum(1 for m in mistakes if m.subject == "chinese")
     english_m = sum(1 for m in mistakes if m.subject == "english")
 
@@ -57,11 +72,11 @@ async def get_daily_report(db: AsyncSession, user_id: int, date: str) -> dict:
         reverse=True,
     )[:3]
 
-    total = homework_count + words_learned + review_count
+    total = chat_count + homework_count + words_learned + review_count
 
     return {
         "date": date,
-        "chat_count": 0,
+        "chat_count": chat_count,
         "homework_count": homework_count,
         "words_learned": words_learned,
         "mistakes_count": mistakes_count,
@@ -75,6 +90,7 @@ async def get_daily_report(db: AsyncSession, user_id: int, date: str) -> dict:
 async def get_weekly_report(db: AsyncSession, user_id: int, week_start: str) -> dict:
     start = datetime.strptime(week_start, "%Y-%m-%d")
     end = start + timedelta(days=7)
+    sid = await active_student_id(db, user_id)
 
     daily_trend = []
     total = 0
@@ -83,7 +99,7 @@ async def get_weekly_report(db: AsyncSession, user_id: int, week_start: str) -> 
         day_str = day.strftime("%Y-%m-%d")
         day_next = day + timedelta(days=1)
 
-        hw = await _count_range(db, Homework, user_id, day, day_next)
+        hw = await _count_range(db, Homework, user_id, day, day_next, student_id=sid)
         wp = await _count_range(db, WordProgress, user_id, day, day_next)
         count = hw + wp
         daily_trend.append({"date": day_str, "count": count})
@@ -108,9 +124,11 @@ async def get_weekly_report(db: AsyncSession, user_id: int, week_start: str) -> 
     )
     words_mastered = words_mastered_result.scalar() or 0
 
+    mistake_student_conds = [Mistake.student_id == sid] if sid is not None else []
     mistakes_reviewed = await db.execute(
         select(func.count()).select_from(Mistake).where(
             Mistake.user_id == user_id,
+            *mistake_student_conds,
             Mistake.review_count > 0,
             Mistake.created_at >= start,
             Mistake.created_at < end,
@@ -118,7 +136,7 @@ async def get_weekly_report(db: AsyncSession, user_id: int, week_start: str) -> 
     )
     reviewed = mistakes_reviewed.scalar() or 0
 
-    all_mistakes = await _get_mistakes_range(db, user_id, start, end)
+    all_mistakes = await _get_mistakes_range(db, user_id, start, end, student_id=sid)
     chinese_count = sum(1 for m in all_mistakes if m.subject == "chinese")
     english_count = sum(1 for m in all_mistakes if m.subject == "english")
     subject_dist = {"chinese": chinese_count, "english": english_count}
@@ -138,7 +156,7 @@ async def get_weekly_report(db: AsyncSession, user_id: int, week_start: str) -> 
     for i in range(7):
         day = last_week_start + timedelta(days=i)
         day_next = day + timedelta(days=1)
-        last_total += await _count_range(db, Homework, user_id, day, day_next)
+        last_total += await _count_range(db, Homework, user_id, day, day_next, student_id=sid)
 
     return {
         "week_start": week_start,
@@ -158,7 +176,8 @@ async def get_weekly_report(db: AsyncSession, user_id: int, week_start: str) -> 
 
 
 async def _count_range(
-    db: AsyncSession, model, user_id: int, start: datetime, end: datetime, subject: str | None = None
+    db: AsyncSession, model, user_id: int, start: datetime, end: datetime,
+    subject: str | None = None, student_id: int | None = None,
 ) -> int:
     q = select(func.count()).select_from(model).where(
         model.user_id == user_id,
@@ -167,16 +186,21 @@ async def _count_range(
     )
     if subject:
         q = q.where(model.subject == subject)
+    if student_id is not None:
+        q = q.where(model.student_id == student_id)
     result = await db.execute(q)
     return result.scalar() or 0
 
 
-async def _get_mistakes_range(db: AsyncSession, user_id: int, start: datetime, end: datetime) -> list:
-    result = await db.execute(
-        select(Mistake).where(
-            Mistake.user_id == user_id,
-            Mistake.created_at >= start,
-            Mistake.created_at < end,
-        )
-    )
+async def _get_mistakes_range(
+    db: AsyncSession, user_id: int, start: datetime, end: datetime, student_id: int | None = None
+) -> list:
+    conds = [
+        Mistake.user_id == user_id,
+        Mistake.created_at >= start,
+        Mistake.created_at < end,
+    ]
+    if student_id is not None:
+        conds.append(Mistake.student_id == student_id)
+    result = await db.execute(select(Mistake).where(*conds))
     return list(result.scalars().all())

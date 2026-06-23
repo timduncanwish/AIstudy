@@ -8,6 +8,7 @@ class ChatHistory(Base):
 
     id = Column(Integer, primary_key=True, autoincrement=True)
     user_id = Column(Integer, nullable=False, index=True)
+    student_id = Column(Integer, nullable=True, index=True)
     session_id = Column(String(64), nullable=False, index=True)
     subject = Column(String(20), nullable=False)
     grade = Column(Integer, nullable=False)

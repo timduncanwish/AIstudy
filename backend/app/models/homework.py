@@ -11,6 +11,7 @@ class Homework(Base):
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
     user_id = mapped_column(Integer, ForeignKey("users.id"), nullable=False)
+    student_id = mapped_column(Integer, ForeignKey("students.id"), nullable=True, index=True)
     subject = mapped_column(String(20), nullable=False)
     image_url = mapped_column(String(500), nullable=False)
     status = mapped_column(String(20), default="pending")
