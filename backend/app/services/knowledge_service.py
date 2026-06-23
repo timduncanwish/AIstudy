@@ -59,6 +59,8 @@ async def add_mistake_to_kb(mistake) -> None:
             documents=[doc],
             metadatas=[{
                 "user_id": mistake.user_id,
+                # 多孩子隔离：0 表示无建档孩子（兼容旧数据）
+                "student_id": mistake.student_id or 0,
                 "subject": mistake.subject,
                 "topic": mistake.topic or "",
                 "mastery": mistake.mastery,
@@ -81,12 +83,17 @@ async def search_relevant_mistakes(
     query: str,
     subject: str | None = None,
     n_results: int = 5,
+    student_id: int | None = None,
 ) -> list[dict]:
     query_embeddings = await _embed([query])
 
-    where_filter = {"user_id": user_id}
+    # chromadb 1.x：单条件用扁平 dict，多条件必须用 $and 包裹
+    conditions = [{"user_id": user_id}]
+    if student_id is not None:
+        conditions.append({"student_id": student_id})
     if subject:
-        where_filter["subject"] = subject
+        conditions.append({"subject": subject})
+    where_filter = conditions[0] if len(conditions) == 1 else {"$and": conditions}
 
     col = _get_collection()
     results = col.query(
