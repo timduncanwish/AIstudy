@@ -157,6 +157,9 @@ const sendMessage = () => {
   messages.value.push({ role: 'assistant', content: '' })
 
   let buffer = ''
+  // 复用同一个 decoder 并开启 stream 模式：中文占 3 字节，
+  // 一个汉字可能被拆到相邻网络块，逐块独立解码会产生乱码。
+  const decoder = new TextDecoder()
 
   const task = uni.request({
     url: BASE_URL + '/chat/stream',
@@ -182,7 +185,7 @@ const sendMessage = () => {
 
   // @ts-ignore — uni-app chunked callback
   task.onChunkReceived((res: { data: ArrayBuffer }) => {
-    const text = new TextDecoder().decode(new Uint8Array(res.data))
+    const text = decoder.decode(new Uint8Array(res.data), { stream: true })
     buffer += text
     const lines = buffer.split('\n')
     buffer = lines.pop() ?? ''
