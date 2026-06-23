@@ -12,7 +12,7 @@ from slowapi.errors import RateLimitExceeded
 
 from app.limiter import limiter
 
-from app.config import APP_HOST, APP_PORT, DEBUG
+from app.config import APP_HOST, APP_PORT, DEBUG, ALLOWED_ORIGINS, JWT_SECRET, DEFAULT_JWT_SECRET
 from app.routers import auth, chat, homework, mistakes, challenge, students, reports, practice, notify
 from app.database import init_db, get_db_context
 
@@ -28,8 +28,10 @@ app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
+    allow_origins=ALLOWED_ORIGINS,
+    # 通配来源时凭证必须关闭（CORS 规范不允许 * + credentials）；
+    # 本应用用 Bearer 头鉴权而非 cookie，关闭无影响。
+    allow_credentials=ALLOWED_ORIGINS != ["*"],
     allow_methods=["*"],
     allow_headers=["*"],
 )
@@ -73,6 +75,11 @@ async def _daily_push_job():
 
 @app.on_event("startup")
 async def startup():
+    if not DEBUG and JWT_SECRET == DEFAULT_JWT_SECRET:
+        logger.warning(
+            "⚠️ 生产环境仍在使用默认 JWT_SECRET！任何人可伪造登录令牌，"
+            "请在 .env 设置强随机的 JWT_SECRET。"
+        )
     await init_db()
     scheduler.add_job(_daily_push_job, "cron", minute="*")  # 每分钟检查一次
     scheduler.start()

@@ -18,7 +18,11 @@ DEBUG = os.getenv("DEBUG", "True").lower() == "true"
 
 WX_APPID = os.getenv("WX_APPID", "")
 WX_SECRET = os.getenv("WX_SECRET", "")
-JWT_SECRET = os.getenv("JWT_SECRET", "ai_tutor_secret_key_change_in_prod")
+DEFAULT_JWT_SECRET = "ai_tutor_secret_key_change_in_prod"
+JWT_SECRET = os.getenv("JWT_SECRET", DEFAULT_JWT_SECRET)
+
+# CORS 允许来源，逗号分隔；默认 * 便于开发，生产应在 .env 设具体域名
+ALLOWED_ORIGINS = [o.strip() for o in os.getenv("ALLOWED_ORIGINS", "*").split(",") if o.strip()]
 
 # 微信订阅消息模板 ID（在 MP 后台申请后填入）
 WX_TMPL_PRACTICE = os.getenv("WX_TMPL_PRACTICE", "")   # 即时：练习完成简报
