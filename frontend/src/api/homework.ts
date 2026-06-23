@@ -1,6 +1,5 @@
 import { getUserId } from '@/utils/user'
-
-const BASE_URL = 'http://localhost:8000'
+import { BASE_URL } from './config'
 
 export interface QuestionResult {
   question_number: number

@@ -38,6 +38,7 @@ async def wx_login(db: AsyncSession, code: str, nickname: str = "家长", avatar
     token = _generate_token(user.id)
     return {
         "token": token,
+        "user_id": user.id,
         "is_new_user": is_new,
         "nickname": user.nickname,
     }

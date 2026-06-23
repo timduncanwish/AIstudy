@@ -9,5 +9,6 @@ class LoginRequest(BaseModel):
 
 class LoginResponse(BaseModel):
     token: str
+    user_id: int
     is_new_user: bool
     nickname: str

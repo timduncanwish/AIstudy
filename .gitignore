@@ -4,6 +4,8 @@ __pycache__/
 *.egg-info/
 .venv/
 venv/
+venv_local/
+backend/venv_local/
 
 # 环境变量
 backend/.env

@@ -2,6 +2,7 @@ import { request } from './config'
 
 interface LoginResponse {
   token: string
+  user_id: number
   is_new_user: boolean
   nickname: string
 }
