@@ -89,21 +89,22 @@ async def process_homework(
         if "encouragement" not in result:
             result["encouragement"] = "继续加油！"
 
-        # 即时通知家长
+        # 即时通知家长（score 为 None 表示批改未得出分数，不推送以免误报"0分"）
         try:
-            user_result = await db.execute(select(User).where(User.id == user_id))
-            user = user_result.scalar_one_or_none()
-            if user and user.notify_subscribed and user.openid:
-                from app.services.notify_service import notify_practice_done
-                subject_label = "语文" if subject == "chinese" else "英语"
-                score = result.get("score") or 0
-                await notify_practice_done(
-                    openid=user.openid,
-                    subject=subject,
-                    topic=f"{subject_label}作业",
-                    score=int(score),
-                    total=100,
-                )
+            score_val = result.get("score")
+            if score_val is not None:
+                user_result = await db.execute(select(User).where(User.id == user_id))
+                user = user_result.scalar_one_or_none()
+                if user and user.notify_subscribed and user.openid:
+                    from app.services.notify_service import notify_practice_done
+                    subject_label = "语文" if subject == "chinese" else "英语"
+                    await notify_practice_done(
+                        openid=user.openid,
+                        subject=subject,
+                        topic=f"{subject_label}作业",
+                        score=int(score_val),
+                        total=100,
+                    )
         except Exception:
             pass
 
