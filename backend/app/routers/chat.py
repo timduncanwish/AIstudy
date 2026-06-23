@@ -9,7 +9,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from app.limiter import limiter
 
 from app.config import ZHIPU_API_KEY
-from app.database import get_db
+from app.database import get_db, get_db_context
 from app.deps import get_verified_user_id
 from app.models.chat_history import ChatHistory
 from app.schemas.chat import (
@@ -150,28 +150,31 @@ async def chat_stream_endpoint(
         yield f"data: {json.dumps({'done': True, 'mistakes_referenced': mistakes_referenced}, ensure_ascii=False)}\n\n"
 
         if effective_user_id and req.session_id and reply:
-            sid = await active_student_id(db, effective_user_id)
-            user_msg = req.messages[-1] if req.messages else None
-            if user_msg and user_msg.role == "user":
-                db.add(ChatHistory(
+            # 请求作用域的 db 在 StreamingResponse 返回后即关闭，
+            # 生成器在此之后才执行，必须用独立会话落库，否则写入静默丢失。
+            async with get_db_context() as write_db:
+                sid = await active_student_id(write_db, effective_user_id)
+                user_msg = req.messages[-1] if req.messages else None
+                if user_msg and user_msg.role == "user":
+                    write_db.add(ChatHistory(
+                        user_id=effective_user_id,
+                        student_id=sid,
+                        session_id=req.session_id,
+                        subject=req.subject,
+                        grade=req.grade,
+                        role="user",
+                        content=user_msg.content,
+                    ))
+                write_db.add(ChatHistory(
                     user_id=effective_user_id,
                     student_id=sid,
                     session_id=req.session_id,
                     subject=req.subject,
                     grade=req.grade,
-                    role="user",
-                    content=user_msg.content,
+                    role="assistant",
+                    content=reply,
                 ))
-            db.add(ChatHistory(
-                user_id=effective_user_id,
-                student_id=sid,
-                session_id=req.session_id,
-                subject=req.subject,
-                grade=req.grade,
-                role="assistant",
-                content=reply,
-            ))
-            await db.commit()
+                await write_db.commit()
 
     return StreamingResponse(
         generate(),
