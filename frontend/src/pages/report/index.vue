@@ -206,15 +206,17 @@ onMounted(() => loadData())
 .container {
   padding: 30rpx;
   min-height: 100vh;
-  background: #f5f5f5;
+  background: #EEF2FF;
 }
 
 .tab-bar {
   display: flex;
   background: #fff;
-  border-radius: 16rpx;
+  border-radius: 20rpx;
   overflow: hidden;
   margin-bottom: 24rpx;
+  border: 3rpx solid #E0E7FF;
+  box-shadow: 4rpx 4rpx 12rpx rgba(79, 70, 229, 0.06);
 }
 
 .tab {
@@ -226,7 +228,7 @@ onMounted(() => loadData())
 }
 
 .tab.active {
-  background: #4A90D9;
+  background: #4F46E5;
   color: #fff;
   font-weight: bold;
 }
@@ -241,7 +243,7 @@ onMounted(() => loadData())
   width: 60rpx;
   height: 60rpx;
   border: 4rpx solid #e0e0e0;
-  border-top-color: #4A90D9;
+  border-top-color: #4F46E5;
   border-radius: 50%;
   animation: spin 1s linear infinite;
 }
@@ -272,13 +274,14 @@ onMounted(() => loadData())
   border-radius: 16rpx;
   padding: 20rpx 12rpx;
   text-align: center;
-  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.04);
+  border: 3rpx solid #E0E7FF;
+  box-shadow: 4rpx 4rpx 12rpx rgba(79, 70, 229, 0.06);
 }
 
 .ov-value {
   font-size: 36rpx;
   font-weight: bold;
-  color: #4A90D9;
+  color: #4F46E5;
   display: block;
 }
 
@@ -291,15 +294,17 @@ onMounted(() => loadData())
 
 .chart-card {
   background: #fff;
-  border-radius: 16rpx;
+  border-radius: 20rpx;
   padding: 24rpx;
   margin-bottom: 20rpx;
+  border: 3rpx solid #E0E7FF;
+  box-shadow: 4rpx 4rpx 12rpx rgba(79, 70, 229, 0.06), inset -2rpx -2rpx 6rpx rgba(79, 70, 229, 0.03);
 }
 
 .card-title {
   font-size: 28rpx;
   font-weight: bold;
-  color: #333;
+  color: #312E81;
   display: block;
   margin-bottom: 20rpx;
 }
@@ -337,7 +342,7 @@ onMounted(() => loadData())
 }
 
 .bar-fill.chinese { background: linear-gradient(90deg, #FF6B6B, #FF8E53); }
-.bar-fill.english { background: linear-gradient(90deg, #4A90D9, #67B8DE); }
+.bar-fill.english { background: linear-gradient(90deg, #4F46E5, #818CF8); }
 
 .bar-num {
   font-size: 26rpx;
@@ -363,7 +368,7 @@ onMounted(() => loadData())
 
 .trend-bar {
   width: 40rpx;
-  background: linear-gradient(180deg, #4A90D9, #67B8DE);
+  background: linear-gradient(180deg, #4F46E5, #818CF8);
   border-radius: 8rpx 8rpx 0 0;
   min-height: 4rpx;
 }
@@ -394,14 +399,16 @@ onMounted(() => loadData())
 
 .vs-card {
   background: #fff;
-  border-radius: 16rpx;
+  border-radius: 20rpx;
   padding: 24rpx;
   margin-bottom: 20rpx;
+  border: 3rpx solid #E0E7FF;
+  box-shadow: 4rpx 4rpx 12rpx rgba(79, 70, 229, 0.06), inset -2rpx -2rpx 6rpx rgba(79, 70, 229, 0.03);
 }
 
 .vs-text {
   font-size: 30rpx;
-  color: #4A90D9;
+  color: #4F46E5;
   font-weight: bold;
   display: block;
   text-align: center;

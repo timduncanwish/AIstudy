@@ -662,7 +662,7 @@ fetchKnowledgeMap()
 .pq-option {
   padding: 16rpx 20rpx;
   margin-bottom: 10rpx;
-  background: #f5f5f5;
+  background: #F5F3FF;
   border-radius: 12rpx;
   font-size: 26rpx;
   color: #333;

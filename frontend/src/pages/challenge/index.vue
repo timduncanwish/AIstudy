@@ -239,7 +239,7 @@ onMounted(() => {
 <style scoped>
 .container {
   min-height: 100vh;
-  background: #f5f5f5;
+  background: #EEF2FF;
 }
 
 .loading-screen {
@@ -254,7 +254,7 @@ onMounted(() => {
   width: 80rpx;
   height: 80rpx;
   border: 6rpx solid #e0e0e0;
-  border-top-color: #4A90D9;
+  border-top-color: #4F46E5;
   border-radius: 50%;
   animation: spin 1s linear infinite;
 }
@@ -276,9 +276,11 @@ onMounted(() => {
 .subject-tabs {
   display: flex;
   background: #fff;
-  border-radius: 16rpx;
+  border-radius: 20rpx;
   overflow: hidden;
   margin-bottom: 24rpx;
+  border: 3rpx solid #E0E7FF;
+  box-shadow: 4rpx 4rpx 12rpx rgba(79, 70, 229, 0.06);
 }
 
 .tab {
@@ -290,23 +292,24 @@ onMounted(() => {
 }
 
 .tab.active {
-  background: #4A90D9;
+  background: #4F46E5;
   color: #fff;
   font-weight: bold;
 }
 
 .task-card {
   background: #fff;
-  border-radius: 20rpx;
+  border-radius: 24rpx;
   padding: 36rpx;
   margin-bottom: 24rpx;
-  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.06);
+  border: 3rpx solid #E0E7FF;
+  box-shadow: 4rpx 4rpx 12rpx rgba(79, 70, 229, 0.06), inset -2rpx -2rpx 6rpx rgba(79, 70, 229, 0.03);
 }
 
 .task-title {
   font-size: 34rpx;
   font-weight: bold;
-  color: #333;
+  color: #312E81;
   display: block;
   margin-bottom: 8rpx;
 }
@@ -338,7 +341,7 @@ onMounted(() => {
 
 .progress-fill {
   height: 100%;
-  background: linear-gradient(90deg, #4A90D9, #67B8DE);
+  background: linear-gradient(90deg, #4F46E5, #818CF8);
   border-radius: 8rpx;
   transition: width 0.3s;
 }
@@ -360,7 +363,7 @@ onMounted(() => {
 .stat-value {
   font-size: 40rpx;
   font-weight: bold;
-  color: #4A90D9;
+  color: #4F46E5;
   display: block;
 }
 
@@ -426,7 +429,7 @@ onMounted(() => {
 
 .streak-count {
   font-size: 26rpx;
-  color: #4A90D9;
+  color: #4F46E5;
   font-weight: bold;
 }
 
@@ -611,7 +614,7 @@ onMounted(() => {
 
 .btn-restart {
   padding: 24rpx 80rpx;
-  background: #4A90D9;
+  background: #4F46E5;
   border-radius: 16rpx;
   font-size: 30rpx;
   color: #fff;

@@ -298,7 +298,7 @@ startPractice()
   align-items: center;
   padding: 20rpx 24rpx;
   margin-bottom: 16rpx;
-  background: #f5f5f5;
+  background: #F5F3FF;
   border-radius: 16rpx;
   position: relative;
 }
@@ -320,7 +320,7 @@ startPractice()
 .option-letter {
   width: 48rpx;
   height: 48rpx;
-  background: #4A90D9;
+  background: #4F46E5;
   border-radius: 50%;
   display: flex;
   align-items: center;
