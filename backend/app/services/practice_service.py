@@ -7,11 +7,15 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.models.daily_practice import DailyPractice
 from app.models.mistake import Mistake
+from app.models.user import User
 from app.services.ai_service import _client
 from app.config import ZHIPU_MODEL
+from app.scope import active_student_id
 
 
 async def get_weakest_topic(db: AsyncSession, user_id: int, subject: str) -> dict | None:
+    sid = await active_student_id(db, user_id)
+    student_conds = [Mistake.student_id == sid] if sid is not None else []
     stmt = (
         select(
             Mistake.topic,
@@ -20,6 +24,7 @@ async def get_weakest_topic(db: AsyncSession, user_id: int, subject: str) -> dic
         )
         .where(
             Mistake.user_id == user_id,
+            *student_conds,
             Mistake.subject == subject,
             Mistake.topic != "",
             Mistake.topic.isnot(None),
@@ -47,8 +52,10 @@ async def generate_daily_practice(
 
     questions = await _generate_questions(subject, topic, context_mistakes)
 
+    sid = await active_student_id(db, user_id)
     practice = DailyPractice(
         user_id=user_id,
+        student_id=sid,
         subject=subject,
         topic=topic,
         questions_json=json.dumps(questions, ensure_ascii=False),
@@ -63,9 +70,11 @@ async def generate_daily_practice(
 async def _get_weak_mistakes(
     db: AsyncSession, user_id: int, subject: str, topic: str, limit: int = 3
 ) -> list[Mistake]:
+    sid = await active_student_id(db, user_id)
+    student_conds = [Mistake.student_id == sid] if sid is not None else []
     stmt = (
         select(Mistake)
-        .where(Mistake.user_id == user_id, Mistake.subject == subject, Mistake.topic == topic)
+        .where(Mistake.user_id == user_id, *student_conds, Mistake.subject == subject, Mistake.topic == topic)
         .order_by(Mistake.mastery.asc())
         .limit(limit)
     )
@@ -138,15 +147,34 @@ async def submit_practice(
     practice.score = score
     await db.commit()
     await db.refresh(practice)
+
+    # 即时通知家长
+    try:
+        user_result = await db.execute(select(User).where(User.id == user_id))
+        user = user_result.scalar_one_or_none()
+        if user and user.notify_subscribed and user.openid:
+            from app.services.notify_service import notify_practice_done
+            await notify_practice_done(
+                openid=user.openid,
+                subject=practice.subject,
+                topic=practice.topic or "综合练习",
+                score=score,
+                total=practice.total,
+            )
+    except Exception:
+        pass  # 通知失败不影响主流程
+
     return practice
 
 
 async def get_practice_history(
     db: AsyncSession, user_id: int, limit: int = 30
 ) -> dict:
+    sid = await active_student_id(db, user_id)
+    student_conds = [DailyPractice.student_id == sid] if sid is not None else []
     stmt = (
         select(DailyPractice)
-        .where(DailyPractice.user_id == user_id, DailyPractice.score.isnot(None))
+        .where(DailyPractice.user_id == user_id, *student_conds, DailyPractice.score.isnot(None))
         .order_by(DailyPractice.created_at.desc())
         .limit(limit)
     )

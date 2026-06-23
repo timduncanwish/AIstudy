@@ -19,3 +19,7 @@ DEBUG = os.getenv("DEBUG", "True").lower() == "true"
 WX_APPID = os.getenv("WX_APPID", "")
 WX_SECRET = os.getenv("WX_SECRET", "")
 JWT_SECRET = os.getenv("JWT_SECRET", "ai_tutor_secret_key_change_in_prod")
+
+# 微信订阅消息模板 ID（在 MP 后台申请后填入）
+WX_TMPL_PRACTICE = os.getenv("WX_TMPL_PRACTICE", "")   # 即时：练习完成简报
+WX_TMPL_DAILY    = os.getenv("WX_TMPL_DAILY", "")       # 定时：每日学习汇总

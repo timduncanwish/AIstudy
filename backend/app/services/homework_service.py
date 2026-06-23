@@ -2,11 +2,14 @@ import json
 import base64
 from datetime import datetime
 
+from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.models.homework import Homework
 from app.models.mistake import Mistake
+from app.models.user import User
 from app.services.ai_service import grade_homework
+from app.scope import active_student_id
 
 _knowledge_service = None
 
@@ -31,8 +34,11 @@ async def process_homework(
     with open(file_path, "rb") as f:
         image_base64 = base64.b64encode(f.read()).decode("utf-8")
 
+    sid = await active_student_id(db, user_id)
+
     homework = Homework(
         user_id=user_id,
+        student_id=sid,
         subject=subject,
         image_url=file_path,
         status="grading",
@@ -51,6 +57,7 @@ async def process_homework(
                 mistake_count += 1
                 mistake = Mistake(
                     user_id=user_id,
+                    student_id=sid,
                     homework_id=homework.id,
                     subject=subject,
                     question_text=q.get("question_text", ""),
@@ -81,6 +88,25 @@ async def process_homework(
         result["mistake_count"] = mistake_count
         if "encouragement" not in result:
             result["encouragement"] = "继续加油！"
+
+        # 即时通知家长
+        try:
+            user_result = await db.execute(select(User).where(User.id == user_id))
+            user = user_result.scalar_one_or_none()
+            if user and user.notify_subscribed and user.openid:
+                from app.services.notify_service import notify_practice_done
+                subject_label = "语文" if subject == "chinese" else "英语"
+                score = result.get("score") or 0
+                await notify_practice_done(
+                    openid=user.openid,
+                    subject=subject,
+                    topic=f"{subject_label}作业",
+                    score=int(score),
+                    total=100,
+                )
+        except Exception:
+            pass
+
         return result
 
     except Exception as e:

@@ -42,12 +42,25 @@
           <text class="reminder-time">{{ reminderTime || '未设置' }}</text>
         </picker>
       </view>
+      <view class="reminder-card" style="margin-top:16rpx;">
+        <text class="reminder-label">微信学习通知</text>
+        <view
+          :class="['notify-btn', notifySubscribed ? 'notify-on' : 'notify-off']"
+          @tap="toggleNotify"
+        >
+          <text class="notify-btn-text">{{ notifySubscribed ? '已订阅 ✓' : '点击订阅' }}</text>
+        </view>
+      </view>
     </view>
 
     <view class="section">
       <text class="section-title">其他</text>
       <view class="menu-item" @tap="goReport">
         <text>学习报告</text>
+        <text class="arrow">></text>
+      </view>
+      <view class="menu-item" @tap="goChatHistory">
+        <text>历史对话</text>
         <text class="arrow">></text>
       </view>
       <view class="menu-item" @tap="goAbout">
@@ -97,6 +110,8 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import { getStudents, addStudent, activateStudent, type StudentInfo } from '@/api/students'
+import { request } from '@/api/config'
+import { wxLogin } from '@/api/auth'
 
 const isLoggedIn = ref(false)
 const nickname = ref('家长')
@@ -107,6 +122,7 @@ const newName = ref('')
 const newGrade = ref(3)
 const newAvatar = ref('👦')
 const reminderTime = ref('')
+const notifySubscribed = ref(false)
 
 const avatarOptions = ['👦', '👧', '🧒', '👶', '🐱', '🐶']
 
@@ -117,6 +133,21 @@ if (token) {
 }
 
 reminderTime.value = uni.getStorageSync('reminder_time') || ''
+
+// 加载通知订阅状态
+const loadNotifyStatus = async () => {
+  const dbUserId = uni.getStorageSync('db_user_id')
+  if (!dbUserId) return
+  try {
+    const res = await request<{ subscribed: boolean; notify_time: string }>({
+      url: `/notify/status/${dbUserId}`,
+      method: 'GET',
+    })
+    notifySubscribed.value = res.subscribed
+    if (res.notify_time) reminderTime.value = res.notify_time
+  } catch { /* ignore */ }
+}
+loadNotifyStatus()
 
 const loadStudents = async () => {
   try {
@@ -132,10 +163,10 @@ const doLogin = () => {
   uni.login({
     success: async (res) => {
       if (res.code) {
-        const { wxLogin } = await import('@/api/auth')
         try {
           const result = await wxLogin(res.code)
           uni.setStorageSync('token', result.token)
+          uni.setStorageSync('db_user_id', result.user_id)
           uni.setStorageSync('nickname', result.nickname)
           isLoggedIn.value = true
           nickname.value = result.nickname
@@ -150,6 +181,7 @@ const doLogin = () => {
 
 const doLogout = () => {
   uni.removeStorageSync('token')
+  uni.removeStorageSync('db_user_id')
   uni.removeStorageSync('nickname')
   isLoggedIn.value = false
   nickname.value = '家长'
@@ -183,14 +215,73 @@ const doAddStudent = async () => {
   }
 }
 
-const setReminderTime = (e: any) => {
+const setReminderTime = async (e: any) => {
   reminderTime.value = e.detail.value
   uni.setStorageSync('reminder_time', reminderTime.value)
+  const dbUserId = uni.getStorageSync('db_user_id')
+  if (dbUserId) {
+    try {
+      await request({ url: '/notify/time', method: 'POST', data: { user_id: dbUserId, notify_time: reminderTime.value } })
+    } catch { /* ignore */ }
+  }
   uni.showToast({ title: `提醒时间设为 ${reminderTime.value}`, icon: 'none' })
+}
+
+const toggleNotify = async () => {
+  const dbUserId = uni.getStorageSync('db_user_id')
+  if (!dbUserId) {
+    uni.showToast({ title: '请先登录', icon: 'none' })
+    return
+  }
+  if (notifySubscribed.value) {
+    // 取消订阅
+    uni.showModal({
+      title: '取消通知',
+      content: '确定取消学习通知？',
+      success: async (res) => {
+        if (!res.confirm) return
+        try {
+          await request({ url: '/notify/subscribe', method: 'POST', data: { user_id: dbUserId, subscribed: false } })
+          notifySubscribed.value = false
+          uni.showToast({ title: '已取消通知', icon: 'none' })
+        } catch { uni.showToast({ title: '操作失败', icon: 'none' }) }
+      },
+    })
+  } else {
+    // 先从后端拿模板 ID，再调起微信订阅授权
+    let tmplIds: string[] = []
+    try {
+      const cfg = await request<{ tmpl_ids: string[] }>({ url: '/notify/config', method: 'GET' })
+      tmplIds = cfg.tmpl_ids
+    } catch { /* ignore */ }
+
+    if (!tmplIds.length) {
+      uni.showToast({ title: '通知服务暂未配置', icon: 'none' })
+      return
+    }
+
+    uni.requestSubscribeMessage({
+      tmplIds,
+      success: async (authRes: any) => {
+        const accepted = Object.values(authRes).some((v) => v === 'accept')
+        if (!accepted) { uni.showToast({ title: '未授权通知', icon: 'none' }); return }
+        try {
+          await request({ url: '/notify/subscribe', method: 'POST', data: { user_id: dbUserId, subscribed: true } })
+          notifySubscribed.value = true
+          uni.showToast({ title: '已开启学习通知', icon: 'success' })
+        } catch { uni.showToast({ title: '开启失败', icon: 'none' }) }
+      },
+      fail: () => uni.showToast({ title: '订阅失败，请重试', icon: 'none' }),
+    })
+  }
 }
 
 const goReport = () => {
   uni.navigateTo({ url: '/pages/report/index' })
+}
+
+const goChatHistory = () => {
+  uni.navigateTo({ url: '/pages/chat-history/index' })
 }
 
 const goAbout = () => {
@@ -206,16 +297,17 @@ onMounted(() => {
 .container {
   padding: 30rpx;
   min-height: 100vh;
-  background: #f5f5f5;
+  background: #EEF2FF;
 }
 
 .user-card {
   display: flex;
   align-items: center;
-  background: linear-gradient(135deg, #4A90D9, #67B8DE);
-  border-radius: 20rpx;
+  background: linear-gradient(135deg, #818CF8, #4F46E5);
+  border-radius: 24rpx;
   padding: 40rpx;
   margin-bottom: 30rpx;
+  box-shadow: 4rpx 4rpx 16rpx rgba(79, 70, 229, 0.25), inset 0 2rpx 4rpx rgba(255, 255, 255, 0.2);
 }
 
 .avatar {
@@ -244,9 +336,11 @@ onMounted(() => {
 
 .section {
   background: #fff;
-  border-radius: 16rpx;
+  border-radius: 24rpx;
   padding: 30rpx;
   margin-bottom: 24rpx;
+  border: 3rpx solid #E0E7FF;
+  box-shadow: 4rpx 4rpx 12rpx rgba(79, 70, 229, 0.06), inset -2rpx -2rpx 6rpx rgba(79, 70, 229, 0.03);
 }
 
 .section-header {
@@ -259,12 +353,12 @@ onMounted(() => {
 .section-title {
   font-size: 30rpx;
   font-weight: bold;
-  color: #333;
+  color: #312E81;
 }
 
 .add-btn {
   font-size: 28rpx;
-  color: #4A90D9;
+  color: #4F46E5;
   font-weight: bold;
 }
 
@@ -286,7 +380,7 @@ onMounted(() => {
 
 .student-card.active {
   background: #e3f2fd;
-  border: 2rpx solid #4A90D9;
+  border: 2rpx solid #4F46E5;
 }
 
 .student-avatar {
@@ -311,7 +405,7 @@ onMounted(() => {
 }
 
 .active-tag {
-  background: #4A90D9;
+  background: #4F46E5;
   color: #fff;
   font-size: 22rpx;
   padding: 4rpx 12rpx;
@@ -332,8 +426,27 @@ onMounted(() => {
 
 .reminder-time {
   font-size: 28rpx;
-  color: #4A90D9;
+  color: #4F46E5;
   font-weight: bold;
+}
+
+.notify-btn {
+  padding: 10rpx 28rpx;
+  border-radius: 28rpx;
+  font-size: 24rpx;
+  font-weight: 600;
+}
+
+.notify-on {
+  background: linear-gradient(135deg, #86EFAC, #22C55E);
+}
+
+.notify-off {
+  background: linear-gradient(135deg, #818CF8, #4F46E5);
+}
+
+.notify-btn-text {
+  color: #fff;
 }
 
 .menu-item {
@@ -403,14 +516,14 @@ onMounted(() => {
   flex: 1;
   text-align: center;
   padding: 16rpx 0;
-  background: #f5f5f5;
+  background: #EEF2FF;
   border-radius: 12rpx;
   font-size: 28rpx;
   color: #666;
 }
 
 .grade-btn.active {
-  background: #4A90D9;
+  background: #4F46E5;
   color: #fff;
 }
 
@@ -432,9 +545,9 @@ onMounted(() => {
 }
 
 .avatar-option.active {
-  border-color: #4A90D9;
+  border-color: #4F46E5;
   border-width: 4rpx;
-  background: #e3f2fd;
+  background: #EEF2FF;
 }
 
 .modal-actions {
@@ -451,12 +564,12 @@ onMounted(() => {
 }
 
 .btn-cancel {
-  background: #f5f5f5;
+  background: #EEF2FF;
   color: #666;
 }
 
 .btn-confirm {
-  background: #4A90D9;
+  background: #4F46E5;
   color: #fff;
   font-weight: bold;
 }
