@@ -53,17 +53,23 @@
 			"style": {
 				"navigationBarTitleText": "每日一练"
 			}
+		},
+		{
+			"path": "pages/chat-history/index",
+			"style": {
+				"navigationBarTitleText": "历史对话"
+			}
 		}
 	],
 	"globalStyle": {
 		"navigationBarTextStyle": "white",
 		"navigationBarTitleText": "AI助学",
-		"navigationBarBackgroundColor": "#4A90D9",
-		"backgroundColor": "#F5F5F5"
+		"navigationBarBackgroundColor": "#4F46E5",
+		"backgroundColor": "#EEF2FF"
 	},
 	"tabBar": {
-		"color": "#999999",
-		"selectedColor": "#4A90D9",
+		"color": "#9CA3AF",
+		"selectedColor": "#4F46E5",
 		"backgroundColor": "#FFFFFF",
 		"list": [
 			{

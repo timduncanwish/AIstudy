@@ -1,6 +1,8 @@
 import json
 import re
 
+from collections.abc import AsyncGenerator
+
 from openai import AsyncOpenAI
 
 from app.config import ZHIPU_API_KEY, ZHIPU_BASE_URL, ZHIPU_MODEL
@@ -91,11 +93,39 @@ async def chat(
     response = await _client.chat.completions.create(
         model=ZHIPU_MODEL,
         messages=api_messages,
-        max_tokens=1024,
+        max_tokens=2048,
         temperature=0.7,
     )
 
     return response.choices[0].message.content
+
+
+async def chat_stream(
+    messages: list[dict], subject: str, grade: int, mistake_context: list[dict] | None = None
+) -> AsyncGenerator[str, None]:
+    system_prompt = SYSTEM_PROMPTS.get(subject, SYSTEM_PROMPTS["chinese"]).format(
+        grade=grade
+    )
+
+    if mistake_context:
+        formatted = _format_mistake_context(mistake_context, subject)
+        template = MISTAKE_CONTEXT_TEMPLATE.get(subject, MISTAKE_CONTEXT_TEMPLATE["chinese"])
+        system_prompt += template.format(mistakes=formatted)
+
+    api_messages = [{"role": "system", "content": system_prompt}] + messages
+
+    stream = await _client.chat.completions.create(
+        model=ZHIPU_MODEL,
+        messages=api_messages,
+        max_tokens=2048,
+        temperature=0.7,
+        stream=True,
+    )
+
+    async for chunk in stream:
+        delta = chunk.choices[0].delta.content
+        if delta:
+            yield delta
 
 
 async def grade_homework(image_base64: str, subject: str, grade: int) -> dict:
@@ -122,7 +152,7 @@ async def grade_homework(image_base64: str, subject: str, grade: int) -> dict:
                 ],
             },
         ],
-        max_tokens=1024,
+        max_tokens=3000,
         temperature=0.3,
     )
 

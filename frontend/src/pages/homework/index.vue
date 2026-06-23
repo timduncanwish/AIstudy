@@ -107,6 +107,10 @@
           <text>再拍一份</text>
         </view>
       </view>
+
+      <view v-if="result.mistake_count > 0" class="ask-ai-btn" @tap="askAiAboutMistakes">
+        <text class="ask-ai-text">问AI讲解错题 →</text>
+      </view>
     </view>
   </view>
 </template>
@@ -216,6 +220,23 @@ const goToMistakes = () => {
   uni.navigateTo({ url: '/pages/mistakes/index' })
 }
 
+const askAiAboutMistakes = () => {
+  const wrongQuestions = result.questions.filter(q => !q.is_correct)
+  if (!wrongQuestions.length) return
+
+  // 把错题摘要存入 storage，chat 页读取后作为首条消息上下文
+  const summary = wrongQuestions.map((q, i) =>
+    `第${i + 1}题：${q.question_text}（我答了"${q.student_answer}"，正确答案是"${q.correct_answer}"）`
+  ).join('\n')
+
+  const prompt = `我刚刚批改了${subject.value === 'chinese' ? '语文' : '英语'}作业，有${wrongQuestions.length}道题做错了：\n${summary}\n\n请帮我一道一道讲解为什么错了，怎么才能记住。`
+
+  uni.setStorageSync('chat_subject', subject.value)
+  uni.setStorageSync('chat_grade', grade.value)
+  uni.setStorageSync('chat_pending_message', prompt)
+  uni.switchTab({ url: '/pages/chat/index' })
+}
+
 const resetPage = () => {
   state.value = 'upload'
   previewUrl.value = ''
@@ -233,15 +254,17 @@ const resetPage = () => {
 .container {
   padding: 30rpx;
   min-height: 100vh;
-  background: #f5f5f5;
+  background: #EEF2FF;
 }
 
 .subject-tabs {
   display: flex;
   margin-bottom: 30rpx;
   background: #fff;
-  border-radius: 16rpx;
+  border-radius: 20rpx;
   overflow: hidden;
+  border: 3rpx solid #E0E7FF;
+  box-shadow: 4rpx 4rpx 12rpx rgba(79, 70, 229, 0.06);
 }
 
 .tab {
@@ -254,7 +277,7 @@ const resetPage = () => {
 
 .tab.active {
   color: #fff;
-  background: #4A90D9;
+  background: #4F46E5;
   font-weight: bold;
 }
 
@@ -275,7 +298,7 @@ const resetPage = () => {
 .upload-text {
   font-size: 36rpx;
   font-weight: bold;
-  color: #333;
+  color: #312E81;
   display: block;
   margin-bottom: 12rpx;
 }
@@ -318,7 +341,7 @@ const resetPage = () => {
   flex: 1;
   text-align: center;
   padding: 24rpx 0;
-  background: linear-gradient(135deg, #4A90D9, #67B8DE);
+  background: linear-gradient(135deg, #818CF8, #4F46E5);
   border-radius: 16rpx;
   font-size: 30rpx;
   color: #fff;
@@ -340,7 +363,7 @@ const resetPage = () => {
   width: 80rpx;
   height: 80rpx;
   border: 6rpx solid #e0e0e0;
-  border-top-color: #4A90D9;
+  border-top-color: #4F46E5;
   border-radius: 50%;
   margin: 0 auto 30rpx;
   animation: spin 1s linear infinite;
@@ -376,7 +399,7 @@ const resetPage = () => {
 }
 
 .score-card {
-  background: linear-gradient(135deg, #4A90D9, #67B8DE);
+  background: linear-gradient(135deg, #818CF8, #4F46E5);
   border-radius: 20rpx;
   padding: 40rpx;
   text-align: center;
@@ -417,9 +440,11 @@ const resetPage = () => {
 
 .summary-card {
   background: #fff;
-  border-radius: 16rpx;
+  border-radius: 20rpx;
   padding: 30rpx;
   margin-bottom: 24rpx;
+  border: 3rpx solid #E0E7FF;
+  box-shadow: 4rpx 4rpx 12rpx rgba(79, 70, 229, 0.06), inset -2rpx -2rpx 6rpx rgba(79, 70, 229, 0.03);
 }
 
 .summary-text {
@@ -434,9 +459,11 @@ const resetPage = () => {
 
 .question-card {
   background: #fff;
-  border-radius: 16rpx;
+  border-radius: 20rpx;
   margin-bottom: 16rpx;
   overflow: hidden;
+  border: 3rpx solid #E0E7FF;
+  box-shadow: 4rpx 4rpx 12rpx rgba(79, 70, 229, 0.05);
 }
 
 .question-card.wrong {
@@ -549,5 +576,20 @@ const resetPage = () => {
   font-size: 30rpx;
   color: #666;
   box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.06);
+}
+
+.ask-ai-btn {
+  margin-top: 24rpx;
+  background: linear-gradient(135deg, #FED7AA, #FB923C);
+  border-radius: 20rpx;
+  padding: 30rpx 0;
+  text-align: center;
+  box-shadow: 0 4rpx 12rpx rgba(251, 146, 60, 0.3);
+}
+
+.ask-ai-text {
+  font-size: 30rpx;
+  font-weight: 700;
+  color: #fff;
 }
 </style>

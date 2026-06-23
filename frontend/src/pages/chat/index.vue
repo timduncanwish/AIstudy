@@ -12,6 +12,9 @@
       <view class="grade-pill">
         <text class="grade-text">{{ grade }}年级</text>
       </view>
+      <view class="history-btn" @tap="goHistory">
+        <text class="history-text">历史</text>
+      </view>
     </view>
 
     <scroll-view
@@ -46,7 +49,8 @@
         </view>
       </view>
 
-      <view v-if="loading" class="message-row ai-row">
+      <!-- 流式时 AI 气泡已实时显示，仅在内容为空时才显示等待动画 -->
+      <view v-if="loading && messages.length > 0 && messages[messages.length - 1].content === ''" class="message-row ai-row">
         <view class="avatar avatar-ai">
           <text class="avatar-text">AI</text>
         </view>
@@ -72,7 +76,9 @@
         />
       </view>
       <view
-        :class="['send-btn', { disabled: !inputText.trim() || loading }]"
+        :class="['send-btn', 'clay-tap', { disabled: !inputText.trim() || loading }]"
+        hover-class="clay-pressed"
+        hover-stay-time="80"
         @tap="sendMessage"
       >
         <text class="send-text">发送</text>
@@ -83,8 +89,8 @@
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
-import { chat } from '@/api/chat'
 import { getUserId } from '@/utils/user'
+import { BASE_URL } from '@/api/config'
 
 interface Message {
   role: 'user' | 'assistant'
@@ -105,12 +111,25 @@ onMounted(() => {
   subject.value = uni.getStorageSync('chat_subject') || 'chinese'
   grade.value = parseInt(String(uni.getStorageSync('chat_grade') || '3'))
   sessionId.value = 'sess_' + Date.now() + '_' + Math.random().toString(36).slice(2, 8)
+
+  // 来自作业批改的跟进消息
+  const pending = uni.getStorageSync('chat_pending_message')
+  if (pending) {
+    uni.removeStorageSync('chat_pending_message')
+    inputText.value = pending
+    // 延迟一帧确保页面渲染完成后再发送
+    setTimeout(() => sendMessage(), 100)
+  }
 })
 
 const scrollToBottom = () => {
   setTimeout(() => {
     scrollTop.value = scrollTop.value + 1000
   }, 50)
+}
+
+const goHistory = () => {
+  uni.navigateTo({ url: '/pages/chat-history/index' })
 }
 
 const switchSubject = (s: string) => {
@@ -121,7 +140,7 @@ const switchSubject = (s: string) => {
   uni.setStorageSync('chat_subject', s)
 }
 
-const sendMessage = async () => {
+const sendMessage = () => {
   const text = inputText.value.trim()
   if (!text || loading.value) return
 
@@ -130,38 +149,67 @@ const sendMessage = async () => {
   loading.value = true
   scrollToBottom()
 
-  try {
-    const chatMessages = messages.value.map((m) => ({
-      role: m.role,
-      content: m.content,
-    }))
+  const chatMessages = messages.value.map((m) => ({ role: m.role, content: m.content }))
+  const dbUserId = uni.getStorageSync('db_user_id') || null
 
-    const dbUserId = uni.getStorageSync('db_user_id') || null
+  // 预先插入一条空的 AI 消息，流式追加内容到这里
+  const aiMsgIndex = messages.value.length
+  messages.value.push({ role: 'assistant', content: '' })
 
-    const data = await chat({
+  let buffer = ''
+
+  const task = uni.request({
+    url: BASE_URL + '/chat/stream',
+    method: 'POST',
+    data: {
       messages: chatMessages,
       subject: subject.value,
       grade: grade.value,
       user_id: dbUserId,
       session_id: sessionId.value,
-    })
+    },
+    header: { 'Content-Type': 'application/json' },
+    enableChunked: true,
+    success: () => {
+      loading.value = false
+      scrollToBottom()
+    },
+    fail: () => {
+      messages.value[aiMsgIndex].content = '抱歉，网络出了点问题，请稍后再试。'
+      loading.value = false
+    },
+  })
 
-    if (data.reply) {
-      messages.value.push({
-        role: 'assistant',
-        content: data.reply,
-        mistakesReferenced: data.mistakes_referenced || 0,
-      })
+  // @ts-ignore — uni-app chunked callback
+  task.onChunkReceived((res: { data: ArrayBuffer }) => {
+    const text = new TextDecoder().decode(new Uint8Array(res.data))
+    buffer += text
+    const lines = buffer.split('\n')
+    buffer = lines.pop() ?? ''
+
+    for (const line of lines) {
+      if (!line.startsWith('data: ')) continue
+      const payload = line.slice(6).trim()
+      if (!payload) continue
+      try {
+        const obj = JSON.parse(payload)
+        if (obj.text) {
+          messages.value[aiMsgIndex].content += obj.text
+          scrollToBottom()
+        }
+        if (obj.done) {
+          messages.value[aiMsgIndex].mistakesReferenced = obj.mistakes_referenced || 0
+          loading.value = false
+        }
+        if (obj.error) {
+          messages.value[aiMsgIndex].content = '抱歉，AI 暂时无法回复，请稍后再试。'
+          loading.value = false
+        }
+      } catch {
+        // 非 JSON 行忽略
+      }
     }
-  } catch {
-    messages.value.push({
-      role: 'assistant',
-      content: '抱歉，网络出了点问题，请稍后再试。',
-    })
-  }
-
-  loading.value = false
-  scrollToBottom()
+  })
 }
 </script>
 
@@ -227,6 +275,20 @@ const sendMessage = async () => {
 .grade-text {
   font-size: 22rpx;
   color: #6366F1;
+  font-weight: 600;
+}
+
+.history-btn {
+  margin-left: 16rpx;
+  padding: 14rpx 24rpx;
+  background: #EEF2FF;
+  border-radius: 20rpx;
+  border: 2rpx solid #C7D2FE;
+}
+
+.history-text {
+  font-size: 22rpx;
+  color: #4F46E5;
   font-weight: 600;
 }
 
