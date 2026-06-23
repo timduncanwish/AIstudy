@@ -26,6 +26,9 @@ BAIDU_OCR_SECRET_KEY = os.getenv("BAIDU_OCR_SECRET_KEY", "")
 DEFAULT_JWT_SECRET = "ai_tutor_secret_key_change_in_prod"
 JWT_SECRET = os.getenv("JWT_SECRET", DEFAULT_JWT_SECRET)
 
+# 数据加密密钥（逗号分隔支持轮换：第一个加密、全部解密）。不设则从 JWT_SECRET 派生
+DATA_ENCRYPTION_KEY = os.getenv("DATA_ENCRYPTION_KEY", "")
+
 # CORS 允许来源，逗号分隔；默认 * 便于开发，生产应在 .env 设具体域名
 ALLOWED_ORIGINS = [o.strip() for o in os.getenv("ALLOWED_ORIGINS", "*").split(",") if o.strip()]
 
