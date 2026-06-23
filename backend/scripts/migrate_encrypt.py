@@ -11,7 +11,7 @@ import re
 
 from sqlalchemy import text
 
-from app.database import get_db_context
+from app.database import get_db_context, init_db
 from app.security import crypto
 
 _HEX64 = re.compile(r"[0-9a-f]{64}")
@@ -87,6 +87,8 @@ async def _main():
     ap.add_argument("--encrypt-content", action="store_true")
     ap.add_argument("--dry-run", action="store_true")
     args = ap.parse_args()
+    # 先确保表结构就绪（幂等加 openid_hash 列），脚本才能独立于应用启动运行
+    await init_db()
     async with get_db_context() as conn:
         counts = await run(conn, encrypt_content=args.encrypt_content, dry_run=args.dry_run)
     mode = "DRY-RUN" if args.dry_run else "已写入"
