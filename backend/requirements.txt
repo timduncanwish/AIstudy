@@ -11,3 +11,7 @@ PyJWT==2.8.0
 chromadb>=0.5.0
 apscheduler==3.10.4
 slowapi==0.1.9
+
+# 测试（开发用）
+pytest==9.1.1
+pytest-asyncio==1.4.0
