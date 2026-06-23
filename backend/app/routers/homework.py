@@ -1,8 +1,10 @@
 import os
 import uuid
 
-from fastapi import APIRouter, UploadFile, File, Form, Depends, Header
+from fastapi import APIRouter, UploadFile, File, Form, Depends, Header, Request
 from sqlalchemy.ext.asyncio import AsyncSession
+
+from app.limiter import limiter
 
 from app.database import get_db
 from app.services.user_service import get_or_create_user
@@ -13,7 +15,9 @@ router = APIRouter(prefix="/homework", tags=["homework"])
 
 
 @router.post("/upload", response_model=HomeworkUploadResponse)
+@limiter.limit("5/minute")
 async def upload_homework(
+    request: Request,
     file: UploadFile = File(...),
     subject: str = Form(...),
     grade: int = Form(...),
