@@ -2,6 +2,7 @@ import json
 import re
 from datetime import datetime, timedelta
 
+from fastapi import HTTPException
 from sqlalchemy import select, func
 from sqlalchemy.ext.asyncio import AsyncSession
 
@@ -51,6 +52,9 @@ async def generate_daily_practice(
         context_mistakes = []
 
     questions = await _generate_questions(subject, topic, context_mistakes)
+    if not questions:
+        # AI 出题失败（解析异常/限流等）：不落库空练习，直接报错让前端重试
+        raise HTTPException(status_code=503, detail="AI 出题暂时不可用，请稍后再试")
 
     sid = await active_student_id(db, user_id)
     practice = DailyPractice(
