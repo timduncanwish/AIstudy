@@ -18,6 +18,11 @@ DEBUG = os.getenv("DEBUG", "True").lower() == "true"
 
 WX_APPID = os.getenv("WX_APPID", "")
 WX_SECRET = os.getenv("WX_SECRET", "")
+
+# 百度OCR（可选；不配则作业批改仅用视觉模型）
+BAIDU_OCR_API_KEY = os.getenv("BAIDU_OCR_API_KEY", "")
+BAIDU_OCR_SECRET_KEY = os.getenv("BAIDU_OCR_SECRET_KEY", "")
+
 DEFAULT_JWT_SECRET = "ai_tutor_secret_key_change_in_prod"
 JWT_SECRET = os.getenv("JWT_SECRET", DEFAULT_JWT_SECRET)
 
