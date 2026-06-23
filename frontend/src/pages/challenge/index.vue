@@ -133,6 +133,7 @@ const subject = ref('chinese')
 const state = ref<'loading' | 'ready' | 'playing' | 'feedback' | 'complete'>('loading')
 const streak = ref(0)
 const question = ref<ChallengeQuestion | null>(null)
+const submitting = ref(false)  // 防止 await 窗口内连点选项导致重复提交/重复计分
 const task = ref<DailyTaskResponse>({ task_date: '', subject: 'chinese', total: 0, completed: 0, remaining: 0, words: [] })
 const stats = ref<UserStatsResponse>({ total_points: 0, streak_days: 0, words_mastered: 0, badges: [] })
 const lastCorrect = ref(false)
@@ -184,7 +185,8 @@ const startChallenge = async () => {
 }
 
 const selectAnswer = async (opt: { text: string; index: number }) => {
-  if (!question.value) return
+  if (!question.value || submitting.value) return
+  submitting.value = true
 
   try {
     const res = await submitChallengeAnswer({
@@ -210,15 +212,24 @@ const selectAnswer = async (opt: { text: string; index: number }) => {
     state.value = 'feedback'
 
     setTimeout(async () => {
-      const q = await getChallengeQuestion(subject.value, grade.value)
-      if (q) {
-        question.value = q
+      try {
+        const q = await getChallengeQuestion(subject.value, grade.value)
+        if (q) {
+          question.value = q
+          state.value = 'playing'
+        } else {
+          state.value = 'complete'
+        }
+      } catch {
+        // 取下一题失败：退回作答态避免卡在反馈页
         state.value = 'playing'
-      } else {
-        state.value = 'complete'
+        uni.showToast({ title: '加载下一题失败，请重试', icon: 'none' })
+      } finally {
+        submitting.value = false
       }
     }, 1500)
   } catch {
+    submitting.value = false
     uni.showToast({ title: '提交失败', icon: 'none' })
   }
 }
