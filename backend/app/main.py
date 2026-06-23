@@ -12,7 +12,7 @@ from slowapi.errors import RateLimitExceeded
 
 from app.limiter import limiter
 
-from app.config import APP_HOST, APP_PORT, DEBUG, ALLOWED_ORIGINS, JWT_SECRET, DEFAULT_JWT_SECRET
+from app.config import APP_HOST, APP_PORT, DEBUG, ALLOWED_ORIGINS, JWT_SECRET, DEFAULT_JWT_SECRET, DATA_ENCRYPTION_KEY
 from app.routers import auth, chat, homework, mistakes, challenge, students, reports, practice, notify
 from app.database import init_db, get_db_context
 
@@ -79,6 +79,11 @@ async def startup():
         logger.warning(
             "⚠️ 生产环境仍在使用默认 JWT_SECRET！任何人可伪造登录令牌，"
             "请在 .env 设置强随机的 JWT_SECRET。"
+        )
+    if not DEBUG and not DATA_ENCRYPTION_KEY:
+        logger.warning(
+            "⚠️ 未设置 DATA_ENCRYPTION_KEY，正在用 JWT_SECRET 派生数据加密密钥。"
+            "生产请设置固定的 DATA_ENCRYPTION_KEY，且永不更换（更换将导致密文不可解、哈希失配）。"
         )
     await init_db()
     scheduler.add_job(_daily_push_job, "cron", minute="*")  # 每分钟检查一次

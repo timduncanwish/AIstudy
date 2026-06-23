@@ -69,6 +69,9 @@ python -m pytest
 - **AI 失败韧性**：出题失败抛 503、批改失败标记 failed、通知失败静默不影响主流程。
 - **作业 OCR 增强**：批改前先用百度 OCR 识别文字注入视觉模型提示；未配置
   `BAIDU_OCR_*` 或 OCR 失败时自动降级为纯视觉批改。
+- **儿童数据加密**：身份字段（device_id、openid_hash）HMAC 哈希、内容字段（openid、
+  孩子姓名、对话、错题文本）Fernet 可逆加密，经 SQLAlchemy 透明列类型自动加解密。
+  openid 用盲索引（加密存储 + openid_hash 查找），仍可解密回传微信推送。
 
 ## 生产部署须知
 
@@ -78,3 +81,8 @@ python -m pytest
 - **`DEBUG=false`**。
 - **智谱账户额度**：AI 对话/批改/出题/知识库嵌入全依赖智谱，确保额度充足。
 - 数据库可通过 `DATABASE_URL` 切换为 MySQL。
+- **`DATA_ENCRYPTION_KEY`**：生产须设固定强随机值并**永不更换**（更换将使所有密文不可解、
+  哈希失配）。用 `python -c "from cryptography.fernet import Fernet; print(Fernet.generate_key().decode())"` 生成合法密钥。部署后跑一次 `python -m scripts.migrate_encrypt` 回填存量查找字段
+  （加 `--encrypt-content` 可一并加密存量内容；先 `--dry-run` 预览，务必先备份）。
+- `chroma_data/` 与 `uploads/` 仍为明文（属"全面加密"后续项），生产须对这两个目录
+  做操作系统级访问控制。
