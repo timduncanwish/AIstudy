@@ -124,7 +124,7 @@ const isLast = computed(() => {
 
 const scorePercent = computed(() => {
   if (!practice.value || !practice.value.total) return 0
-  return Math.round((practice.value.score / practice.value.total) * 100)
+  return Math.round(((practice.value.score ?? 0) / practice.value.total) * 100)
 })
 
 const resultMessage = computed(() => {
