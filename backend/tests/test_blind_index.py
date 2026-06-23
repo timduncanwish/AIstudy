@@ -1,5 +1,5 @@
 """openid 盲索引：加密存储可恢复 + openid_hash 哈希查找。"""
-from sqlalchemy import select
+from sqlalchemy import select, text
 
 from app.models.user import User
 from app.security import crypto
@@ -10,6 +10,17 @@ async def test_openid_encrypted_but_recoverable(db):
     user = await make_user(db, openid="wx_real_openid_123")
     # 读出可恢复为明文（回传微信用）
     assert user.openid == "wx_real_openid_123"
+
+
+async def test_openid_stored_as_ciphertext_at_rest(db):
+    # 原生 SQL 读底层存储，确认 openid 列是密文而非明文
+    user = await make_user(db, openid="wx_real_openid_123")
+    raw = (await db.execute(
+        text("SELECT openid FROM users WHERE id = :i"), {"i": user.id}
+    )).scalar()
+    assert raw != "wx_real_openid_123"
+    assert raw.startswith("gAAAAA")  # Fernet 令牌前缀
+    assert crypto.decrypt(raw) == "wx_real_openid_123"
 
 
 async def test_lookup_by_openid_hash(db):
