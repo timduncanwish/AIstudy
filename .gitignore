@@ -17,6 +17,9 @@ backend/*.db.bak*
 # 上传文件
 backend/uploads/
 
+# 向量库运行时数据
+backend/chroma_data/
+
 # Node
 frontend/node_modules/
 frontend/dist/
