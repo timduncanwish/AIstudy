@@ -4,6 +4,7 @@ from sqlalchemy import String, Integer, Text, DateTime, ForeignKey
 from sqlalchemy.orm import Mapped, mapped_column
 
 from app.database import Base
+from app.security.types import EncryptedText
 
 
 class Mistake(Base):
@@ -14,10 +15,10 @@ class Mistake(Base):
     student_id = mapped_column(Integer, ForeignKey("students.id"), nullable=True, index=True)
     homework_id = mapped_column(Integer, ForeignKey("homework.id"), nullable=True)
     subject = mapped_column(String(20), nullable=False)
-    question_text = mapped_column(Text, nullable=False)
-    correct_answer = mapped_column(Text, nullable=False)
-    student_answer = mapped_column(Text, nullable=True)
-    explanation = mapped_column(Text, nullable=True)
+    question_text = mapped_column(EncryptedText, nullable=False)
+    correct_answer = mapped_column(EncryptedText, nullable=False)
+    student_answer = mapped_column(EncryptedText, nullable=True)
+    explanation = mapped_column(EncryptedText, nullable=True)
     topic = mapped_column(String(100), nullable=True)
     mastery = mapped_column(Integer, default=0)
     review_count = mapped_column(Integer, default=0)

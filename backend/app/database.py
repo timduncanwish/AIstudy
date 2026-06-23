@@ -40,6 +40,7 @@ async def init_db():
             "ALTER TABLE homework ADD COLUMN student_id INTEGER",
             "ALTER TABLE daily_practices ADD COLUMN student_id INTEGER",
             "ALTER TABLE chat_history ADD COLUMN student_id INTEGER",
+            "ALTER TABLE users ADD COLUMN openid_hash VARCHAR(64)",
         ]:
             try:
                 await conn.execute(text(stmt))

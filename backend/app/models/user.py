@@ -4,14 +4,16 @@ from sqlalchemy import String, Integer, DateTime
 from sqlalchemy.orm import Mapped, mapped_column
 
 from app.database import Base
+from app.security.types import EncryptedText, HashedKey
 
 
 class User(Base):
     __tablename__ = "users"
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
-    device_id = mapped_column(String(64), unique=True, nullable=False)
-    openid = mapped_column(String(100), unique=True, nullable=True)
+    device_id = mapped_column(HashedKey(64), unique=True, nullable=False)
+    openid = mapped_column(EncryptedText, nullable=True)  # 可恢复，回传微信
+    openid_hash = mapped_column(HashedKey(64), unique=True, nullable=True, index=True)  # 盲索引
     nickname = mapped_column(String(50), default="同学")
     avatar_url = mapped_column(String(500), nullable=True)
     grade = mapped_column(Integer, default=3)

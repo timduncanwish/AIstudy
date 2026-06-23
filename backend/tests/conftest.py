@@ -38,6 +38,7 @@ async def make_user(db, *, nickname="家长", openid=None, notify_subscribed=0, 
         device_id=device_id or f"dev_{uuid.uuid4().hex[:12]}",
         nickname=nickname,
         openid=openid,
+        openid_hash=openid,
         notify_subscribed=notify_subscribed,
     )
     db.add(user)

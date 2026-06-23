@@ -12,7 +12,7 @@ from app.models.user import User
 async def wx_login(db: AsyncSession, code: str, nickname: str = "家长", avatar: str = "") -> dict:
     openid = await _code2session(code)
 
-    result = await db.execute(select(User).where(User.openid == openid))
+    result = await db.execute(select(User).where(User.openid_hash == openid))
     user = result.scalar_one_or_none()
 
     is_new = False
@@ -21,6 +21,7 @@ async def wx_login(db: AsyncSession, code: str, nickname: str = "家长", avatar
         user = User(
             device_id=device_id,
             openid=openid,
+            openid_hash=openid,
             nickname=nickname,
             avatar_url=avatar or "",
         )
