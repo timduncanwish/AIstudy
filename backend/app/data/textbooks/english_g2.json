@@ -1,0 +1,129 @@
+{
+  "subject": "english",
+  "grade": 2,
+  "version": "PEP人教版（一年级起点）",
+  "source_name": "人教社中小学教材电子版（PEP一年级起点；多数地区一二年级不开设英语，按一起版整理）",
+  "source_url": "https://jc.pep.com.cn/",
+  "data_note": "一二年级英语教材因地区而异，本表按 PEP 一年级起点常见词汇整理，单元划分为参考，全部标待人工复核。",
+  "semesters": {
+    "上册": {
+      "units": [
+        {
+          "unit": 1,
+          "title": "Unit 1 Toys",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "ball", "phonetic": "/bɔːl/", "meaning": "球" },
+            { "word": "doll", "phonetic": "/dɒl/", "meaning": "玩偶" },
+            { "word": "car", "phonetic": "/kɑː/", "meaning": "小汽车" },
+            { "word": "kite", "phonetic": "/kaɪt/", "meaning": "风筝" },
+            { "word": "train", "phonetic": "/treɪn/", "meaning": "火车（玩具）" },
+            { "word": "balloon", "phonetic": "/bəˈluːn/", "meaning": "气球" }
+          ],
+          "phrases": [],
+          "sentences": [ { "text": "It's my kite.", "meaning": "这是我的风筝。" } ]
+        },
+        {
+          "unit": 2,
+          "title": "Unit 2 Fruit",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "apple", "phonetic": "/ˈæpl/", "meaning": "苹果" },
+            { "word": "banana", "phonetic": "/bəˈnɑːnə/", "meaning": "香蕉" },
+            { "word": "orange", "phonetic": "/ˈɒrɪndʒ/", "meaning": "橙子" },
+            { "word": "pear", "phonetic": "/peə/", "meaning": "梨" }
+          ],
+          "phrases": [],
+          "sentences": [ { "text": "I like apples.", "meaning": "我喜欢苹果。" } ]
+        },
+        {
+          "unit": 3,
+          "title": "Unit 3 Numbers (7-12)",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "seven", "phonetic": "/ˈsevn/", "meaning": "七" },
+            { "word": "eight", "phonetic": "/eɪt/", "meaning": "八" },
+            { "word": "nine", "phonetic": "/naɪn/", "meaning": "九" },
+            { "word": "ten", "phonetic": "/ten/", "meaning": "十" },
+            { "word": "eleven", "phonetic": "/ɪˈlevn/", "meaning": "十一" },
+            { "word": "twelve", "phonetic": "/twelv/", "meaning": "十二" }
+          ],
+          "phrases": [],
+          "sentences": [ { "text": "I have ten fingers.", "meaning": "我有十根手指。" } ]
+        },
+        {
+          "unit": 4,
+          "title": "Unit 4 Clothes",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "hat", "phonetic": "/hæt/", "meaning": "帽子" },
+            { "word": "coat", "phonetic": "/kəʊt/", "meaning": "外套" },
+            { "word": "shoes", "phonetic": "/ʃuːz/", "meaning": "鞋" },
+            { "word": "shirt", "phonetic": "/ʃɜːt/", "meaning": "衬衫" }
+          ],
+          "phrases": [],
+          "sentences": [ { "text": "Put on your hat.", "meaning": "戴上你的帽子。" } ]
+        }
+      ]
+    },
+    "下册": {
+      "units": [
+        {
+          "unit": 1,
+          "title": "Unit 1 In the park",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "tree", "phonetic": "/triː/", "meaning": "树" },
+            { "word": "flower", "phonetic": "/ˈflaʊə/", "meaning": "花" },
+            { "word": "bird", "phonetic": "/bɜːd/", "meaning": "鸟" },
+            { "word": "sun", "phonetic": "/sʌn/", "meaning": "太阳" }
+          ],
+          "phrases": [],
+          "sentences": [ { "text": "Look at the flowers!", "meaning": "看那些花！" } ]
+        },
+        {
+          "unit": 2,
+          "title": "Unit 2 My room",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "bed", "phonetic": "/bed/", "meaning": "床" },
+            { "word": "chair", "phonetic": "/tʃeə/", "meaning": "椅子" },
+            { "word": "desk", "phonetic": "/desk/", "meaning": "书桌" },
+            { "word": "door", "phonetic": "/dɔː/", "meaning": "门" },
+            { "word": "window", "phonetic": "/ˈwɪndəʊ/", "meaning": "窗户" }
+          ],
+          "phrases": [],
+          "sentences": [ { "text": "The cat is on the bed.", "meaning": "猫在床上。" } ]
+        },
+        {
+          "unit": 3,
+          "title": "Unit 3 Action words",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "run", "phonetic": "/rʌn/", "meaning": "跑" },
+            { "word": "jump", "phonetic": "/dʒʌmp/", "meaning": "跳" },
+            { "word": "sing", "phonetic": "/sɪŋ/", "meaning": "唱" },
+            { "word": "dance", "phonetic": "/dɑːns/", "meaning": "跳舞" },
+            { "word": "swim", "phonetic": "/swɪm/", "meaning": "游泳" }
+          ],
+          "phrases": [],
+          "sentences": [ { "text": "Let's jump!", "meaning": "我们一起跳吧！" } ]
+        },
+        {
+          "unit": 4,
+          "title": "Unit 4 Weather",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "sunny", "phonetic": "/ˈsʌni/", "meaning": "晴朗的" },
+            { "word": "rainy", "phonetic": "/ˈreɪni/", "meaning": "下雨的" },
+            { "word": "windy", "phonetic": "/ˈwɪndi/", "meaning": "有风的" },
+            { "word": "hot", "phonetic": "/hɒt/", "meaning": "热的" },
+            { "word": "cold", "phonetic": "/kəʊld/", "meaning": "冷的" }
+          ],
+          "phrases": [],
+          "sentences": [ { "text": "It's sunny today.", "meaning": "今天是晴天。" } ]
+        }
+      ]
+    }
+  }
+}

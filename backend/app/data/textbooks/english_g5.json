@@ -1,0 +1,262 @@
+{
+  "subject": "english",
+  "grade": 5,
+  "version": "PEP人教版",
+  "source_name": "国家中小学智慧教育平台 / 人教社中小学教材电子版（PEP三年级起点 Book 5）",
+  "source_url": "https://jc.pep.com.cn/",
+  "source_verified": "为标准 PEP 三年级起点词表；本册未单独抓源核对（同系列三上/四上/六上已对照 diyifanwen 一致），建议复核时一并核对。",
+  "semesters": {
+    "上册": {
+      "units": [
+        {
+          "unit": 1,
+          "title": "Unit 1 What's he like?",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "old", "phonetic": "/əʊld/", "meaning": "年老的" },
+            { "word": "young", "phonetic": "/jʌŋ/", "meaning": "年轻的" },
+            { "word": "funny", "phonetic": "/ˈfʌni/", "meaning": "有趣的" },
+            { "word": "kind", "phonetic": "/kaɪnd/", "meaning": "和蔼的" },
+            { "word": "strict", "phonetic": "/strɪkt/", "meaning": "严格的" },
+            { "word": "polite", "phonetic": "/pəˈlaɪt/", "meaning": "有礼貌的" },
+            { "word": "hard-working", "phonetic": "", "meaning": "勤奋的" },
+            { "word": "helpful", "phonetic": "/ˈhelpfl/", "meaning": "乐于助人的" },
+            { "word": "clever", "phonetic": "/ˈklevə/", "meaning": "聪明的" },
+            { "word": "shy", "phonetic": "/ʃaɪ/", "meaning": "害羞的" }
+          ],
+          "phrases": [],
+          "sentences": [
+            { "text": "What's he like? — He's kind and strict.", "meaning": "他是个怎样的人？——他和蔼又严格。" }
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Unit 2 My week",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "Monday", "phonetic": "/ˈmʌndeɪ/", "meaning": "星期一" },
+            { "word": "Tuesday", "phonetic": "/ˈtjuːzdeɪ/", "meaning": "星期二" },
+            { "word": "Wednesday", "phonetic": "/ˈwenzdeɪ/", "meaning": "星期三" },
+            { "word": "Thursday", "phonetic": "/ˈθɜːzdeɪ/", "meaning": "星期四" },
+            { "word": "Friday", "phonetic": "/ˈfraɪdeɪ/", "meaning": "星期五" },
+            { "word": "Saturday", "phonetic": "/ˈsætədeɪ/", "meaning": "星期六" },
+            { "word": "Sunday", "phonetic": "/ˈsʌndeɪ/", "meaning": "星期日" },
+            { "word": "do homework", "phonetic": "", "meaning": "做作业" },
+            { "word": "watch TV", "phonetic": "", "meaning": "看电视" },
+            { "word": "read books", "phonetic": "", "meaning": "读书" }
+          ],
+          "phrases": [],
+          "sentences": [
+            { "text": "What do you do on Mondays? — I have …", "meaning": "你周一做什么？——我有……" }
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Unit 3 What would you like?",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "sandwich", "phonetic": "/ˈsænwɪdʒ/", "meaning": "三明治" },
+            { "word": "salad", "phonetic": "/ˈsæləd/", "meaning": "沙拉" },
+            { "word": "ice cream", "phonetic": "", "meaning": "冰激凌" },
+            { "word": "tea", "phonetic": "/tiː/", "meaning": "茶" },
+            { "word": "fresh", "phonetic": "/freʃ/", "meaning": "新鲜的" },
+            { "word": "healthy", "phonetic": "/ˈhelθi/", "meaning": "健康的" },
+            { "word": "delicious", "phonetic": "/dɪˈlɪʃəs/", "meaning": "美味的" },
+            { "word": "sweet", "phonetic": "/swiːt/", "meaning": "甜的" },
+            { "word": "hot", "phonetic": "/hɒt/", "meaning": "辣的；热的" }
+          ],
+          "phrases": [],
+          "sentences": [
+            { "text": "What would you like to eat? — I'd like a sandwich.", "meaning": "你想吃什么？——我想要个三明治。" }
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Unit 4 What can you do?",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "sing English songs", "phonetic": "", "meaning": "唱英文歌" },
+            { "word": "do kung fu", "phonetic": "", "meaning": "练功夫" },
+            { "word": "play the pipa", "phonetic": "", "meaning": "弹琵琶" },
+            { "word": "dance", "phonetic": "/dɑːns/", "meaning": "跳舞" },
+            { "word": "draw cartoons", "phonetic": "", "meaning": "画卡通画" },
+            { "word": "cook", "phonetic": "/kʊk/", "meaning": "做饭" },
+            { "word": "swim", "phonetic": "/swɪm/", "meaning": "游泳" },
+            { "word": "play basketball", "phonetic": "", "meaning": "打篮球" }
+          ],
+          "phrases": [],
+          "sentences": [
+            { "text": "What can you do? — I can sing and dance.", "meaning": "你会做什么？——我会唱歌和跳舞。" }
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Unit 5 There is a big bed",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "clock", "phonetic": "/klɒk/", "meaning": "时钟" },
+            { "word": "plant", "phonetic": "/plɑːnt/", "meaning": "植物" },
+            { "word": "bottle", "phonetic": "/ˈbɒtl/", "meaning": "瓶子" },
+            { "word": "photo", "phonetic": "/ˈfəʊtəʊ/", "meaning": "照片" },
+            { "word": "mirror", "phonetic": "/ˈmɪrə/", "meaning": "镜子" },
+            { "word": "in front of", "phonetic": "", "meaning": "在……前面" },
+            { "word": "between", "phonetic": "/bɪˈtwiːn/", "meaning": "在……之间" },
+            { "word": "above", "phonetic": "/əˈbʌv/", "meaning": "在……上方" },
+            { "word": "beside", "phonetic": "/bɪˈsaɪd/", "meaning": "在……旁边" }
+          ],
+          "phrases": [],
+          "sentences": [
+            { "text": "There is a clock above the bed.", "meaning": "床的上方有一个时钟。" }
+          ]
+        },
+        {
+          "unit": 6,
+          "title": "Unit 6 In a nature park",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "forest", "phonetic": "/ˈfɒrɪst/", "meaning": "森林" },
+            { "word": "river", "phonetic": "/ˈrɪvə/", "meaning": "河流" },
+            { "word": "lake", "phonetic": "/leɪk/", "meaning": "湖泊" },
+            { "word": "mountain", "phonetic": "/ˈmaʊntɪn/", "meaning": "高山" },
+            { "word": "hill", "phonetic": "/hɪl/", "meaning": "小山" },
+            { "word": "tree", "phonetic": "/triː/", "meaning": "树" },
+            { "word": "flower", "phonetic": "/ˈflaʊə/", "meaning": "花" },
+            { "word": "grass", "phonetic": "/ɡrɑːs/", "meaning": "草" },
+            { "word": "path", "phonetic": "/pɑːθ/", "meaning": "小路" },
+            { "word": "village", "phonetic": "/ˈvɪlɪdʒ/", "meaning": "村庄" }
+          ],
+          "phrases": [],
+          "sentences": [
+            { "text": "Is there a river in the park? — Yes, there is.", "meaning": "公园里有河吗？——有。" }
+          ]
+        }
+      ]
+    },
+    "下册": {
+      "units": [
+        {
+          "unit": 1,
+          "title": "Unit 1 My day",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "eat breakfast", "phonetic": "", "meaning": "吃早饭" },
+            { "word": "do morning exercises", "phonetic": "", "meaning": "做早操" },
+            { "word": "have class", "phonetic": "", "meaning": "上课" },
+            { "word": "play sports", "phonetic": "", "meaning": "进行体育运动" },
+            { "word": "eat dinner", "phonetic": "", "meaning": "吃晚饭" },
+            { "word": "climb mountains", "phonetic": "", "meaning": "爬山" },
+            { "word": "go shopping", "phonetic": "", "meaning": "去购物" },
+            { "word": "play the piano", "phonetic": "", "meaning": "弹钢琴" },
+            { "word": "go hiking", "phonetic": "", "meaning": "去远足" },
+            { "word": "when", "phonetic": "/wen/", "meaning": "什么时候" }
+          ],
+          "phrases": [],
+          "sentences": [
+            { "text": "When do you eat dinner? — At 7 o'clock.", "meaning": "你什么时候吃晚饭？——七点。" }
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Unit 2 My favourite season",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "spring", "phonetic": "/sprɪŋ/", "meaning": "春天" },
+            { "word": "summer", "phonetic": "/ˈsʌmə/", "meaning": "夏天" },
+            { "word": "autumn", "phonetic": "/ˈɔːtəm/", "meaning": "秋天" },
+            { "word": "winter", "phonetic": "/ˈwɪntə/", "meaning": "冬天" },
+            { "word": "season", "phonetic": "/ˈsiːzn/", "meaning": "季节" },
+            { "word": "pick apples", "phonetic": "", "meaning": "摘苹果" },
+            { "word": "go swimming", "phonetic": "", "meaning": "去游泳" },
+            { "word": "make a snowman", "phonetic": "", "meaning": "堆雪人" },
+            { "word": "plant trees", "phonetic": "", "meaning": "植树" },
+            { "word": "why", "phonetic": "/waɪ/", "meaning": "为什么" }
+          ],
+          "phrases": [],
+          "sentences": [
+            { "text": "Which season do you like best? — Winter, because I can …", "meaning": "你最喜欢哪个季节？——冬天，因为我可以……" }
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Unit 3 My school calendar",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "January", "phonetic": "/ˈdʒænjuəri/", "meaning": "一月" },
+            { "word": "February", "phonetic": "/ˈfebruəri/", "meaning": "二月" },
+            { "word": "March", "phonetic": "/mɑːtʃ/", "meaning": "三月" },
+            { "word": "April", "phonetic": "/ˈeɪprəl/", "meaning": "四月" },
+            { "word": "May", "phonetic": "/meɪ/", "meaning": "五月" },
+            { "word": "June", "phonetic": "/dʒuːn/", "meaning": "六月" },
+            { "word": "July", "phonetic": "/dʒuˈlaɪ/", "meaning": "七月" },
+            { "word": "August", "phonetic": "/ˈɔːɡəst/", "meaning": "八月" },
+            { "word": "September", "phonetic": "/sepˈtembə/", "meaning": "九月" },
+            { "word": "October", "phonetic": "/ɒkˈtəʊbə/", "meaning": "十月" },
+            { "word": "November", "phonetic": "/nəʊˈvembə/", "meaning": "十一月" },
+            { "word": "December", "phonetic": "/dɪˈsembə/", "meaning": "十二月" }
+          ],
+          "phrases": [],
+          "sentences": [
+            { "text": "When is the sports meet? — It's in spring.", "meaning": "运动会在什么时候？——在春季。" }
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Unit 4 When is Easter?",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "sports meet", "phonetic": "", "meaning": "运动会" },
+            { "word": "Easter", "phonetic": "/ˈiːstə/", "meaning": "复活节" },
+            { "word": "singing contest", "phonetic": "", "meaning": "歌咏比赛" },
+            { "word": "Mid-Autumn Festival", "phonetic": "", "meaning": "中秋节" },
+            { "word": "Halloween", "phonetic": "/ˌhæləʊˈiːn/", "meaning": "万圣节前夕" },
+            { "word": "first", "phonetic": "/fɜːst/", "meaning": "第一" },
+            { "word": "second", "phonetic": "/ˈsekənd/", "meaning": "第二" },
+            { "word": "third", "phonetic": "/θɜːd/", "meaning": "第三" }
+          ],
+          "phrases": [],
+          "sentences": [
+            { "text": "When is Easter this year? — It's in April.", "meaning": "今年复活节在什么时候？——在四月。" }
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Unit 5 Whose dog is this?",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "mine", "phonetic": "/maɪn/", "meaning": "我的（东西）" },
+            { "word": "yours", "phonetic": "/jɔːz/", "meaning": "你的（东西）" },
+            { "word": "his", "phonetic": "/hɪz/", "meaning": "他的（东西）" },
+            { "word": "hers", "phonetic": "/hɜːz/", "meaning": "她的（东西）" },
+            { "word": "climb", "phonetic": "/klaɪm/", "meaning": "爬" },
+            { "word": "jump", "phonetic": "/dʒʌmp/", "meaning": "跳" },
+            { "word": "eat", "phonetic": "/iːt/", "meaning": "吃" },
+            { "word": "sleep", "phonetic": "/sliːp/", "meaning": "睡觉" }
+          ],
+          "phrases": [],
+          "sentences": [
+            { "text": "Whose dog is this? — It's hers.", "meaning": "这是谁的狗？——是她的。" }
+          ]
+        },
+        {
+          "unit": 6,
+          "title": "Unit 6 Work quietly!",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "talk", "phonetic": "/tɔːk/", "meaning": "说话" },
+            { "word": "draw", "phonetic": "/drɔː/", "meaning": "画画" },
+            { "word": "write", "phonetic": "/raɪt/", "meaning": "写" },
+            { "word": "read", "phonetic": "/riːd/", "meaning": "读" },
+            { "word": "listen", "phonetic": "/ˈlɪsn/", "meaning": "听" },
+            { "word": "count", "phonetic": "/kaʊnt/", "meaning": "数数" },
+            { "word": "fly", "phonetic": "/flaɪ/", "meaning": "飞" },
+            { "word": "walk", "phonetic": "/wɔːk/", "meaning": "走" }
+          ],
+          "phrases": [],
+          "sentences": [
+            { "text": "What is she doing? — She's reading a book.", "meaning": "她在做什么？——她在读书。" }
+          ]
+        }
+      ]
+    }
+  }
+}

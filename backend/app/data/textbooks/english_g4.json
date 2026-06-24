@@ -1,0 +1,269 @@
+{
+  "subject": "english",
+  "grade": 4,
+  "version": "PEP人教版",
+  "source_name": "国家中小学智慧教育平台 / 人教社中小学教材电子版（PEP三年级起点 Book 4）",
+  "source_url": "https://jc.pep.com.cn/",
+  "source_verified": "上册已对照 diyifanwen 单词表核对（补 computer/讲台等），与当前版一致：https://m.diyifanwen.com/jiaoan/xiaoxuesinianjiyingyujiaoan/16322031486134847.htm",
+  "semesters": {
+    "上册": {
+      "units": [
+        {
+          "unit": 1,
+          "title": "Unit 1 My classroom",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "classroom", "phonetic": "/ˈklɑːsruːm/", "meaning": "教室" },
+            { "word": "window", "phonetic": "/ˈwɪndəʊ/", "meaning": "窗户" },
+            { "word": "door", "phonetic": "/dɔː/", "meaning": "门" },
+            { "word": "picture", "phonetic": "/ˈpɪktʃə/", "meaning": "图画" },
+            { "word": "board", "phonetic": "/bɔːd/", "meaning": "黑板" },
+            { "word": "light", "phonetic": "/laɪt/", "meaning": "灯" },
+            { "word": "fan", "phonetic": "/fæn/", "meaning": "风扇" },
+            { "word": "floor", "phonetic": "/flɔː/", "meaning": "地板" },
+            { "word": "wall", "phonetic": "/wɔːl/", "meaning": "墙" },
+            { "word": "computer", "phonetic": "/kəmˈpjuːtə/", "meaning": "电脑" },
+            { "word": "teacher's desk", "phonetic": "", "meaning": "讲台" }
+          ],
+          "phrases": [],
+          "sentences": [
+            { "text": "What's in the classroom? — A board, …", "meaning": "教室里有什么？——一块黑板，……" },
+            { "text": "Let's clean the classroom.", "meaning": "让我们打扫教室吧。" }
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Unit 2 My schoolbag",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "schoolbag", "phonetic": "/ˈskuːlbæɡ/", "meaning": "书包" },
+            { "word": "Chinese book", "phonetic": "", "meaning": "语文书" },
+            { "word": "English book", "phonetic": "", "meaning": "英语书" },
+            { "word": "math book", "phonetic": "", "meaning": "数学书" },
+            { "word": "storybook", "phonetic": "/ˈstɔːribʊk/", "meaning": "故事书" },
+            { "word": "notebook", "phonetic": "/ˈnəʊtbʊk/", "meaning": "笔记本" },
+            { "word": "candy", "phonetic": "/ˈkændi/", "meaning": "糖果" },
+            { "word": "toy", "phonetic": "/tɔɪ/", "meaning": "玩具" },
+            { "word": "key", "phonetic": "/kiː/", "meaning": "钥匙" }
+          ],
+          "phrases": [],
+          "sentences": [
+            { "text": "What's in your schoolbag? — An English book and …", "meaning": "你书包里有什么？——一本英语书和……" }
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Unit 3 My friends",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "friend", "phonetic": "/frend/", "meaning": "朋友" },
+            { "word": "long hair", "phonetic": "", "meaning": "长头发" },
+            { "word": "short hair", "phonetic": "", "meaning": "短头发" },
+            { "word": "thin", "phonetic": "/θɪn/", "meaning": "瘦的" },
+            { "word": "strong", "phonetic": "/strɒŋ/", "meaning": "强壮的" },
+            { "word": "quiet", "phonetic": "/ˈkwaɪət/", "meaning": "安静的" },
+            { "word": "glasses", "phonetic": "/ˈɡlɑːsɪz/", "meaning": "眼镜" }
+          ],
+          "phrases": [],
+          "sentences": [
+            { "text": "My friend has short hair. — He's quiet.", "meaning": "我的朋友留短发。——他很安静。" }
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Unit 4 My home",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "study", "phonetic": "/ˈstʌdi/", "meaning": "书房" },
+            { "word": "bedroom", "phonetic": "/ˈbedruːm/", "meaning": "卧室" },
+            { "word": "living room", "phonetic": "", "meaning": "客厅" },
+            { "word": "kitchen", "phonetic": "/ˈkɪtʃɪn/", "meaning": "厨房" },
+            { "word": "bathroom", "phonetic": "/ˈbɑːθruːm/", "meaning": "卫生间" },
+            { "word": "bed", "phonetic": "/bed/", "meaning": "床" },
+            { "word": "sofa", "phonetic": "/ˈsəʊfə/", "meaning": "沙发" },
+            { "word": "fridge", "phonetic": "/frɪdʒ/", "meaning": "冰箱" },
+            { "word": "table", "phonetic": "/ˈteɪbl/", "meaning": "桌子" }
+          ],
+          "phrases": [],
+          "sentences": [
+            { "text": "Is she in the study? — Yes, she is. / No, she isn't.", "meaning": "她在书房吗？——是的。／不，她不在。" }
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Unit 5 Dinner's ready",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "beef", "phonetic": "/biːf/", "meaning": "牛肉" },
+            { "word": "chicken", "phonetic": "/ˈtʃɪkɪn/", "meaning": "鸡肉" },
+            { "word": "noodles", "phonetic": "/ˈnuːdlz/", "meaning": "面条" },
+            { "word": "soup", "phonetic": "/suːp/", "meaning": "汤" },
+            { "word": "vegetable", "phonetic": "/ˈvedʒtəbl/", "meaning": "蔬菜" },
+            { "word": "fish", "phonetic": "/fɪʃ/", "meaning": "鱼" },
+            { "word": "rice", "phonetic": "/raɪs/", "meaning": "米饭" },
+            { "word": "fork", "phonetic": "/fɔːk/", "meaning": "叉子" },
+            { "word": "knife", "phonetic": "/naɪf/", "meaning": "刀" },
+            { "word": "chopsticks", "phonetic": "/ˈtʃɒpstɪks/", "meaning": "筷子" },
+            { "word": "spoon", "phonetic": "/spuːn/", "meaning": "勺子" },
+            { "word": "plate", "phonetic": "/pleɪt/", "meaning": "盘子" }
+          ],
+          "phrases": [],
+          "sentences": [
+            { "text": "What would you like for dinner? — I'd like …", "meaning": "晚饭你想吃什么？——我想要……" }
+          ]
+        },
+        {
+          "unit": 6,
+          "title": "Unit 6 Meet my family",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "parents", "phonetic": "/ˈpeərənts/", "meaning": "父母" },
+            { "word": "uncle", "phonetic": "/ˈʌŋkl/", "meaning": "叔叔；舅舅" },
+            { "word": "aunt", "phonetic": "/ɑːnt/", "meaning": "阿姨；姑姑" },
+            { "word": "baby brother", "phonetic": "", "meaning": "小弟弟" },
+            { "word": "people", "phonetic": "/ˈpiːpl/", "meaning": "人；人们" },
+            { "word": "doctor", "phonetic": "/ˈdɒktə/", "meaning": "医生" },
+            { "word": "cook", "phonetic": "/kʊk/", "meaning": "厨师" },
+            { "word": "driver", "phonetic": "/ˈdraɪvə/", "meaning": "司机" },
+            { "word": "farmer", "phonetic": "/ˈfɑːmə/", "meaning": "农民" },
+            { "word": "nurse", "phonetic": "/nɜːs/", "meaning": "护士" }
+          ],
+          "phrases": [],
+          "sentences": [
+            { "text": "How many people are there in your family?", "meaning": "你家有几口人？" },
+            { "text": "What's your father? — He's a doctor.", "meaning": "你爸爸是做什么的？——他是医生。" }
+          ]
+        }
+      ]
+    },
+    "下册": {
+      "units": [
+        {
+          "unit": 1,
+          "title": "Unit 1 My school",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "playground", "phonetic": "/ˈpleɪɡraʊnd/", "meaning": "操场" },
+            { "word": "garden", "phonetic": "/ˈɡɑːdn/", "meaning": "花园" },
+            { "word": "library", "phonetic": "/ˈlaɪbrəri/", "meaning": "图书馆" },
+            { "word": "canteen", "phonetic": "/kænˈtiːn/", "meaning": "食堂" },
+            { "word": "art room", "phonetic": "", "meaning": "美术教室" },
+            { "word": "computer room", "phonetic": "", "meaning": "计算机房" },
+            { "word": "washroom", "phonetic": "/ˈwɒʃruːm/", "meaning": "盥洗室" },
+            { "word": "music room", "phonetic": "", "meaning": "音乐教室" },
+            { "word": "gym", "phonetic": "/dʒɪm/", "meaning": "体育馆" }
+          ],
+          "phrases": [],
+          "sentences": [
+            { "text": "This is my school. — Welcome!", "meaning": "这是我的学校。——欢迎！" }
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Unit 2 What time is it?",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "breakfast", "phonetic": "/ˈbrekfəst/", "meaning": "早餐" },
+            { "word": "lunch", "phonetic": "/lʌntʃ/", "meaning": "午餐" },
+            { "word": "dinner", "phonetic": "/ˈdɪnə/", "meaning": "晚餐" },
+            { "word": "English class", "phonetic": "", "meaning": "英语课" },
+            { "word": "music class", "phonetic": "", "meaning": "音乐课" },
+            { "word": "PE class", "phonetic": "", "meaning": "体育课" },
+            { "word": "get up", "phonetic": "", "meaning": "起床" },
+            { "word": "go to school", "phonetic": "", "meaning": "去上学" },
+            { "word": "go home", "phonetic": "", "meaning": "回家" },
+            { "word": "go to bed", "phonetic": "", "meaning": "上床睡觉" }
+          ],
+          "phrases": [],
+          "sentences": [
+            { "text": "What time is it? — It's nine o'clock.", "meaning": "几点了？——九点钟。" }
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Unit 3 Weather",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "cold", "phonetic": "/kəʊld/", "meaning": "寒冷的" },
+            { "word": "cool", "phonetic": "/kuːl/", "meaning": "凉爽的" },
+            { "word": "warm", "phonetic": "/wɔːm/", "meaning": "温暖的" },
+            { "word": "hot", "phonetic": "/hɒt/", "meaning": "炎热的" },
+            { "word": "sunny", "phonetic": "/ˈsʌni/", "meaning": "晴朗的" },
+            { "word": "windy", "phonetic": "/ˈwɪndi/", "meaning": "有风的" },
+            { "word": "cloudy", "phonetic": "/ˈklaʊdi/", "meaning": "多云的" },
+            { "word": "snowy", "phonetic": "/ˈsnəʊi/", "meaning": "下雪的" },
+            { "word": "rainy", "phonetic": "/ˈreɪni/", "meaning": "下雨的" },
+            { "word": "weather", "phonetic": "/ˈweðə/", "meaning": "天气" }
+          ],
+          "phrases": [],
+          "sentences": [
+            { "text": "What's the weather like in Beijing? — It's sunny.", "meaning": "北京天气怎么样？——晴天。" }
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Unit 4 At the farm",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "sheep", "phonetic": "/ʃiːp/", "meaning": "绵羊" },
+            { "word": "hen", "phonetic": "/hen/", "meaning": "母鸡" },
+            { "word": "cow", "phonetic": "/kaʊ/", "meaning": "奶牛" },
+            { "word": "horse", "phonetic": "/hɔːs/", "meaning": "马" },
+            { "word": "tomato", "phonetic": "/təˈmɑːtəʊ/", "meaning": "西红柿" },
+            { "word": "potato", "phonetic": "/pəˈteɪtəʊ/", "meaning": "土豆" },
+            { "word": "carrot", "phonetic": "/ˈkærət/", "meaning": "胡萝卜" },
+            { "word": "green beans", "phonetic": "", "meaning": "青豆" },
+            { "word": "farm", "phonetic": "/fɑːm/", "meaning": "农场" }
+          ],
+          "phrases": [],
+          "sentences": [
+            { "text": "Are they ducks? — No, they're hens.", "meaning": "它们是鸭子吗？——不，是母鸡。" }
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Unit 5 My clothes",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "clothes", "phonetic": "/kləʊðz/", "meaning": "衣服" },
+            { "word": "sock", "phonetic": "/sɒk/", "meaning": "袜子" },
+            { "word": "shoe", "phonetic": "/ʃuː/", "meaning": "鞋" },
+            { "word": "T-shirt", "phonetic": "/ˈtiːʃɜːt/", "meaning": "T恤衫" },
+            { "word": "skirt", "phonetic": "/skɜːt/", "meaning": "裙子" },
+            { "word": "dress", "phonetic": "/dres/", "meaning": "连衣裙" },
+            { "word": "sweater", "phonetic": "/ˈswetə/", "meaning": "毛衣" },
+            { "word": "jacket", "phonetic": "/ˈdʒækɪt/", "meaning": "夹克衫" },
+            { "word": "coat", "phonetic": "/kəʊt/", "meaning": "外套" },
+            { "word": "hat", "phonetic": "/hæt/", "meaning": "帽子" }
+          ],
+          "phrases": [],
+          "sentences": [
+            { "text": "Whose skirt is this? — It's my sister's.", "meaning": "这是谁的裙子？——是我姐姐的。" }
+          ]
+        },
+        {
+          "unit": 6,
+          "title": "Unit 6 Shopping",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "gloves", "phonetic": "/ɡlʌvz/", "meaning": "手套" },
+            { "word": "scarf", "phonetic": "/skɑːf/", "meaning": "围巾" },
+            { "word": "umbrella", "phonetic": "/ʌmˈbrelə/", "meaning": "雨伞" },
+            { "word": "sunglasses", "phonetic": "/ˈsʌnɡlɑːsɪz/", "meaning": "太阳镜" },
+            { "word": "big", "phonetic": "/bɪɡ/", "meaning": "大的" },
+            { "word": "small", "phonetic": "/smɔːl/", "meaning": "小的" },
+            { "word": "expensive", "phonetic": "/ɪkˈspensɪv/", "meaning": "昂贵的" },
+            { "word": "cheap", "phonetic": "/tʃiːp/", "meaning": "便宜的" },
+            { "word": "pretty", "phonetic": "/ˈprɪti/", "meaning": "漂亮的" },
+            { "word": "size", "phonetic": "/saɪz/", "meaning": "尺码" }
+          ],
+          "phrases": [],
+          "sentences": [
+            { "text": "How much is this? — It's ten yuan.", "meaning": "这个多少钱？——十元。" },
+            { "text": "Can I help you?", "meaning": "需要我帮忙吗？" }
+          ]
+        }
+      ]
+    }
+  }
+}

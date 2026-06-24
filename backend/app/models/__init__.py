@@ -7,5 +7,9 @@ from app.models.user_stats import UserStats
 from app.models.student import Student
 from app.models.chat_history import ChatHistory
 from app.models.daily_practice import DailyPractice
+from app.models.preview_progress import PreviewProgress
 
-__all__ = ["User", "Homework", "Mistake", "WordProgress", "DailyTask", "UserStats", "Student", "ChatHistory", "DailyPractice"]
+__all__ = [
+    "User", "Homework", "Mistake", "WordProgress", "DailyTask", "UserStats",
+    "Student", "ChatHistory", "DailyPractice", "PreviewProgress",
+]

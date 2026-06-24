@@ -1,0 +1,162 @@
+{
+  "subject": "chinese",
+  "grade": 7,
+  "version": "统编版",
+  "source_name": "国家中小学智慧教育平台 / 人教社中小学教材电子版（统编版七年级·初中）",
+  "source_url": "https://basic.smartedu.cn/",
+  "data_note": "初中语文以每课后“读读写写”词语表为预习对象（无小学式一/二类字表）。meaning 字段为“拼音 · 释义”。词语取自教材示例，完整词表以官方教材为准，全部标待人工复核。",
+  "semesters": {
+    "上册": {
+      "units": [
+        {
+          "unit": 1,
+          "title": "第一单元 · 四季美景（春 / 济南的冬天 / 雨的四季）",
+          "source_status": "待人工复核",
+          "phrases": [
+            { "text": "酝酿", "meaning": "yùnniàng · 比喻做准备工作，逐渐成熟" },
+            { "text": "嘹亮", "meaning": "liáoliàng · 声音清晰响亮" },
+            { "text": "烘托", "meaning": "hōngtuō · 陪衬，使明显突出" },
+            { "text": "静谧", "meaning": "jìngmì · 安静" },
+            { "text": "贮蓄", "meaning": "zhùxù · 储存，积聚" }
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "第二单元 · 至爱亲情（秋天的怀念 / 散步 / 散文诗二首）",
+          "source_status": "待人工复核",
+          "phrases": [
+            { "text": "瘫痪", "meaning": "tānhuàn · 身体某部分丧失活动能力" },
+            { "text": "憔悴", "meaning": "qiáocuì · 形容人瘦弱、面色不好" },
+            { "text": "诀别", "meaning": "juébié · 分别（多指不易再见的离别）" },
+            { "text": "分歧", "meaning": "fēnqí · 思想、意见不一致" },
+            { "text": "喜出望外", "meaning": "xǐchūwàngwài · 遇到意外的喜事而特别高兴" }
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "第三单元 · 学习生活（从百草园到三味书屋 / 《论语》十二章）",
+          "source_status": "待人工复核",
+          "phrases": [
+            { "text": "确凿", "meaning": "quèzáo · 确实" },
+            { "text": "倜傥", "meaning": "tìtǎng · 洒脱，不拘束" },
+            { "text": "人迹罕至", "meaning": "rénjìhǎnzhì · 很少有人到" },
+            { "text": "人声鼎沸", "meaning": "rénshēngdǐngfèi · 人声喧闹嘈杂" },
+            { "text": "花团锦簇", "meaning": "huātuánjǐncù · 形容五彩缤纷、繁华艳丽" }
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "第四单元 · 人生之舟（纪念白求恩 / 走一步，再走一步 / 诫子书）",
+          "source_status": "待人工复核",
+          "phrases": [
+            { "text": "殉职", "meaning": "xùnzhí · 为公务而牺牲生命" },
+            { "text": "漠不关心", "meaning": "mòbùguānxīn · 态度冷淡，毫不关心" },
+            { "text": "见异思迁", "meaning": "jiànyìsīqiān · 意志不坚定，喜爱不专一" },
+            { "text": "坍塌", "meaning": "tāntā · 建筑物倒下来" },
+            { "text": "不毛之地", "meaning": "bùmáozhīdì · 不长庄稼的地方，泛指荒凉的地方" }
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "第五单元 · 生命之趣（猫 / 动物笑谈 / 狼）",
+          "source_status": "待人工复核",
+          "phrases": [
+            { "text": "怂恿", "meaning": "sǒngyǒng · 鼓动别人去做某事" },
+            { "text": "蜷伏", "meaning": "quánfú · 弯着身体卧着" },
+            { "text": "怅然", "meaning": "chàngrán · 因不如意而感到不痛快" },
+            { "text": "畏罪潜逃", "meaning": "wèizuìqiántáo · 犯罪后怕受制裁而逃走" },
+            { "text": "孜孜不倦", "meaning": "zīzībùjuàn · 勤奋努力，不知疲倦" }
+          ]
+        },
+        {
+          "unit": 6,
+          "title": "第六单元 · 想象之翼（皇帝的新装 / 天上的街市 / 寓言四则）",
+          "source_status": "待人工复核",
+          "phrases": [
+            { "text": "炫耀", "meaning": "xuànyào · 夸耀" },
+            { "text": "滑稽", "meaning": "huájī · 言语、动作引人发笑" },
+            { "text": "骇人听闻", "meaning": "hàiréntīngwén · 使人听了非常吃惊（多指坏事）" },
+            { "text": "随声附和", "meaning": "suíshēngfùhè · 别人怎么说，自己跟着说" },
+            { "text": "杞人忧天", "meaning": "qǐrényōutiān · 比喻不必要的或无根据的忧虑" }
+          ]
+        }
+      ]
+    },
+    "下册": {
+      "units": [
+        {
+          "unit": 1,
+          "title": "第一单元 · 杰出人物（邓稼先 / 说和做 / 回忆鲁迅先生）",
+          "source_status": "待人工复核",
+          "phrases": [
+            { "text": "鞠躬尽瘁", "meaning": "jūgōngjìncuì · 恭敬谨慎，竭尽心力" },
+            { "text": "锋芒毕露", "meaning": "fēngmángbìlù · 锐气、才干全部显露" },
+            { "text": "妇孺皆知", "meaning": "fùrújiēzhī · 妇女小孩都知道，指众所周知" },
+            { "text": "至死不懈", "meaning": "zhìsǐbùxiè · 到死都不松懈" },
+            { "text": "家喻户晓", "meaning": "jiāyùhùxiǎo · 家家户户都知道" }
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "第二单元 · 家国情怀（黄河颂 / 老山界 / 土地的誓言）",
+          "source_status": "待人工复核",
+          "phrases": [
+            { "text": "狂澜", "meaning": "kuánglán · 巨大的波浪，比喻动荡不定的局势" },
+            { "text": "屏障", "meaning": "píngzhàng · 像屏风那样起遮挡作用的东西" },
+            { "text": "哺育", "meaning": "bǔyù · 喂养，比喻培养" },
+            { "text": "九曲连环", "meaning": "jiǔqūliánhuán · 形容黄河蜿蜒曲折" },
+            { "text": "亦复如是", "meaning": "yìfùrúshì · 也是这样" }
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "第三单元 · 凡人小事（阿长与《山海经》 / 老王 / 台阶）",
+          "source_status": "待人工复核",
+          "phrases": [
+            { "text": "诘问", "meaning": "jiéwèn · 追问，责问" },
+            { "text": "渴慕", "meaning": "kěmù · 非常思慕" },
+            { "text": "震悚", "meaning": "zhènsǒng · 身体因恐惧而颤动" },
+            { "text": "微不足道", "meaning": "wēibùzúdào · 非常渺小，不值得一提" },
+            { "text": "大庭广众", "meaning": "dàtíngguǎngzhòng · 人很多的公开场合" }
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "第四单元 · 修身正己（叶圣陶先生二三事 / 驿路梨花 / 陋室铭）",
+          "source_status": "待人工复核",
+          "phrases": [
+            { "text": "商酌", "meaning": "shāngzhuó · 商量斟酌" },
+            { "text": "恳切", "meaning": "kěnqiè · 诚恳而殷切" },
+            { "text": "累赘", "meaning": "léizhuì · 多余，麻烦" },
+            { "text": "拖沓", "meaning": "tuōtà · 做事拖拉，不爽利" },
+            { "text": "颠沛流离", "meaning": "diānpèiliúlí · 生活艰难，四处流浪" }
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "第五单元 · 哲理之思（紫藤萝瀑布 / 一棵小桃树）",
+          "source_status": "待人工复核",
+          "phrases": [
+            { "text": "迸溅", "meaning": "bèngjiàn · 向四外飞溅" },
+            { "text": "伫立", "meaning": "zhùlì · 长时间地站着" },
+            { "text": "伶仃", "meaning": "língdīng · 孤独，没有依靠" },
+            { "text": "祸不单行", "meaning": "huòbùdānxíng · 不幸的事接连发生" },
+            { "text": "盘虬卧龙", "meaning": "pánqiúwòlóng · 形容树枝盘曲苍劲" }
+          ]
+        },
+        {
+          "unit": 6,
+          "title": "第六单元 · 探险与科幻（伟大的悲剧 / 太空一日 / 河中石兽）",
+          "source_status": "待人工复核",
+          "phrases": [
+            { "text": "无垠", "meaning": "wúyín · 辽阔无边" },
+            { "text": "凛冽", "meaning": "lǐnliè · 刺骨地寒冷" },
+            { "text": "吞噬", "meaning": "tūnshì · 吞食，并吞" },
+            { "text": "羸弱", "meaning": "léiruò · 瘦弱" },
+            { "text": "畏缩不前", "meaning": "wèisuōbùqián · 害怕退缩，不敢前进" }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -13,7 +13,7 @@ from slowapi.errors import RateLimitExceeded
 from app.limiter import limiter
 
 from app.config import APP_HOST, APP_PORT, DEBUG, ALLOWED_ORIGINS, JWT_SECRET, DEFAULT_JWT_SECRET, DATA_ENCRYPTION_KEY
-from app.routers import auth, chat, homework, mistakes, challenge, students, reports, practice, notify
+from app.routers import auth, chat, homework, mistakes, challenge, students, reports, practice, notify, preview
 from app.database import init_db, get_db_context
 
 logger = logging.getLogger(__name__)
@@ -45,6 +45,7 @@ app.include_router(students.router)
 app.include_router(reports.router)
 app.include_router(practice.router)
 app.include_router(notify.router)
+app.include_router(preview.router)
 app.mount("/uploads", StaticFiles(directory="uploads"), name="uploads")
 
 

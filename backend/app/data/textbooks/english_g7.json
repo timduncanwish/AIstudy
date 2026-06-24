@@ -1,0 +1,198 @@
+{
+  "subject": "english",
+  "grade": 7,
+  "version": "人教版（新目标 Go for it!）",
+  "source_name": "人教社中小学教材电子版（义务教育教科书 英语 七年级·新目标）",
+  "source_url": "https://jc.pep.com.cn/",
+  "data_note": "初中英语按各单元词汇表（黑体词为重点）整理，每单元取代表性单词示例，完整词表以官方教材为准，全部标待人工复核。",
+  "semesters": {
+    "上册": {
+      "units": [
+        {
+          "unit": 1,
+          "title": "Unit 1 My name's Gina",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "name", "phonetic": "/neɪm/", "meaning": "名字" },
+            { "word": "nice", "phonetic": "/naɪs/", "meaning": "令人愉快的" },
+            { "word": "meet", "phonetic": "/miːt/", "meaning": "遇见，认识" },
+            { "word": "first name", "phonetic": "", "meaning": "名字" },
+            { "word": "last name", "phonetic": "", "meaning": "姓氏" },
+            { "word": "friend", "phonetic": "/frend/", "meaning": "朋友" }
+          ],
+          "phrases": [],
+          "sentences": [ { "text": "What's your name? — My name's Gina.", "meaning": "你叫什么名字？——我叫吉娜。" } ]
+        },
+        {
+          "unit": 2,
+          "title": "Unit 2 This is my sister",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "father", "phonetic": "/ˈfɑːðə/", "meaning": "父亲" },
+            { "word": "mother", "phonetic": "/ˈmʌðə/", "meaning": "母亲" },
+            { "word": "parent", "phonetic": "/ˈpeərənt/", "meaning": "父（母）亲" },
+            { "word": "brother", "phonetic": "/ˈbrʌðə/", "meaning": "兄；弟" },
+            { "word": "grandmother", "phonetic": "/ˈɡrænmʌðə/", "meaning": "祖母；外祖母" },
+            { "word": "cousin", "phonetic": "/ˈkʌzn/", "meaning": "堂（表）兄弟姐妹" }
+          ],
+          "phrases": [],
+          "sentences": [ { "text": "This is my sister.", "meaning": "这是我的妹妹。" } ]
+        },
+        {
+          "unit": 3,
+          "title": "Unit 3 Is this your pencil?",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "pencil", "phonetic": "/ˈpensl/", "meaning": "铅笔" },
+            { "word": "eraser", "phonetic": "/ɪˈreɪzə/", "meaning": "橡皮" },
+            { "word": "ruler", "phonetic": "/ˈruːlə/", "meaning": "尺子" },
+            { "word": "backpack", "phonetic": "/ˈbækpæk/", "meaning": "双肩背包" },
+            { "word": "dictionary", "phonetic": "/ˈdɪkʃənri/", "meaning": "词典" },
+            { "word": "pencil box", "phonetic": "", "meaning": "铅笔盒" }
+          ],
+          "phrases": [],
+          "sentences": [ { "text": "Is this your pencil? — Yes, it is.", "meaning": "这是你的铅笔吗？——是的。" } ]
+        },
+        {
+          "unit": 4,
+          "title": "Unit 4 Where's my schoolbag?",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "table", "phonetic": "/ˈteɪbl/", "meaning": "桌子" },
+            { "word": "bed", "phonetic": "/bed/", "meaning": "床" },
+            { "word": "bookcase", "phonetic": "/ˈbʊkkeɪs/", "meaning": "书橱" },
+            { "word": "sofa", "phonetic": "/ˈsəʊfə/", "meaning": "沙发" },
+            { "word": "chair", "phonetic": "/tʃeə/", "meaning": "椅子" },
+            { "word": "where", "phonetic": "/weə/", "meaning": "在哪里" }
+          ],
+          "phrases": [],
+          "sentences": [ { "text": "Where's my schoolbag? — It's under the table.", "meaning": "我的书包在哪里？——在桌子下面。" } ]
+        },
+        {
+          "unit": 5,
+          "title": "Unit 5 Do you have a soccer ball?",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "soccer ball", "phonetic": "", "meaning": "英式足球" },
+            { "word": "tennis racket", "phonetic": "", "meaning": "网球拍" },
+            { "word": "basketball", "phonetic": "/ˈbɑːskɪtbɔːl/", "meaning": "篮球" },
+            { "word": "volleyball", "phonetic": "/ˈvɒlibɔːl/", "meaning": "排球" },
+            { "word": "ping-pong", "phonetic": "/ˈpɪŋpɒŋ/", "meaning": "乒乓球" },
+            { "word": "have", "phonetic": "/hæv/", "meaning": "有" }
+          ],
+          "phrases": [],
+          "sentences": [ { "text": "Do you have a soccer ball? — Yes, I do.", "meaning": "你有英式足球吗？——是的。" } ]
+        },
+        {
+          "unit": 6,
+          "title": "Unit 6 Do you like bananas?",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "banana", "phonetic": "/bəˈnɑːnə/", "meaning": "香蕉" },
+            { "word": "hamburger", "phonetic": "/ˈhæmbɜːɡə/", "meaning": "汉堡包" },
+            { "word": "tomato", "phonetic": "/təˈmɑːtəʊ/", "meaning": "西红柿" },
+            { "word": "broccoli", "phonetic": "/ˈbrɒkəli/", "meaning": "西兰花" },
+            { "word": "salad", "phonetic": "/ˈsæləd/", "meaning": "沙拉" },
+            { "word": "strawberry", "phonetic": "/ˈstrɔːbəri/", "meaning": "草莓" }
+          ],
+          "phrases": [],
+          "sentences": [ { "text": "Do you like bananas? — Yes, I do.", "meaning": "你喜欢香蕉吗？——是的。" } ]
+        }
+      ]
+    },
+    "下册": {
+      "units": [
+        {
+          "unit": 1,
+          "title": "Unit 1 Can you play the guitar?",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "guitar", "phonetic": "/ɡɪˈtɑː/", "meaning": "吉他" },
+            { "word": "sing", "phonetic": "/sɪŋ/", "meaning": "唱歌" },
+            { "word": "swim", "phonetic": "/swɪm/", "meaning": "游泳" },
+            { "word": "dance", "phonetic": "/dɑːns/", "meaning": "跳舞" },
+            { "word": "chess", "phonetic": "/tʃes/", "meaning": "国际象棋" },
+            { "word": "club", "phonetic": "/klʌb/", "meaning": "俱乐部，社团" }
+          ],
+          "phrases": [],
+          "sentences": [ { "text": "Can you play the guitar? — Yes, I can.", "meaning": "你会弹吉他吗？——会。" } ]
+        },
+        {
+          "unit": 2,
+          "title": "Unit 2 What time do you go to school?",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "get up", "phonetic": "", "meaning": "起床" },
+            { "word": "get dressed", "phonetic": "", "meaning": "穿上衣服" },
+            { "word": "brush teeth", "phonetic": "", "meaning": "刷牙" },
+            { "word": "eat breakfast", "phonetic": "", "meaning": "吃早饭" },
+            { "word": "usually", "phonetic": "/ˈjuːʒuəli/", "meaning": "通常地" },
+            { "word": "always", "phonetic": "/ˈɔːlweɪz/", "meaning": "总是" }
+          ],
+          "phrases": [],
+          "sentences": [ { "text": "What time do you get up? — At six thirty.", "meaning": "你几点起床？——六点半。" } ]
+        },
+        {
+          "unit": 3,
+          "title": "Unit 3 How do you get to school?",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "subway", "phonetic": "/ˈsʌbweɪ/", "meaning": "地铁" },
+            { "word": "train", "phonetic": "/treɪn/", "meaning": "火车" },
+            { "word": "bike", "phonetic": "/baɪk/", "meaning": "自行车" },
+            { "word": "ride", "phonetic": "/raɪd/", "meaning": "骑" },
+            { "word": "walk", "phonetic": "/wɔːk/", "meaning": "步行" },
+            { "word": "minute", "phonetic": "/ˈmɪnɪt/", "meaning": "分钟" }
+          ],
+          "phrases": [],
+          "sentences": [ { "text": "How do you get to school? — I take the subway.", "meaning": "你怎么去上学？——我坐地铁。" } ]
+        },
+        {
+          "unit": 4,
+          "title": "Unit 4 Don't eat in class",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "rule", "phonetic": "/ruːl/", "meaning": "规则" },
+            { "word": "arrive", "phonetic": "/əˈraɪv/", "meaning": "到达" },
+            { "word": "late", "phonetic": "/leɪt/", "meaning": "迟到的" },
+            { "word": "listen", "phonetic": "/ˈlɪsn/", "meaning": "听" },
+            { "word": "quiet", "phonetic": "/ˈkwaɪət/", "meaning": "安静的" },
+            { "word": "rule", "phonetic": "/ruːl/", "meaning": "规章，制度" }
+          ],
+          "phrases": [],
+          "sentences": [ { "text": "Don't eat in class.", "meaning": "不要在课堂上吃东西。" } ]
+        },
+        {
+          "unit": 5,
+          "title": "Unit 5 Why do you like pandas?",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "panda", "phonetic": "/ˈpændə/", "meaning": "熊猫" },
+            { "word": "tiger", "phonetic": "/ˈtaɪɡə/", "meaning": "老虎" },
+            { "word": "elephant", "phonetic": "/ˈelɪfənt/", "meaning": "大象" },
+            { "word": "koala", "phonetic": "/kəʊˈɑːlə/", "meaning": "树袋熊" },
+            { "word": "lion", "phonetic": "/ˈlaɪən/", "meaning": "狮子" },
+            { "word": "giraffe", "phonetic": "/dʒəˈrɑːf/", "meaning": "长颈鹿" }
+          ],
+          "phrases": [],
+          "sentences": [ { "text": "Why do you like pandas? — Because they're cute.", "meaning": "你为什么喜欢熊猫？——因为它们很可爱。" } ]
+        },
+        {
+          "unit": 6,
+          "title": "Unit 6 I'm watching TV",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "watch TV", "phonetic": "", "meaning": "看电视" },
+            { "word": "read", "phonetic": "/riːd/", "meaning": "阅读" },
+            { "word": "clean", "phonetic": "/kliːn/", "meaning": "打扫" },
+            { "word": "eat dinner", "phonetic": "", "meaning": "吃晚饭" },
+            { "word": "talk", "phonetic": "/tɔːk/", "meaning": "交谈" },
+            { "word": "wash", "phonetic": "/wɒʃ/", "meaning": "洗" }
+          ],
+          "phrases": [],
+          "sentences": [ { "text": "What are you doing? — I'm watching TV.", "meaning": "你在做什么？——我在看电视。" } ]
+        }
+      ]
+    }
+  }
+}

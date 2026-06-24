@@ -1,0 +1,162 @@
+{
+  "subject": "chinese",
+  "grade": 8,
+  "version": "统编版",
+  "source_name": "国家中小学智慧教育平台 / 人教社中小学教材电子版（统编版八年级·初中）",
+  "source_url": "https://basic.smartedu.cn/",
+  "data_note": "初中语文以每课后“读读写写”词语表为预习对象。meaning 字段为“拼音 · 释义”。词语取自教材示例，完整词表以官方教材为准，全部标待人工复核。",
+  "semesters": {
+    "上册": {
+      "units": [
+        {
+          "unit": 1,
+          "title": "第一单元 · 新闻（消息二则 / “飞天”凌空 / 一着惊海天）",
+          "source_status": "待人工复核",
+          "phrases": [
+            { "text": "溃退", "meaning": "kuìtuì · （军队）被打垮而后退" },
+            { "text": "要塞", "meaning": "yàosài · 在军事上有重要意义的据点" },
+            { "text": "摧枯拉朽", "meaning": "cuīkūlāxiǔ · 比喻轻而易举地摧毁腐朽势力" },
+            { "text": "锐不可当", "meaning": "ruìbùkědāng · 来势凶猛，不可阻挡" },
+            { "text": "白手起家", "meaning": "báishǒuqǐjiā · 在没有基础的条件下创立事业" }
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "第二单元 · 回忆性散文（藤野先生 / 列夫·托尔斯泰 / 美丽的颜色）",
+          "source_status": "待人工复核",
+          "phrases": [
+            { "text": "绯红", "meaning": "fēihóng · 鲜红" },
+            { "text": "诘责", "meaning": "jiézé · 责问" },
+            { "text": "油光可鉴", "meaning": "yóuguāngkějiàn · 形容非常光亮润泽" },
+            { "text": "杳无消息", "meaning": "yǎowúxiāoxī · 一直没有音信" },
+            { "text": "藏污纳垢", "meaning": "cángwūnàgòu · 比喻包容坏人坏事" }
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "第三单元 · 文言山水（三峡 / 答谢中书书 / 记承天寺夜游）",
+          "source_status": "待人工复核",
+          "phrases": [
+            { "text": "沿溯", "meaning": "yánsù · 顺流而下和逆流而上" },
+            { "text": "素湍", "meaning": "sùtuān · 激起白色浪花的急流" },
+            { "text": "夕日欲颓", "meaning": "xīrìyùtuí · 太阳快要落山" },
+            { "text": "沉鳞竞跃", "meaning": "chénlínjìngyuè · 潜游的鱼争相跳出水面" },
+            { "text": "盖竹柏影也", "meaning": "gàizhúbǎiyǐngyě · 原来是竹子和柏树的影子" }
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "第四单元 · 散文（背影 / 白杨礼赞 / 昆明的雨）",
+          "source_status": "待人工复核",
+          "phrases": [
+            { "text": "颓唐", "meaning": "tuítáng · 精神萎靡" },
+            { "text": "琐屑", "meaning": "suǒxiè · 细小而琐碎的事" },
+            { "text": "妙手偶得", "meaning": "miàoshǒuǒudé · 技术高超的人偶然间得到" },
+            { "text": "旁逸斜出", "meaning": "pángyìxiéchū · （树枝）从旁边斜伸出来" },
+            { "text": "潜滋暗长", "meaning": "qiánzīànzhǎng · 暗暗地不知不觉地生长" }
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "第五单元 · 说明文（中国石拱桥 / 苏州园林 / 蝉）",
+          "source_status": "待人工复核",
+          "phrases": [
+            { "text": "推崇", "meaning": "tuīchóng · 十分重视、尊敬" },
+            { "text": "巧妙绝伦", "meaning": "qiǎomiàojuélún · 灵巧高明，无与伦比" },
+            { "text": "因地制宜", "meaning": "yīndìzhìyí · 根据各地具体情况制定办法" },
+            { "text": "别具匠心", "meaning": "biéjùjiàngxīn · 另有一种巧妙的构思（多指文艺创作）" },
+            { "text": "重峦叠嶂", "meaning": "chóngluándiézhàng · 山峰一个连着一个" }
+          ]
+        },
+        {
+          "unit": 6,
+          "title": "第六单元 · 人物品格（孟子二章 / 愚公移山 / 周亚夫军细柳）",
+          "source_status": "待人工复核",
+          "phrases": [
+            { "text": "富贵不能淫", "meaning": "fùguìbùnéngyín · 富贵不能使其迷惑动摇" },
+            { "text": "贫贱不能移", "meaning": "pínjiànbùnéngyí · 贫贱不能使其改变志向" },
+            { "text": "惩山北之塞", "meaning": "chéngshānběizhīsè · 苦于山北交通阻塞" },
+            { "text": "曾不能损魁父之丘", "meaning": "zēngbùnéngsǔnkuífǔzhīqiū · 连魁父这样的小山都削不平" },
+            { "text": "军细柳", "meaning": "jūnxìliǔ · 驻军在细柳" }
+          ]
+        }
+      ]
+    },
+    "下册": {
+      "units": [
+        {
+          "unit": 1,
+          "title": "第一单元 · 民俗（社戏 / 回延安 / 安塞腰鼓 / 灯笼）",
+          "source_status": "待人工复核",
+          "phrases": [
+            { "text": "偏僻", "meaning": "piānpì · 离城市或中心区远，交通不便" },
+            { "text": "欺侮", "meaning": "qīwǔ · 欺负" },
+            { "text": "怠慢", "meaning": "dàimàn · 冷淡，待客态度不够殷勤" },
+            { "text": "叹为观止", "meaning": "tànwéiguānzhǐ · 赞美所看到的事物好到极点" },
+            { "text": "戛然而止", "meaning": "jiárán'érzhǐ · 声音突然停止" }
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "第二单元 · 阐释事理（大自然的语言 / 大雁归来 / 时间的脚印）",
+          "source_status": "待人工复核",
+          "phrases": [
+            { "text": "萌发", "meaning": "méngfā · 种子或孢子开始生长" },
+            { "text": "翩然", "meaning": "piānrán · 动作轻快的样子" },
+            { "text": "孕育", "meaning": "yùnyù · 怀胎生育，比喻在已有事物中酝酿新事物" },
+            { "text": "销声匿迹", "meaning": "xiāoshēngnìjì · 不公开讲话，不出头露面" },
+            { "text": "周而复始", "meaning": "zhōu'érfùshǐ · 一次又一次地循环" }
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "第三单元 · 文言（桃花源记 / 小石潭记 / 核舟记 / 《诗经》二首）",
+          "source_status": "待人工复核",
+          "phrases": [
+            { "text": "豁然开朗", "meaning": "huòránkāilǎng · 由狭窄昏暗变得开阔明亮" },
+            { "text": "怡然自乐", "meaning": "yíránzìlè · 安适愉快而自得其乐" },
+            { "text": "悄怆幽邃", "meaning": "qiǎochuàngyōusuì · 凄凉幽深" },
+            { "text": "奇巧人", "meaning": "qíqiǎorén · 手艺奇特精巧的人" },
+            { "text": "窈窕淑女", "meaning": "yǎotiǎoshūnǚ · 文静美好的女子" }
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "第四单元 · 演讲（最后一次讲演 / 应有格物致知精神）",
+          "source_status": "待人工复核",
+          "phrases": [
+            { "text": "卑劣", "meaning": "bēiliè · 卑鄙恶劣" },
+            { "text": "诬蔑", "meaning": "wūmiè · 捏造事实败坏别人名誉" },
+            { "text": "格物致知", "meaning": "géwùzhìzhī · 推究事物的原理而获得知识" },
+            { "text": "袖手旁观", "meaning": "xiùshǒupángguān · 比喻置身事外，不加过问" },
+            { "text": "不知所措", "meaning": "bùzhīsuǒcuò · 不知道怎么办才好" }
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "第五单元 · 游记（壶口瀑布 / 在长江源头各拉丹冬 / 登勃朗峰）",
+          "source_status": "待人工复核",
+          "phrases": [
+            { "text": "雾霭", "meaning": "wù'ǎi · 雾气" },
+            { "text": "推搡", "meaning": "tuīsǎng · 用力推" },
+            { "text": "驰骋", "meaning": "chíchěng · （骑马）奔驰" },
+            { "text": "历历在目", "meaning": "lìlìzàimù · 清楚地呈现在眼前" },
+            { "text": "川流不息", "meaning": "chuānliúbùxī · 像水流一样连续不断" }
+          ]
+        },
+        {
+          "unit": 6,
+          "title": "第六单元 · 人生哲理（《庄子》二则 / 马说 / 唐诗二首）",
+          "source_status": "待人工复核",
+          "phrases": [
+            { "text": "鹏之徙于南冥", "meaning": "péngzhīxǐyúnánmíng · 大鹏迁徙到南海" },
+            { "text": "濠梁之辩", "meaning": "háoliángzhībiàn · 庄子与惠子关于鱼之乐的辩论" },
+            { "text": "祗辱于奴隶人之手", "meaning": "zhīrǔyúnúlìrénzhīshǒu · 只能屈辱于仆役之手" },
+            { "text": "食不饱力不足", "meaning": "shíbùbǎolìbùzú · 吃不饱，力气不足" },
+            { "text": "安得广厦千万间", "meaning": "āndéguǎngshàqiānwànjiān · 怎能得到千万间宽敞的房屋" }
+          ]
+        }
+      ]
+    }
+  }
+}

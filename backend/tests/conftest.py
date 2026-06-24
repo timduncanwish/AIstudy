@@ -12,7 +12,7 @@ from app.database import Base
 # 导入全部模型，确保 Base.metadata 完整
 from app.models import (  # noqa: F401
     User, Homework, Mistake, WordProgress, DailyTask, UserStats,
-    Student, ChatHistory, DailyPractice,
+    Student, ChatHistory, DailyPractice, PreviewProgress,
 )
 
 

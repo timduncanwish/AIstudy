@@ -19,6 +19,18 @@
 			}
 		},
 		{
+			"path": "pages/preview/index",
+			"style": {
+				"navigationBarTitleText": "字词句预习"
+			}
+		},
+		{
+			"path": "pages/textbook/index",
+			"style": {
+				"navigationBarTitleText": "教材选择"
+			}
+		},
+		{
 			"path": "pages/mistakes/index",
 			"style": {
 				"navigationBarTitleText": "错题本"

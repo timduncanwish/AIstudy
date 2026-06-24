@@ -20,6 +20,13 @@ backend/uploads/
 # 向量库运行时数据
 backend/chroma_data/
 
+# 运行日志
+backend/*.log
+*.err.log
+
+# Claude Code 本地配置
+.claude/
+
 # Node
 frontend/node_modules/
 frontend/dist/

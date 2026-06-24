@@ -1,0 +1,1999 @@
+{
+  "subject": "chinese",
+  "grade": 4,
+  "version": "统编版",
+  "source_name": "统编版四年级 · 写字表/识字表（按课程知识整理为较完整字表，待人工对照官方教材复核）",
+  "source_url": "https://basic.smartedu.cn/",
+  "data_note": "一类字=写字表(会写)，二类字=识字表(会认)。按统编版四年级课程知识整理为较完整字表，全部标待人工复核，须对照官方教材核对完整性与逐课归属。",
+  "semesters": {
+    "上册": {
+      "units": [
+        {
+          "unit": 1,
+          "title": "第一单元 · 自然景观（观潮 / 走月亮）",
+          "source_status": "待人工复核",
+          "first_class": [
+            {
+              "word": "潮",
+              "pinyin": "cháo",
+              "meaning": "观潮"
+            },
+            {
+              "word": "据",
+              "pinyin": "jù",
+              "meaning": "根据"
+            },
+            {
+              "word": "堤",
+              "pinyin": "dī",
+              "meaning": "江堤"
+            },
+            {
+              "word": "阔",
+              "pinyin": "kuò",
+              "meaning": "宽阔"
+            },
+            {
+              "word": "笼",
+              "pinyin": "lóng",
+              "meaning": "笼罩"
+            },
+            {
+              "word": "罩",
+              "pinyin": "zhào",
+              "meaning": "笼罩"
+            },
+            {
+              "word": "盼",
+              "pinyin": "pàn",
+              "meaning": "盼望"
+            },
+            {
+              "word": "滚",
+              "pinyin": "gǔn",
+              "meaning": "翻滚"
+            },
+            {
+              "word": "顿",
+              "pinyin": "dùn",
+              "meaning": "顿时"
+            },
+            {
+              "word": "逐",
+              "pinyin": "zhú",
+              "meaning": "逐渐"
+            },
+            {
+              "word": "渐",
+              "pinyin": "jiàn",
+              "meaning": "逐渐"
+            },
+            {
+              "word": "堆",
+              "pinyin": "duī",
+              "meaning": "堆积"
+            },
+            {
+              "word": "霎",
+              "pinyin": "shà",
+              "meaning": "霎时"
+            },
+            {
+              "word": "余",
+              "pinyin": "yú",
+              "meaning": "余波"
+            },
+            {
+              "word": "牵",
+              "pinyin": "qiān",
+              "meaning": "牵着"
+            },
+            {
+              "word": "鹅",
+              "pinyin": "é",
+              "meaning": "鹅卵石"
+            },
+            {
+              "word": "卵",
+              "pinyin": "luǎn",
+              "meaning": "鹅卵石"
+            },
+            {
+              "word": "填",
+              "pinyin": "tián",
+              "meaning": "填满"
+            },
+            {
+              "word": "庄",
+              "pinyin": "zhuāng",
+              "meaning": "村庄"
+            },
+            {
+              "word": "稼",
+              "pinyin": "jià",
+              "meaning": "庄稼"
+            },
+            {
+              "word": "葡",
+              "pinyin": "pú",
+              "meaning": "葡萄"
+            },
+            {
+              "word": "萄",
+              "pinyin": "táo",
+              "meaning": "葡萄"
+            },
+            {
+              "word": "稻",
+              "pinyin": "dào",
+              "meaning": "稻谷"
+            },
+            {
+              "word": "熟",
+              "pinyin": "shú",
+              "meaning": "成熟"
+            }
+          ],
+          "second_class": [
+            {
+              "word": "盐",
+              "pinyin": "yán"
+            },
+            {
+              "word": "屹",
+              "pinyin": "yì"
+            },
+            {
+              "word": "鼎",
+              "pinyin": "dǐng"
+            },
+            {
+              "word": "沸",
+              "pinyin": "fèi"
+            },
+            {
+              "word": "贯",
+              "pinyin": "guàn"
+            },
+            {
+              "word": "浩",
+              "pinyin": "hào"
+            },
+            {
+              "word": "崩",
+              "pinyin": "bēng"
+            },
+            {
+              "word": "恢",
+              "pinyin": "huī"
+            }
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "第二单元 · 提问（蝙蝠和雷达 / 呼风唤雨的世纪）",
+          "source_status": "待人工复核",
+          "first_class": [
+            {
+              "word": "豌",
+              "pinyin": "wān",
+              "meaning": "豌豆"
+            },
+            {
+              "word": "按",
+              "pinyin": "àn",
+              "meaning": "按照"
+            },
+            {
+              "word": "舒",
+              "pinyin": "shū",
+              "meaning": "舒适"
+            },
+            {
+              "word": "适",
+              "pinyin": "shì",
+              "meaning": "舒适"
+            },
+            {
+              "word": "恐",
+              "pinyin": "kǒng",
+              "meaning": "恐怕"
+            },
+            {
+              "word": "僵",
+              "pinyin": "jiāng",
+              "meaning": "僵硬"
+            },
+            {
+              "word": "硬",
+              "pinyin": "yìng",
+              "meaning": "僵硬"
+            },
+            {
+              "word": "预",
+              "pinyin": "yù",
+              "meaning": "预报"
+            },
+            {
+              "word": "雷",
+              "pinyin": "léi",
+              "meaning": "雷达"
+            },
+            {
+              "word": "达",
+              "pinyin": "dá",
+              "meaning": "雷达"
+            },
+            {
+              "word": "蚊",
+              "pinyin": "wén",
+              "meaning": "蚊子"
+            },
+            {
+              "word": "即",
+              "pinyin": "jí",
+              "meaning": "即将"
+            },
+            {
+              "word": "科",
+              "pinyin": "kē",
+              "meaning": "科学"
+            },
+            {
+              "word": "技",
+              "pinyin": "jì",
+              "meaning": "科技"
+            },
+            {
+              "word": "改",
+              "pinyin": "gǎi",
+              "meaning": "改变"
+            },
+            {
+              "word": "程",
+              "pinyin": "chéng",
+              "meaning": "程度"
+            },
+            {
+              "word": "超",
+              "pinyin": "chāo",
+              "meaning": "超过"
+            },
+            {
+              "word": "亿",
+              "pinyin": "yì",
+              "meaning": "亿万"
+            },
+            {
+              "word": "航",
+              "pinyin": "háng",
+              "meaning": "航行"
+            },
+            {
+              "word": "索",
+              "pinyin": "suǒ",
+              "meaning": "探索"
+            }
+          ],
+          "second_class": [
+            {
+              "word": "荚",
+              "pinyin": "jiá"
+            },
+            {
+              "word": "锐",
+              "pinyin": "ruì"
+            },
+            {
+              "word": "揭",
+              "pinyin": "jiē"
+            },
+            {
+              "word": "潜",
+              "pinyin": "qián"
+            },
+            {
+              "word": "莹",
+              "pinyin": "yíng"
+            },
+            {
+              "word": "码",
+              "pinyin": "mǎ"
+            }
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "第三单元 · 连续观察（古诗三首 / 爬山虎的脚 / 蟋蟀的住宅）",
+          "source_status": "待人工复核",
+          "first_class": [
+            {
+              "word": "暮",
+              "pinyin": "mù",
+              "meaning": "日暮"
+            },
+            {
+              "word": "吟",
+              "pinyin": "yín",
+              "meaning": "吟诵"
+            },
+            {
+              "word": "题",
+              "pinyin": "tí",
+              "meaning": "题词"
+            },
+            {
+              "word": "侧",
+              "pinyin": "cè",
+              "meaning": "侧面"
+            },
+            {
+              "word": "峰",
+              "pinyin": "fēng",
+              "meaning": "山峰"
+            },
+            {
+              "word": "庐",
+              "pinyin": "lú",
+              "meaning": "庐山"
+            },
+            {
+              "word": "缘",
+              "pinyin": "yuán",
+              "meaning": "缘故"
+            },
+            {
+              "word": "降",
+              "pinyin": "xiáng",
+              "meaning": "降服"
+            },
+            {
+              "word": "逊",
+              "pinyin": "xùn",
+              "meaning": "谦逊"
+            },
+            {
+              "word": "输",
+              "pinyin": "shū",
+              "meaning": "输赢"
+            },
+            {
+              "word": "莫",
+              "pinyin": "mò",
+              "meaning": "莫非"
+            },
+            {
+              "word": "腊",
+              "pinyin": "là",
+              "meaning": "腊月"
+            },
+            {
+              "word": "浑",
+              "pinyin": "hún",
+              "meaning": "浑浊"
+            },
+            {
+              "word": "疑",
+              "pinyin": "yí",
+              "meaning": "怀疑"
+            },
+            {
+              "word": "操",
+              "pinyin": "cāo",
+              "meaning": "操场"
+            },
+            {
+              "word": "占",
+              "pinyin": "zhàn",
+              "meaning": "占据"
+            },
+            {
+              "word": "嫩",
+              "pinyin": "nèn",
+              "meaning": "嫩绿"
+            },
+            {
+              "word": "顺",
+              "pinyin": "shùn",
+              "meaning": "顺序"
+            },
+            {
+              "word": "均",
+              "pinyin": "jūn",
+              "meaning": "均匀"
+            },
+            {
+              "word": "叠",
+              "pinyin": "dié",
+              "meaning": "重叠"
+            },
+            {
+              "word": "茎",
+              "pinyin": "jīng",
+              "meaning": "叶茎"
+            },
+            {
+              "word": "柄",
+              "pinyin": "bǐng",
+              "meaning": "叶柄"
+            },
+            {
+              "word": "宅",
+              "pinyin": "zhái",
+              "meaning": "住宅"
+            },
+            {
+              "word": "临",
+              "pinyin": "lín",
+              "meaning": "临时"
+            },
+            {
+              "word": "慎",
+              "pinyin": "shèn",
+              "meaning": "谨慎"
+            },
+            {
+              "word": "选",
+              "pinyin": "xuǎn",
+              "meaning": "选择"
+            },
+            {
+              "word": "择",
+              "pinyin": "zé",
+              "meaning": "选择"
+            },
+            {
+              "word": "址",
+              "pinyin": "zhǐ",
+              "meaning": "地址"
+            },
+            {
+              "word": "良",
+              "pinyin": "liáng",
+              "meaning": "良好"
+            },
+            {
+              "word": "穴",
+              "pinyin": "xué",
+              "meaning": "洞穴"
+            },
+            {
+              "word": "厅",
+              "pinyin": "tīng",
+              "meaning": "客厅"
+            },
+            {
+              "word": "卧",
+              "pinyin": "wò",
+              "meaning": "卧室"
+            },
+            {
+              "word": "专",
+              "pinyin": "zhuān",
+              "meaning": "专门"
+            },
+            {
+              "word": "寸",
+              "pinyin": "cùn",
+              "meaning": "尺寸"
+            },
+            {
+              "word": "卫",
+              "pinyin": "wèi",
+              "meaning": "卫生"
+            }
+          ],
+          "second_class": [
+            {
+              "word": "枯",
+              "pinyin": "kū"
+            },
+            {
+              "word": "萎",
+              "pinyin": "wěi"
+            },
+            {
+              "word": "瞧",
+              "pinyin": "qiáo"
+            },
+            {
+              "word": "蔽",
+              "pinyin": "bì"
+            },
+            {
+              "word": "搜",
+              "pinyin": "sōu"
+            },
+            {
+              "word": "倾",
+              "pinyin": "qīng"
+            },
+            {
+              "word": "抛",
+              "pinyin": "pāo"
+            }
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "第四单元 · 神话（盘古开天地 / 普罗米修斯 / 女娲补天）",
+          "source_status": "待人工复核",
+          "first_class": [
+            {
+              "word": "劈",
+              "pinyin": "pī",
+              "meaning": "劈开"
+            },
+            {
+              "word": "缓",
+              "pinyin": "huǎn",
+              "meaning": "缓慢"
+            },
+            {
+              "word": "浊",
+              "pinyin": "zhuó",
+              "meaning": "浑浊"
+            },
+            {
+              "word": "丈",
+              "pinyin": "zhàng",
+              "meaning": "万丈"
+            },
+            {
+              "word": "撑",
+              "pinyin": "chēng",
+              "meaning": "支撑"
+            },
+            {
+              "word": "竭",
+              "pinyin": "jié",
+              "meaning": "竭力"
+            },
+            {
+              "word": "累",
+              "pinyin": "lèi",
+              "meaning": "劳累"
+            },
+            {
+              "word": "血",
+              "pinyin": "xuè",
+              "meaning": "血液"
+            },
+            {
+              "word": "液",
+              "pinyin": "yè",
+              "meaning": "血液"
+            },
+            {
+              "word": "奔",
+              "pinyin": "bēn",
+              "meaning": "奔跑"
+            },
+            {
+              "word": "茂",
+              "pinyin": "mào",
+              "meaning": "茂盛"
+            },
+            {
+              "word": "滋",
+              "pinyin": "zī",
+              "meaning": "滋润"
+            },
+            {
+              "word": "润",
+              "pinyin": "rùn",
+              "meaning": "滋润"
+            },
+            {
+              "word": "隆",
+              "pinyin": "lóng",
+              "meaning": "隆隆"
+            },
+            {
+              "word": "肢",
+              "pinyin": "zhī",
+              "meaning": "四肢"
+            },
+            {
+              "word": "躯",
+              "pinyin": "qū",
+              "meaning": "身躯"
+            },
+            {
+              "word": "述",
+              "pinyin": "shù",
+              "meaning": "叙述"
+            },
+            {
+              "word": "宙",
+              "pinyin": "zhòu",
+              "meaning": "宇宙"
+            },
+            {
+              "word": "混",
+              "pinyin": "hùn",
+              "meaning": "混沌"
+            }
+          ],
+          "second_class": [
+            {
+              "word": "斯",
+              "pinyin": "sī"
+            },
+            {
+              "word": "惩",
+              "pinyin": "chéng"
+            },
+            {
+              "word": "盗",
+              "pinyin": "dào"
+            },
+            {
+              "word": "烬",
+              "pinyin": "jìn"
+            },
+            {
+              "word": "狭",
+              "pinyin": "xiá"
+            },
+            {
+              "word": "豁",
+              "pinyin": "huò"
+            }
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "第五单元 · 习作（麻雀 / 爬天都峰）",
+          "source_status": "待人工复核",
+          "first_class": [
+            {
+              "word": "嗅",
+              "pinyin": "xiù",
+              "meaning": "嗅觉"
+            },
+            {
+              "word": "躯",
+              "pinyin": "qū",
+              "meaning": "身躯"
+            },
+            {
+              "word": "奈",
+              "pinyin": "nài",
+              "meaning": "无奈"
+            },
+            {
+              "word": "巢",
+              "pinyin": "cháo",
+              "meaning": "鸟巢"
+            },
+            {
+              "word": "搏",
+              "pinyin": "bó",
+              "meaning": "搏斗"
+            },
+            {
+              "word": "庞",
+              "pinyin": "páng",
+              "meaning": "庞大"
+            },
+            {
+              "word": "煤",
+              "pinyin": "méi",
+              "meaning": "煤炭"
+            },
+            {
+              "word": "攀",
+              "pinyin": "pān",
+              "meaning": "攀登"
+            },
+            {
+              "word": "链",
+              "pinyin": "liàn",
+              "meaning": "铁链"
+            },
+            {
+              "word": "颤",
+              "pinyin": "chàn",
+              "meaning": "颤抖"
+            },
+            {
+              "word": "辫",
+              "pinyin": "biàn",
+              "meaning": "辫子"
+            },
+            {
+              "word": "呵",
+              "pinyin": "hē",
+              "meaning": "呵护"
+            }
+          ],
+          "second_class": [
+            {
+              "word": "拯",
+              "pinyin": "zhěng"
+            },
+            {
+              "word": "嘶",
+              "pinyin": "sī"
+            },
+            {
+              "word": "哑",
+              "pinyin": "yǎ"
+            },
+            {
+              "word": "鲫",
+              "pinyin": "jì"
+            }
+          ]
+        },
+        {
+          "unit": 6,
+          "title": "第六单元 · 成长故事（牛和鹅 / 一只窝囊的大老虎 / 陀螺）",
+          "source_status": "待人工复核",
+          "first_class": [
+            {
+              "word": "摸",
+              "pinyin": "mō",
+              "meaning": "摸索"
+            },
+            {
+              "word": "甩",
+              "pinyin": "shuǎi",
+              "meaning": "甩开"
+            },
+            {
+              "word": "捶",
+              "pinyin": "chuí",
+              "meaning": "捶打"
+            },
+            {
+              "word": "欺",
+              "pinyin": "qī",
+              "meaning": "欺负"
+            },
+            {
+              "word": "凭",
+              "pinyin": "píng",
+              "meaning": "凭借"
+            },
+            {
+              "word": "握",
+              "pinyin": "wò",
+              "meaning": "握手"
+            },
+            {
+              "word": "概",
+              "pinyin": "gài",
+              "meaning": "大概"
+            },
+            {
+              "word": "批",
+              "pinyin": "pī",
+              "meaning": "批评"
+            },
+            {
+              "word": "评",
+              "pinyin": "píng",
+              "meaning": "批评"
+            },
+            {
+              "word": "亏",
+              "pinyin": "kuī",
+              "meaning": "幸亏"
+            },
+            {
+              "word": "删",
+              "pinyin": "shān",
+              "meaning": "删除"
+            },
+            {
+              "word": "拳",
+              "pinyin": "quán",
+              "meaning": "拳头"
+            },
+            {
+              "word": "堪",
+              "pinyin": "kān",
+              "meaning": "难堪"
+            },
+            {
+              "word": "跺",
+              "pinyin": "duò",
+              "meaning": "跺脚"
+            },
+            {
+              "word": "绷",
+              "pinyin": "bēng",
+              "meaning": "绷紧"
+            },
+            {
+              "word": "撇",
+              "pinyin": "piě",
+              "meaning": "撇开"
+            }
+          ],
+          "second_class": [
+            {
+              "word": "譬",
+              "pinyin": "pì"
+            },
+            {
+              "word": "谬",
+              "pinyin": "miù"
+            },
+            {
+              "word": "囊",
+              "pinyin": "náng"
+            },
+            {
+              "word": "豁",
+              "pinyin": "huō"
+            }
+          ]
+        },
+        {
+          "unit": 7,
+          "title": "第七单元 · 家国情怀（古诗三首 / 为中华之崛起而读书）",
+          "source_status": "待人工复核",
+          "first_class": [
+            {
+              "word": "塞",
+              "pinyin": "sài",
+              "meaning": "边塞"
+            },
+            {
+              "word": "秦",
+              "pinyin": "qín",
+              "meaning": "秦朝"
+            },
+            {
+              "word": "征",
+              "pinyin": "zhēng",
+              "meaning": "出征"
+            },
+            {
+              "word": "词",
+              "pinyin": "cí",
+              "meaning": "词语"
+            },
+            {
+              "word": "催",
+              "pinyin": "cuī",
+              "meaning": "催促"
+            },
+            {
+              "word": "醉",
+              "pinyin": "zuì",
+              "meaning": "陶醉"
+            },
+            {
+              "word": "杰",
+              "pinyin": "jié",
+              "meaning": "杰出"
+            },
+            {
+              "word": "亥",
+              "pinyin": "hài",
+              "meaning": "己亥"
+            },
+            {
+              "word": "雄",
+              "pinyin": "xióng",
+              "meaning": "英雄"
+            },
+            {
+              "word": "项",
+              "pinyin": "xiàng",
+              "meaning": "项目"
+            },
+            {
+              "word": "肃",
+              "pinyin": "sù",
+              "meaning": "严肃"
+            },
+            {
+              "word": "晰",
+              "pinyin": "xī",
+              "meaning": "清晰"
+            },
+            {
+              "word": "振",
+              "pinyin": "zhèn",
+              "meaning": "振兴"
+            },
+            {
+              "word": "胸",
+              "pinyin": "xiōng",
+              "meaning": "胸怀"
+            },
+            {
+              "word": "怀",
+              "pinyin": "huái",
+              "meaning": "胸怀"
+            },
+            {
+              "word": "赞",
+              "pinyin": "zàn",
+              "meaning": "赞扬"
+            },
+            {
+              "word": "效",
+              "pinyin": "xiào",
+              "meaning": "效果"
+            },
+            {
+              "word": "疗",
+              "pinyin": "liáo",
+              "meaning": "治疗"
+            },
+            {
+              "word": "迫",
+              "pinyin": "pò",
+              "meaning": "压迫"
+            },
+            {
+              "word": "屈",
+              "pinyin": "qū",
+              "meaning": "屈辱"
+            },
+            {
+              "word": "辱",
+              "pinyin": "rǔ",
+              "meaning": "屈辱"
+            },
+            {
+              "word": "凡",
+              "pinyin": "fán",
+              "meaning": "平凡"
+            }
+          ],
+          "second_class": [
+            {
+              "word": "崛",
+              "pinyin": "jué"
+            },
+            {
+              "word": "范",
+              "pinyin": "fàn"
+            },
+            {
+              "word": "魏",
+              "pinyin": "wèi"
+            },
+            {
+              "word": "淮",
+              "pinyin": "huái"
+            },
+            {
+              "word": "惩",
+              "pinyin": "chéng"
+            }
+          ]
+        },
+        {
+          "unit": 8,
+          "title": "第八单元 · 历史传说（王戎不取道旁李 / 西门豹治邺）",
+          "source_status": "待人工复核",
+          "first_class": [
+            {
+              "word": "戎",
+              "pinyin": "róng",
+              "meaning": "王戎"
+            },
+            {
+              "word": "尝",
+              "pinyin": "cháng",
+              "meaning": "品尝"
+            },
+            {
+              "word": "诸",
+              "pinyin": "zhū",
+              "meaning": "诸位"
+            },
+            {
+              "word": "竞",
+              "pinyin": "jìng",
+              "meaning": "竞争"
+            },
+            {
+              "word": "唯",
+              "pinyin": "wéi",
+              "meaning": "唯一"
+            },
+            {
+              "word": "豹",
+              "pinyin": "bào",
+              "meaning": "西门豹"
+            },
+            {
+              "word": "巫",
+              "pinyin": "wū",
+              "meaning": "巫婆"
+            },
+            {
+              "word": "绅",
+              "pinyin": "shēn",
+              "meaning": "绅士"
+            },
+            {
+              "word": "媳",
+              "pinyin": "xí",
+              "meaning": "媳妇"
+            },
+            {
+              "word": "妇",
+              "pinyin": "fù",
+              "meaning": "媳妇"
+            },
+            {
+              "word": "徒",
+              "pinyin": "tú",
+              "meaning": "徒弟"
+            },
+            {
+              "word": "骗",
+              "pinyin": "piàn",
+              "meaning": "欺骗"
+            },
+            {
+              "word": "灌",
+              "pinyin": "guàn",
+              "meaning": "灌溉"
+            },
+            {
+              "word": "溉",
+              "pinyin": "gài",
+              "meaning": "灌溉"
+            },
+            {
+              "word": "罚",
+              "pinyin": "fá",
+              "meaning": "惩罚"
+            },
+            {
+              "word": "扁",
+              "pinyin": "biǎn",
+              "meaning": "扁担"
+            }
+          ],
+          "second_class": [
+            {
+              "word": "魏",
+              "pinyin": "wèi"
+            },
+            {
+              "word": "淌",
+              "pinyin": "tǎng"
+            },
+            {
+              "word": "葬",
+              "pinyin": "zàng"
+            },
+            {
+              "word": "骂",
+              "pinyin": "mà"
+            }
+          ]
+        }
+      ]
+    },
+    "下册": {
+      "units": [
+        {
+          "unit": 1,
+          "title": "第一单元 · 乡村生活（古诗词三首 / 乡下人家 / 天窗）",
+          "source_status": "待人工复核",
+          "first_class": [
+            {
+              "word": "宿",
+              "pinyin": "sù",
+              "meaning": "住宿"
+            },
+            {
+              "word": "徐",
+              "pinyin": "xú",
+              "meaning": "徐徐"
+            },
+            {
+              "word": "篱",
+              "pinyin": "lí",
+              "meaning": "篱笆"
+            },
+            {
+              "word": "疏",
+              "pinyin": "shū",
+              "meaning": "稀疏"
+            },
+            {
+              "word": "杂",
+              "pinyin": "zá",
+              "meaning": "杂乱"
+            },
+            {
+              "word": "稀",
+              "pinyin": "xī",
+              "meaning": "稀疏"
+            },
+            {
+              "word": "蜻",
+              "pinyin": "qīng",
+              "meaning": "蜻蜓"
+            },
+            {
+              "word": "蜓",
+              "pinyin": "tíng",
+              "meaning": "蜻蜓"
+            },
+            {
+              "word": "茅",
+              "pinyin": "máo",
+              "meaning": "茅屋"
+            },
+            {
+              "word": "檐",
+              "pinyin": "yán",
+              "meaning": "屋檐"
+            },
+            {
+              "word": "构",
+              "pinyin": "gòu",
+              "meaning": "构成"
+            },
+            {
+              "word": "芍",
+              "pinyin": "sháo",
+              "meaning": "芍药"
+            },
+            {
+              "word": "瓜",
+              "pinyin": "guā",
+              "meaning": "西瓜"
+            },
+            {
+              "word": "藤",
+              "pinyin": "téng",
+              "meaning": "藤蔓"
+            },
+            {
+              "word": "附",
+              "pinyin": "fù",
+              "meaning": "附近"
+            },
+            {
+              "word": "捣",
+              "pinyin": "dǎo",
+              "meaning": "捣衣"
+            },
+            {
+              "word": "绘",
+              "pinyin": "huì",
+              "meaning": "描绘"
+            },
+            {
+              "word": "率",
+              "pinyin": "shuài",
+              "meaning": "率领"
+            },
+            {
+              "word": "觅",
+              "pinyin": "mì",
+              "meaning": "觅食"
+            },
+            {
+              "word": "耸",
+              "pinyin": "sǒng",
+              "meaning": "高耸"
+            }
+          ],
+          "second_class": [
+            {
+              "word": "倘",
+              "pinyin": "tǎng"
+            },
+            {
+              "word": "霸",
+              "pinyin": "bà"
+            },
+            {
+              "word": "冠",
+              "pinyin": "guān"
+            },
+            {
+              "word": "慰",
+              "pinyin": "wèi"
+            }
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "第二单元 · 科普（琥珀 / 飞向蓝天的恐龙 / 纳米技术）",
+          "source_status": "待人工复核",
+          "first_class": [
+            {
+              "word": "珀",
+              "pinyin": "pò",
+              "meaning": "琥珀"
+            },
+            {
+              "word": "餐",
+              "pinyin": "cān",
+              "meaning": "午餐"
+            },
+            {
+              "word": "晌",
+              "pinyin": "shǎng",
+              "meaning": "晌午"
+            },
+            {
+              "word": "渗",
+              "pinyin": "shèn",
+              "meaning": "渗透"
+            },
+            {
+              "word": "脂",
+              "pinyin": "zhī",
+              "meaning": "松脂"
+            },
+            {
+              "word": "勃",
+              "pinyin": "bó",
+              "meaning": "蓬勃"
+            },
+            {
+              "word": "拭",
+              "pinyin": "shì",
+              "meaning": "擦拭"
+            },
+            {
+              "word": "详",
+              "pinyin": "xiáng",
+              "meaning": "详细"
+            },
+            {
+              "word": "漫",
+              "pinyin": "màn",
+              "meaning": "漫长"
+            },
+            {
+              "word": "推",
+              "pinyin": "tuī",
+              "meaning": "推测"
+            },
+            {
+              "word": "测",
+              "pinyin": "cè",
+              "meaning": "推测"
+            },
+            {
+              "word": "恐",
+              "pinyin": "kǒng",
+              "meaning": "恐龙"
+            },
+            {
+              "word": "顿",
+              "pinyin": "dùn",
+              "meaning": "顿时"
+            },
+            {
+              "word": "谈",
+              "pinyin": "tán",
+              "meaning": "谈论"
+            },
+            {
+              "word": "鸽",
+              "pinyin": "gē",
+              "meaning": "鸽子"
+            },
+            {
+              "word": "盈",
+              "pinyin": "yíng",
+              "meaning": "轻盈"
+            },
+            {
+              "word": "敏",
+              "pinyin": "mǐn",
+              "meaning": "敏捷"
+            },
+            {
+              "word": "捷",
+              "pinyin": "jié",
+              "meaning": "敏捷"
+            },
+            {
+              "word": "崭",
+              "pinyin": "zhǎn",
+              "meaning": "崭新"
+            },
+            {
+              "word": "纳",
+              "pinyin": "nà",
+              "meaning": "纳米"
+            },
+            {
+              "word": "健",
+              "pinyin": "jiàn",
+              "meaning": "健康"
+            }
+          ],
+          "second_class": [
+            {
+              "word": "琥",
+              "pinyin": "hǔ"
+            },
+            {
+              "word": "濒",
+              "pinyin": "bīn"
+            },
+            {
+              "word": "墓",
+              "pinyin": "mù"
+            },
+            {
+              "word": "番",
+              "pinyin": "fān"
+            },
+            {
+              "word": "膨",
+              "pinyin": "péng"
+            }
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "第三单元 · 现代诗（短诗三首 / 绿 / 白桦）",
+          "source_status": "待人工复核",
+          "first_class": [
+            {
+              "word": "漫",
+              "pinyin": "màn",
+              "meaning": "漫天"
+            },
+            {
+              "word": "灭",
+              "pinyin": "miè",
+              "meaning": "熄灭"
+            },
+            {
+              "word": "坠",
+              "pinyin": "zhuì",
+              "meaning": "坠落"
+            },
+            {
+              "word": "藤",
+              "pinyin": "téng",
+              "meaning": "紫藤"
+            },
+            {
+              "word": "萝",
+              "pinyin": "luó",
+              "meaning": "藤萝"
+            },
+            {
+              "word": "蕾",
+              "pinyin": "lěi",
+              "meaning": "花蕾"
+            },
+            {
+              "word": "谅",
+              "pinyin": "liàng",
+              "meaning": "原谅"
+            },
+            {
+              "word": "瓦",
+              "pinyin": "wǎ",
+              "meaning": "瓦片"
+            },
+            {
+              "word": "墨",
+              "pinyin": "mò",
+              "meaning": "墨绿"
+            },
+            {
+              "word": "挤",
+              "pinyin": "jǐ",
+              "meaning": "拥挤"
+            },
+            {
+              "word": "叉",
+              "pinyin": "chā",
+              "meaning": "交叉"
+            },
+            {
+              "word": "桦",
+              "pinyin": "huà",
+              "meaning": "白桦"
+            },
+            {
+              "word": "潇",
+              "pinyin": "xiāo",
+              "meaning": "潇洒"
+            },
+            {
+              "word": "梢",
+              "pinyin": "shāo",
+              "meaning": "树梢"
+            }
+          ],
+          "second_class": [
+            {
+              "word": "摇",
+              "pinyin": "yáo"
+            },
+            {
+              "word": "曳",
+              "pinyin": "yè"
+            },
+            {
+              "word": "徊",
+              "pinyin": "huái"
+            },
+            {
+              "word": "漾",
+              "pinyin": "yàng"
+            }
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "第四单元 · 动物朋友（猫 / 母鸡 / 白鹅）",
+          "source_status": "待人工复核",
+          "first_class": [
+            {
+              "word": "忧",
+              "pinyin": "yōu",
+              "meaning": "忧愁"
+            },
+            {
+              "word": "虑",
+              "pinyin": "lǜ",
+              "meaning": "顾虑"
+            },
+            {
+              "word": "贪",
+              "pinyin": "tān",
+              "meaning": "贪玩"
+            },
+            {
+              "word": "职",
+              "pinyin": "zhí",
+              "meaning": "尽职"
+            },
+            {
+              "word": "屏",
+              "pinyin": "píng",
+              "meaning": "屏息"
+            },
+            {
+              "word": "蹭",
+              "pinyin": "cèng",
+              "meaning": "蹭痒"
+            },
+            {
+              "word": "稿",
+              "pinyin": "gǎo",
+              "meaning": "稿纸"
+            },
+            {
+              "word": "撞",
+              "pinyin": "zhuàng",
+              "meaning": "碰撞"
+            },
+            {
+              "word": "催",
+              "pinyin": "cuī",
+              "meaning": "催促"
+            },
+            {
+              "word": "勉",
+              "pinyin": "miǎn",
+              "meaning": "勉强"
+            },
+            {
+              "word": "慎",
+              "pinyin": "shèn",
+              "meaning": "谨慎"
+            },
+            {
+              "word": "绒",
+              "pinyin": "róng",
+              "meaning": "绒毛"
+            },
+            {
+              "word": "凯",
+              "pinyin": "kǎi",
+              "meaning": "凯旋"
+            },
+            {
+              "word": "纠",
+              "pinyin": "jiū",
+              "meaning": "纠纷"
+            },
+            {
+              "word": "奢",
+              "pinyin": "shē",
+              "meaning": "奢侈"
+            },
+            {
+              "word": "侈",
+              "pinyin": "chǐ",
+              "meaning": "奢侈"
+            },
+            {
+              "word": "叮",
+              "pinyin": "dīng",
+              "meaning": "叮嘱"
+            },
+            {
+              "word": "脾",
+              "pinyin": "pí",
+              "meaning": "脾气"
+            },
+            {
+              "word": "敏",
+              "pinyin": "mǐn",
+              "meaning": "敏捷"
+            },
+            {
+              "word": "捷",
+              "pinyin": "jié",
+              "meaning": "敏捷"
+            }
+          ],
+          "second_class": [
+            {
+              "word": "凄",
+              "pinyin": "qī"
+            },
+            {
+              "word": "惨",
+              "pinyin": "cǎn"
+            },
+            {
+              "word": "跪",
+              "pinyin": "guì"
+            },
+            {
+              "word": "窝",
+              "pinyin": "wō"
+            },
+            {
+              "word": "瓮",
+              "pinyin": "wèng"
+            }
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "第五单元 · 习作（海上日出 / 记金华的双龙洞）",
+          "source_status": "待人工复核",
+          "first_class": [
+            {
+              "word": "紫",
+              "pinyin": "zǐ",
+              "meaning": "紫色"
+            },
+            {
+              "word": "范",
+              "pinyin": "fàn",
+              "meaning": "范围"
+            },
+            {
+              "word": "努",
+              "pinyin": "nǔ",
+              "meaning": "努力"
+            },
+            {
+              "word": "刹",
+              "pinyin": "chà",
+              "meaning": "刹那"
+            },
+            {
+              "word": "镶",
+              "pinyin": "xiāng",
+              "meaning": "镶嵌"
+            },
+            {
+              "word": "辨",
+              "pinyin": "biàn",
+              "meaning": "分辨"
+            },
+            {
+              "word": "烂",
+              "pinyin": "làn",
+              "meaning": "灿烂"
+            },
+            {
+              "word": "替",
+              "pinyin": "tì",
+              "meaning": "代替"
+            },
+            {
+              "word": "扩",
+              "pinyin": "kuò",
+              "meaning": "扩大"
+            },
+            {
+              "word": "臀",
+              "pinyin": "tún",
+              "meaning": "臀部"
+            },
+            {
+              "word": "移",
+              "pinyin": "yí",
+              "meaning": "移动"
+            },
+            {
+              "word": "额",
+              "pinyin": "é",
+              "meaning": "额头"
+            },
+            {
+              "word": "陆",
+              "pinyin": "lù",
+              "meaning": "陆续"
+            },
+            {
+              "word": "乳",
+              "pinyin": "rǔ",
+              "meaning": "钟乳"
+            },
+            {
+              "word": "笋",
+              "pinyin": "sǔn",
+              "meaning": "石笋"
+            },
+            {
+              "word": "浙",
+              "pinyin": "zhè",
+              "meaning": "浙江"
+            },
+            {
+              "word": "罗",
+              "pinyin": "luó",
+              "meaning": "罗列"
+            },
+            {
+              "word": "杜",
+              "pinyin": "dù",
+              "meaning": "杜鹃"
+            },
+            {
+              "word": "鹃",
+              "pinyin": "juān",
+              "meaning": "杜鹃"
+            },
+            {
+              "word": "贱",
+              "pinyin": "jiàn",
+              "meaning": "低贱"
+            }
+          ],
+          "second_class": [
+            {
+              "word": "簇",
+              "pinyin": "cù"
+            },
+            {
+              "word": "漆",
+              "pinyin": "qī"
+            },
+            {
+              "word": "蜿",
+              "pinyin": "wān"
+            },
+            {
+              "word": "蜒",
+              "pinyin": "yán"
+            }
+          ]
+        },
+        {
+          "unit": 6,
+          "title": "第六单元 · 成长（小英雄雨来 / 芦花鞋）",
+          "source_status": "待人工复核",
+          "first_class": [
+            {
+              "word": "晋",
+              "pinyin": "jìn",
+              "meaning": "晋察冀"
+            },
+            {
+              "word": "扒",
+              "pinyin": "pá",
+              "meaning": "扒开"
+            },
+            {
+              "word": "铅",
+              "pinyin": "qiān",
+              "meaning": "铅笔"
+            },
+            {
+              "word": "枕",
+              "pinyin": "zhěn",
+              "meaning": "枕头"
+            },
+            {
+              "word": "炕",
+              "pinyin": "kàng",
+              "meaning": "火炕"
+            },
+            {
+              "word": "尸",
+              "pinyin": "shī",
+              "meaning": "尸首"
+            },
+            {
+              "word": "慌",
+              "pinyin": "huāng",
+              "meaning": "慌张"
+            },
+            {
+              "word": "拧",
+              "pinyin": "nǐng",
+              "meaning": "拧开"
+            },
+            {
+              "word": "塞",
+              "pinyin": "sāi",
+              "meaning": "塞住"
+            },
+            {
+              "word": "壁",
+              "pinyin": "bì",
+              "meaning": "墙壁"
+            },
+            {
+              "word": "鞋",
+              "pinyin": "xié",
+              "meaning": "芦花鞋"
+            },
+            {
+              "word": "葵",
+              "pinyin": "kuí",
+              "meaning": "向日葵"
+            }
+          ],
+          "second_class": [
+            {
+              "word": "苇",
+              "pinyin": "wěi"
+            },
+            {
+              "word": "絮",
+              "pinyin": "xù"
+            },
+            {
+              "word": "吆",
+              "pinyin": "yāo"
+            },
+            {
+              "word": "喝",
+              "pinyin": "hè"
+            }
+          ]
+        },
+        {
+          "unit": 7,
+          "title": "第七单元 · 人物品格（古诗三首 / “诺曼底号”遇难记 / 黄继光）",
+          "source_status": "待人工复核",
+          "first_class": [
+            {
+              "word": "芙",
+              "pinyin": "fú",
+              "meaning": "芙蓉"
+            },
+            {
+              "word": "蓉",
+              "pinyin": "róng",
+              "meaning": "芙蓉"
+            },
+            {
+              "word": "洛",
+              "pinyin": "luò",
+              "meaning": "洛阳"
+            },
+            {
+              "word": "壶",
+              "pinyin": "hú",
+              "meaning": "玉壶"
+            },
+            {
+              "word": "雁",
+              "pinyin": "yàn",
+              "meaning": "大雁"
+            },
+            {
+              "word": "砚",
+              "pinyin": "yàn",
+              "meaning": "砚台"
+            },
+            {
+              "word": "乾",
+              "pinyin": "qián",
+              "meaning": "乾坤"
+            },
+            {
+              "word": "坤",
+              "pinyin": "kūn",
+              "meaning": "乾坤"
+            },
+            {
+              "word": "卓",
+              "pinyin": "zhuó",
+              "meaning": "卓越"
+            },
+            {
+              "word": "剖",
+              "pinyin": "pōu",
+              "meaning": "解剖"
+            },
+            {
+              "word": "维",
+              "pinyin": "wéi",
+              "meaning": "维持"
+            },
+            {
+              "word": "秩",
+              "pinyin": "zhì",
+              "meaning": "秩序"
+            },
+            {
+              "word": "卑",
+              "pinyin": "bēi",
+              "meaning": "卑微"
+            },
+            {
+              "word": "惯",
+              "pinyin": "guàn",
+              "meaning": "习惯"
+            },
+            {
+              "word": "肇",
+              "pinyin": "zhào",
+              "meaning": "肇祸"
+            },
+            {
+              "word": "窟",
+              "pinyin": "kū",
+              "meaning": "窟窿"
+            },
+            {
+              "word": "窿",
+              "pinyin": "lóng",
+              "meaning": "窟窿"
+            }
+          ],
+          "second_class": [
+            {
+              "word": "玛",
+              "pinyin": "mǎ"
+            },
+            {
+              "word": "瑙",
+              "pinyin": "nǎo"
+            },
+            {
+              "word": "湃",
+              "pinyin": "pài"
+            },
+            {
+              "word": "屉",
+              "pinyin": "tì"
+            }
+          ]
+        },
+        {
+          "unit": 8,
+          "title": "第八单元 · 故事（宝葫芦的秘密 / 巨人的花园 / 海的女儿）",
+          "source_status": "待人工复核",
+          "first_class": [
+            {
+              "word": "葫",
+              "pinyin": "hú",
+              "meaning": "葫芦"
+            },
+            {
+              "word": "芦",
+              "pinyin": "lú",
+              "meaning": "葫芦"
+            },
+            {
+              "word": "瓢",
+              "pinyin": "piáo",
+              "meaning": "水瓢"
+            },
+            {
+              "word": "撤",
+              "pinyin": "chè",
+              "meaning": "撤退"
+            },
+            {
+              "word": "规",
+              "pinyin": "guī",
+              "meaning": "规矩"
+            },
+            {
+              "word": "矩",
+              "pinyin": "jǔ",
+              "meaning": "规矩"
+            },
+            {
+              "word": "拽",
+              "pinyin": "zhuài",
+              "meaning": "拉拽"
+            },
+            {
+              "word": "妖",
+              "pinyin": "yāo",
+              "meaning": "妖怪"
+            },
+            {
+              "word": "扔",
+              "pinyin": "rēng",
+              "meaning": "扔掉"
+            },
+            {
+              "word": "拆",
+              "pinyin": "chāi",
+              "meaning": "拆开"
+            },
+            {
+              "word": "墙",
+              "pinyin": "qiáng",
+              "meaning": "围墙"
+            },
+            {
+              "word": "增",
+              "pinyin": "zēng",
+              "meaning": "增添"
+            },
+            {
+              "word": "罕",
+              "pinyin": "hǎn",
+              "meaning": "罕见"
+            },
+            {
+              "word": "囱",
+              "pinyin": "cōng",
+              "meaning": "烟囱"
+            },
+            {
+              "word": "孤",
+              "pinyin": "gū",
+              "meaning": "孤独"
+            },
+            {
+              "word": "零",
+              "pinyin": "líng",
+              "meaning": "孤零"
+            },
+            {
+              "word": "覆",
+              "pinyin": "fù",
+              "meaning": "覆盖"
+            }
+          ],
+          "second_class": [
+            {
+              "word": "撵",
+              "pinyin": "niǎn"
+            },
+            {
+              "word": "呈",
+              "pinyin": "chéng"
+            },
+            {
+              "word": "锣",
+              "pinyin": "luó"
+            },
+            {
+              "word": "跺",
+              "pinyin": "duò"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

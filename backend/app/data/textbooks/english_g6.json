@@ -1,0 +1,210 @@
+{
+  "subject": "english",
+  "grade": 6,
+  "version": "PEP人教版",
+  "source_name": "国家中小学智慧教育平台 / 人教社中小学教材电子版（PEP三年级起点 Book 6）",
+  "source_url": "https://jc.pep.com.cn/",
+  "source_verified": "上册已对照 diyifanwen 单词表核对（逐单元一致，确认当前版非旧版，补 by taxi）：https://m.diyifanwen.com/jiaoan/xiaoxueliunianjiyingyujiaoan/858306.html",
+  "semesters": {
+    "上册": {
+      "units": [
+        {
+          "unit": 1,
+          "title": "Unit 1 How can I get there?",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "science museum", "phonetic": "", "meaning": "科学博物馆" },
+            { "word": "post office", "phonetic": "", "meaning": "邮局" },
+            { "word": "bookstore", "phonetic": "/ˈbʊkstɔː/", "meaning": "书店" },
+            { "word": "cinema", "phonetic": "/ˈsɪnəmə/", "meaning": "电影院" },
+            { "word": "hospital", "phonetic": "/ˈhɒspɪtl/", "meaning": "医院" },
+            { "word": "crossing", "phonetic": "/ˈkrɒsɪŋ/", "meaning": "十字路口" },
+            { "word": "turn left", "phonetic": "", "meaning": "向左转" },
+            { "word": "turn right", "phonetic": "", "meaning": "向右转" },
+            { "word": "go straight", "phonetic": "", "meaning": "直走" }
+          ],
+          "phrases": [],
+          "sentences": [
+            { "text": "How can I get to the hospital? — Turn left at the crossing.", "meaning": "我怎么去医院？——在路口左转。" }
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Unit 2 Ways to go to school",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "on foot", "phonetic": "", "meaning": "步行" },
+            { "word": "by bus", "phonetic": "", "meaning": "乘公共汽车" },
+            { "word": "by train", "phonetic": "", "meaning": "乘火车" },
+            { "word": "by subway", "phonetic": "", "meaning": "乘地铁" },
+            { "word": "by plane", "phonetic": "", "meaning": "乘飞机" },
+            { "word": "by ship", "phonetic": "", "meaning": "乘轮船" },
+            { "word": "by taxi", "phonetic": "", "meaning": "乘出租车" },
+            { "word": "traffic light", "phonetic": "", "meaning": "交通灯" },
+            { "word": "traffic rule", "phonetic": "", "meaning": "交通规则" },
+            { "word": "slow down", "phonetic": "", "meaning": "慢下来" }
+          ],
+          "phrases": [],
+          "sentences": [
+            { "text": "How do you go to school? — I go on foot.", "meaning": "你怎么去上学？——我步行去。" }
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Unit 3 My weekend plan",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "visit", "phonetic": "/ˈvɪzɪt/", "meaning": "拜访" },
+            { "word": "take a trip", "phonetic": "", "meaning": "去旅行" },
+            { "word": "read a magazine", "phonetic": "", "meaning": "读杂志" },
+            { "word": "go to the cinema", "phonetic": "", "meaning": "去看电影" },
+            { "word": "this morning", "phonetic": "", "meaning": "今天上午" },
+            { "word": "tonight", "phonetic": "/təˈnaɪt/", "meaning": "今晚" },
+            { "word": "tomorrow", "phonetic": "/təˈmɒrəʊ/", "meaning": "明天" },
+            { "word": "next week", "phonetic": "", "meaning": "下周" }
+          ],
+          "phrases": [],
+          "sentences": [
+            { "text": "What are you going to do tomorrow? — I'm going to …", "meaning": "你明天打算做什么？——我打算……" }
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Unit 4 I have a pen pal",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "pen pal", "phonetic": "", "meaning": "笔友" },
+            { "word": "hobby", "phonetic": "/ˈhɒbi/", "meaning": "爱好" },
+            { "word": "ride a bike", "phonetic": "", "meaning": "骑自行车" },
+            { "word": "dive", "phonetic": "/daɪv/", "meaning": "跳水" },
+            { "word": "play the violin", "phonetic": "", "meaning": "拉小提琴" },
+            { "word": "make kites", "phonetic": "", "meaning": "制作风筝" },
+            { "word": "collect stamps", "phonetic": "", "meaning": "集邮" }
+          ],
+          "phrases": [],
+          "sentences": [
+            { "text": "What's your hobby? — I like collecting stamps.", "meaning": "你的爱好是什么？——我喜欢集邮。" }
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Unit 5 What does he do?",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "factory worker", "phonetic": "", "meaning": "工厂工人" },
+            { "word": "postman", "phonetic": "/ˈpəʊstmən/", "meaning": "邮递员" },
+            { "word": "businessman", "phonetic": "/ˈbɪznəsmæn/", "meaning": "商人" },
+            { "word": "police officer", "phonetic": "", "meaning": "警察" },
+            { "word": "fisherman", "phonetic": "/ˈfɪʃəmən/", "meaning": "渔民" },
+            { "word": "scientist", "phonetic": "/ˈsaɪəntɪst/", "meaning": "科学家" },
+            { "word": "pilot", "phonetic": "/ˈpaɪlət/", "meaning": "飞行员" },
+            { "word": "coach", "phonetic": "/kəʊtʃ/", "meaning": "教练" }
+          ],
+          "phrases": [],
+          "sentences": [
+            { "text": "What does your father do? — He's a coach.", "meaning": "你爸爸是做什么的？——他是教练。" }
+          ]
+        },
+        {
+          "unit": 6,
+          "title": "Unit 6 How do you feel?",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "angry", "phonetic": "/ˈæŋɡri/", "meaning": "生气的" },
+            { "word": "afraid", "phonetic": "/əˈfreɪd/", "meaning": "害怕的" },
+            { "word": "sad", "phonetic": "/sæd/", "meaning": "难过的" },
+            { "word": "worried", "phonetic": "/ˈwʌrid/", "meaning": "担心的" },
+            { "word": "happy", "phonetic": "/ˈhæpi/", "meaning": "高兴的" },
+            { "word": "see a doctor", "phonetic": "", "meaning": "看医生" },
+            { "word": "wear warm clothes", "phonetic": "", "meaning": "穿暖和的衣服" },
+            { "word": "do more exercise", "phonetic": "", "meaning": "多锻炼" }
+          ],
+          "phrases": [],
+          "sentences": [
+            { "text": "How does he feel? — He's worried.", "meaning": "他感觉怎么样？——他很担心。" }
+          ]
+        }
+      ]
+    },
+    "下册": {
+      "units": [
+        {
+          "unit": 1,
+          "title": "Unit 1 How tall are you?",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "taller", "phonetic": "/ˈtɔːlə/", "meaning": "更高的" },
+            { "word": "shorter", "phonetic": "/ˈʃɔːtə/", "meaning": "更矮的" },
+            { "word": "stronger", "phonetic": "/ˈstrɒŋɡə/", "meaning": "更强壮的" },
+            { "word": "older", "phonetic": "/ˈəʊldə/", "meaning": "年龄更大的" },
+            { "word": "younger", "phonetic": "/ˈjʌŋɡə/", "meaning": "更年轻的" },
+            { "word": "bigger", "phonetic": "/ˈbɪɡə/", "meaning": "更大的" },
+            { "word": "heavier", "phonetic": "/ˈheviə/", "meaning": "更重的" },
+            { "word": "longer", "phonetic": "/ˈlɒŋɡə/", "meaning": "更长的" },
+            { "word": "thinner", "phonetic": "/ˈθɪnə/", "meaning": "更瘦的" }
+          ],
+          "phrases": [],
+          "sentences": [
+            { "text": "How tall are you? — I'm 1.6 metres.", "meaning": "你多高？——我1.6米。" },
+            { "text": "I'm taller than you.", "meaning": "我比你高。" }
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Unit 2 Last weekend",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "cleaned", "phonetic": "/kliːnd/", "meaning": "打扫（过去式）" },
+            { "word": "stayed", "phonetic": "/steɪd/", "meaning": "停留（过去式）" },
+            { "word": "washed", "phonetic": "/wɒʃt/", "meaning": "洗（过去式）" },
+            { "word": "watched", "phonetic": "/wɒtʃt/", "meaning": "看（过去式）" },
+            { "word": "played", "phonetic": "/pleɪd/", "meaning": "玩（过去式）" },
+            { "word": "did", "phonetic": "/dɪd/", "meaning": "做（过去式）" },
+            { "word": "went", "phonetic": "/went/", "meaning": "去（过去式）" }
+          ],
+          "phrases": [],
+          "sentences": [
+            { "text": "What did you do last weekend? — I cleaned my room.", "meaning": "上周末你做了什么？——我打扫了房间。" }
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Unit 3 Where did you go?",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "went", "phonetic": "/went/", "meaning": "去（过去式）" },
+            { "word": "ate", "phonetic": "/eɪt/", "meaning": "吃（过去式）" },
+            { "word": "hurt", "phonetic": "/hɜːt/", "meaning": "受伤（过去式）" },
+            { "word": "took pictures", "phonetic": "", "meaning": "拍照（过去式）" },
+            { "word": "bought presents", "phonetic": "", "meaning": "买礼物（过去式）" },
+            { "word": "rode a horse", "phonetic": "", "meaning": "骑马（过去式）" },
+            { "word": "last year", "phonetic": "", "meaning": "去年" }
+          ],
+          "phrases": [],
+          "sentences": [
+            { "text": "Where did you go on your holiday? — I went to Xinjiang.", "meaning": "假期你去哪了？——我去了新疆。" }
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Unit 4 Then and now",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "dining hall", "phonetic": "", "meaning": "餐厅" },
+            { "word": "grass", "phonetic": "/ɡrɑːs/", "meaning": "草地" },
+            { "word": "ground", "phonetic": "/ɡraʊnd/", "meaning": "地面" },
+            { "word": "gym", "phonetic": "/dʒɪm/", "meaning": "体育馆" },
+            { "word": "ice-cream", "phonetic": "", "meaning": "冰激凌" },
+            { "word": "were", "phonetic": "/wɜː/", "meaning": "是（was的复数过去式）" },
+            { "word": "was", "phonetic": "/wɒz/", "meaning": "是（过去式）" },
+            { "word": "before", "phonetic": "/bɪˈfɔː/", "meaning": "以前" }
+          ],
+          "phrases": [],
+          "sentences": [
+            { "text": "There was no library before. Now there is one.", "meaning": "以前没有图书馆，现在有了。" }
+          ]
+        }
+      ]
+    }
+  }
+}

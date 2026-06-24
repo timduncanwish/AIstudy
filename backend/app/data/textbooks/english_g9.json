@@ -1,0 +1,138 @@
+{
+  "subject": "english",
+  "grade": 9,
+  "version": "人教版（新目标 Go for it!）",
+  "source_name": "人教社中小学教材电子版（义务教育教科书 英语 九年级·新目标，全一册）",
+  "source_url": "https://jc.pep.com.cn/",
+  "data_note": "人教版九年级英语为全一册（Units 1-14），本表按教学进度拆分为上学期/下学期参考，每单元取代表性单词示例，完整词表以官方教材为准，全部标待人工复核。",
+  "semesters": {
+    "上册": {
+      "units": [
+        {
+          "unit": 1,
+          "title": "Unit 1 How can we become good learners?",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "aloud", "phonetic": "/əˈlaʊd/", "meaning": "大声地" },
+            { "word": "pronunciation", "phonetic": "/prəˌnʌnsiˈeɪʃn/", "meaning": "发音" },
+            { "word": "memorize", "phonetic": "/ˈmeməraɪz/", "meaning": "记忆，背诵" },
+            { "word": "grammar", "phonetic": "/ˈɡræmə/", "meaning": "语法" },
+            { "word": "ability", "phonetic": "/əˈbɪləti/", "meaning": "能力" },
+            { "word": "knowledge", "phonetic": "/ˈnɒlɪdʒ/", "meaning": "知识" }
+          ],
+          "phrases": [],
+          "sentences": [ { "text": "How do you study for a test? — By making word cards.", "meaning": "你怎么备考？——通过做单词卡片。" } ]
+        },
+        {
+          "unit": 2,
+          "title": "Unit 2 I think that mooncakes are delicious!",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "mooncake", "phonetic": "/ˈmuːnkeɪk/", "meaning": "月饼" },
+            { "word": "lantern", "phonetic": "/ˈlæntən/", "meaning": "灯笼" },
+            { "word": "tradition", "phonetic": "/trəˈdɪʃn/", "meaning": "传统" },
+            { "word": "folk", "phonetic": "/fəʊk/", "meaning": "民间的" },
+            { "word": "celebrate", "phonetic": "/ˈselɪbreɪt/", "meaning": "庆祝" },
+            { "word": "gather", "phonetic": "/ˈɡæðə/", "meaning": "聚集" }
+          ],
+          "phrases": [],
+          "sentences": [ { "text": "I think that mooncakes are delicious!", "meaning": "我认为月饼很美味！" } ]
+        },
+        {
+          "unit": 3,
+          "title": "Unit 3 Could you please tell me where the restrooms are?",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "restroom", "phonetic": "/ˈrestruːm/", "meaning": "洗手间" },
+            { "word": "stamp", "phonetic": "/stæmp/", "meaning": "邮票" },
+            { "word": "bathroom", "phonetic": "/ˈbɑːθruːm/", "meaning": "浴室，盥洗室" },
+            { "word": "staff", "phonetic": "/stɑːf/", "meaning": "全体职员" },
+            { "word": "polite", "phonetic": "/pəˈlaɪt/", "meaning": "有礼貌的" },
+            { "word": "direction", "phonetic": "/dəˈrekʃn/", "meaning": "方向" }
+          ],
+          "phrases": [],
+          "sentences": [ { "text": "Could you please tell me where the restrooms are?", "meaning": "你能告诉我洗手间在哪里吗？" } ]
+        },
+        {
+          "unit": 4,
+          "title": "Unit 4 I used to be afraid of the dark",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "used to", "phonetic": "", "meaning": "过去常常" },
+            { "word": "afraid", "phonetic": "/əˈfreɪd/", "meaning": "害怕的" },
+            { "word": "insect", "phonetic": "/ˈɪnsekt/", "meaning": "昆虫" },
+            { "word": "private", "phonetic": "/ˈpraɪvət/", "meaning": "私人的" },
+            { "word": "change", "phonetic": "/tʃeɪndʒ/", "meaning": "改变" },
+            { "word": "deal with", "phonetic": "", "meaning": "处理，应付" }
+          ],
+          "phrases": [],
+          "sentences": [ { "text": "I used to be afraid of the dark.", "meaning": "我过去害怕黑暗。" } ]
+        }
+      ]
+    },
+    "下册": {
+      "units": [
+        {
+          "unit": 7,
+          "title": "Unit 7 Teenagers should be allowed to choose their own clothes",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "teenager", "phonetic": "/ˈtiːneɪdʒə/", "meaning": "青少年" },
+            { "word": "allow", "phonetic": "/əˈlaʊ/", "meaning": "允许" },
+            { "word": "choose", "phonetic": "/tʃuːz/", "meaning": "选择" },
+            { "word": "license", "phonetic": "/ˈlaɪsns/", "meaning": "执照" },
+            { "word": "society", "phonetic": "/səˈsaɪəti/", "meaning": "社会" },
+            { "word": "education", "phonetic": "/ˌedʒuˈkeɪʃn/", "meaning": "教育" }
+          ],
+          "phrases": [],
+          "sentences": [ { "text": "Teenagers should be allowed to choose their own clothes.", "meaning": "应该允许青少年选择自己的衣服。" } ]
+        },
+        {
+          "unit": 8,
+          "title": "Unit 8 It must belong to Carla",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "belong", "phonetic": "/bɪˈlɒŋ/", "meaning": "属于" },
+            { "word": "author", "phonetic": "/ˈɔːθə/", "meaning": "作者" },
+            { "word": "picnic", "phonetic": "/ˈpɪknɪk/", "meaning": "野餐" },
+            { "word": "owner", "phonetic": "/ˈəʊnə/", "meaning": "物主，所有者" },
+            { "word": "mystery", "phonetic": "/ˈmɪstri/", "meaning": "神秘的事物" },
+            { "word": "happen", "phonetic": "/ˈhæpən/", "meaning": "发生" }
+          ],
+          "phrases": [],
+          "sentences": [ { "text": "Whose book is this? — It must belong to Carla.", "meaning": "这是谁的书？——一定是卡拉的。" } ]
+        },
+        {
+          "unit": 9,
+          "title": "Unit 9 I like music that I can dance to",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "prefer", "phonetic": "/prɪˈfɜː/", "meaning": "更喜欢" },
+            { "word": "lyric", "phonetic": "/ˈlɪrɪk/", "meaning": "歌词" },
+            { "word": "gentle", "phonetic": "/ˈdʒentl/", "meaning": "温柔的" },
+            { "word": "electronic", "phonetic": "/ɪˌlekˈtrɒnɪk/", "meaning": "电子的" },
+            { "word": "spare", "phonetic": "/speə/", "meaning": "空闲的" },
+            { "word": "recall", "phonetic": "/rɪˈkɔːl/", "meaning": "回忆起" }
+          ],
+          "phrases": [],
+          "sentences": [ { "text": "I like music that I can dance to.", "meaning": "我喜欢我能随之起舞的音乐。" } ]
+        },
+        {
+          "unit": 10,
+          "title": "Unit 10 You're supposed to shake hands",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "be supposed to", "phonetic": "", "meaning": "应该，被期望" },
+            { "word": "shake hands", "phonetic": "", "meaning": "握手" },
+            { "word": "bow", "phonetic": "/baʊ/", "meaning": "鞠躬" },
+            { "word": "kiss", "phonetic": "/kɪs/", "meaning": "亲吻" },
+            { "word": "custom", "phonetic": "/ˈkʌstəm/", "meaning": "风俗，习惯" },
+            { "word": "manner", "phonetic": "/ˈmænə/", "meaning": "礼貌，规矩" }
+          ],
+          "phrases": [],
+          "sentences": [ { "text": "You're supposed to shake hands.", "meaning": "你应该握手（问候）。" } ]
+        }
+      ]
+    }
+  }
+}

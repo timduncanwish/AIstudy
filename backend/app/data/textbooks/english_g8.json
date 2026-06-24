@@ -1,0 +1,198 @@
+{
+  "subject": "english",
+  "grade": 8,
+  "version": "人教版（新目标 Go for it!）",
+  "source_name": "人教社中小学教材电子版（义务教育教科书 英语 八年级·新目标）",
+  "source_url": "https://jc.pep.com.cn/",
+  "data_note": "初中英语按各单元词汇表整理，每单元取代表性单词示例，完整词表以官方教材为准，全部标待人工复核。",
+  "semesters": {
+    "上册": {
+      "units": [
+        {
+          "unit": 1,
+          "title": "Unit 1 Where did you go on vacation?",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "vacation", "phonetic": "/vəˈkeɪʃn/", "meaning": "假期" },
+            { "word": "anyone", "phonetic": "/ˈeniwʌn/", "meaning": "任何人" },
+            { "word": "wonderful", "phonetic": "/ˈwʌndəfl/", "meaning": "极好的" },
+            { "word": "few", "phonetic": "/fjuː/", "meaning": "很少的，几个" },
+            { "word": "most", "phonetic": "/məʊst/", "meaning": "大多数" },
+            { "word": "delicious", "phonetic": "/dɪˈlɪʃəs/", "meaning": "美味的" }
+          ],
+          "phrases": [],
+          "sentences": [ { "text": "Where did you go on vacation? — I went to the mountains.", "meaning": "你去哪里度假了？——我去爬山了。" } ]
+        },
+        {
+          "unit": 2,
+          "title": "Unit 2 How often do you exercise?",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "exercise", "phonetic": "/ˈeksəsaɪz/", "meaning": "锻炼" },
+            { "word": "always", "phonetic": "/ˈɔːlweɪz/", "meaning": "总是" },
+            { "word": "usually", "phonetic": "/ˈjuːʒuəli/", "meaning": "通常" },
+            { "word": "sometimes", "phonetic": "/ˈsʌmtaɪmz/", "meaning": "有时" },
+            { "word": "hardly ever", "phonetic": "", "meaning": "几乎从不" },
+            { "word": "healthy", "phonetic": "/ˈhelθi/", "meaning": "健康的" }
+          ],
+          "phrases": [],
+          "sentences": [ { "text": "How often do you exercise? — Three times a week.", "meaning": "你多久锻炼一次？——一周三次。" } ]
+        },
+        {
+          "unit": 3,
+          "title": "Unit 3 I'm more outgoing than my sister",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "outgoing", "phonetic": "/ˈaʊtɡəʊɪŋ/", "meaning": "外向的" },
+            { "word": "funny", "phonetic": "/ˈfʌni/", "meaning": "滑稽的" },
+            { "word": "serious", "phonetic": "/ˈsɪəriəs/", "meaning": "严肃的" },
+            { "word": "quiet", "phonetic": "/ˈkwaɪət/", "meaning": "安静的" },
+            { "word": "talented", "phonetic": "/ˈtæləntɪd/", "meaning": "有才能的" },
+            { "word": "than", "phonetic": "/ðæn/", "meaning": "比" }
+          ],
+          "phrases": [],
+          "sentences": [ { "text": "I'm more outgoing than my sister.", "meaning": "我比我妹妹更外向。" } ]
+        },
+        {
+          "unit": 4,
+          "title": "Unit 4 What's the best movie theater?",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "theater", "phonetic": "/ˈθɪətə/", "meaning": "剧院，电影院" },
+            { "word": "comfortable", "phonetic": "/ˈkʌmftəbl/", "meaning": "舒适的" },
+            { "word": "cheaply", "phonetic": "/ˈtʃiːpli/", "meaning": "便宜地" },
+            { "word": "popular", "phonetic": "/ˈpɒpjələ/", "meaning": "受欢迎的" },
+            { "word": "service", "phonetic": "/ˈsɜːvɪs/", "meaning": "服务" },
+            { "word": "screen", "phonetic": "/skriːn/", "meaning": "屏幕" }
+          ],
+          "phrases": [],
+          "sentences": [ { "text": "What's the best movie theater in town?", "meaning": "城里最好的电影院是哪家？" } ]
+        },
+        {
+          "unit": 5,
+          "title": "Unit 5 Do you want to watch a game show?",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "game show", "phonetic": "", "meaning": "游戏节目" },
+            { "word": "talk show", "phonetic": "", "meaning": "脱口秀" },
+            { "word": "comedy", "phonetic": "/ˈkɒmədi/", "meaning": "喜剧" },
+            { "word": "news", "phonetic": "/njuːz/", "meaning": "新闻" },
+            { "word": "expect", "phonetic": "/ɪkˈspekt/", "meaning": "期望" },
+            { "word": "plan", "phonetic": "/plæn/", "meaning": "计划" }
+          ],
+          "phrases": [],
+          "sentences": [ { "text": "Do you want to watch a game show?", "meaning": "你想看游戏节目吗？" } ]
+        },
+        {
+          "unit": 6,
+          "title": "Unit 6 I'm going to study computer science",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "grow up", "phonetic": "", "meaning": "成长，长大" },
+            { "word": "computer programmer", "phonetic": "", "meaning": "电脑程序员" },
+            { "word": "engineer", "phonetic": "/ˌendʒɪˈnɪə/", "meaning": "工程师" },
+            { "word": "pilot", "phonetic": "/ˈpaɪlət/", "meaning": "飞行员" },
+            { "word": "dream", "phonetic": "/driːm/", "meaning": "梦想" },
+            { "word": "resolution", "phonetic": "/ˌrezəˈluːʃn/", "meaning": "决心，决定" }
+          ],
+          "phrases": [],
+          "sentences": [ { "text": "What are you going to be when you grow up?", "meaning": "你长大想做什么？" } ]
+        }
+      ]
+    },
+    "下册": {
+      "units": [
+        {
+          "unit": 1,
+          "title": "Unit 1 What's the matter?",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "matter", "phonetic": "/ˈmætə/", "meaning": "问题，麻烦事" },
+            { "word": "headache", "phonetic": "/ˈhedeɪk/", "meaning": "头痛" },
+            { "word": "fever", "phonetic": "/ˈfiːvə/", "meaning": "发烧" },
+            { "word": "cough", "phonetic": "/kɒf/", "meaning": "咳嗽" },
+            { "word": "stomachache", "phonetic": "/ˈstʌməkeɪk/", "meaning": "胃痛" },
+            { "word": "rest", "phonetic": "/rest/", "meaning": "休息" }
+          ],
+          "phrases": [],
+          "sentences": [ { "text": "What's the matter? — I have a headache.", "meaning": "怎么了？——我头痛。" } ]
+        },
+        {
+          "unit": 2,
+          "title": "Unit 2 I'll help to clean up the city parks",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "clean up", "phonetic": "", "meaning": "打扫干净" },
+            { "word": "cheer up", "phonetic": "", "meaning": "使振奋，使高兴" },
+            { "word": "volunteer", "phonetic": "/ˌvɒlənˈtɪə/", "meaning": "志愿者" },
+            { "word": "hunger", "phonetic": "/ˈhʌŋɡə/", "meaning": "饥饿" },
+            { "word": "homeless", "phonetic": "/ˈhəʊmləs/", "meaning": "无家可归的" },
+            { "word": "charity", "phonetic": "/ˈtʃærəti/", "meaning": "慈善机构" }
+          ],
+          "phrases": [],
+          "sentences": [ { "text": "I'll help to clean up the city parks.", "meaning": "我会帮忙清扫城市公园。" } ]
+        },
+        {
+          "unit": 3,
+          "title": "Unit 3 Could you please clean your room?",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "do the dishes", "phonetic": "", "meaning": "洗餐具" },
+            { "word": "take out the rubbish", "phonetic": "", "meaning": "倒垃圾" },
+            { "word": "make the bed", "phonetic": "", "meaning": "整理床铺" },
+            { "word": "borrow", "phonetic": "/ˈbɒrəʊ/", "meaning": "借入" },
+            { "word": "chore", "phonetic": "/tʃɔː/", "meaning": "家务活" },
+            { "word": "neither", "phonetic": "/ˈnaɪðə/", "meaning": "两者都不" }
+          ],
+          "phrases": [],
+          "sentences": [ { "text": "Could you please clean your room?", "meaning": "你能打扫一下你的房间吗？" } ]
+        },
+        {
+          "unit": 4,
+          "title": "Unit 4 Why don't you talk to your parents?",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "allow", "phonetic": "/əˈlaʊ/", "meaning": "允许" },
+            { "word": "wrong", "phonetic": "/rɒŋ/", "meaning": "错误的" },
+            { "word": "argue", "phonetic": "/ˈɑːɡjuː/", "meaning": "争吵" },
+            { "word": "cloud", "phonetic": "/klaʊd/", "meaning": "云" },
+            { "word": "offer", "phonetic": "/ˈɒfə/", "meaning": "提供" },
+            { "word": "pressure", "phonetic": "/ˈpreʃə/", "meaning": "压力" }
+          ],
+          "phrases": [],
+          "sentences": [ { "text": "Why don't you talk to your parents?", "meaning": "你为什么不和父母谈谈呢？" } ]
+        },
+        {
+          "unit": 5,
+          "title": "Unit 5 What were you doing when the rainstorm came?",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "rainstorm", "phonetic": "/ˈreɪnstɔːm/", "meaning": "暴风雨" },
+            { "word": "alarm", "phonetic": "/əˈlɑːm/", "meaning": "闹钟，警报" },
+            { "word": "suddenly", "phonetic": "/ˈsʌdənli/", "meaning": "突然" },
+            { "word": "pick up", "phonetic": "", "meaning": "接电话；捡起" },
+            { "word": "wind", "phonetic": "/wɪnd/", "meaning": "风" },
+            { "word": "report", "phonetic": "/rɪˈpɔːt/", "meaning": "报道" }
+          ],
+          "phrases": [],
+          "sentences": [ { "text": "What were you doing when the rainstorm came?", "meaning": "暴风雨来时你在做什么？" } ]
+        },
+        {
+          "unit": 6,
+          "title": "Unit 6 An old man tried to move the mountains",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "god", "phonetic": "/ɡɒd/", "meaning": "神，上帝" },
+            { "word": "remind", "phonetic": "/rɪˈmaɪnd/", "meaning": "提醒，使想起" },
+            { "word": "weak", "phonetic": "/wiːk/", "meaning": "虚弱的" },
+            { "word": "magic", "phonetic": "/ˈmædʒɪk/", "meaning": "魔法的" },
+            { "word": "stranger", "phonetic": "/ˈstreɪndʒə/", "meaning": "陌生人" },
+            { "word": "western", "phonetic": "/ˈwestən/", "meaning": "西方的" }
+          ],
+          "phrases": [],
+          "sentences": [ { "text": "An old man tried to move the mountains.", "meaning": "一位老人试图移走大山。" } ]
+        }
+      ]
+    }
+  }
+}

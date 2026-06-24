@@ -1,0 +1,282 @@
+{
+  "subject": "english",
+  "grade": 3,
+  "version": "PEP人教版",
+  "source_name": "国家中小学智慧教育平台 / 人教社中小学教材电子版（PEP三年级起点）",
+  "source_url": "https://jc.pep.com.cn/",
+  "source_verified": "上册已对照 diyifanwen 单词表核对，与当前版一致：https://m.diyifanwen.com/jiaoan/xiaoxuesannianjiyingyujiaoan/16322031426048923.htm",
+  "semesters": {
+    "上册": {
+      "units": [
+        {
+          "unit": 1,
+          "title": "Unit 1 Hello!",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "pen", "phonetic": "/pen/", "meaning": "钢笔" },
+            { "word": "pencil", "phonetic": "/ˈpensl/", "meaning": "铅笔" },
+            { "word": "pencil case", "phonetic": "", "meaning": "铅笔盒" },
+            { "word": "ruler", "phonetic": "/ˈruːlə/", "meaning": "尺子" },
+            { "word": "eraser", "phonetic": "/ɪˈreɪzə/", "meaning": "橡皮" },
+            { "word": "crayon", "phonetic": "/ˈkreɪən/", "meaning": "蜡笔" },
+            { "word": "book", "phonetic": "/bʊk/", "meaning": "书" },
+            { "word": "bag", "phonetic": "/bæɡ/", "meaning": "书包；袋子" },
+            { "word": "sharpener", "phonetic": "/ˈʃɑːpnə/", "meaning": "卷笔刀" },
+            { "word": "school", "phonetic": "/skuːl/", "meaning": "学校" }
+          ],
+          "phrases": [],
+          "sentences": [
+            { "text": "Hello! / Hi!", "meaning": "你好！" },
+            { "text": "Goodbye! / Bye!", "meaning": "再见！" },
+            { "text": "What's your name? — My name's …", "meaning": "你叫什么名字？——我叫……" }
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Unit 2 Look at me",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "head", "phonetic": "/hed/", "meaning": "头" },
+            { "word": "face", "phonetic": "/feɪs/", "meaning": "脸" },
+            { "word": "ear", "phonetic": "/ɪə/", "meaning": "耳朵" },
+            { "word": "eye", "phonetic": "/aɪ/", "meaning": "眼睛" },
+            { "word": "nose", "phonetic": "/nəʊz/", "meaning": "鼻子" },
+            { "word": "mouth", "phonetic": "/maʊθ/", "meaning": "嘴" },
+            { "word": "arm", "phonetic": "/ɑːm/", "meaning": "手臂" },
+            { "word": "hand", "phonetic": "/hænd/", "meaning": "手" },
+            { "word": "finger", "phonetic": "/ˈfɪŋɡə/", "meaning": "手指" },
+            { "word": "leg", "phonetic": "/leɡ/", "meaning": "腿" },
+            { "word": "foot", "phonetic": "/fʊt/", "meaning": "脚" },
+            { "word": "body", "phonetic": "/ˈbɒdi/", "meaning": "身体" }
+          ],
+          "phrases": [],
+          "sentences": [
+            { "text": "Good morning! / Good afternoon!", "meaning": "早上好！/ 下午好！" },
+            { "text": "Let's go to school.", "meaning": "让我们去上学吧。" }
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Unit 3 Let's paint",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "red", "phonetic": "/red/", "meaning": "红色" },
+            { "word": "yellow", "phonetic": "/ˈjeləʊ/", "meaning": "黄色" },
+            { "word": "green", "phonetic": "/ɡriːn/", "meaning": "绿色" },
+            { "word": "blue", "phonetic": "/bluː/", "meaning": "蓝色" },
+            { "word": "purple", "phonetic": "/ˈpɜːpl/", "meaning": "紫色" },
+            { "word": "white", "phonetic": "/waɪt/", "meaning": "白色" },
+            { "word": "black", "phonetic": "/blæk/", "meaning": "黑色" },
+            { "word": "orange", "phonetic": "/ˈɒrɪndʒ/", "meaning": "橙色" },
+            { "word": "pink", "phonetic": "/pɪŋk/", "meaning": "粉色" },
+            { "word": "brown", "phonetic": "/braʊn/", "meaning": "棕色" }
+          ],
+          "phrases": [],
+          "sentences": [
+            { "text": "How are you? — I'm fine, thank you.", "meaning": "你好吗？——我很好，谢谢。" }
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Unit 4 We love animals",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "cat", "phonetic": "/kæt/", "meaning": "猫" },
+            { "word": "dog", "phonetic": "/dɒɡ/", "meaning": "狗" },
+            { "word": "monkey", "phonetic": "/ˈmʌŋki/", "meaning": "猴子" },
+            { "word": "panda", "phonetic": "/ˈpændə/", "meaning": "熊猫" },
+            { "word": "rabbit", "phonetic": "/ˈræbɪt/", "meaning": "兔子" },
+            { "word": "duck", "phonetic": "/dʌk/", "meaning": "鸭子" },
+            { "word": "pig", "phonetic": "/pɪɡ/", "meaning": "猪" },
+            { "word": "bird", "phonetic": "/bɜːd/", "meaning": "鸟" },
+            { "word": "bear", "phonetic": "/beə/", "meaning": "熊" },
+            { "word": "elephant", "phonetic": "/ˈelɪfənt/", "meaning": "大象" },
+            { "word": "mouse", "phonetic": "/maʊs/", "meaning": "老鼠" },
+            { "word": "squirrel", "phonetic": "/ˈskwɪrəl/", "meaning": "松鼠" }
+          ],
+          "phrases": [],
+          "sentences": [
+            { "text": "Look at the …! It's so big/cute.", "meaning": "看那只……！它真大／真可爱。" }
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Unit 5 Let's eat",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "cake", "phonetic": "/keɪk/", "meaning": "蛋糕" },
+            { "word": "bread", "phonetic": "/bred/", "meaning": "面包" },
+            { "word": "hamburger", "phonetic": "/ˈhæmbɜːɡə/", "meaning": "汉堡包" },
+            { "word": "hot dog", "phonetic": "", "meaning": "热狗" },
+            { "word": "chicken", "phonetic": "/ˈtʃɪkɪn/", "meaning": "鸡肉" },
+            { "word": "French fries", "phonetic": "", "meaning": "炸薯条" },
+            { "word": "Coke", "phonetic": "/kəʊk/", "meaning": "可乐" },
+            { "word": "juice", "phonetic": "/dʒuːs/", "meaning": "果汁" },
+            { "word": "milk", "phonetic": "/mɪlk/", "meaning": "牛奶" },
+            { "word": "water", "phonetic": "/ˈwɔːtə/", "meaning": "水" },
+            { "word": "tea", "phonetic": "/tiː/", "meaning": "茶" },
+            { "word": "coffee", "phonetic": "/ˈkɒfi/", "meaning": "咖啡" }
+          ],
+          "phrases": [],
+          "sentences": [
+            { "text": "Have some …, please. — Thank you.", "meaning": "请吃点……。——谢谢。" }
+          ]
+        },
+        {
+          "unit": 6,
+          "title": "Unit 6 Happy birthday",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "one", "phonetic": "/wʌn/", "meaning": "一" },
+            { "word": "two", "phonetic": "/tuː/", "meaning": "二" },
+            { "word": "three", "phonetic": "/θriː/", "meaning": "三" },
+            { "word": "four", "phonetic": "/fɔː/", "meaning": "四" },
+            { "word": "five", "phonetic": "/faɪv/", "meaning": "五" },
+            { "word": "six", "phonetic": "/sɪks/", "meaning": "六" },
+            { "word": "seven", "phonetic": "/ˈsevn/", "meaning": "七" },
+            { "word": "eight", "phonetic": "/eɪt/", "meaning": "八" },
+            { "word": "nine", "phonetic": "/naɪn/", "meaning": "九" },
+            { "word": "ten", "phonetic": "/ten/", "meaning": "十" },
+            { "word": "doll", "phonetic": "/dɒl/", "meaning": "玩偶" },
+            { "word": "balloon", "phonetic": "/bəˈluːn/", "meaning": "气球" },
+            { "word": "ball", "phonetic": "/bɔːl/", "meaning": "球" },
+            { "word": "kite", "phonetic": "/kaɪt/", "meaning": "风筝" },
+            { "word": "plane", "phonetic": "/pleɪn/", "meaning": "飞机" },
+            { "word": "car", "phonetic": "/kɑː/", "meaning": "小汽车" }
+          ],
+          "phrases": [],
+          "sentences": [
+            { "text": "Happy birthday! — Thank you.", "meaning": "生日快乐！——谢谢。" },
+            { "text": "How old are you? — I'm nine.", "meaning": "你几岁了？——我九岁。" }
+          ]
+        }
+      ]
+    },
+    "下册": {
+      "units": [
+        {
+          "unit": 1,
+          "title": "Unit 1 Welcome back to school",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "boy", "phonetic": "/bɔɪ/", "meaning": "男孩" },
+            { "word": "girl", "phonetic": "/ɡɜːl/", "meaning": "女孩" },
+            { "word": "teacher", "phonetic": "/ˈtiːtʃə/", "meaning": "教师" },
+            { "word": "student", "phonetic": "/ˈstjuːdnt/", "meaning": "学生" },
+            { "word": "friend", "phonetic": "/frend/", "meaning": "朋友" },
+            { "word": "China", "phonetic": "/ˈtʃaɪnə/", "meaning": "中国" },
+            { "word": "Canada", "phonetic": "/ˈkænədə/", "meaning": "加拿大" },
+            { "word": "USA", "phonetic": "", "meaning": "美国" },
+            { "word": "UK", "phonetic": "", "meaning": "英国" }
+          ],
+          "phrases": [],
+          "sentences": [
+            { "text": "This is my friend.", "meaning": "这是我的朋友。" },
+            { "text": "Where are you from? — I'm from China.", "meaning": "你来自哪里？——我来自中国。" }
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "Unit 2 My family",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "father / dad", "phonetic": "/ˈfɑːðə/", "meaning": "父亲；爸爸" },
+            { "word": "mother / mom", "phonetic": "/ˈmʌðə/", "meaning": "母亲；妈妈" },
+            { "word": "brother", "phonetic": "/ˈbrʌðə/", "meaning": "兄弟" },
+            { "word": "sister", "phonetic": "/ˈsɪstə/", "meaning": "姐妹" },
+            { "word": "grandfather / grandpa", "phonetic": "", "meaning": "祖父；外祖父" },
+            { "word": "grandmother / grandma", "phonetic": "", "meaning": "祖母；外祖母" },
+            { "word": "man", "phonetic": "/mæn/", "meaning": "男人" },
+            { "word": "woman", "phonetic": "/ˈwʊmən/", "meaning": "女人" },
+            { "word": "family", "phonetic": "/ˈfæməli/", "meaning": "家庭" }
+          ],
+          "phrases": [],
+          "sentences": [
+            { "text": "Who's that man/woman? — He's/She's my …", "meaning": "那个男人／女人是谁？——他／她是我的……" }
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "Unit 3 At the zoo",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "tall", "phonetic": "/tɔːl/", "meaning": "高的" },
+            { "word": "short", "phonetic": "/ʃɔːt/", "meaning": "矮的；短的" },
+            { "word": "fat", "phonetic": "/fæt/", "meaning": "胖的" },
+            { "word": "thin", "phonetic": "/θɪn/", "meaning": "瘦的" },
+            { "word": "small", "phonetic": "/smɔːl/", "meaning": "小的" },
+            { "word": "big", "phonetic": "/bɪɡ/", "meaning": "大的" },
+            { "word": "long", "phonetic": "/lɒŋ/", "meaning": "长的" },
+            { "word": "giraffe", "phonetic": "/dʒəˈrɑːf/", "meaning": "长颈鹿" }
+          ],
+          "phrases": [],
+          "sentences": [
+            { "text": "It has a long nose / a short tail.", "meaning": "它有长鼻子／短尾巴。" }
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "Unit 4 Where is my car?",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "in", "phonetic": "/ɪn/", "meaning": "在……里面" },
+            { "word": "on", "phonetic": "/ɒn/", "meaning": "在……上面" },
+            { "word": "under", "phonetic": "/ˈʌndə/", "meaning": "在……下面" },
+            { "word": "chair", "phonetic": "/tʃeə/", "meaning": "椅子" },
+            { "word": "desk", "phonetic": "/desk/", "meaning": "书桌" },
+            { "word": "cap", "phonetic": "/kæp/", "meaning": "帽子" },
+            { "word": "ball", "phonetic": "/bɔːl/", "meaning": "球" },
+            { "word": "car", "phonetic": "/kɑː/", "meaning": "小汽车" },
+            { "word": "boat", "phonetic": "/bəʊt/", "meaning": "小船" },
+            { "word": "map", "phonetic": "/mæp/", "meaning": "地图" },
+            { "word": "toy", "phonetic": "/tɔɪ/", "meaning": "玩具" },
+            { "word": "box", "phonetic": "/bɒks/", "meaning": "盒子" }
+          ],
+          "phrases": [],
+          "sentences": [
+            { "text": "Where is my car? — It's in/on/under the …", "meaning": "我的小汽车在哪里？——在……里面／上面／下面。" }
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "Unit 5 Do you like pears?",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "pear", "phonetic": "/peə/", "meaning": "梨" },
+            { "word": "apple", "phonetic": "/ˈæpl/", "meaning": "苹果" },
+            { "word": "orange", "phonetic": "/ˈɒrɪndʒ/", "meaning": "橙子" },
+            { "word": "banana", "phonetic": "/bəˈnɑːnə/", "meaning": "香蕉" },
+            { "word": "strawberry", "phonetic": "/ˈstrɔːbəri/", "meaning": "草莓" },
+            { "word": "grape", "phonetic": "/ɡreɪp/", "meaning": "葡萄" },
+            { "word": "watermelon", "phonetic": "/ˈwɔːtəmelən/", "meaning": "西瓜" }
+          ],
+          "phrases": [],
+          "sentences": [
+            { "text": "Do you like pears? — Yes, I do. / No, I don't.", "meaning": "你喜欢梨吗？——是的，我喜欢。／不，我不喜欢。" }
+          ]
+        },
+        {
+          "unit": 6,
+          "title": "Unit 6 How many?",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "eleven", "phonetic": "/ɪˈlevn/", "meaning": "十一" },
+            { "word": "twelve", "phonetic": "/twelv/", "meaning": "十二" },
+            { "word": "thirteen", "phonetic": "/ˌθɜːˈtiːn/", "meaning": "十三" },
+            { "word": "fourteen", "phonetic": "/ˌfɔːˈtiːn/", "meaning": "十四" },
+            { "word": "fifteen", "phonetic": "/ˌfɪfˈtiːn/", "meaning": "十五" },
+            { "word": "sixteen", "phonetic": "/ˌsɪkˈstiːn/", "meaning": "十六" },
+            { "word": "seventeen", "phonetic": "/ˌsevnˈtiːn/", "meaning": "十七" },
+            { "word": "eighteen", "phonetic": "/ˌeɪˈtiːn/", "meaning": "十八" },
+            { "word": "nineteen", "phonetic": "/ˌnaɪnˈtiːn/", "meaning": "十九" },
+            { "word": "twenty", "phonetic": "/ˈtwenti/", "meaning": "二十" }
+          ],
+          "phrases": [],
+          "sentences": [
+            { "text": "How many … do you see? — I see …", "meaning": "你看见多少个……？——我看见……个。" }
+          ]
+        }
+      ]
+    }
+  }
+}

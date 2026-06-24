@@ -59,6 +59,13 @@
     <view class="tools-section">
       <text class="section-title">学习工具</text>
       <view class="tools-grid">
+        <view class="tool-card clay-tap" hover-class="clay-pressed" hover-stay-time="80" @tap="goPreview">
+          <view class="tool-icon-wrap preview-icon">
+            <text class="tool-icon-text">预</text>
+          </view>
+          <text class="tool-title">字词句预习</text>
+          <text class="tool-desc">按教材预习</text>
+        </view>
         <view class="tool-card clay-tap" hover-class="clay-pressed" hover-stay-time="80" @tap="goHomework">
           <view class="tool-icon-wrap homework-icon">
             <text class="tool-icon-text">批</text>
@@ -133,6 +140,9 @@ const startChat = (subject: string) => {
 
 const goHomework = () => {
   uni.navigateTo({ url: `/pages/homework/index?grade=${selectedGrade.value}` })
+}
+const goPreview = () => {
+  uni.navigateTo({ url: `/pages/preview/index?grade=${selectedGrade.value}` })
 }
 const goMistakes = () => {
   uni.navigateTo({ url: '/pages/mistakes/index' })
@@ -436,6 +446,13 @@ const goDailyPractice = () => {
 }
 .homework-icon .tool-icon-text {
   color: #D97706;
+}
+
+.preview-icon {
+  background: #E0F2FE;
+}
+.preview-icon .tool-icon-text {
+  color: #0284C7;
 }
 
 .mistakes-icon {

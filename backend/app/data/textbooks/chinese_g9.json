@@ -1,0 +1,162 @@
+{
+  "subject": "chinese",
+  "grade": 9,
+  "version": "统编版",
+  "source_name": "国家中小学智慧教育平台 / 人教社中小学教材电子版（统编版九年级·初中）",
+  "source_url": "https://basic.smartedu.cn/",
+  "data_note": "初中语文以每课后“读读写写”词语表为预习对象。meaning 字段为“拼音 · 释义”。词语取自教材示例，完整词表以官方教材为准，全部标待人工复核。",
+  "semesters": {
+    "上册": {
+      "units": [
+        {
+          "unit": 1,
+          "title": "第一单元 · 诗歌（沁园春·雪 / 我爱这土地 / 乡愁）",
+          "source_status": "待人工复核",
+          "phrases": [
+            { "text": "妖娆", "meaning": "yāoráo · 娇艳美好" },
+            { "text": "风骚", "meaning": "fēngsāo · 原指文学才华，文中泛指文治武功" },
+            { "text": "红装素裹", "meaning": "hóngzhuāngsùguǒ · 形容雪后红日与白雪交相辉映" },
+            { "text": "一代天骄", "meaning": "yídàitiānjiāo · 称雄一世的人物" },
+            { "text": "成吉思汗", "meaning": "chéngjísīhán · 元太祖（人名）" }
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "第二单元 · 议论文（敬业与乐业 / 论教养 / 精神的三间小屋）",
+          "source_status": "待人工复核",
+          "phrases": [
+            { "text": "敬业乐群", "meaning": "jìngyèlèqún · 专心学业，与同学融洽相处" },
+            { "text": "断章取义", "meaning": "duànzhāngqǔyì · 引用别人话只取一段而不顾全篇本意" },
+            { "text": "不二法门", "meaning": "bù'èrfǎmén · 最好的或独一无二的方法" },
+            { "text": "强聒不舍", "meaning": "qiǎngguōbùshě · 唠唠叨叨说个没完" },
+            { "text": "矫揉造作", "meaning": "jiǎoróuzàozuò · 过分做作，极不自然" }
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "第三单元 · 文言（岳阳楼记 / 醉翁亭记 / 湖心亭看雪）",
+          "source_status": "待人工复核",
+          "phrases": [
+            { "text": "政通人和", "meaning": "zhèngtōngrénhé · 政事顺利，百姓和乐" },
+            { "text": "心旷神怡", "meaning": "xīnkuàngshényí · 心情舒畅，精神愉快" },
+            { "text": "先天下之忧而忧", "meaning": "xiāntiānxiàzhīyōu'éryōu · 在天下人忧愁之前先忧愁" },
+            { "text": "醉翁之意不在酒", "meaning": "zuìwēngzhīyìbùzàijiǔ · 本意不在此而在别的方面" },
+            { "text": "雾凇沆砀", "meaning": "wùsōnghàngdàng · 冰花一片弥漫" }
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "第四单元 · 小说（故乡 / 我的叔叔于勒 / 孤独之旅）",
+          "source_status": "待人工复核",
+          "phrases": [
+            { "text": "阴晦", "meaning": "yīnhuì · 阴沉昏暗" },
+            { "text": "鄙夷", "meaning": "bǐyí · 轻视，看不起" },
+            { "text": "嗤笑", "meaning": "chīxiào · 讥笑" },
+            { "text": "置之不理", "meaning": "zhìzhībùlǐ · 放在一边不予理睬" },
+            { "text": "莫名其妙", "meaning": "mòmíngqímiào · 没有人能说明它的奥妙（道理）" }
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "第五单元 · 议论（中国人失掉自信力了吗 / 怀疑与学问）",
+          "source_status": "待人工复核",
+          "phrases": [
+            { "text": "玄虚", "meaning": "xuánxū · 用来掩盖真相使人迷惑的手段" },
+            { "text": "渺茫", "meaning": "miǎománg · 因遥远而模糊不清" },
+            { "text": "诓骗", "meaning": "kuāngpiàn · 说谎话骗人" },
+            { "text": "为民请命", "meaning": "wèimínqǐngmìng · 替老百姓向上申诉，请求保全性命" },
+            { "text": "不攻自破", "meaning": "bùgōngzìpò · 不用攻击，自己就溃败了" }
+          ]
+        },
+        {
+          "unit": 6,
+          "title": "第六单元 · 古典小说（智取生辰纲 / 范进中举 / 三顾茅庐）",
+          "source_status": "待人工复核",
+          "phrases": [
+            { "text": "聒噪", "meaning": "guōzào · 声音杂乱，吵闹" },
+            { "text": "死心塌地", "meaning": "sǐxīntādì · 形容主意已定，决不改变" },
+            { "text": "唯唯连声", "meaning": "wěiwěiliánshēng · 连连答应（表示恭顺）" },
+            { "text": "如雷贯耳", "meaning": "rúléiguàn'ěr · 形容人名声大" },
+            { "text": "思贤如渴", "meaning": "sīxiánrúkě · 寻求贤才如口渴想喝水般急切" }
+          ]
+        }
+      ]
+    },
+    "下册": {
+      "units": [
+        {
+          "unit": 1,
+          "title": "第一单元 · 诗歌（祖国啊，我亲爱的祖国 / 梅岭三章 / 海燕）",
+          "source_status": "待人工复核",
+          "phrases": [
+            { "text": "干瘪", "meaning": "gānbiě · 干而收缩，不丰满" },
+            { "text": "淤滩", "meaning": "yūtān · 淤泥淤积的滩地" },
+            { "text": "簇新", "meaning": "cùxīn · 极新，全新" },
+            { "text": "取义成仁", "meaning": "qǔyìchéngrén · 为正义事业而牺牲" },
+            { "text": "血雨腥风", "meaning": "xuèyǔxīngfēng · 比喻残酷屠杀的景象" }
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "第二单元 · 小说（孔乙己 / 变色龙 / 蒲柳人家）",
+          "source_status": "待人工复核",
+          "phrases": [
+            { "text": "阔绰", "meaning": "kuòchuò · 排场大，生活奢侈" },
+            { "text": "间或", "meaning": "jiànhuò · 偶尔，有时候" },
+            { "text": "不屑置辩", "meaning": "bùxièzhìbiàn · 认为不值得辩论或申辩" },
+            { "text": "无精打采", "meaning": "wújīngdǎcǎi · 形容不高兴、不振作" },
+            { "text": "望眼欲穿", "meaning": "wàngyǎnyùchuān · 形容盼望殷切" }
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "第三单元 · 文言（鱼我所欲也 / 唐雎不辱使命 / 送东阳马生序）",
+          "source_status": "待人工复核",
+          "phrases": [
+            { "text": "舍生取义", "meaning": "shěshēngqǔyì · 为正义而牺牲生命" },
+            { "text": "嗟来之食", "meaning": "jiēláizhīshí · 带有侮辱性的施舍" },
+            { "text": "色挠", "meaning": "sènáo · 面露屈服的神色" },
+            { "text": "缟素", "meaning": "gǎosù · 白色的丝织品，指穿丧服" },
+            { "text": "援疑质理", "meaning": "yuányízhìlǐ · 提出疑难，询问道理" }
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "第四单元 · 文艺论文（山水画的意境 / 无言之美 / 驱遣我们的想象）",
+          "source_status": "待人工复核",
+          "phrases": [
+            { "text": "怡情", "meaning": "yíqíng · 使心情愉快" },
+            { "text": "诘难", "meaning": "jiénàn · 诘问，为难" },
+            { "text": "意境", "meaning": "yìjìng · 文艺作品中描绘的生活图景与思想情感融合的境界" },
+            { "text": "金戈铁马", "meaning": "jīngētiěmǎ · 形容战争，也形容战士的雄姿" },
+            { "text": "轻描淡写", "meaning": "qīngmiáodànxiě · 着力不多地描写或叙述" }
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "第五单元 · 戏剧（屈原（节选） / 天下第一楼 / 枣儿）",
+          "source_status": "待人工复核",
+          "phrases": [
+            { "text": "睥睨", "meaning": "pìnì · 眼睛斜着看，表示傲视" },
+            { "text": "鞭挞", "meaning": "biāntà · 鞭打，比喻抨击" },
+            { "text": "雷霆", "meaning": "léitíng · 比喻威力或怒气" },
+            { "text": "踌躇", "meaning": "chóuchú · 犹豫不决" },
+            { "text": "言简意赅", "meaning": "yánjiǎnyìgāi · 言语简单而意思完备" }
+          ]
+        },
+        {
+          "unit": 6,
+          "title": "第六单元 · 文言（曹刿论战 / 邹忌讽齐王纳谏 / 出师表）",
+          "source_status": "待人工复核",
+          "phrases": [
+            { "text": "肉食者鄙", "meaning": "ròushízhěbǐ · 居高位、享厚禄的人目光短浅" },
+            { "text": "一鼓作气", "meaning": "yìgǔzuòqì · 趁劲头大的时候一举做成" },
+            { "text": "门庭若市", "meaning": "méntíngruòshì · 形容来的人很多，非常热闹" },
+            { "text": "妄自菲薄", "meaning": "wàngzìfěibó · 过分看轻自己" },
+            { "text": "三顾茅庐", "meaning": "sāngùmáolú · 比喻诚心诚意地一再邀请" }
+          ]
+        }
+      ]
+    }
+  }
+}

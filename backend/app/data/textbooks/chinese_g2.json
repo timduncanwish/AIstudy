@@ -1,0 +1,162 @@
+{
+  "subject": "chinese",
+  "grade": 2,
+  "version": "统编版",
+  "source_name": "国家中小学智慧教育平台 / 人教社中小学教材电子版（统编版二年级）",
+  "source_url": "https://basic.smartedu.cn/",
+  "data_note": "一类字=写字表(会写)，二类字=识字表(会认)。二年级生字示例取自教材，逐课归属与完整字表以官方教材为准，全部标待人工复核。",
+  "semesters": {
+    "上册": {
+      "units": [
+        {
+          "unit": 1,
+          "title": "第一单元 · 小蝌蚪找妈妈 / 我是什么 / 植物妈妈有办法",
+          "source_status": "待人工复核",
+          "first_class": [
+            { "word": "两", "pinyin": "liǎng", "meaning": "两个", "examples": ["两个", "两手"] },
+            { "word": "就", "pinyin": "jiù", "meaning": "就", "examples": ["就是", "马上就"] },
+            { "word": "哪", "pinyin": "nǎ", "meaning": "哪里", "examples": ["哪里", "哪儿"] },
+            { "word": "变", "pinyin": "biàn", "meaning": "变化", "examples": ["变化", "改变"] },
+            { "word": "他", "pinyin": "tā", "meaning": "他", "examples": ["他们", "其他"] }
+          ],
+          "second_class": [
+            { "word": "蝌", "pinyin": "kē", "meaning": "蝌蚪" },
+            { "word": "蚪", "pinyin": "dǒu", "meaning": "蝌蚪" }
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "识字 · 场景歌 / 树之歌 / 拍手歌 / 田家四季歌",
+          "source_status": "待人工复核",
+          "first_class": [
+            { "word": "处", "pinyin": "chù", "meaning": "处所；到处", "examples": ["到处", "处理"] },
+            { "word": "园", "pinyin": "yuán", "meaning": "花园", "examples": ["花园", "公园"] },
+            { "word": "桐", "pinyin": "tóng", "meaning": "梧桐", "examples": ["梧桐"] },
+            { "word": "枫", "pinyin": "fēng", "meaning": "枫树", "examples": ["枫叶", "枫树"] },
+            { "word": "棉", "pinyin": "mián", "meaning": "棉花", "examples": ["棉花", "棉袄"] }
+          ],
+          "second_class": [
+            { "word": "帆", "pinyin": "fān", "meaning": "帆船" },
+            { "word": "鸥", "pinyin": "ōu", "meaning": "海鸥" }
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "第三单元 · 曹冲称象 / 玲玲的画 / 一封信",
+          "source_status": "待人工复核",
+          "first_class": [
+            { "word": "称", "pinyin": "chēng", "meaning": "称量；称呼", "examples": ["称象", "称呼"] },
+            { "word": "象", "pinyin": "xiàng", "meaning": "大象", "examples": ["大象", "现象"] },
+            { "word": "画", "pinyin": "huà", "meaning": "画画", "examples": ["画画", "图画"] },
+            { "word": "封", "pinyin": "fēng", "meaning": "一封信", "examples": ["一封信", "封口"] },
+            { "word": "音", "pinyin": "yīn", "meaning": "声音", "examples": ["声音", "音乐"] }
+          ],
+          "second_class": [
+            { "word": "曹", "pinyin": "cáo", "meaning": "姓曹" },
+            { "word": "秤", "pinyin": "chèng", "meaning": "杆秤" }
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "识字 · 古诗二首 / 黄山奇石 / 日月潭 / 葡萄沟",
+          "source_status": "待人工复核",
+          "first_class": [
+            { "word": "楼", "pinyin": "lóu", "meaning": "楼房", "examples": ["楼房", "高楼"] },
+            { "word": "依", "pinyin": "yī", "meaning": "依靠", "examples": ["依靠", "依山"] },
+            { "word": "尽", "pinyin": "jìn", "meaning": "尽头；用尽", "examples": ["尽头", "用尽"] },
+            { "word": "层", "pinyin": "céng", "meaning": "楼层", "examples": ["一层", "层次"] },
+            { "word": "丹", "pinyin": "dān", "meaning": "丹霞；红色", "examples": ["丹霞", "牡丹"] }
+          ],
+          "second_class": [
+            { "word": "瀑", "pinyin": "pù", "meaning": "瀑布" },
+            { "word": "潭", "pinyin": "tán", "meaning": "日月潭" }
+          ]
+        },
+        {
+          "unit": 5,
+          "title": "第六单元 · 我要的是葫芦 / 大禹治水 / 难忘的泼水节",
+          "source_status": "待人工复核",
+          "first_class": [
+            { "word": "言", "pinyin": "yán", "meaning": "语言", "examples": ["语言", "名言"] },
+            { "word": "治", "pinyin": "zhì", "meaning": "治理", "examples": ["治水", "治理"] },
+            { "word": "洪", "pinyin": "hóng", "meaning": "洪水", "examples": ["洪水", "山洪"] },
+            { "word": "泼", "pinyin": "pō", "meaning": "泼水", "examples": ["泼水", "活泼"] },
+            { "word": "忘", "pinyin": "wàng", "meaning": "忘记", "examples": ["难忘", "忘记"] }
+          ],
+          "second_class": [
+            { "word": "葫", "pinyin": "hú", "meaning": "葫芦" },
+            { "word": "芦", "pinyin": "lú", "meaning": "葫芦" }
+          ]
+        }
+      ]
+    },
+    "下册": {
+      "units": [
+        {
+          "unit": 1,
+          "title": "第一单元 · 古诗二首（村居 / 咏柳）/ 找春天 / 邓小平爷爷植树",
+          "source_status": "待人工复核",
+          "first_class": [
+            { "word": "村", "pinyin": "cūn", "meaning": "村庄", "examples": ["村庄", "乡村"] },
+            { "word": "童", "pinyin": "tóng", "meaning": "儿童", "examples": ["儿童", "童年"] },
+            { "word": "碧", "pinyin": "bì", "meaning": "碧绿", "examples": ["碧绿", "碧水"] },
+            { "word": "妆", "pinyin": "zhuāng", "meaning": "梳妆；妆扮", "examples": ["梳妆", "化妆"] },
+            { "word": "植", "pinyin": "zhí", "meaning": "种植", "examples": ["植树", "植物"] }
+          ],
+          "second_class": [
+            { "word": "咏", "pinyin": "yǒng", "meaning": "咏柳" },
+            { "word": "莺", "pinyin": "yīng", "meaning": "黄莺" }
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "第二单元 · 雷锋叔叔，你在哪里 / 千人糕 / 一匹出色的马",
+          "source_status": "待人工复核",
+          "first_class": [
+            { "word": "锋", "pinyin": "fēng", "meaning": "雷锋；锋利", "examples": ["雷锋", "锋利"] },
+            { "word": "叔", "pinyin": "shū", "meaning": "叔叔", "examples": ["叔叔"] },
+            { "word": "需", "pinyin": "xū", "meaning": "需要", "examples": ["需要", "必需"] },
+            { "word": "匹", "pinyin": "pǐ", "meaning": "一匹马", "examples": ["一匹", "马匹"] },
+            { "word": "波", "pinyin": "bō", "meaning": "波纹", "examples": ["水波", "波浪"] }
+          ],
+          "second_class": [
+            { "word": "锋", "pinyin": "fēng", "meaning": "雷锋" },
+            { "word": "糕", "pinyin": "gāo", "meaning": "千人糕" }
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "第三单元 · 寓言二则（亡羊补牢 / 揠苗助长）/ 画杨桃 / 小马过河",
+          "source_status": "待人工复核",
+          "first_class": [
+            { "word": "亡", "pinyin": "wáng", "meaning": "丢失；灭亡", "examples": ["亡羊补牢", "灭亡"] },
+            { "word": "牢", "pinyin": "láo", "meaning": "羊圈；牢固", "examples": ["亡羊补牢", "牢固"] },
+            { "word": "助", "pinyin": "zhù", "meaning": "帮助", "examples": ["帮助", "助长"] },
+            { "word": "桃", "pinyin": "táo", "meaning": "桃子", "examples": ["杨桃", "桃花"] },
+            { "word": "该", "pinyin": "gāi", "meaning": "应该", "examples": ["应该", "活该"] }
+          ],
+          "second_class": [
+            { "word": "揠", "pinyin": "yà", "meaning": "揠苗助长" },
+            { "word": "焦", "pinyin": "jiāo", "meaning": "焦急" }
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "识字 · 中国美食 / 神州谣 / 传统节日",
+          "source_status": "待人工复核",
+          "first_class": [
+            { "word": "州", "pinyin": "zhōu", "meaning": "神州；州", "examples": ["神州", "广州"] },
+            { "word": "民", "pinyin": "mín", "meaning": "人民", "examples": ["人民", "民族"] },
+            { "word": "贴", "pinyin": "tiē", "meaning": "粘贴", "examples": ["贴对联", "粘贴"] },
+            { "word": "街", "pinyin": "jiē", "meaning": "街道", "examples": ["街道", "上街"] },
+            { "word": "舟", "pinyin": "zhōu", "meaning": "小舟；龙舟", "examples": ["龙舟", "小舟"] }
+          ],
+          "second_class": [
+            { "word": "湾", "pinyin": "wān", "meaning": "台湾；海湾" },
+            { "word": "佳", "pinyin": "jiā", "meaning": "佳节" }
+          ]
+        }
+      ]
+    }
+  }
+}

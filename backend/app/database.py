@@ -25,7 +25,7 @@ async def get_db_context():
 
 
 async def init_db():
-    from app.models import User, Homework, Mistake, WordProgress, DailyTask, UserStats, Student, ChatHistory, DailyPractice  # noqa: F401
+    from app.models import User, Homework, Mistake, WordProgress, DailyTask, UserStats, Student, ChatHistory, DailyPractice, PreviewProgress  # noqa: F401
 
     from sqlalchemy import text
 

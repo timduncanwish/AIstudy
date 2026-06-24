@@ -1,0 +1,129 @@
+{
+  "subject": "english",
+  "grade": 1,
+  "version": "PEP人教版（一年级起点）",
+  "source_name": "人教社中小学教材电子版（PEP一年级起点；多数地区一二年级不开设英语，按一起版整理）",
+  "source_url": "https://jc.pep.com.cn/",
+  "data_note": "一二年级英语教材因地区而异，本表按 PEP 一年级起点常见词汇整理，单元划分为参考，全部标待人工复核。",
+  "semesters": {
+    "上册": {
+      "units": [
+        {
+          "unit": 1,
+          "title": "Unit 1 Hello",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "hello", "phonetic": "/həˈləʊ/", "meaning": "你好" },
+            { "word": "hi", "phonetic": "/haɪ/", "meaning": "嗨" },
+            { "word": "goodbye", "phonetic": "/ˌɡʊdˈbaɪ/", "meaning": "再见" },
+            { "word": "I'm", "phonetic": "/aɪm/", "meaning": "我是" }
+          ],
+          "phrases": [],
+          "sentences": [ { "text": "Hello! I'm …", "meaning": "你好！我是……" } ]
+        },
+        {
+          "unit": 2,
+          "title": "Unit 2 School things",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "pen", "phonetic": "/pen/", "meaning": "钢笔" },
+            { "word": "pencil", "phonetic": "/ˈpensl/", "meaning": "铅笔" },
+            { "word": "ruler", "phonetic": "/ˈruːlə/", "meaning": "尺子" },
+            { "word": "book", "phonetic": "/bʊk/", "meaning": "书" },
+            { "word": "bag", "phonetic": "/bæɡ/", "meaning": "书包" }
+          ],
+          "phrases": [],
+          "sentences": [ { "text": "What's this? — It's a pen.", "meaning": "这是什么？——是一支钢笔。" } ]
+        },
+        {
+          "unit": 3,
+          "title": "Unit 3 Colours",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "red", "phonetic": "/red/", "meaning": "红色" },
+            { "word": "yellow", "phonetic": "/ˈjeləʊ/", "meaning": "黄色" },
+            { "word": "blue", "phonetic": "/bluː/", "meaning": "蓝色" },
+            { "word": "green", "phonetic": "/ɡriːn/", "meaning": "绿色" }
+          ],
+          "phrases": [],
+          "sentences": [ { "text": "It's red.", "meaning": "它是红色的。" } ]
+        },
+        {
+          "unit": 4,
+          "title": "Unit 4 Numbers",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "one", "phonetic": "/wʌn/", "meaning": "一" },
+            { "word": "two", "phonetic": "/tuː/", "meaning": "二" },
+            { "word": "three", "phonetic": "/θriː/", "meaning": "三" },
+            { "word": "four", "phonetic": "/fɔː/", "meaning": "四" },
+            { "word": "five", "phonetic": "/faɪv/", "meaning": "五" },
+            { "word": "six", "phonetic": "/sɪks/", "meaning": "六" }
+          ],
+          "phrases": [],
+          "sentences": [ { "text": "How many? — Three.", "meaning": "有几个？——三个。" } ]
+        }
+      ]
+    },
+    "下册": {
+      "units": [
+        {
+          "unit": 1,
+          "title": "Unit 1 My body",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "head", "phonetic": "/hed/", "meaning": "头" },
+            { "word": "eye", "phonetic": "/aɪ/", "meaning": "眼睛" },
+            { "word": "ear", "phonetic": "/ɪə/", "meaning": "耳朵" },
+            { "word": "nose", "phonetic": "/nəʊz/", "meaning": "鼻子" },
+            { "word": "mouth", "phonetic": "/maʊθ/", "meaning": "嘴" },
+            { "word": "hand", "phonetic": "/hænd/", "meaning": "手" }
+          ],
+          "phrases": [],
+          "sentences": [ { "text": "Touch your nose.", "meaning": "摸摸你的鼻子。" } ]
+        },
+        {
+          "unit": 2,
+          "title": "Unit 2 Animals",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "cat", "phonetic": "/kæt/", "meaning": "猫" },
+            { "word": "dog", "phonetic": "/dɒɡ/", "meaning": "狗" },
+            { "word": "bird", "phonetic": "/bɜːd/", "meaning": "鸟" },
+            { "word": "duck", "phonetic": "/dʌk/", "meaning": "鸭子" },
+            { "word": "pig", "phonetic": "/pɪɡ/", "meaning": "猪" },
+            { "word": "fish", "phonetic": "/fɪʃ/", "meaning": "鱼" }
+          ],
+          "phrases": [],
+          "sentences": [ { "text": "I like cats.", "meaning": "我喜欢猫。" } ]
+        },
+        {
+          "unit": 3,
+          "title": "Unit 3 My family",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "dad", "phonetic": "/dæd/", "meaning": "爸爸" },
+            { "word": "mum", "phonetic": "/mʌm/", "meaning": "妈妈" },
+            { "word": "brother", "phonetic": "/ˈbrʌðə/", "meaning": "哥哥；弟弟" },
+            { "word": "sister", "phonetic": "/ˈsɪstə/", "meaning": "姐姐；妹妹" }
+          ],
+          "phrases": [],
+          "sentences": [ { "text": "This is my dad.", "meaning": "这是我的爸爸。" } ]
+        },
+        {
+          "unit": 4,
+          "title": "Unit 4 Food",
+          "source_status": "待人工复核",
+          "words": [
+            { "word": "cake", "phonetic": "/keɪk/", "meaning": "蛋糕" },
+            { "word": "egg", "phonetic": "/eɡ/", "meaning": "鸡蛋" },
+            { "word": "milk", "phonetic": "/mɪlk/", "meaning": "牛奶" },
+            { "word": "rice", "phonetic": "/raɪs/", "meaning": "米饭" }
+          ],
+          "phrases": [],
+          "sentences": [ { "text": "I'd like some milk.", "meaning": "我想要一些牛奶。" } ]
+        }
+      ]
+    }
+  }
+}

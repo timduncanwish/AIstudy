@@ -1,0 +1,150 @@
+{
+  "subject": "chinese",
+  "grade": 1,
+  "version": "统编版",
+  "source_name": "国家中小学智慧教育平台 / 人教社中小学教材电子版（统编版一年级）",
+  "source_url": "https://basic.smartedu.cn/",
+  "data_note": "一类字=写字表(会写)，二类字=识字表(会认)。一年级生字示例取自教材，逐课归属与完整字表以官方教材为准，全部标待人工复核。",
+  "semesters": {
+    "上册": {
+      "units": [
+        {
+          "unit": 1,
+          "title": "识字（一）· 天地人 / 口耳目 / 日月水火",
+          "source_status": "待人工复核",
+          "first_class": [
+            { "word": "一", "pinyin": "yī", "meaning": "数字一", "examples": ["一个", "第一"] },
+            { "word": "二", "pinyin": "èr", "meaning": "数字二", "examples": ["二月", "第二"] },
+            { "word": "三", "pinyin": "sān", "meaning": "数字三", "examples": ["三天", "三个"] },
+            { "word": "上", "pinyin": "shàng", "meaning": "上面", "examples": ["上面", "上学"] },
+            { "word": "口", "pinyin": "kǒu", "meaning": "嘴；口", "examples": ["开口", "门口"] },
+            { "word": "目", "pinyin": "mù", "meaning": "眼睛", "examples": ["目光", "耳目"] },
+            { "word": "耳", "pinyin": "ěr", "meaning": "耳朵", "examples": ["耳朵", "木耳"] },
+            { "word": "手", "pinyin": "shǒu", "meaning": "手", "examples": ["手心", "拍手"] }
+          ],
+          "second_class": [
+            { "word": "天", "pinyin": "tiān", "meaning": "天空" },
+            { "word": "人", "pinyin": "rén", "meaning": "人" },
+            { "word": "火", "pinyin": "huǒ", "meaning": "火" }
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "课文（一）· 秋天 / 小小的船 / 江南 / 四季",
+          "source_status": "待人工复核",
+          "first_class": [
+            { "word": "了", "pinyin": "le", "meaning": "语气助词", "examples": ["来了", "好了"] },
+            { "word": "子", "pinyin": "zǐ", "meaning": "孩子；种子", "examples": ["孩子", "种子"] },
+            { "word": "大", "pinyin": "dà", "meaning": "大的", "examples": ["大小", "大人"] },
+            { "word": "月", "pinyin": "yuè", "meaning": "月亮；月份", "examples": ["月亮", "六月"] },
+            { "word": "儿", "pinyin": "ér", "meaning": "儿子；词尾", "examples": ["儿子", "花儿"] }
+          ],
+          "second_class": [
+            { "word": "秋", "pinyin": "qiū", "meaning": "秋天" },
+            { "word": "船", "pinyin": "chuán", "meaning": "小船" }
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "识字（二）· 大小多少 / 小书包 / 日月明",
+          "source_status": "待人工复核",
+          "first_class": [
+            { "word": "六", "pinyin": "liù", "meaning": "数字六", "examples": ["六个", "六月"] },
+            { "word": "七", "pinyin": "qī", "meaning": "数字七", "examples": ["七天", "七月"] },
+            { "word": "八", "pinyin": "bā", "meaning": "数字八", "examples": ["八个", "八月"] },
+            { "word": "九", "pinyin": "jiǔ", "meaning": "数字九", "examples": ["九个", "九月"] },
+            { "word": "无", "pinyin": "wú", "meaning": "没有", "examples": ["无声", "无人"] }
+          ],
+          "second_class": [
+            { "word": "多", "pinyin": "duō", "meaning": "多" },
+            { "word": "少", "pinyin": "shǎo", "meaning": "少" }
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "课文（二）· 影子 / 比尾巴 / 青蛙写诗 / 雨点儿",
+          "source_status": "待人工复核",
+          "first_class": [
+            { "word": "在", "pinyin": "zài", "meaning": "在", "examples": ["在家", "现在"] },
+            { "word": "后", "pinyin": "hòu", "meaning": "后面", "examples": ["后面", "以后"] },
+            { "word": "我", "pinyin": "wǒ", "meaning": "我", "examples": ["我们", "自我"] },
+            { "word": "好", "pinyin": "hǎo", "meaning": "好的", "examples": ["好人", "你好"] },
+            { "word": "长", "pinyin": "cháng", "meaning": "长（短的反义）", "examples": ["长短", "长江"] }
+          ],
+          "second_class": [
+            { "word": "影", "pinyin": "yǐng", "meaning": "影子" },
+            { "word": "尾", "pinyin": "wěi", "meaning": "尾巴" }
+          ]
+        }
+      ]
+    },
+    "下册": {
+      "units": [
+        {
+          "unit": 1,
+          "title": "识字（一）· 春夏秋冬 / 姓氏歌 / 小青蛙 / 猜字谜",
+          "source_status": "待人工复核",
+          "first_class": [
+            { "word": "春", "pinyin": "chūn", "meaning": "春天", "examples": ["春天", "春风"] },
+            { "word": "冬", "pinyin": "dōng", "meaning": "冬天", "examples": ["冬天", "冬日"] },
+            { "word": "风", "pinyin": "fēng", "meaning": "风", "examples": ["春风", "大风"] },
+            { "word": "雪", "pinyin": "xuě", "meaning": "雪", "examples": ["下雪", "雪花"] },
+            { "word": "花", "pinyin": "huā", "meaning": "花", "examples": ["花朵", "鲜花"] }
+          ],
+          "second_class": [
+            { "word": "霜", "pinyin": "shuāng", "meaning": "霜" },
+            { "word": "蛙", "pinyin": "wā", "meaning": "青蛙" }
+          ]
+        },
+        {
+          "unit": 2,
+          "title": "课文（一）· 吃水不忘挖井人 / 我多想去看看 / 四个太阳",
+          "source_status": "待人工复核",
+          "first_class": [
+            { "word": "吃", "pinyin": "chī", "meaning": "吃", "examples": ["吃饭", "吃水"] },
+            { "word": "井", "pinyin": "jǐng", "meaning": "水井", "examples": ["水井", "井口"] },
+            { "word": "想", "pinyin": "xiǎng", "meaning": "想", "examples": ["想念", "思想"] },
+            { "word": "太", "pinyin": "tài", "meaning": "太；过于", "examples": ["太阳", "太多"] },
+            { "word": "阳", "pinyin": "yáng", "meaning": "太阳", "examples": ["太阳", "阳光"] }
+          ],
+          "second_class": [
+            { "word": "忘", "pinyin": "wàng", "meaning": "忘记" },
+            { "word": "挖", "pinyin": "wā", "meaning": "挖井" }
+          ]
+        },
+        {
+          "unit": 3,
+          "title": "识字（二）· 古对今 / 操场上 / 人之初",
+          "source_status": "待人工复核",
+          "first_class": [
+            { "word": "古", "pinyin": "gǔ", "meaning": "古代", "examples": ["古今", "古人"] },
+            { "word": "凉", "pinyin": "liáng", "meaning": "凉爽", "examples": ["凉爽", "清凉"] },
+            { "word": "细", "pinyin": "xì", "meaning": "细", "examples": ["细雨", "仔细"] },
+            { "word": "夕", "pinyin": "xī", "meaning": "傍晚", "examples": ["夕阳", "朝夕"] },
+            { "word": "李", "pinyin": "lǐ", "meaning": "李子；姓李", "examples": ["李子", "姓李"] }
+          ],
+          "second_class": [
+            { "word": "晨", "pinyin": "chén", "meaning": "早晨" },
+            { "word": "杨", "pinyin": "yáng", "meaning": "杨柳" }
+          ]
+        },
+        {
+          "unit": 4,
+          "title": "课文（二）· 荷叶圆圆 / 要下雨了 / 古诗二首（池上 / 小池）",
+          "source_status": "待人工复核",
+          "first_class": [
+            { "word": "叶", "pinyin": "yè", "meaning": "叶子", "examples": ["树叶", "荷叶"] },
+            { "word": "美", "pinyin": "měi", "meaning": "美丽", "examples": ["美丽", "美好"] },
+            { "word": "光", "pinyin": "guāng", "meaning": "光", "examples": ["阳光", "光明"] },
+            { "word": "角", "pinyin": "jiǎo", "meaning": "角；牛角", "examples": ["牛角", "角落"] },
+            { "word": "池", "pinyin": "chí", "meaning": "池塘", "examples": ["水池", "池塘"] }
+          ],
+          "second_class": [
+            { "word": "荷", "pinyin": "hé", "meaning": "荷叶" },
+            { "word": "蜻", "pinyin": "qīng", "meaning": "蜻蜓" }
+          ]
+        }
+      ]
+    }
+  }
+}
