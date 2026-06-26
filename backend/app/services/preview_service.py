@@ -1,4 +1,5 @@
-from datetime import datetime
+from collections import defaultdict
+from datetime import datetime, timedelta
 
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -158,6 +159,73 @@ async def complete_preview_item(
     await db.commit()
     await db.refresh(progress)
     return progress
+
+
+async def get_parent_preview_summary(
+    db: AsyncSession, user_id: int, days: int = 7
+) -> dict:
+    """家长摘要：本周已预习单元、完成量、薄弱/待复习项与建议。"""
+    sid = await active_student_id(db, user_id)
+    since = datetime.now() - timedelta(days=days)
+
+    conds = [PreviewProgress.user_id == user_id]
+    if sid is not None:
+        conds.append(PreviewProgress.student_id == sid)
+    rows = (await db.execute(select(PreviewProgress).where(*conds))).scalars().all()
+
+    # 全部完成项按单元归集（用于计算单元完成度），并标记本周触达的单元
+    done_keys: dict[tuple, set] = defaultdict(set)
+    week_touched: set[tuple] = set()
+    weekly_completed = 0
+    subject_breakdown = {"chinese": 0, "english": 0}
+    for r in rows:
+        key = (r.subject, r.grade, r.semester, r.textbook_version, r.unit)
+        done_keys[key].add(r.item_key)
+        if r.completed_at and r.completed_at >= since:
+            weekly_completed += 1
+            if r.subject in subject_breakdown:
+                subject_breakdown[r.subject] += 1
+            week_touched.add(key)
+
+    studied_units = []
+    review_suggestions = []
+    for key in week_touched:
+        subject, grade, semester, _version, unit_no = key
+        units = get_semester_units(subject, grade, semester)
+        unit = next((u for u in units if int(u.get("unit", 0)) == unit_no), None)
+        if not unit:
+            continue
+        items = _build_unit_items(subject, grade, semester, unit_no, unit)
+        total = len(items)
+        completed = sum(1 for it in items if it["item_key"] in done_keys[key])
+        percent = round(completed / total * 100) if total else 0
+        title = unit.get("title", "")
+        studied_units.append({
+            "subject": subject,
+            "grade": grade,
+            "semester": semester,
+            "unit": unit_no,
+            "title": title,
+            "completed_items": completed,
+            "total_items": total,
+            "percent": percent,
+        })
+        if completed < total:
+            subj_label = "语文" if subject == "chinese" else "英语"
+            review_suggestions.append(
+                f"{subj_label}《{title}》还有 {total - completed} 项没预习完，建议带孩子再读一遍。"
+            )
+
+    studied_units.sort(key=lambda x: x["percent"])
+    review_suggestions = review_suggestions[:5]
+
+    return {
+        "period_days": days,
+        "weekly_completed": weekly_completed,
+        "subject_breakdown": subject_breakdown,
+        "studied_units": studied_units,
+        "review_suggestions": review_suggestions,
+    }
 
 
 async def _completed_keys(

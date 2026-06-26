@@ -90,6 +90,30 @@ export function completePreviewItem(data: {
   })
 }
 
+export interface StudiedUnit {
+  subject: string
+  grade: number
+  semester: string
+  unit: number
+  title: string
+  completed_items: number
+  total_items: number
+  percent: number
+}
+
+export interface ParentSummary {
+  period_days: number
+  weekly_completed: number
+  subject_breakdown: Record<string, number>
+  studied_units: StudiedUnit[]
+  review_suggestions: string[]
+}
+
+export function getParentSummary(params: { days?: number; grade: number }): Promise<ParentSummary> {
+  const q = encodeParams({ days: params.days ?? 7, grade: params.grade })
+  return request<ParentSummary>({ url: `/preview/parent-summary?${q}`, method: 'GET' })
+}
+
 export function explainPreviewItem(data: {
   subject: string
   grade: number

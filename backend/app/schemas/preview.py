@@ -90,3 +90,22 @@ class ExplainPreviewItemRequest(BaseModel):
 class ExplainPreviewItemResponse(BaseModel):
     word: str
     explanation: str
+
+
+class StudiedUnit(BaseModel):
+    subject: str
+    grade: int
+    semester: str
+    unit: int
+    title: str
+    completed_items: int
+    total_items: int
+    percent: int
+
+
+class ParentSummaryResponse(BaseModel):
+    period_days: int
+    weekly_completed: int
+    subject_breakdown: dict[str, int]
+    studied_units: list[StudiedUnit]
+    review_suggestions: list[str]

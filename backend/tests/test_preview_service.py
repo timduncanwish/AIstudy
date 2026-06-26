@@ -4,6 +4,7 @@ import pytest
 
 from app.services.preview_service import (
     complete_preview_item,
+    get_parent_preview_summary,
     get_preview_unit_detail,
     get_preview_units,
     list_textbook_options,
@@ -57,6 +58,34 @@ async def test_english_detail_has_vocabulary(db):
     detail = await get_preview_unit_detail(db, user.id, "english", 3, "上册", "PEP人教版", 1)
     types = {item["item_type"] for item in detail["items"]}
     assert "vocabulary" in types
+
+
+@pytest.mark.asyncio
+async def test_parent_summary_reports_studied_and_weak(db):
+    user = await make_user(db)
+    detail = await get_preview_unit_detail(db, user.id, "chinese", 3, "上册", "统编版", 1)
+    for it in detail["items"][:2]:
+        await complete_preview_item(
+            db, user.id, "chinese", 3, "上册", "统编版", 1, it["item_key"], it["item_type"]
+        )
+
+    summary = await get_parent_preview_summary(db, user.id, days=7)
+    assert summary["weekly_completed"] == 2
+    assert summary["subject_breakdown"]["chinese"] == 2
+    assert summary["studied_units"]
+    su = summary["studied_units"][0]
+    assert su["completed_items"] == 2 and su["total_items"] > 2
+    assert su["percent"] < 100
+    assert summary["review_suggestions"]  # 单元未完成 → 给出复习建议
+
+
+@pytest.mark.asyncio
+async def test_parent_summary_empty_when_no_progress(db):
+    user = await make_user(db)
+    summary = await get_parent_preview_summary(db, user.id, days=7)
+    assert summary["weekly_completed"] == 0
+    assert summary["studied_units"] == []
+    assert summary["review_suggestions"] == []
 
 
 def test_build_explain_messages_chinese_first_class():

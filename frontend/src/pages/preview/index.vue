@@ -36,17 +36,32 @@
       <text class="empty-desc">教材库已预留1-9年级结构，当前先开放3-6年级样例数据，后续接入官方教材复核数据。</text>
     </view>
 
-    <view v-else-if="!detail" class="unit-list">
-      <view v-for="unit in units" :key="unit.unit" class="unit-card" @tap="openUnit(unit.unit)">
-        <view>
-          <text class="unit-title">{{ unit.title }}</text>
-          <text class="unit-desc">{{ unit.completed_items }}/{{ unit.total_items }} 项已预习</text>
+    <view v-else-if="!detail">
+      <view v-if="summary && summary.weekly_completed > 0" class="summary-card" @tap="showSummary = !showSummary">
+        <view class="summary-head">
+          <text class="summary-title">📊 本周预习小结</text>
+          <text class="summary-toggle">{{ showSummary ? '收起' : '展开' }}</text>
         </view>
-        <view class="unit-progress">
-          <view class="progress-bar">
-            <view class="progress-fill" :style="{ width: unitPercent(unit) + '%' }" />
+        <text class="summary-stat">本周已预习 {{ summary.weekly_completed }} 项 · 语文 {{ summary.subject_breakdown.chinese }} · 英语 {{ summary.subject_breakdown.english }}</text>
+        <view v-if="showSummary" class="summary-detail">
+          <text v-if="summary.review_suggestions.length" class="summary-subtitle">建议复习</text>
+          <text v-for="(s, i) in summary.review_suggestions" :key="i" class="summary-tip">· {{ s }}</text>
+          <text v-if="!summary.review_suggestions.length" class="summary-tip">本周预习过的单元都完成啦，真棒！👍</text>
+        </view>
+      </view>
+
+      <view class="unit-list">
+        <view v-for="unit in units" :key="unit.unit" class="unit-card" @tap="openUnit(unit.unit)">
+          <view>
+            <text class="unit-title">{{ unit.title }}</text>
+            <text class="unit-desc">{{ unit.completed_items }}/{{ unit.total_items }} 项已预习</text>
           </view>
-          <text class="unit-go">进入</text>
+          <view class="unit-progress">
+            <view class="progress-bar">
+              <view class="progress-fill" :style="{ width: unitPercent(unit) + '%' }" />
+            </view>
+            <text class="unit-go">进入</text>
+          </view>
         </view>
       </view>
     </view>
@@ -103,8 +118,10 @@ import { computed, onMounted, ref } from 'vue'
 import {
   completePreviewItem,
   explainPreviewItem,
+  getParentSummary,
   getPreviewUnitDetail,
   getPreviewUnits,
+  type ParentSummary,
   type PreviewItem,
   type PreviewUnit,
   type PreviewUnitDetail,
@@ -119,6 +136,16 @@ const detail = ref<PreviewUnitDetail | null>(null)
 const loading = ref(false)
 const explanations = ref<Record<string, string>>({})
 const explainingKey = ref('')
+const summary = ref<ParentSummary | null>(null)
+const showSummary = ref(false)
+
+const loadSummary = async () => {
+  try {
+    summary.value = await getParentSummary({ days: 7, grade: grade.value })
+  } catch {
+    summary.value = null
+  }
+}
 
 const textbookVersion = computed(() => subject.value === 'chinese' ? '统编版' : 'PEP人教版')
 
@@ -134,6 +161,7 @@ const loadUnits = async () => {
       textbook_version: textbookVersion.value,
     })
     units.value = res.units
+    loadSummary()
   } catch {
     uni.showToast({ title: '加载预习清单失败', icon: 'none' })
   } finally {
@@ -195,6 +223,7 @@ const markComplete = async (item: PreviewItem) => {
     item.completed = true
     const unit = units.value.find(u => u.unit === detail.value?.unit)
     if (unit) unit.completed_items += 1
+    loadSummary()
     uni.showToast({ title: '预习完成', icon: 'success' })
   } catch {
     uni.showToast({ title: '保存失败', icon: 'none' })
@@ -536,5 +565,60 @@ onMounted(loadUnits)
   color: #4338CA;
   line-height: 1.7;
   white-space: pre-wrap;
+}
+
+.summary-card {
+  background: #fff;
+  border: 3rpx solid #E0E7FF;
+  border-radius: 20rpx;
+  box-shadow: 4rpx 4rpx 12rpx rgba(79, 70, 229, 0.06);
+  padding: 24rpx;
+  margin-bottom: 20rpx;
+}
+
+.summary-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10rpx;
+}
+
+.summary-title {
+  font-size: 30rpx;
+  font-weight: 800;
+  color: #312E81;
+}
+
+.summary-toggle {
+  font-size: 24rpx;
+  color: #4F46E5;
+}
+
+.summary-stat {
+  display: block;
+  font-size: 26rpx;
+  color: #374151;
+  line-height: 1.6;
+}
+
+.summary-detail {
+  margin-top: 14rpx;
+  padding-top: 14rpx;
+  border-top: 2rpx dashed #E5E7EB;
+}
+
+.summary-subtitle {
+  display: block;
+  font-size: 24rpx;
+  font-weight: 700;
+  color: #D97706;
+  margin-bottom: 6rpx;
+}
+
+.summary-tip {
+  display: block;
+  font-size: 25rpx;
+  color: #4B5563;
+  line-height: 1.7;
 }
 </style>

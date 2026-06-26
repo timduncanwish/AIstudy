@@ -9,15 +9,18 @@ from app.schemas.preview import (
     CompletePreviewItemResponse,
     ExplainPreviewItemRequest,
     ExplainPreviewItemResponse,
+    ParentSummaryResponse,
     PreviewUnitDetailResponse,
     PreviewUnitItem,
     PreviewUnitsResponse,
+    StudiedUnit,
     TextbookOption,
     TextbookOptionsResponse,
 )
 from app.services.ai_service import explain_preview_item
 from app.services.preview_service import (
     complete_preview_item,
+    get_parent_preview_summary,
     get_preview_unit_detail,
     get_preview_units,
     list_textbook_options,
@@ -122,3 +125,21 @@ async def explain(request: Request, body: ExplainPreviewItemRequest):
         raise HTTPException(status_code=502, detail=f"AI服务调用失败: {str(e)}")
 
     return ExplainPreviewItemResponse(word=body.word, explanation=explanation)
+
+
+@router.get("/parent-summary", response_model=ParentSummaryResponse)
+async def parent_summary(
+    days: int = Query(7, ge=1, le=31),
+    grade: int = Query(3),
+    db: AsyncSession = Depends(get_db),
+    x_user_id: str = Header(None, alias="X-User-Id"),
+):
+    user = await get_or_create_user(db, x_user_id or "anonymous", grade)
+    data = await get_parent_preview_summary(db, user.id, days)
+    return ParentSummaryResponse(
+        period_days=data["period_days"],
+        weekly_completed=data["weekly_completed"],
+        subject_breakdown=data["subject_breakdown"],
+        studied_units=[StudiedUnit(**u) for u in data["studied_units"]],
+        review_suggestions=data["review_suggestions"],
+    )
