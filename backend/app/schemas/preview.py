@@ -75,3 +75,18 @@ class CompletePreviewItemResponse(BaseModel):
     item_key: str
     completed: bool
     completed_at: datetime
+
+
+class ExplainPreviewItemRequest(BaseModel):
+    subject: str
+    grade: int
+    word: str
+    item_type: str
+    category_label: str = ""
+    unit_title: str = ""
+    meaning: str = ""
+
+
+class ExplainPreviewItemResponse(BaseModel):
+    word: str
+    explanation: str

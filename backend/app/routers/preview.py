@@ -1,16 +1,21 @@
-from fastapi import APIRouter, Depends, Header, HTTPException, Query
+from fastapi import APIRouter, Depends, Header, HTTPException, Query, Request
 from sqlalchemy.ext.asyncio import AsyncSession
 
+from app.config import ZHIPU_API_KEY
 from app.database import get_db
+from app.limiter import limiter
 from app.schemas.preview import (
     CompletePreviewItemRequest,
     CompletePreviewItemResponse,
+    ExplainPreviewItemRequest,
+    ExplainPreviewItemResponse,
     PreviewUnitDetailResponse,
     PreviewUnitItem,
     PreviewUnitsResponse,
     TextbookOption,
     TextbookOptionsResponse,
 )
+from app.services.ai_service import explain_preview_item
 from app.services.preview_service import (
     complete_preview_item,
     get_preview_unit_detail,
@@ -89,3 +94,31 @@ async def complete(
         completed=True,
         completed_at=progress.completed_at,
     )
+
+
+@router.post("/explain", response_model=ExplainPreviewItemResponse)
+@limiter.limit("20/minute")
+async def explain(request: Request, body: ExplainPreviewItemRequest):
+    if body.subject not in ("chinese", "english"):
+        raise HTTPException(status_code=400, detail="科目仅支持 chinese 或 english")
+    if not 1 <= body.grade <= 9:
+        raise HTTPException(status_code=400, detail="年级范围为1-9年级")
+    if not body.word.strip():
+        raise HTTPException(status_code=400, detail="缺少要讲解的字/词")
+    if not ZHIPU_API_KEY or ZHIPU_API_KEY == "your_api_key_here":
+        raise HTTPException(status_code=503, detail="AI服务未配置，请在 .env 设置 ZHIPU_API_KEY")
+
+    try:
+        explanation = await explain_preview_item(
+            subject=body.subject,
+            grade=body.grade,
+            word=body.word,
+            item_type=body.item_type,
+            category_label=body.category_label,
+            unit_title=body.unit_title,
+            meaning=body.meaning,
+        )
+    except Exception as e:
+        raise HTTPException(status_code=502, detail=f"AI服务调用失败: {str(e)}")
+
+    return ExplainPreviewItemResponse(word=body.word, explanation=explanation)

@@ -84,6 +84,14 @@
           <view v-if="item.sample_sentences.length" class="sentences">
             <text v-for="sentence in item.sample_sentences.slice(0, 2)" :key="sentence" class="sentence">{{ sentence }}</text>
           </view>
+          <view class="ai-row">
+            <view :class="['ai-btn', { loading: explainingKey === item.item_key }]" @tap="askAI(item)">
+              <text>{{ explainingKey === item.item_key ? 'AI 思考中…' : '✨ 问问 AI' }}</text>
+            </view>
+          </view>
+          <view v-if="explanations[item.item_key]" class="ai-box">
+            <text class="ai-text">{{ explanations[item.item_key] }}</text>
+          </view>
         </view>
       </view>
     </view>
@@ -94,6 +102,7 @@
 import { computed, onMounted, ref } from 'vue'
 import {
   completePreviewItem,
+  explainPreviewItem,
   getPreviewUnitDetail,
   getPreviewUnits,
   type PreviewItem,
@@ -108,6 +117,8 @@ const semester = ref(String(uni.getStorageSync('preview_semester') || '上册'))
 const units = ref<PreviewUnit[]>([])
 const detail = ref<PreviewUnitDetail | null>(null)
 const loading = ref(false)
+const explanations = ref<Record<string, string>>({})
+const explainingKey = ref('')
 
 const textbookVersion = computed(() => subject.value === 'chinese' ? '统编版' : 'PEP人教版')
 
@@ -187,6 +198,28 @@ const markComplete = async (item: PreviewItem) => {
     uni.showToast({ title: '预习完成', icon: 'success' })
   } catch {
     uni.showToast({ title: '保存失败', icon: 'none' })
+  }
+}
+
+const askAI = async (item: PreviewItem) => {
+  if (explainingKey.value) return
+  if (explanations.value[item.item_key]) return
+  explainingKey.value = item.item_key
+  try {
+    const res = await explainPreviewItem({
+      subject: subject.value,
+      grade: grade.value,
+      word: item.word,
+      item_type: item.item_type,
+      category_label: item.category_label,
+      unit_title: detail.value?.title || '',
+      meaning: item.meaning,
+    })
+    explanations.value[item.item_key] = res.explanation
+  } catch {
+    uni.showToast({ title: 'AI讲解失败，稍后再试', icon: 'none' })
+  } finally {
+    explainingKey.value = ''
   }
 }
 
@@ -469,5 +502,39 @@ onMounted(loadUnits)
 
 .sentence {
   color: #6B7280;
+}
+
+.ai-row {
+  margin-top: 16rpx;
+}
+
+.ai-btn {
+  display: inline-block;
+  padding: 12rpx 24rpx;
+  border-radius: 999rpx;
+  background: linear-gradient(90deg, #6366F1, #8B5CF6);
+  color: #fff;
+  font-size: 24rpx;
+  font-weight: 700;
+}
+
+.ai-btn.loading {
+  opacity: 0.6;
+}
+
+.ai-box {
+  margin-top: 14rpx;
+  padding: 20rpx;
+  background: #F5F3FF;
+  border: 2rpx solid #DDD6FE;
+  border-radius: 14rpx;
+}
+
+.ai-text {
+  display: block;
+  font-size: 26rpx;
+  color: #4338CA;
+  line-height: 1.7;
+  white-space: pre-wrap;
 }
 </style>

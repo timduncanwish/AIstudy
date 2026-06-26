@@ -165,6 +165,95 @@ async def grade_homework(image_base64: str, subject: str, grade: int, ocr_hint: 
     return _parse_grading_json(text)
 
 
+def build_preview_explain_messages(
+    subject: str,
+    grade: int,
+    word: str,
+    item_type: str,
+    category_label: str = "",
+    unit_title: str = "",
+    meaning: str = "",
+) -> list[dict]:
+    """构造「字词句预习」AI 讲解的消息。
+
+    遵循 AI 提示词原则：分年级用语、引导式、先肯定再提示、最后给练习建议、正面激励。
+    纯函数，便于单测。
+    """
+    source = f"，出自《{unit_title}》" if unit_title else ""
+    if subject == "english":
+        kind = {
+            "phrase": "phrase",
+            "sentence": "sentence",
+        }.get(item_type, "word")
+        system = (
+            f"You are a warm, patient English teacher for a Chinese grade {grade} pupil "
+            f"who is previewing before class. Explain the {kind} in 4-5 short lines, "
+            "using very simple English plus Chinese help. Order: "
+            "1) read it out (sound it slowly); 2) the Chinese meaning; "
+            "3) one very simple example (English + 中文); "
+            "4) a tiny task to try; 5) one encouraging sentence in Chinese. "
+            "Do not give a long lecture. Be friendly and never scold."
+        )
+        hint = f" (中文意思：{meaning})" if meaning else ""
+        user = f"Please help me preview this {kind}: \"{word}\"{hint}{source}."
+    else:
+        if item_type == "first_class_char":
+            focus = (
+                "这是要『会写』的一类字。按顺序讲：1)读准字音并说一个常用词；"
+                "2)引导孩子观察字形（结构、部首、容易写错的地方），先让他自己看再点出来；"
+                "3)给一个简单例句；4)布置一个小练习（如组个词或说句话）；5)用一句鼓励收尾。"
+            )
+        elif item_type == "second_class_char":
+            focus = (
+                "这是只要『会认、理解』的二类字。按顺序讲：1)读准字音；2)说说它的意思；"
+                "3)给一个它所在的词或短句帮助理解；4)布置一个小练习（认一认、说说意思）；5)鼓励一句。"
+            )
+        elif item_type == "sentence":
+            focus = (
+                "这是一个重点句。按顺序讲：1)读一读；2)说说句子的意思；"
+                "3)引导孩子发现句子的妙处或用法；4)请他仿写一句；5)鼓励一句。"
+            )
+        else:
+            focus = (
+                "按顺序讲：1)读准音；2)讲讲意思；3)举个例子；4)布置一个小练习；5)鼓励一句。"
+            )
+        system = (
+            f"你是一位耐心、友善的小学{grade}年级语文老师，正在帮孩子做课前预习。"
+            f"用适合{grade}年级孩子理解的简单、亲切的口语，控制在 4-6 句，不要长篇大论。"
+            f"先肯定、再引导观察、最后给练习建议，多鼓励、不批评。{focus}"
+        )
+        hint = f"（参考：{meaning}）" if meaning else ""
+        label = f"（{category_label}）" if category_label else ""
+        user = f"请帮我预习「{word}」{label}{hint}{source}。"
+
+    return [
+        {"role": "system", "content": system},
+        {"role": "user", "content": user},
+    ]
+
+
+async def explain_preview_item(
+    subject: str,
+    grade: int,
+    word: str,
+    item_type: str,
+    category_label: str = "",
+    unit_title: str = "",
+    meaning: str = "",
+) -> str:
+    """为预习字/词/句生成一段分年级、引导式的 AI 讲解。"""
+    messages = build_preview_explain_messages(
+        subject, grade, word, item_type, category_label, unit_title, meaning
+    )
+    response = await _client.chat.completions.create(
+        model=ZHIPU_MODEL,
+        messages=messages,
+        max_tokens=600,
+        temperature=0.7,
+    )
+    return response.choices[0].message.content
+
+
 def _parse_grading_json(text: str) -> dict:
     cleaned = re.sub(r'```json\s*', '', text)
     cleaned = re.sub(r'```\s*', '', cleaned).strip()

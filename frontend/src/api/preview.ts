@@ -90,6 +90,22 @@ export function completePreviewItem(data: {
   })
 }
 
+export function explainPreviewItem(data: {
+  subject: string
+  grade: number
+  word: string
+  item_type: string
+  category_label?: string
+  unit_title?: string
+  meaning?: string
+}): Promise<{ word: string; explanation: string }> {
+  return request<{ word: string; explanation: string }>({
+    url: '/preview/explain',
+    method: 'POST',
+    data,
+  })
+}
+
 function encodeParams(params: Record<string, string | number>) {
   return Object.entries(params)
     .map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(String(value))}`)

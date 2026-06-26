@@ -59,6 +59,33 @@ async def test_english_detail_has_vocabulary(db):
     assert "vocabulary" in types
 
 
+def test_build_explain_messages_chinese_first_class():
+    from app.services.ai_service import build_preview_explain_messages
+    msgs = build_preview_explain_messages(
+        "chinese", 3, "晨", "first_class_char", "一类字（会写）", "第一单元 · 校园生活", "早晨"
+    )
+    assert msgs[0]["role"] == "system" and msgs[1]["role"] == "user"
+    assert "3年级" in msgs[0]["content"]
+    assert "会写" in msgs[0]["content"]  # 一类字强调书写
+    assert "晨" in msgs[1]["content"]
+    assert "第一单元" in msgs[1]["content"]
+
+
+def test_build_explain_messages_chinese_second_class_no_writing():
+    from app.services.ai_service import build_preview_explain_messages
+    msgs = build_preview_explain_messages("chinese", 5, "鹭", "second_class_char")
+    assert "会认" in msgs[0]["content"]
+    assert "鹭" in msgs[1]["content"]
+
+
+def test_build_explain_messages_english_uses_simple_english():
+    from app.services.ai_service import build_preview_explain_messages
+    msgs = build_preview_explain_messages("english", 4, "panda", "vocabulary", "词汇表单词", "Unit 4", "熊猫")
+    assert "grade 4" in msgs[0]["content"]
+    assert "panda" in msgs[1]["content"]
+    assert "熊猫" in msgs[1]["content"]
+
+
 @pytest.mark.asyncio
 async def test_complete_preview_item_marks_unit_detail(db):
     user = await make_user(db)
