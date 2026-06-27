@@ -335,6 +335,96 @@ async def submit_answer(
     }
 
 
+async def record_preview_challenge(
+    db: AsyncSession,
+    user_id: int,
+    subject: str,
+    grade: int,
+    results: list[dict],
+) -> dict:
+    """记录「预习单元闯关」成绩，并入既有积分/掌握度/徽章体系。
+
+    results: [{"word": str, "correct": bool}, ...]
+    认读级计分，与每日闯关共用 WordProgress / UserStats / 徽章。
+    """
+    points = 0
+    correct_count = 0
+    total = 0
+    best_wp: WordProgress | None = None
+
+    for r in results:
+        word = (r.get("word") or "").strip()
+        if not word:
+            continue
+        total += 1
+        wp = await _get_or_create_progress(db, user_id, word, subject)
+        wp.review_count += 1
+        if r.get("correct"):
+            correct_count += 1
+            wp.level = min(4, wp.level + 1)
+            interval_idx = min(wp.level, len(REVIEW_INTERVALS) - 1)
+            wp.next_review = datetime.now() + timedelta(days=REVIEW_INTERVALS[interval_idx])
+            points += LEVEL_POINTS[1]
+        else:
+            wp.next_review = datetime.now() + timedelta(days=1)
+        wp.updated_at = datetime.now()
+        if best_wp is None or wp.level >= best_wp.level:
+            best_wp = wp
+
+    if total and correct_count == total:
+        points += 10  # 全对奖励
+
+    await db.commit()
+
+    stats = await _get_or_create_stats(db, user_id)
+    stats.total_points += points
+    today = datetime.now().strftime("%Y-%m-%d")
+    if stats.last_practice_date:
+        last = datetime.strptime(stats.last_practice_date, "%Y-%m-%d")
+        delta = (datetime.now() - last).days
+        if delta == 1:
+            stats.streak_days += 1
+        elif delta > 1:
+            stats.streak_days = 1
+    else:
+        stats.streak_days = 1
+    stats.last_practice_date = today
+
+    mastered = await db.execute(
+        select(func.count()).select_from(WordProgress).where(
+            WordProgress.user_id == user_id,
+            WordProgress.level >= 4,
+        )
+    )
+    stats.words_mastered = mastered.scalar() or 0
+
+    new_badges: list[str] = []
+    if best_wp is not None:
+        while True:
+            b = _check_badges(stats, best_wp, None)
+            if not b:
+                break
+            new_badges.append(b)
+    stats.updated_at = datetime.now()
+    await db.commit()
+
+    badge_details = []
+    for b in new_badges:
+        if b in BADGE_DEFS:
+            name, desc = BADGE_DEFS[b]
+            badge_details.append({"id": b, "name": name, "desc": desc})
+
+    return {
+        "points_earned": points,
+        "correct_count": correct_count,
+        "total": total,
+        "total_points": stats.total_points,
+        "streak_days": stats.streak_days,
+        "words_mastered": stats.words_mastered,
+        "new_badges": badge_details,
+    }
+
+
 def _check_badges(stats: UserStats, wp: WordProgress, task: DailyTask | None) -> str | None:
     badges = json.loads(stats.badges_json)
     new_badge = None

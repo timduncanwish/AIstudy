@@ -132,3 +132,30 @@ class UnitChallengeResponse(BaseModel):
     semester: str
     unit: int
     questions: list[ChallengeQuestion]
+
+
+class ChallengeResultItem(BaseModel):
+    word: str
+    correct: bool
+
+
+class ChallengeResultRequest(BaseModel):
+    subject: str
+    grade: int
+    results: list[ChallengeResultItem]
+
+
+class BadgeInfo(BaseModel):
+    id: str
+    name: str
+    desc: str
+
+
+class ChallengeResultResponse(BaseModel):
+    points_earned: int
+    correct_count: int
+    total: int
+    total_points: int
+    streak_days: int
+    words_mastered: int
+    new_badges: list[BadgeInfo]

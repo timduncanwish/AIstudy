@@ -118,6 +118,24 @@ export function getUnitChallenge(params: {
   })
 }
 
+export interface ChallengeResult {
+  points_earned: number
+  correct_count: number
+  total: number
+  total_points: number
+  streak_days: number
+  words_mastered: number
+  new_badges: { id: string; name: string; desc: string }[]
+}
+
+export function submitChallengeResult(data: {
+  subject: string
+  grade: number
+  results: { word: string; correct: boolean }[]
+}): Promise<ChallengeResult> {
+  return request<ChallengeResult>({ url: '/preview/challenge-result', method: 'POST', data })
+}
+
 export interface StudiedUnit {
   subject: string
   grade: number

@@ -61,6 +61,33 @@ async def test_english_detail_has_vocabulary(db):
     assert "vocabulary" in types
 
 
+@pytest.mark.asyncio
+async def test_record_preview_challenge_awards_points_and_badge(db):
+    from app.services.challenge_service import record_preview_challenge
+    user = await make_user(db)
+    res = await record_preview_challenge(db, user.id, "chinese", 3, [
+        {"word": "晨", "correct": True},
+        {"word": "绒", "correct": True},
+        {"word": "球", "correct": False},
+    ])
+    assert res["correct_count"] == 2 and res["total"] == 3
+    assert res["points_earned"] == 10  # 5×2，未全对无奖励
+    assert res["total_points"] == 10
+    assert res["streak_days"] == 1
+    assert "first_word" in [b["id"] for b in res["new_badges"]]
+
+
+@pytest.mark.asyncio
+async def test_record_preview_challenge_perfect_bonus(db):
+    from app.services.challenge_service import record_preview_challenge
+    user = await make_user(db)
+    res = await record_preview_challenge(db, user.id, "english", 3, [
+        {"word": "hello", "correct": True},
+        {"word": "book", "correct": True},
+    ])
+    assert res["points_earned"] == 5 * 2 + 10  # 全对奖励
+
+
 def test_unit_challenge_generates_valid_questions():
     questions = build_unit_challenge("chinese", 3, "上册", 1)
     assert questions

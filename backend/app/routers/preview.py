@@ -7,7 +7,10 @@ from app.limiter import limiter
 from app.schemas.preview import (
     CompletePreviewItemRequest,
     CompletePreviewItemResponse,
+    BadgeInfo,
     ChallengeQuestion,
+    ChallengeResultRequest,
+    ChallengeResultResponse,
     ExplainPreviewItemRequest,
     ExplainPreviewItemResponse,
     ParentSummaryResponse,
@@ -20,6 +23,7 @@ from app.schemas.preview import (
     UnitChallengeResponse,
 )
 from app.services.ai_service import explain_preview_item
+from app.services.challenge_service import record_preview_challenge
 from app.services.preview_service import (
     build_unit_challenge,
     complete_preview_item,
@@ -148,6 +152,30 @@ async def unit_challenge(
         semester=semester,
         unit=unit_no,
         questions=[ChallengeQuestion(**q) for q in questions],
+    )
+
+
+@router.post("/challenge-result", response_model=ChallengeResultResponse)
+async def challenge_result(
+    body: ChallengeResultRequest,
+    db: AsyncSession = Depends(get_db),
+    x_user_id: str = Header(None, alias="X-User-Id"),
+):
+    if body.subject not in ("chinese", "english"):
+        raise HTTPException(status_code=400, detail="科目仅支持 chinese 或 english")
+    user = await get_or_create_user(db, x_user_id or "anonymous", body.grade)
+    data = await record_preview_challenge(
+        db, user.id, body.subject, body.grade,
+        [{"word": r.word, "correct": r.correct} for r in body.results],
+    )
+    return ChallengeResultResponse(
+        points_earned=data["points_earned"],
+        correct_count=data["correct_count"],
+        total=data["total"],
+        total_points=data["total_points"],
+        streak_days=data["streak_days"],
+        words_mastered=data["words_mastered"],
+        new_badges=[BadgeInfo(**b) for b in data["new_badges"]],
     )
 
 

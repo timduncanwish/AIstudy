@@ -146,6 +146,7 @@ import {
   getPreviewUnitDetail,
   getPreviewUnits,
   getUnitChallenge,
+  submitChallengeResult,
   type ChallengeQuestion,
   type ParentSummary,
   type PreviewItem,
@@ -263,6 +264,7 @@ const qIndex = ref(0)
 const qScore = ref(0)
 const qSelected = ref(-1)
 const qAnswered = ref(false)
+const qResults = ref<{ word: string; correct: boolean }[]>([])
 
 const currentQuestion = computed(() => challengeQuestions.value[qIndex.value] || null)
 const isLastQuestion = computed(() => qIndex.value >= challengeQuestions.value.length - 1)
@@ -285,6 +287,7 @@ const startChallenge = async () => {
     qScore.value = 0
     qSelected.value = -1
     qAnswered.value = false
+    qResults.value = []
     challengeActive.value = true
   } catch {
     uni.showToast({ title: '加载闯关失败', icon: 'none' })
@@ -295,18 +298,41 @@ const pickOption = (idx: number) => {
   if (qAnswered.value) return
   qSelected.value = idx
   qAnswered.value = true
-  const opt = currentQuestion.value?.options.find(o => o.index === idx)
-  if (opt?.is_correct) qScore.value += 1
+  const q = currentQuestion.value
+  if (!q) return
+  const opt = q.options.find(o => o.index === idx)
+  const correct = !!opt?.is_correct
+  if (correct) qScore.value += 1
+  qResults.value.push({ word: q.word, correct })
+}
+
+const finishChallenge = async () => {
+  const total = challengeQuestions.value.length
+  let extra = ''
+  try {
+    const res = await submitChallengeResult({
+      subject: subject.value,
+      grade: grade.value,
+      results: qResults.value,
+    })
+    extra = `\n获得 ${res.points_earned} 积分（累计 ${res.total_points}）`
+    if (res.new_badges.length) {
+      extra += `\n🏅 新徽章：${res.new_badges.map(b => b.name).join('、')}`
+    }
+  } catch {
+    // 计分失败不影响本地结果展示
+  }
+  challengeActive.value = false
+  uni.showModal({
+    title: '闯关完成 🎉',
+    content: `本单元答对 ${qScore.value}/${total} 题，继续加油！${extra}`,
+    showCancel: false,
+  })
 }
 
 const nextQuestion = () => {
   if (isLastQuestion.value) {
-    uni.showModal({
-      title: '闯关完成 🎉',
-      content: `本单元答对 ${qScore.value}/${challengeQuestions.value.length} 题，继续加油！`,
-      showCancel: false,
-    })
-    challengeActive.value = false
+    finishChallenge()
     return
   }
   qIndex.value += 1
