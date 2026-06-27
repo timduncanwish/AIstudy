@@ -9,6 +9,43 @@
       </view>
     </view>
 
+    <view v-if="stats" class="section">
+      <text class="section-title">学习成长</text>
+      <view class="growth-stats">
+        <view class="growth-item">
+          <text class="growth-num">{{ stats.total_points }}</text>
+          <text class="growth-label">积分</text>
+        </view>
+        <view class="growth-item">
+          <text class="growth-num">{{ stats.streak_days }}</text>
+          <text class="growth-label">连续天数</text>
+        </view>
+        <view class="growth-item">
+          <text class="growth-num">{{ stats.words_mastered }}</text>
+          <text class="growth-label">掌握字词</text>
+        </view>
+      </view>
+      <view v-if="stats.badges.length" class="badge-list">
+        <view v-for="b in stats.badges" :key="b.id" class="badge-chip">
+          <text>🏅 {{ b.name }}</text>
+        </view>
+      </view>
+      <text v-else class="badge-empty">完成闯关即可解锁徽章 ✨</text>
+    </view>
+
+    <view v-if="summary && summary.weekly_completed > 0" class="section">
+      <text class="section-title">本周预习</text>
+      <text class="preview-stat">已预习 {{ summary.weekly_completed }} 项 · 语文 {{ summary.subject_breakdown.chinese }} · 英语 {{ summary.subject_breakdown.english }}</text>
+      <view v-if="summary.review_suggestions.length" class="preview-tips">
+        <text class="preview-tips-title">建议复习</text>
+        <text v-for="(s, i) in summary.review_suggestions.slice(0, 3)" :key="i" class="preview-tip">· {{ s }}</text>
+      </view>
+      <view class="menu-item" style="margin-top:8rpx;" @tap="goPreview">
+        <text>去预习</text>
+        <text class="arrow">></text>
+      </view>
+    </view>
+
     <view class="section">
       <view class="section-header">
         <text class="section-title">我的孩子</text>
@@ -112,6 +149,8 @@ import { ref, onMounted } from 'vue'
 import { getStudents, addStudent, activateStudent, type StudentInfo } from '@/api/students'
 import { request } from '@/api/config'
 import { wxLogin } from '@/api/auth'
+import { getUserStats, type UserStatsResponse } from '@/api/challenge'
+import { getParentSummary, type ParentSummary } from '@/api/preview'
 
 const isLoggedIn = ref(false)
 const nickname = ref('家长')
@@ -123,6 +162,8 @@ const newGrade = ref(3)
 const newAvatar = ref('👦')
 const reminderTime = ref('')
 const notifySubscribed = ref(false)
+const stats = ref<UserStatsResponse | null>(null)
+const summary = ref<ParentSummary | null>(null)
 
 const avatarOptions = ['👦', '👧', '🧒', '👶', '🐱', '🐶']
 
@@ -280,6 +321,10 @@ const goReport = () => {
   uni.navigateTo({ url: '/pages/report/index' })
 }
 
+const goPreview = () => {
+  uni.navigateTo({ url: '/pages/preview/index' })
+}
+
 const goChatHistory = () => {
   uni.navigateTo({ url: '/pages/chat-history/index' })
 }
@@ -288,8 +333,24 @@ const goAbout = () => {
   uni.showToast({ title: 'AI助学 v1.0', icon: 'none' })
 }
 
-onMounted(() => {
-  loadStudents()
+const loadGrowth = async () => {
+  const active = students.value.find(s => s.is_active)
+  const grade = active?.grade || 3
+  try {
+    stats.value = await getUserStats()
+  } catch {
+    stats.value = null
+  }
+  try {
+    summary.value = await getParentSummary({ days: 7, grade })
+  } catch {
+    summary.value = null
+  }
+}
+
+onMounted(async () => {
+  await loadStudents()
+  loadGrowth()
 })
 </script>
 
@@ -572,5 +633,85 @@ onMounted(() => {
   background: #4F46E5;
   color: #fff;
   font-weight: bold;
+}
+
+.growth-stats {
+  display: flex;
+  gap: 16rpx;
+  margin-top: 16rpx;
+}
+
+.growth-item {
+  flex: 1;
+  text-align: center;
+  padding: 24rpx 0;
+  border-radius: 16rpx;
+  background: #EEF2FF;
+}
+
+.growth-num {
+  display: block;
+  font-size: 44rpx;
+  font-weight: 800;
+  color: #4F46E5;
+}
+
+.growth-label {
+  display: block;
+  font-size: 24rpx;
+  color: #6B7280;
+  margin-top: 4rpx;
+}
+
+.badge-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12rpx;
+  margin-top: 18rpx;
+}
+
+.badge-chip {
+  padding: 10rpx 18rpx;
+  border-radius: 999rpx;
+  background: #FEF3C7;
+  color: #B45309;
+  font-size: 24rpx;
+  font-weight: 700;
+}
+
+.badge-empty {
+  display: block;
+  margin-top: 16rpx;
+  font-size: 24rpx;
+  color: #9CA3AF;
+}
+
+.preview-stat {
+  display: block;
+  margin-top: 14rpx;
+  font-size: 26rpx;
+  color: #374151;
+}
+
+.preview-tips {
+  margin-top: 14rpx;
+  padding: 18rpx;
+  background: #F5F3FF;
+  border-radius: 14rpx;
+}
+
+.preview-tips-title {
+  display: block;
+  font-size: 24rpx;
+  font-weight: 700;
+  color: #7C3AED;
+  margin-bottom: 6rpx;
+}
+
+.preview-tip {
+  display: block;
+  font-size: 24rpx;
+  color: #4B5563;
+  line-height: 1.7;
 }
 </style>
