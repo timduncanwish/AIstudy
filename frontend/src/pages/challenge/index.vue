@@ -190,7 +190,7 @@ const selectAnswer = async (opt: { text: string; index: number }) => {
 
   try {
     const res = await submitChallengeAnswer({
-      word: question.value.correct_answer,
+      word: question.value.target_word,
       subject: subject.value,
       grade: grade.value,
       level: question.value.level,

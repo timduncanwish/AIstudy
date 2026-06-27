@@ -9,6 +9,7 @@ class ChallengeOption(BaseModel):
 
 class ChallengeQuestion(BaseModel):
     word: str
+    target_word: str = ""  # 底层生字，前端原样回传给 /submit（level 2/4 时 word 为空）
     pinyin: str
     level: int
     level_name: str
