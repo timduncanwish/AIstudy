@@ -62,6 +62,7 @@ async def get_challenge_question(
 
     return ChallengeQuestion(
         word=challenge.get("word", ""),
+        target_word=challenge.get("target_word", ""),
         pinyin=challenge.get("pinyin", ""),
         level=challenge.get("level", 1),
         level_name=challenge.get("level_name", ""),

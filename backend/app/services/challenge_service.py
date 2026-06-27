@@ -132,6 +132,7 @@ def _build_challenge(word_detail: dict, level: int, subject: str, grade: int) ->
         options = _make_options(word_detail["meaning"], word_detail.get("distractor_meanings", []))
         return {
             "word": word,
+            "target_word": word,
             "pinyin": word_detail.get("pinyin", word_detail.get("phonetic", "")),
             "level": level,
             "level_name": LEVEL_NAMES[level],
@@ -146,6 +147,7 @@ def _build_challenge(word_detail: dict, level: int, subject: str, grade: int) ->
         meaning = word_detail["meaning"]
         return {
             "word": "",
+            "target_word": word,
             "pinyin": word_detail.get("pinyin", word_detail.get("phonetic", "")),
             "level": level,
             "level_name": LEVEL_NAMES[level],
@@ -169,6 +171,7 @@ def _build_challenge(word_detail: dict, level: int, subject: str, grade: int) ->
             options = _make_options(correct, distractor_sents)
             return {
                 "word": word,
+                "target_word": word,
                 "pinyin": word_detail.get("pinyin", word_detail.get("phonetic", "")),
                 "level": level,
                 "level_name": LEVEL_NAMES[level],
@@ -184,6 +187,7 @@ def _build_challenge(word_detail: dict, level: int, subject: str, grade: int) ->
         options = _make_options(word, distractors)
         return {
             "word": "",
+            "target_word": word,
             "pinyin": "",
             "level": level,
             "level_name": LEVEL_NAMES[level],

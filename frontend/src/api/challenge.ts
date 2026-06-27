@@ -7,6 +7,7 @@ export interface ChallengeOption {
 
 export interface ChallengeQuestion {
   word: string
+  target_word: string
   pinyin: string
   level: number
   level_name: string
