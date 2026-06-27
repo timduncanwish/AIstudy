@@ -122,6 +122,37 @@
         </view>
       </view>
 
+      <view v-if="challengeStats" class="chart-card">
+        <text class="card-title">闯关成长</text>
+        <view class="overview-cards" style="margin-bottom:0;">
+          <view class="ov-card">
+            <text class="ov-value">{{ challengeStats.total_points }}</text>
+            <text class="ov-label">积分</text>
+          </view>
+          <view class="ov-card">
+            <text class="ov-value">{{ challengeStats.streak_days }}</text>
+            <text class="ov-label">连续天数</text>
+          </view>
+          <view class="ov-card">
+            <text class="ov-value">{{ challengeStats.badges.length }}</text>
+            <text class="ov-label">徽章</text>
+          </view>
+        </view>
+      </view>
+
+      <view v-if="previewSummary && previewSummary.weekly_completed > 0" class="chart-card">
+        <text class="card-title">本周预习</text>
+        <text class="preview-line">已预习 {{ previewSummary.weekly_completed }} 项 · 语文 {{ previewSummary.subject_breakdown.chinese }} · 英语 {{ previewSummary.subject_breakdown.english }}</text>
+        <view
+          v-for="u in previewSummary.studied_units"
+          :key="`${u.subject}-${u.grade}-${u.semester}-${u.unit}`"
+          class="topic-row"
+        >
+          <text class="topic-name">{{ u.title }}</text>
+          <text class="topic-count done">{{ u.completed_items }}/{{ u.total_items }} ({{ u.percent }}%)</text>
+        </view>
+      </view>
+
       <view v-if="weekly.vs_last_week" class="vs-card">
         <text class="card-title">与上周对比</text>
         <text class="vs-text">
@@ -147,11 +178,29 @@
 <script setup lang="ts">
 import { ref, computed, watch, onMounted } from 'vue'
 import { getDailyReport, getWeeklyReport, type DailyReport, type WeeklyReport } from '@/api/reports'
+import { getParentSummary, type ParentSummary } from '@/api/preview'
+import { getUserStats, type UserStatsResponse } from '@/api/challenge'
 
 const mode = ref<'daily' | 'weekly'>('daily')
 const loading = ref(false)
 const daily = ref<DailyReport | null>(null)
 const weekly = ref<WeeklyReport | null>(null)
+const previewSummary = ref<ParentSummary | null>(null)
+const challengeStats = ref<UserStatsResponse | null>(null)
+
+const loadExtra = async () => {
+  const grade = parseInt(String(uni.getStorageSync('selected_grade'))) || 3
+  try {
+    previewSummary.value = await getParentSummary({ days: 7, grade })
+  } catch {
+    previewSummary.value = null
+  }
+  try {
+    challengeStats.value = await getUserStats()
+  } catch {
+    challengeStats.value = null
+  }
+}
 
 const chinesePercent = computed(() => {
   if (!daily.value) return 0
@@ -199,7 +248,10 @@ const loadData = async () => {
 }
 
 watch(mode, () => loadData())
-onMounted(() => loadData())
+onMounted(() => {
+  loadData()
+  loadExtra()
+})
 </script>
 
 <style scoped>
@@ -395,6 +447,17 @@ onMounted(() => loadData())
   font-size: 26rpx;
   color: #FF6B6B;
   font-weight: bold;
+}
+
+.topic-count.done {
+  color: #4F46E5;
+}
+
+.preview-line {
+  display: block;
+  font-size: 26rpx;
+  color: #374151;
+  margin-bottom: 8rpx;
 }
 
 .vs-card {
