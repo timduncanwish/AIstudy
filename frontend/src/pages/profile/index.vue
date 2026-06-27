@@ -68,6 +68,7 @@
         <view v-if="s.is_active" class="active-tag">
           <text>当前</text>
         </view>
+        <text class="student-edit" @tap.stop="openEdit(s)">编辑</text>
       </view>
     </view>
 
@@ -141,12 +142,45 @@
         </view>
       </view>
     </view>
+
+    <!-- 编辑孩子弹窗 -->
+    <view v-if="showEditStudent" class="modal-mask" @tap="showEditStudent = false">
+      <view class="modal-content" @tap.stop>
+        <text class="modal-title">编辑孩子</text>
+        <input v-model="editName" class="modal-input" placeholder="孩子姓名" />
+        <view class="grade-picker">
+          <view
+            v-for="g in [3, 4, 5, 6]"
+            :key="g"
+            :class="['grade-btn', { active: editGrade === g }]"
+            @tap="editGrade = g"
+          >
+            <text>{{ g }}年级</text>
+          </view>
+        </view>
+        <text class="section-title" style="margin: 16rpx 0 12rpx;">选择头像</text>
+        <view class="avatar-picker">
+          <view
+            v-for="av in avatarOptions"
+            :key="av"
+            :class="['avatar-option', { active: editAvatar === av }]"
+            @tap="editAvatar = av"
+          >
+            <text>{{ av }}</text>
+          </view>
+        </view>
+        <view class="modal-actions">
+          <view class="btn-cancel" @tap="doDeleteStudent"><text>删除</text></view>
+          <view class="btn-confirm" @tap="doUpdateStudent"><text>保存</text></view>
+        </view>
+      </view>
+    </view>
   </view>
 </template>
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
-import { getStudents, addStudent, activateStudent, type StudentInfo } from '@/api/students'
+import { getStudents, addStudent, activateStudent, updateStudent, deleteStudent, type StudentInfo } from '@/api/students'
 import { request } from '@/api/config'
 import { wxLogin } from '@/api/auth'
 import { getUserStats, type UserStatsResponse } from '@/api/challenge'
@@ -160,6 +194,11 @@ const showAddStudent = ref(false)
 const newName = ref('')
 const newGrade = ref(3)
 const newAvatar = ref('👦')
+const showEditStudent = ref(false)
+const editId = ref(0)
+const editName = ref('')
+const editGrade = ref(3)
+const editAvatar = ref('👦')
 const reminderTime = ref('')
 const notifySubscribed = ref(false)
 const stats = ref<UserStatsResponse | null>(null)
@@ -254,6 +293,52 @@ const doAddStudent = async () => {
   } catch {
     uni.showToast({ title: '添加失败', icon: 'none' })
   }
+}
+
+const openEdit = (s: StudentInfo) => {
+  editId.value = s.id
+  editName.value = s.name
+  editGrade.value = s.grade
+  editAvatar.value = s.avatar_tag
+  showEditStudent.value = true
+}
+
+const doUpdateStudent = async () => {
+  if (!editName.value.trim()) {
+    uni.showToast({ title: '请输入姓名', icon: 'none' })
+    return
+  }
+  try {
+    await updateStudent(editId.value, {
+      name: editName.value,
+      grade: editGrade.value,
+      avatar_tag: editAvatar.value,
+    })
+    showEditStudent.value = false
+    await loadStudents()
+    uni.showToast({ title: '已保存', icon: 'success' })
+  } catch {
+    uni.showToast({ title: '保存失败', icon: 'none' })
+  }
+}
+
+const doDeleteStudent = () => {
+  uni.showModal({
+    title: '删除孩子',
+    content: `确定删除「${editName.value}」吗？该孩子的学习记录将不再展示。`,
+    confirmColor: '#EF4444',
+    success: async (r) => {
+      if (!r.confirm) return
+      try {
+        await deleteStudent(editId.value)
+        showEditStudent.value = false
+        await loadStudents()
+        uni.showToast({ title: '已删除', icon: 'none' })
+      } catch {
+        uni.showToast({ title: '删除失败', icon: 'none' })
+      }
+    },
+  })
 }
 
 const setReminderTime = async (e: any) => {
@@ -471,6 +556,15 @@ onMounted(async () => {
   font-size: 22rpx;
   padding: 4rpx 12rpx;
   border-radius: 8rpx;
+}
+
+.student-edit {
+  margin-left: 16rpx;
+  font-size: 24rpx;
+  color: #4F46E5;
+  padding: 6rpx 16rpx;
+  border: 2rpx solid #C7D2FE;
+  border-radius: 999rpx;
 }
 
 .reminder-card {
