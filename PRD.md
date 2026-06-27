@@ -170,13 +170,16 @@
 |------|------|------|
 | 首页 | pages/index/index | 已完成 |
 | AI对话 | pages/chat/index | 已完成（基础版） |
-| 字词句预习 | pages/preview/index | 未开始 |
-| 教材选择 | pages/textbook/index | 未开始 |
-| 作业批改 | pages/homework/index | 未开始 |
-| 闯关练习 | pages/challenge/index | 未开始 |
-| 个人中心 | pages/profile/index | 未开始 |
-| 学习报告 | pages/report/index | 未开始 |
-| 错题本 | pages/mistakes/index | 未开始 |
+| 字词句预习 | pages/preview/index | 已完成（卡片/AI讲解/进度/家长摘要/单元闯关） |
+| 教材选择 | pages/textbook/index | 已完成 |
+| 作业批改 | pages/homework/index | 已完成（拍照批改 + 错题入库） |
+| 闯关练习 | pages/challenge/index | 已完成（每日任务 + 积分徽章） |
+| 个人中心 | pages/profile/index | 已完成（学习成长 + 本周预习摘要） |
+| 学习报告 | pages/report/index | 已完成（日报/周报 + 预习/闯关维度） |
+| 错题本 | pages/mistakes/index | 已完成 |
+| 知识库 | pages/knowledge/index | 已完成 |
+| 每日一练 | pages/daily-practice/index | 已完成 |
+| 历史对话 | pages/chat-history/index | 已完成 |
 
 ---
 
