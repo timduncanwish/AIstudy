@@ -3,6 +3,7 @@
 import pytest
 
 from app.services.preview_service import (
+    build_unit_challenge,
     complete_preview_item,
     get_parent_preview_summary,
     get_preview_unit_detail,
@@ -58,6 +59,26 @@ async def test_english_detail_has_vocabulary(db):
     detail = await get_preview_unit_detail(db, user.id, "english", 3, "上册", "PEP人教版", 1)
     types = {item["item_type"] for item in detail["items"]}
     assert "vocabulary" in types
+
+
+def test_unit_challenge_generates_valid_questions():
+    questions = build_unit_challenge("chinese", 3, "上册", 1)
+    assert questions
+    for q in questions:
+        assert q["question_text"] and q["correct_answer"]
+        assert len(q["options"]) == 4
+        correct = [o for o in q["options"] if o["is_correct"]]
+        assert len(correct) == 1
+        assert correct[0]["text"] == q["correct_answer"]
+        # 选项互不重复
+        texts = [o["text"] for o in q["options"]]
+        assert len(set(texts)) == 4
+
+
+def test_unit_challenge_english_and_empty_unit():
+    en = build_unit_challenge("english", 3, "上册", 1)
+    assert en  # 英语单词也能出题
+    assert build_unit_challenge("chinese", 3, "上册", 999) == []  # 不存在的单元
 
 
 @pytest.mark.asyncio

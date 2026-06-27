@@ -7,6 +7,7 @@ from app.limiter import limiter
 from app.schemas.preview import (
     CompletePreviewItemRequest,
     CompletePreviewItemResponse,
+    ChallengeQuestion,
     ExplainPreviewItemRequest,
     ExplainPreviewItemResponse,
     ParentSummaryResponse,
@@ -16,9 +17,11 @@ from app.schemas.preview import (
     StudiedUnit,
     TextbookOption,
     TextbookOptionsResponse,
+    UnitChallengeResponse,
 )
 from app.services.ai_service import explain_preview_item
 from app.services.preview_service import (
+    build_unit_challenge,
     complete_preview_item,
     get_parent_preview_summary,
     get_preview_unit_detail,
@@ -125,6 +128,27 @@ async def explain(request: Request, body: ExplainPreviewItemRequest):
         raise HTTPException(status_code=502, detail=f"AI服务调用失败: {str(e)}")
 
     return ExplainPreviewItemResponse(word=body.word, explanation=explanation)
+
+
+@router.get("/unit-challenge", response_model=UnitChallengeResponse)
+async def unit_challenge(
+    subject: str = Query("chinese"),
+    grade: int = Query(3),
+    semester: str = Query("上册"),
+    unit_no: int = Query(...),
+):
+    if subject not in ("chinese", "english"):
+        raise HTTPException(status_code=400, detail="科目仅支持 chinese 或 english")
+    questions = build_unit_challenge(subject, grade, semester, unit_no)
+    if not questions:
+        raise HTTPException(status_code=404, detail="该单元暂无可闯关的字词")
+    return UnitChallengeResponse(
+        subject=subject,
+        grade=grade,
+        semester=semester,
+        unit=unit_no,
+        questions=[ChallengeQuestion(**q) for q in questions],
+    )
 
 
 @router.get("/parent-summary", response_model=ParentSummaryResponse)

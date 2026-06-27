@@ -1,3 +1,4 @@
+import random
 from collections import defaultdict
 from datetime import datetime, timedelta
 
@@ -10,6 +11,7 @@ from app.services.textbook_bank import (
     SEMESTERS,
     get_semester_units,
     has_semester_data,
+    iter_grade_words,
     textbook_meta,
 )
 
@@ -246,6 +248,86 @@ async def _completed_keys(
         PreviewProgress.textbook_version == textbook_version,
     )
     return set((await db.execute(stmt)).scalars().all())
+
+
+# ---- 预习单元即时闯关（复用教材库，巩固刚预习的字词）----
+
+def build_unit_challenge(
+    subject: str, grade: int, semester: str, unit_no: int, limit: int = 12
+) -> list[dict]:
+    """用某预习单元的真实字词生成一组小测题，干扰项取同年级其他字词。"""
+    units = get_semester_units(subject, grade, semester)
+    unit = next((u for u in units if int(u.get("unit", 0)) == unit_no), None)
+    if not unit:
+        return []
+
+    items = _build_unit_items(subject, grade, semester, unit_no, unit)
+    pool = iter_grade_words(subject, grade)
+    pool_words = [w.get("word", "") for w in pool if w.get("word")]
+    pool_meanings = [w.get("meaning", "") for w in pool if w.get("meaning")]
+
+    questions = []
+    for item in items:
+        if item["item_type"] in ("phrase", "sentence"):
+            continue  # 闯关只针对字/词
+        q = _make_word_question(item, pool_words, pool_meanings)
+        if q:
+            questions.append(q)
+
+    random.shuffle(questions)
+    return questions[:limit]
+
+
+def _make_word_question(item: dict, pool_words: list[str], pool_meanings: list[str]) -> dict | None:
+    word = item["word"]
+    pron = item.get("pronunciation", "")
+    meaning = item.get("meaning", "")
+
+    # 有释义→认义题；否则→辨音选字题
+    if meaning:
+        distractors = _sample_distractors(meaning, pool_meanings, 3)
+        if len(distractors) < 3:
+            return _pinyin_question(word, pron, pool_words)
+        return {
+            "word": word,
+            "pinyin": pron,
+            "type": "meaning",
+            "question_text": f"「{word}」是什么意思？",
+            "options": _make_options(meaning, distractors),
+            "correct_answer": meaning,
+        }
+    return _pinyin_question(word, pron, pool_words)
+
+
+def _pinyin_question(word: str, pron: str, pool_words: list[str]) -> dict | None:
+    distractors = _sample_distractors(word, pool_words, 3)
+    if len(distractors) < 3:
+        return None
+    prompt = f"读音是 {pron} 的是哪个？" if pron else "下面哪个是要学的字？"
+    return {
+        "word": word,
+        "pinyin": pron,
+        "type": "pinyin",
+        "question_text": prompt,
+        "options": _make_options(word, distractors),
+        "correct_answer": word,
+    }
+
+
+def _sample_distractors(correct: str, pool: list[str], n: int) -> list[str]:
+    candidates = list({x for x in pool if x and x != correct})
+    random.shuffle(candidates)
+    return candidates[:n]
+
+
+def _make_options(correct: str, distractors: list[str]) -> list[dict]:
+    options = [{"text": correct, "is_correct": True}]
+    for d in distractors[:3]:
+        options.append({"text": d, "is_correct": False})
+    random.shuffle(options)
+    for i, opt in enumerate(options):
+        opt["index"] = i
+    return options
 
 
 # ---- 单元 → 预习项 ----

@@ -90,6 +90,34 @@ export function completePreviewItem(data: {
   })
 }
 
+export interface ChallengeOption {
+  text: string
+  is_correct: boolean
+  index: number
+}
+
+export interface ChallengeQuestion {
+  word: string
+  pinyin: string
+  type: string
+  question_text: string
+  options: ChallengeOption[]
+  correct_answer: string
+}
+
+export function getUnitChallenge(params: {
+  subject: string
+  grade: number
+  semester: string
+  unit_no: number
+}): Promise<{ subject: string; grade: number; semester: string; unit: number; questions: ChallengeQuestion[] }> {
+  const q = encodeParams(params)
+  return request<{ subject: string; grade: number; semester: string; unit: number; questions: ChallengeQuestion[] }>({
+    url: `/preview/unit-challenge?${q}`,
+    method: 'GET',
+  })
+}
+
 export interface StudiedUnit {
   subject: string
   grade: number

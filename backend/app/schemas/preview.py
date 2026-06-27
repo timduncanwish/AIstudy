@@ -109,3 +109,26 @@ class ParentSummaryResponse(BaseModel):
     subject_breakdown: dict[str, int]
     studied_units: list[StudiedUnit]
     review_suggestions: list[str]
+
+
+class ChallengeOption(BaseModel):
+    text: str
+    is_correct: bool
+    index: int
+
+
+class ChallengeQuestion(BaseModel):
+    word: str
+    pinyin: str = ""
+    type: str
+    question_text: str
+    options: list[ChallengeOption]
+    correct_answer: str
+
+
+class UnitChallengeResponse(BaseModel):
+    subject: str
+    grade: int
+    semester: str
+    unit: int
+    questions: list[ChallengeQuestion]

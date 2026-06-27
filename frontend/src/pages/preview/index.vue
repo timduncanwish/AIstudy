@@ -72,17 +72,41 @@
           <text class="detail-title">{{ detail.title }}</text>
           <text class="detail-subtitle">{{ detail.guidance }}</text>
         </view>
-        <view class="back-btn" @tap="detail = null">
-          <text>返回单元</text>
+        <view class="header-btns">
+          <view class="challenge-btn" @tap="startChallenge">
+            <text>✏️ 闯关</text>
+          </view>
+          <view class="back-btn" @tap="detail = null">
+            <text>返回</text>
+          </view>
         </view>
       </view>
 
-      <view class="source-card">
+      <view v-if="challengeActive && currentQuestion" class="quiz-panel">
+        <view class="quiz-head">
+          <text class="quiz-progress">第 {{ qIndex + 1 }}/{{ challengeQuestions.length }} 题 · 得分 {{ qScore }}</text>
+          <text class="quiz-exit" @tap="challengeActive = false">退出</text>
+        </view>
+        <text class="quiz-question">{{ currentQuestion.question_text }}</text>
+        <view
+          v-for="opt in currentQuestion.options"
+          :key="opt.index"
+          :class="['quiz-option', optionClass(opt.index)]"
+          @tap="pickOption(opt.index)"
+        >
+          <text>{{ opt.text }}</text>
+        </view>
+        <view v-if="qAnswered" class="quiz-next" @tap="nextQuestion">
+          <text>{{ isLastQuestion ? '完成' : '下一题' }}</text>
+        </view>
+      </view>
+
+      <view v-if="!challengeActive" class="source-card">
         <text class="source-text">来源：{{ detail.source_name }}</text>
         <text class="source-status">状态：待官方教材数据复核</text>
       </view>
 
-      <view class="items-list">
+      <view v-if="!challengeActive" class="items-list">
         <view v-for="item in detail.items" :key="item.item_key" :class="['item-card', { done: item.completed }]">
           <view class="item-top">
             <view>
@@ -121,6 +145,8 @@ import {
   getParentSummary,
   getPreviewUnitDetail,
   getPreviewUnits,
+  getUnitChallenge,
+  type ChallengeQuestion,
   type ParentSummary,
   type PreviewItem,
   type PreviewUnit,
@@ -228,6 +254,72 @@ const markComplete = async (item: PreviewItem) => {
   } catch {
     uni.showToast({ title: '保存失败', icon: 'none' })
   }
+}
+
+// 单元闯关
+const challengeQuestions = ref<ChallengeQuestion[]>([])
+const challengeActive = ref(false)
+const qIndex = ref(0)
+const qScore = ref(0)
+const qSelected = ref(-1)
+const qAnswered = ref(false)
+
+const currentQuestion = computed(() => challengeQuestions.value[qIndex.value] || null)
+const isLastQuestion = computed(() => qIndex.value >= challengeQuestions.value.length - 1)
+
+const startChallenge = async () => {
+  if (!detail.value) return
+  try {
+    const res = await getUnitChallenge({
+      subject: subject.value,
+      grade: grade.value,
+      semester: semester.value,
+      unit_no: detail.value.unit,
+    })
+    if (!res.questions.length) {
+      uni.showToast({ title: '该单元暂无可闯关字词', icon: 'none' })
+      return
+    }
+    challengeQuestions.value = res.questions
+    qIndex.value = 0
+    qScore.value = 0
+    qSelected.value = -1
+    qAnswered.value = false
+    challengeActive.value = true
+  } catch {
+    uni.showToast({ title: '加载闯关失败', icon: 'none' })
+  }
+}
+
+const pickOption = (idx: number) => {
+  if (qAnswered.value) return
+  qSelected.value = idx
+  qAnswered.value = true
+  const opt = currentQuestion.value?.options.find(o => o.index === idx)
+  if (opt?.is_correct) qScore.value += 1
+}
+
+const nextQuestion = () => {
+  if (isLastQuestion.value) {
+    uni.showModal({
+      title: '闯关完成 🎉',
+      content: `本单元答对 ${qScore.value}/${challengeQuestions.value.length} 题，继续加油！`,
+      showCancel: false,
+    })
+    challengeActive.value = false
+    return
+  }
+  qIndex.value += 1
+  qSelected.value = -1
+  qAnswered.value = false
+}
+
+const optionClass = (idx: number) => {
+  if (!qAnswered.value) return ''
+  const opt = currentQuestion.value?.options.find(o => o.index === idx)
+  if (opt?.is_correct) return 'correct'
+  if (idx === qSelected.value) return 'wrong'
+  return ''
 }
 
 const askAI = async (item: PreviewItem) => {
@@ -620,5 +712,87 @@ onMounted(loadUnits)
   font-size: 25rpx;
   color: #4B5563;
   line-height: 1.7;
+}
+
+.header-btns {
+  flex-shrink: 0;
+  display: flex;
+  gap: 12rpx;
+  align-self: flex-start;
+}
+
+.challenge-btn {
+  padding: 14rpx 20rpx;
+  border-radius: 14rpx;
+  background: #F59E0B;
+  color: #fff;
+  font-size: 24rpx;
+  font-weight: 700;
+}
+
+.quiz-panel {
+  background: #fff;
+  border: 3rpx solid #E0E7FF;
+  border-radius: 20rpx;
+  box-shadow: 4rpx 4rpx 12rpx rgba(79, 70, 229, 0.06);
+  padding: 28rpx;
+}
+
+.quiz-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18rpx;
+}
+
+.quiz-progress {
+  font-size: 24rpx;
+  color: #6B7280;
+}
+
+.quiz-exit {
+  font-size: 24rpx;
+  color: #EF4444;
+}
+
+.quiz-question {
+  display: block;
+  font-size: 34rpx;
+  font-weight: 700;
+  color: #312E81;
+  margin-bottom: 24rpx;
+}
+
+.quiz-option {
+  padding: 22rpx 24rpx;
+  margin-bottom: 16rpx;
+  border-radius: 16rpx;
+  background: #F8FAFC;
+  border: 3rpx solid #E5E7EB;
+  font-size: 30rpx;
+  color: #374151;
+}
+
+.quiz-option.correct {
+  background: #DCFCE7;
+  border-color: #16A34A;
+  color: #15803D;
+}
+
+.quiz-option.wrong {
+  background: #FEE2E2;
+  border-color: #EF4444;
+  color: #B91C1C;
+}
+
+.quiz-next {
+  margin-top: 10rpx;
+  padding: 22rpx 0;
+  text-align: center;
+  border-radius: 16rpx;
+  background: #4F46E5;
+  color: #fff;
+  font-size: 30rpx;
+  font-weight: 700;
 }
 </style>

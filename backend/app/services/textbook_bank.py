@@ -63,6 +63,20 @@ def has_semester_data(subject: str, grade: int, semester: str) -> bool:
     return len(get_semester_units(subject, grade, semester)) > 0
 
 
+def iter_grade_words(subject: str, grade: int) -> list[dict]:
+    """该年级（上下册全部单元）的字/词原始条目，用于生成闯关干扰项。"""
+    data = load_textbook(subject, grade)
+    if not data:
+        return []
+    keys = ("words",) if subject == "english" else ("first_class", "second_class")
+    out: list[dict] = []
+    for semester in data.get("semesters", {}).values():
+        for unit in semester.get("units", []):
+            for k in keys:
+                out.extend(unit.get(k, []))
+    return out
+
+
 def textbook_meta(subject: str, grade: int) -> dict:
     data = load_textbook(subject, grade)
     return {
