@@ -6,6 +6,7 @@ import os
 import tempfile
 
 import pytest_asyncio
+from httpx import AsyncClient, ASGITransport
 from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker, AsyncSession
 
 from app.database import Base
@@ -30,6 +31,24 @@ async def db():
     finally:
         await engine.dispose()
         os.remove(path)
+
+
+@pytest_asyncio.fixture
+async def client(db):
+    """带真实路由的 HTTP 客户端：get_db 依赖被替换为测试用临时库。"""
+    from app.main import app
+    from app.database import get_db
+
+    async def _override_get_db():
+        yield db
+
+    app.dependency_overrides[get_db] = _override_get_db
+    transport = ASGITransport(app=app)
+    try:
+        async with AsyncClient(transport=transport, base_url="http://test") as ac:
+            yield ac
+    finally:
+        app.dependency_overrides.pop(get_db, None)
 
 
 async def make_user(db, *, nickname="家长", openid=None, notify_subscribed=0, device_id=None):

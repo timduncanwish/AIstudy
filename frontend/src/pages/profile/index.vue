@@ -49,7 +49,7 @@
     <view class="section">
       <view class="section-header">
         <text class="section-title">我的孩子</text>
-        <text class="add-btn" @tap="showAddStudent = true">+ 添加</text>
+        <text class="add-btn" @tap="openAddStudent">+ 添加</text>
       </view>
       <view v-if="students.length === 0" class="empty-tip">
         <text>还没有添加孩子，点击右上角添加</text>
@@ -268,13 +268,25 @@ const doLogout = () => {
   uni.showToast({ title: '已退出', icon: 'none' })
 }
 
+const requireLogin = (): boolean => {
+  if (isLoggedIn.value) return true
+  uni.showToast({ title: '孩子档案需要先登录', icon: 'none' })
+  return false
+}
+
 const switchStudent = async (s: StudentInfo) => {
   if (s.is_active) return
+  if (!requireLogin()) return
   try {
     await activateStudent(s.id)
     await loadStudents()
     uni.showToast({ title: `已切换到 ${s.name}`, icon: 'none' })
   } catch { /* ignore */ }
+}
+
+const openAddStudent = () => {
+  if (!requireLogin()) return
+  showAddStudent.value = true
 }
 
 const doAddStudent = async () => {
@@ -296,6 +308,7 @@ const doAddStudent = async () => {
 }
 
 const openEdit = (s: StudentInfo) => {
+  if (!requireLogin()) return
   editId.value = s.id
   editName.value = s.name
   editGrade.value = s.grade

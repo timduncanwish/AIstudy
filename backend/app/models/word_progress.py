@@ -11,6 +11,7 @@ class WordProgress(Base):
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
     user_id = mapped_column(Integer, ForeignKey("users.id"), nullable=False)
+    student_id = mapped_column(Integer, ForeignKey("students.id"), nullable=True)
     word = mapped_column(String(50), nullable=False)
     subject = mapped_column(String(20), nullable=False)
     level = mapped_column(Integer, default=0)

@@ -54,10 +54,10 @@
 
 ## 🟢 注意
 
-### 10. 家长端档案接口鉴权
-- 证据：`routers/students.py:21-23`（及 preview/homework）用 `X-User-Id` 头 + `anonymous` 兜底定位用户；而 `chat.py` 用 `get_verified_user_id`（JWT 校验）。
-- 风险：客户端可自行传 user id，理论上可读写他人档案。
-- 动作：家长端档案/报告类接口建议也改走 verified token。
+### 10. ~~家长端档案接口鉴权~~（已修复）
+- 原风险：`routers/students.py` 用 `X-User-Id` 头 + `anonymous` 兜底定位用户，客户端自报的字符串没有签名校验，知道/猜到对方 X-User-Id 即可读写他人孩子档案（含删除）。
+- 修复：`/students` 全部接口改为强制 `require_user_id`（有效 JWT），不再接受 `X-User-Id` 头兜底；未登录一律 401。前端个人中心加了登录态检查，未登录点「添加/编辑」会提示先登录而不是直接报错。见 `backend/tests/test_students_router_authz.py`。
+- 说明：preview/homework/chat 等匿名可用接口的 `X-User-Id` 兜底逻辑本身没变——那类接口设计上就允许免登录使用，风险敞口与本条不同，未在本次修复范围内。
 
 ### 11. 上传文件存储
 - 证据：作业图片存本地磁盘 `uploads/`（`homework.py`）。

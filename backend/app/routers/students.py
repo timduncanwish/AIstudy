@@ -1,8 +1,8 @@
-from fastapi import APIRouter, Depends, Header, HTTPException
+from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.database import get_db
-from app.services.user_service import get_or_create_user
+from app.deps import require_user_id
 from app.services.student_service import (
     list_students,
     create_student,
@@ -14,14 +14,17 @@ from app.schemas.student import StudentCreate, StudentUpdate, StudentResponse
 
 router = APIRouter(prefix="/students", tags=["students"])
 
+# 孩子档案含姓名/年级等儿童个人信息，强制要求已登录（有效 JWT），不再接受
+# 客户端自报的 X-User-Id 头兜底——那种匿名回退只要知道/猜到对方的 X-User-Id
+# 字符串就能冒充对方，参见 tests/test_students_router_authz.py。
+
 
 @router.get("", response_model=list[StudentResponse])
 async def get_students(
     db: AsyncSession = Depends(get_db),
-    x_user_id: str = Header(None, alias="X-User-Id"),
+    user_id: int = Depends(require_user_id),
 ):
-    user = await get_or_create_user(db, x_user_id or "anonymous")
-    students = await list_students(db, user.id)
+    students = await list_students(db, user_id)
     return [StudentResponse.model_validate(s) for s in students]
 
 
@@ -29,10 +32,9 @@ async def get_students(
 async def add_student(
     body: StudentCreate,
     db: AsyncSession = Depends(get_db),
-    x_user_id: str = Header(None, alias="X-User-Id"),
+    user_id: int = Depends(require_user_id),
 ):
-    user = await get_or_create_user(db, x_user_id or "anonymous")
-    student = await create_student(db, user.id, body.name, body.grade, body.avatar_tag)
+    student = await create_student(db, user_id, body.name, body.grade, body.avatar_tag)
     return StudentResponse.model_validate(student)
 
 
@@ -41,11 +43,10 @@ async def edit_student(
     student_id: int,
     body: StudentUpdate,
     db: AsyncSession = Depends(get_db),
-    x_user_id: str = Header(None, alias="X-User-Id"),
+    user_id: int = Depends(require_user_id),
 ):
-    user = await get_or_create_user(db, x_user_id or "anonymous")
     student = await update_student(
-        db, student_id, user.id,
+        db, student_id, user_id,
         name=body.name, grade=body.grade, avatar_tag=body.avatar_tag,
     )
     if not student:
@@ -57,10 +58,9 @@ async def edit_student(
 async def remove_student(
     student_id: int,
     db: AsyncSession = Depends(get_db),
-    x_user_id: str = Header(None, alias="X-User-Id"),
+    user_id: int = Depends(require_user_id),
 ):
-    user = await get_or_create_user(db, x_user_id or "anonymous")
-    ok = await delete_student(db, student_id, user.id)
+    ok = await delete_student(db, student_id, user_id)
     if not ok:
         raise HTTPException(status_code=404, detail="学生不存在")
     return {"ok": True}
@@ -70,10 +70,9 @@ async def remove_student(
 async def set_active_student(
     student_id: int,
     db: AsyncSession = Depends(get_db),
-    x_user_id: str = Header(None, alias="X-User-Id"),
+    user_id: int = Depends(require_user_id),
 ):
-    user = await get_or_create_user(db, x_user_id or "anonymous")
-    student = await activate_student(db, student_id, user.id)
+    student = await activate_student(db, student_id, user_id)
     if not student:
         raise HTTPException(status_code=404, detail="学生不存在")
     return StudentResponse.model_validate(student)

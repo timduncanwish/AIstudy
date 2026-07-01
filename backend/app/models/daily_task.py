@@ -11,6 +11,7 @@ class DailyTask(Base):
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
     user_id = mapped_column(Integer, ForeignKey("users.id"), nullable=False)
+    student_id = mapped_column(Integer, ForeignKey("students.id"), nullable=True)
     subject = mapped_column(String(20), nullable=False)
     task_date = mapped_column(String(10), nullable=False)
     words_json = mapped_column(Text, nullable=False)

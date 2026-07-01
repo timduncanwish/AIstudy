@@ -9,6 +9,7 @@ from app.models.word_progress import WordProgress
 from app.models.daily_task import DailyTask
 from app.models.user_stats import UserStats
 from app.services.word_bank import get_words_for_grade, get_word_detail
+from app.scope import active_student_id
 
 REVIEW_INTERVALS = [1, 2, 4, 7, 14, 30]
 
@@ -29,30 +30,33 @@ BADGE_DEFS = {
 async def get_or_create_daily_task(
     db: AsyncSession, user_id: int, subject: str, grade: int
 ) -> DailyTask:
+    sid = await active_student_id(db, user_id)
     today = datetime.now().strftime("%Y-%m-%d")
-    result = await db.execute(
-        select(DailyTask).where(
-            DailyTask.user_id == user_id,
-            DailyTask.subject == subject,
-            DailyTask.task_date == today,
-        )
-    )
+    conds = [
+        DailyTask.user_id == user_id,
+        DailyTask.subject == subject,
+        DailyTask.task_date == today,
+    ]
+    if sid is not None:
+        conds.append(DailyTask.student_id == sid)
+    result = await db.execute(select(DailyTask).where(*conds))
     task = result.scalar_one_or_none()
     if task:
         return task
 
-    review_words = await _get_review_words(db, user_id, subject)
+    review_words = await _get_review_words(db, user_id, subject, sid)
     all_words = get_words_for_grade(subject, grade)
 
     new_words = []
     for w in all_words:
-        wp_result = await db.execute(
-            select(WordProgress).where(
-                WordProgress.user_id == user_id,
-                WordProgress.word == w["word"],
-                WordProgress.subject == subject,
-            )
-        )
+        wp_conds = [
+            WordProgress.user_id == user_id,
+            WordProgress.word == w["word"],
+            WordProgress.subject == subject,
+        ]
+        if sid is not None:
+            wp_conds.append(WordProgress.student_id == sid)
+        wp_result = await db.execute(select(WordProgress).where(*wp_conds))
         if not wp_result.scalar_one_or_none():
             new_words.append(w["word"])
 
@@ -72,6 +76,7 @@ async def get_or_create_daily_task(
 
     task = DailyTask(
         user_id=user_id,
+        student_id=sid,
         subject=subject,
         task_date=today,
         words_json=json.dumps(selected[:10], ensure_ascii=False),
@@ -84,17 +89,18 @@ async def get_or_create_daily_task(
 
 
 async def _get_review_words(
-    db: AsyncSession, user_id: int, subject: str
+    db: AsyncSession, user_id: int, subject: str, student_id: int | None
 ) -> list[WordProgress]:
+    conds = [
+        WordProgress.user_id == user_id,
+        WordProgress.subject == subject,
+        WordProgress.next_review <= datetime.now(),
+        WordProgress.level < 4,
+    ]
+    if student_id is not None:
+        conds.append(WordProgress.student_id == student_id)
     result = await db.execute(
-        select(WordProgress)
-        .where(
-            WordProgress.user_id == user_id,
-            WordProgress.subject == subject,
-            WordProgress.next_review <= datetime.now(),
-            WordProgress.level < 4,
-        )
-        .order_by(WordProgress.next_review.asc())
+        select(WordProgress).where(*conds).order_by(WordProgress.next_review.asc())
     )
     return list(result.scalars().all())
 
@@ -215,18 +221,20 @@ def _make_options(correct: str, distractors: list[str]) -> list[dict]:
 async def _get_or_create_progress(
     db: AsyncSession, user_id: int, word: str, subject: str
 ) -> WordProgress:
-    result = await db.execute(
-        select(WordProgress).where(
-            WordProgress.user_id == user_id,
-            WordProgress.word == word,
-            WordProgress.subject == subject,
-        )
-    )
+    sid = await active_student_id(db, user_id)
+    conds = [
+        WordProgress.user_id == user_id,
+        WordProgress.word == word,
+        WordProgress.subject == subject,
+    ]
+    if sid is not None:
+        conds.append(WordProgress.student_id == sid)
+    result = await db.execute(select(WordProgress).where(*conds))
     wp = result.scalar_one_or_none()
     if wp:
         return wp
 
-    wp = WordProgress(user_id=user_id, word=word, subject=subject, level=0)
+    wp = WordProgress(user_id=user_id, student_id=sid, word=word, subject=subject, level=0)
     db.add(wp)
     await db.commit()
     await db.refresh(wp)
@@ -243,6 +251,7 @@ async def submit_answer(
     answer: str,
     streak: int,
 ) -> dict:
+    sid = await active_student_id(db, user_id)
     wp = await _get_or_create_progress(db, user_id, word_str, subject)
     word_detail = get_word_detail(subject, grade, word_str)
 
@@ -280,13 +289,14 @@ async def submit_answer(
     wp.updated_at = datetime.now()
     await db.commit()
 
-    task_result = await db.execute(
-        select(DailyTask).where(
-            DailyTask.user_id == user_id,
-            DailyTask.subject == subject,
-            DailyTask.task_date == datetime.now().strftime("%Y-%m-%d"),
-        )
-    )
+    task_conds = [
+        DailyTask.user_id == user_id,
+        DailyTask.subject == subject,
+        DailyTask.task_date == datetime.now().strftime("%Y-%m-%d"),
+    ]
+    if sid is not None:
+        task_conds.append(DailyTask.student_id == sid)
+    task_result = await db.execute(select(DailyTask).where(*task_conds))
     task = task_result.scalar_one_or_none()
     if task:
         task.completed += 1
@@ -310,11 +320,11 @@ async def submit_answer(
         stats.streak_days = 1
     stats.last_practice_date = today
 
+    mastered_conds = [WordProgress.user_id == user_id, WordProgress.level >= 4]
+    if sid is not None:
+        mastered_conds.append(WordProgress.student_id == sid)
     mastered = await db.execute(
-        select(func.count()).select_from(WordProgress).where(
-            WordProgress.user_id == user_id,
-            WordProgress.level >= 4,
-        )
+        select(func.count()).select_from(WordProgress).where(*mastered_conds)
     )
     stats.words_mastered = mastered.scalar() or 0
 
@@ -347,6 +357,7 @@ async def record_preview_challenge(
     results: [{"word": str, "correct": bool}, ...]
     认读级计分，与每日闯关共用 WordProgress / UserStats / 徽章。
     """
+    sid = await active_student_id(db, user_id)
     points = 0
     correct_count = 0
     total = 0
@@ -390,11 +401,11 @@ async def record_preview_challenge(
         stats.streak_days = 1
     stats.last_practice_date = today
 
+    mastered_conds = [WordProgress.user_id == user_id, WordProgress.level >= 4]
+    if sid is not None:
+        mastered_conds.append(WordProgress.student_id == sid)
     mastered = await db.execute(
-        select(func.count()).select_from(WordProgress).where(
-            WordProgress.user_id == user_id,
-            WordProgress.level >= 4,
-        )
+        select(func.count()).select_from(WordProgress).where(*mastered_conds)
     )
     stats.words_mastered = mastered.scalar() or 0
 
@@ -450,14 +461,16 @@ def _check_badges(stats: UserStats, wp: WordProgress, task: DailyTask | None) ->
 
 
 async def _get_or_create_stats(db: AsyncSession, user_id: int) -> UserStats:
-    result = await db.execute(
-        select(UserStats).where(UserStats.user_id == user_id)
-    )
+    sid = await active_student_id(db, user_id)
+    conds = [UserStats.user_id == user_id]
+    if sid is not None:
+        conds.append(UserStats.student_id == sid)
+    result = await db.execute(select(UserStats).where(*conds))
     stats = result.scalar_one_or_none()
     if stats:
         return stats
 
-    stats = UserStats(user_id=user_id)
+    stats = UserStats(user_id=user_id, student_id=sid)
     db.add(stats)
     await db.commit()
     await db.refresh(stats)
